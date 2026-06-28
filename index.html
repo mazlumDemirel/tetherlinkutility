@@ -345,8 +345,8 @@
           <div class="platform-icon">🤖</div>
           <div>
             <h3>Android</h3>
-            <p>Any tun-based SOCKS5 client from the Play Store routes all app traffic.</p>
-            <span class="code-chip">tun-based</span>
+            <p>Install TetherLink Utility, tap <em>Scan QR · Connect to Server</em>, and point the camera at the QR code — connected in one tap, no extra app needed.</p>
+            <span class="code-chip">built-in</span>
           </div>
         </div>
         <div class="platform">
@@ -371,62 +371,62 @@
 </footer>
 
 <script>
-(function() {
-  var canvas = document.getElementById('heroCanvas');
-  if (!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var W = canvas.width, H = canvas.height;
-  var cx = W / 2 + 10, cy = H / 2 - 10;
-  var dark = '#0E0E1C';
-  var orange = '#FF5733';
-  var t = 0;
-  var arcs = [{r:60,phase:0},{r:100,phase:0.4},{r:140,phase:0.8}];
+  (function() {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var cx = W / 2 + 10, cy = H / 2 - 10;
+    var dark = '#0E0E1C';
+    var orange = '#FF5733';
+    var t = 0;
+    var arcs = [{r:60,phase:0},{r:100,phase:0.4},{r:140,phase:0.8}];
 
-  function drawRoundRect(x,y,w,h,r,fill) {
-    ctx.beginPath();
-    ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
-    ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-    ctx.lineTo(x+w,y+h-r);
-    ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-    ctx.lineTo(x+r,y+h);
-    ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-    ctx.lineTo(x,y+r);
-    ctx.quadraticCurveTo(x,y,x+r,y);
-    ctx.closePath();
-    ctx.fillStyle = fill; ctx.fill();
-  }
-
-  function frame() {
-    ctx.clearRect(0,0,W,H);
-    t += 0.018;
-
-    var grad = ctx.createRadialGradient(cx,cy,10,cx,cy,170);
-    grad.addColorStop(0,'rgba(255,87,51,0.06)');
-    grad.addColorStop(1,'rgba(255,87,51,0)');
-    ctx.beginPath(); ctx.arc(cx,cy,170,0,Math.PI*2);
-    ctx.fillStyle = grad; ctx.fill();
-
-    arcs.forEach(function(a) {
-      var alpha = 0.15 + 0.55*(0.5+0.5*Math.sin(t*1.4-a.phase));
+    function drawRoundRect(x,y,w,h,r,fill) {
       ctx.beginPath();
-      ctx.arc(cx+32,cy-60,a.r,Math.PI*1.15,Math.PI*1.85);
-      ctx.strokeStyle = 'rgba(255,87,51,'+alpha+')';
-      ctx.lineWidth = 14; ctx.lineCap = 'round'; ctx.stroke();
-    });
+      ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+      ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+      ctx.lineTo(x+w,y+h-r);
+      ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+      ctx.lineTo(x+r,y+h);
+      ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+      ctx.lineTo(x,y+r);
+      ctx.quadraticCurveTo(x,y,x+r,y);
+      ctx.closePath();
+      ctx.fillStyle = fill; ctx.fill();
+    }
 
-    var bx=cx-110, by=cy+20, bw=220, bh=80;
-    drawRoundRect(bx,by,bw,bh,14,orange);
-    [bx+22,bx+80,bx+138].forEach(function(hx){ drawRoundRect(hx,by+22,28,28,4,dark); });
+    function frame() {
+      ctx.clearRect(0,0,W,H);
+      t += 0.018;
 
-    var ax=cx+68;
-    ctx.fillStyle=orange;
-    ctx.fillRect(ax-7,by-50,14,50);
-    ctx.fillRect(ax-14,by-56,28,10);
+      var grad = ctx.createRadialGradient(cx,cy,10,cx,cy,170);
+      grad.addColorStop(0,'rgba(255,87,51,0.06)');
+      grad.addColorStop(1,'rgba(255,87,51,0)');
+      ctx.beginPath(); ctx.arc(cx,cy,170,0,Math.PI*2);
+      ctx.fillStyle = grad; ctx.fill();
 
-    requestAnimationFrame(frame);
-  }
-  frame();
-})();
+      arcs.forEach(function(a) {
+        var alpha = 0.15 + 0.55*(0.5+0.5*Math.sin(t*1.4-a.phase));
+        ctx.beginPath();
+        ctx.arc(cx+32,cy-60,a.r,Math.PI*1.15,Math.PI*1.85);
+        ctx.strokeStyle = 'rgba(255,87,51,'+alpha+')';
+        ctx.lineWidth = 14; ctx.lineCap = 'round'; ctx.stroke();
+      });
+
+      var bx=cx-110, by=cy+20, bw=220, bh=80;
+      drawRoundRect(bx,by,bw,bh,14,orange);
+      [bx+22,bx+80,bx+138].forEach(function(hx){ drawRoundRect(hx,by+22,28,28,4,dark); });
+
+      var ax=cx+68;
+      ctx.fillStyle=orange;
+      ctx.fillRect(ax-7,by-50,14,50);
+      ctx.fillRect(ax-14,by-56,28,10);
+
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
 </script>
 
 </body>
