@@ -10,15 +10,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ground:   #0A0A14;
-      --surface:  #0E0E1C;
-      --elevated: #14142A;
-      --border:   #1E1E36;
-      --orange:   #FF5733;
-      --teal:     #00C896;
-      --text:     #F0F0F8;
-      --muted:    #8888AA;
-      --dim:      #555570;
+      --ground:    #0C0C18;
+      --surface:   #141428;
+      --elevated:  #1E1E38;
+      --border:    #20203A;
+      --border-md: #2C2C50;
+      --accent:    #5E81F4;
+      --success:   #00BF8A;
+      --text:      #ECEDFF;
+      --muted:     #8888B0;
+      --dim:       #4C4C6A;
     }
 
     html { scroll-behavior: smooth; }
@@ -32,27 +33,31 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--orange); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
+    /* ── Nav ─────────────────────────────── */
     nav {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(10,10,20,0.88);
-      backdrop-filter: blur(12px);
+      background: rgba(12,12,24,0.90);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
       padding: 0 clamp(20px, 5vw, 80px);
       display: flex; align-items: center; justify-content: space-between;
       height: 60px;
     }
+
     .nav-brand {
       font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
       color: var(--text); display: flex; align-items: center; gap: 10px;
     }
+
     .nav-links { display: flex; gap: 28px; }
     .nav-links a { color: var(--muted); font-size: 14px; }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
 
+    /* ── Hero ────────────────────────────── */
     .hero {
       display: grid;
       grid-template-columns: 1fr 420px;
@@ -67,15 +72,15 @@
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--orange);
-      background: rgba(255,87,51,0.08);
-      border: 1px solid rgba(255,87,51,0.2);
+      text-transform: uppercase; color: var(--accent);
+      background: rgba(94,129,244,0.08);
+      border: 1px solid rgba(94,129,244,0.22);
       padding: 5px 12px; border-radius: 20px;
       margin-bottom: 24px;
     }
     .hero-eyebrow .dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: var(--orange); display: inline-block;
+      background: var(--accent); display: inline-block;
     }
 
     h1 {
@@ -86,7 +91,7 @@
       text-wrap: balance;
       margin-bottom: 20px;
     }
-    h1 span { color: var(--orange); }
+    h1 span { color: var(--accent); }
 
     .hero-body {
       font-size: 18px; color: var(--muted); line-height: 1.65;
@@ -97,7 +102,7 @@
 
     .btn-primary {
       display: inline-flex; align-items: center; gap: 10px;
-      background: var(--orange); color: #fff;
+      background: var(--accent); color: #fff;
       font-weight: 700; font-size: 15px;
       padding: 13px 26px; border-radius: 10px;
       transition: opacity 0.15s, transform 0.15s;
@@ -107,7 +112,7 @@
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       color: var(--muted); font-size: 14px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-md);
       padding: 13px 22px; border-radius: 10px;
       transition: border-color 0.15s, color 0.15s;
     }
@@ -116,6 +121,7 @@
     .hero-canvas-wrap { display: flex; justify-content: center; align-items: center; }
     #heroCanvas { display: block; }
 
+    /* ── Sections ────────────────────────── */
     .strip {
       border-top: 1px solid var(--border);
       padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 80px);
@@ -128,6 +134,7 @@
       margin-bottom: 40px;
     }
 
+    /* ── Steps ───────────────────────────── */
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -137,10 +144,14 @@
       border-radius: 14px; overflow: hidden;
     }
     .step { background: var(--surface); padding: 28px 26px; }
-    .step-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 14px; }
+    .step-num {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 14px;
+    }
     .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .step p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+    .step p  { font-size: 14px; color: var(--muted); line-height: 1.55; }
 
+    /* ── Features ────────────────────────── */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -153,17 +164,19 @@
       padding: 24px;
       transition: border-color 0.2s;
     }
-    .feature:hover { border-color: var(--dim); }
+    .feature:hover { border-color: var(--border-md); }
+
     .feature-icon {
       width: 36px; height: 36px; border-radius: 8px;
-      background: rgba(255,87,51,0.1);
+      background: rgba(94,129,244,0.1);
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 14px;
     }
-    .feature-icon.teal { background: rgba(0,200,150,0.1); }
+    .feature-icon.teal { background: rgba(0,191,138,0.1); }
     .feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .feature p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .feature p  { font-size: 13px; color: var(--muted); line-height: 1.55; }
 
+    /* ── Platforms ───────────────────────── */
     .platforms {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -175,21 +188,24 @@
       border-radius: 10px;
       padding: 20px;
       display: flex; align-items: flex-start; gap: 14px;
+      transition: border-color 0.2s;
     }
+    .platform:hover { border-color: var(--border-md); }
     .platform-icon { font-size: 22px; flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
     .platform h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .platform p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .platform p  { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
     .code-chip {
       display: inline-block;
       font-family: ui-monospace, "Cascadia Code", "Fira Code", monospace;
-      font-size: 11px; color: var(--teal);
-      background: rgba(0,200,150,0.08);
-      border: 1px solid rgba(0,200,150,0.15);
+      font-size: 11px; color: var(--success);
+      background: rgba(0,191,138,0.08);
+      border: 1px solid rgba(0,191,138,0.18);
       padding: 2px 7px; border-radius: 4px;
       margin-top: 6px;
     }
 
+    /* ── Footer ──────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
       padding: 32px clamp(20px, 5vw, 80px);
@@ -199,10 +215,13 @@
       max-width: 1200px; margin: 0 auto;
     }
     .footer-brand { font-size: 13px; color: var(--dim); }
+    .footer-brand a { color: var(--muted); }
+    .footer-brand a:hover { color: var(--text); text-decoration: none; }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-size: 13px; color: var(--dim); }
     .footer-links a:hover { color: var(--muted); text-decoration: none; }
 
+    /* ── Responsive ──────────────────────── */
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; }
       .hero-canvas-wrap { display: none; }
@@ -219,14 +238,14 @@
 <nav>
   <div class="nav-brand">
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-      <rect width="22" height="22" rx="5" fill="#FF5733"/>
+      <rect width="22" height="22" rx="5" fill="#5E81F4"/>
       <rect x="3" y="12" width="16" height="7" rx="2" fill="white"/>
-      <rect x="5" y="14" width="3" height="3" rx="0.5" fill="#FF5733"/>
-      <rect x="9.5" y="14" width="3" height="3" rx="0.5" fill="#FF5733"/>
-      <rect x="14" y="14" width="3" height="3" rx="0.5" fill="#FF5733"/>
+      <rect x="5" y="14" width="3" height="3" rx="0.5" fill="#5E81F4"/>
+      <rect x="9.5" y="14" width="3" height="3" rx="0.5" fill="#5E81F4"/>
+      <rect x="14" y="14" width="3" height="3" rx="0.5" fill="#5E81F4"/>
       <rect x="14.5" y="7" width="2" height="5" fill="white"/>
       <path d="M11 4 Q15.5 4 15.5 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <path d="M11 6 Q14 6 14 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M11 6 Q14 6 14 7"    stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
     </svg>
     Tether Link Utility
   </div>
@@ -262,6 +281,7 @@
   </section>
 
   <div style="border-top:1px solid var(--border)">
+
     <section class="strip" id="how">
       <div class="section-label">How it works</div>
       <div class="steps">
@@ -293,28 +313,28 @@
       <div class="features">
         <div class="feature">
           <div class="feature-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF5733"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#5E81F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
           </div>
           <h3>One-tap tunnel</h3>
           <p>START launches the proxy immediately. No configuration wizards, no accounts, no cloud dependency.</p>
         </div>
         <div class="feature">
           <div class="feature-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF5733"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#5E81F4"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"/></svg>
           </div>
           <h3>QR code setup</h3>
           <p>Tap "Show QR" and point your phone's camera. Host and port fill in automatically on compatible clients.</p>
         </div>
         <div class="feature">
           <div class="feature-icon teal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#00C896"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#00BF8A"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
           </div>
           <h3>Fully local</h3>
           <p>No remote VPN server. No traffic logging. Every packet stays within your own hardware chain.</p>
         </div>
         <div class="feature">
           <div class="feature-icon teal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#00C896"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C6.81 18 5 15.21 5 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#00BF8A"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C6.81 18 5 15.21 5 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg>
           </div>
           <h3>IP change detection</h3>
           <p>Carrier IPs shift between sessions. The app detects changes and alerts connected devices automatically.</p>
@@ -359,11 +379,16 @@
         </div>
       </div>
     </section>
+
   </div>
 </main>
 
 <footer>
-  <div class="footer-brand">© 2026 Tether Link Utility · <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a></div>
+  <div class="footer-brand">
+    © 2026 Tether Link Utility
+    &nbsp;·&nbsp;
+    <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a>
+  </div>
   <div class="footer-links">
     <a href="https://gist.github.com/mazlumDemirel/5c3bbc0aa8a77e3979c8c62f3b6c1055">Privacy Policy</a>
     <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility">Google Play</a>
@@ -371,62 +396,79 @@
 </footer>
 
 <script>
-  (function() {
+  (function () {
     var canvas = document.getElementById('heroCanvas');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     var W = canvas.width, H = canvas.height;
     var cx = W / 2 + 10, cy = H / 2 - 10;
-    var dark = '#0E0E1C';
-    var orange = '#FF5733';
+    var DARK = '#141428';
     var t = 0;
-    var arcs = [{r:60,phase:0},{r:100,phase:0.4},{r:140,phase:0.8}];
 
-    function drawRoundRect(x,y,w,h,r,fill) {
+    var arcs = [
+      { r: 60,  phase: 0   },
+      { r: 100, phase: 0.4 },
+      { r: 140, phase: 0.8 },
+    ];
+
+    function drawRoundRect(x, y, w, h, r, fill) {
       ctx.beginPath();
-      ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
-      ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-      ctx.lineTo(x+w,y+h-r);
-      ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-      ctx.lineTo(x+r,y+h);
-      ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-      ctx.lineTo(x,y+r);
-      ctx.quadraticCurveTo(x,y,x+r,y);
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
       ctx.closePath();
-      ctx.fillStyle = fill; ctx.fill();
+      ctx.fillStyle = fill;
+      ctx.fill();
     }
 
     function frame() {
-      ctx.clearRect(0,0,W,H);
+      ctx.clearRect(0, 0, W, H);
       t += 0.018;
 
-      var grad = ctx.createRadialGradient(cx,cy,10,cx,cy,170);
-      grad.addColorStop(0,'rgba(255,87,51,0.06)');
-      grad.addColorStop(1,'rgba(255,87,51,0)');
-      ctx.beginPath(); ctx.arc(cx,cy,170,0,Math.PI*2);
-      ctx.fillStyle = grad; ctx.fill();
+      /* ambient glow */
+      var grad = ctx.createRadialGradient(cx, cy, 10, cx, cy, 170);
+      grad.addColorStop(0, 'rgba(94,129,244,0.07)');
+      grad.addColorStop(1, 'rgba(94,129,244,0)');
+      ctx.beginPath();
+      ctx.arc(cx, cy, 170, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
 
-      arcs.forEach(function(a) {
-        var alpha = 0.15 + 0.55*(0.5+0.5*Math.sin(t*1.4-a.phase));
+      /* signal arcs */
+      arcs.forEach(function (a) {
+        var alpha = 0.15 + 0.55 * (0.5 + 0.5 * Math.sin(t * 1.4 - a.phase));
         ctx.beginPath();
-        ctx.arc(cx+32,cy-60,a.r,Math.PI*1.15,Math.PI*1.85);
-        ctx.strokeStyle = 'rgba(255,87,51,'+alpha+')';
-        ctx.lineWidth = 14; ctx.lineCap = 'round'; ctx.stroke();
+        ctx.arc(cx + 32, cy - 60, a.r, Math.PI * 1.15, Math.PI * 1.85);
+        ctx.strokeStyle = 'rgba(94,129,244,' + alpha + ')';
+        ctx.lineWidth = 14;
+        ctx.lineCap = 'round';
+        ctx.stroke();
       });
 
-      var bx=cx-110, by=cy+20, bw=220, bh=80;
-      drawRoundRect(bx,by,bw,bh,14,orange);
-      [bx+22,bx+80,bx+138].forEach(function(hx){ drawRoundRect(hx,by+22,28,28,4,dark); });
+      /* device body */
+      var bx = cx - 110, by = cy + 20, bw = 220, bh = 80;
+      drawRoundRect(bx, by, bw, bh, 14, '#5E81F4');
+      [bx + 22, bx + 80, bx + 138].forEach(function (hx) {
+        drawRoundRect(hx, by + 22, 28, 28, 4, DARK);
+      });
 
-      var ax=cx+68;
-      ctx.fillStyle=orange;
-      ctx.fillRect(ax-7,by-50,14,50);
-      ctx.fillRect(ax-14,by-56,28,10);
+      /* antenna */
+      var ax = cx + 68;
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(ax - 7, by - 50, 14, 50);
+      ctx.fillRect(ax - 14, by - 56, 28, 10);
 
       requestAnimationFrame(frame);
     }
+
     frame();
-  })();
+  }());
 </script>
 
 </body>
