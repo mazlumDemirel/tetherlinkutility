@@ -15,7 +15,7 @@
       --elevated:  #1E1E38;
       --border:    #20203A;
       --border-md: #2C2C50;
-      --accent:    #5E81F4;
+      --accent:    #E8622A;
       --success:   #00BF8A;
       --text:      #ECEDFF;
       --muted:     #8888B0;
@@ -73,8 +73,8 @@
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--accent);
-      background: rgba(94,129,244,0.08);
-      border: 1px solid rgba(94,129,244,0.22);
+      background: rgba(232,98,42,0.08);
+      border: 1px solid rgba(232,98,42,0.22);
       padding: 5px 12px; border-radius: 20px;
       margin-bottom: 24px;
     }
@@ -168,7 +168,7 @@
 
     .feature-icon {
       width: 36px; height: 36px; border-radius: 8px;
-      background: rgba(94,129,244,0.1);
+      background: rgba(232,98,42,0.1);
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 14px;
     }
@@ -238,11 +238,11 @@
 <nav>
   <div class="nav-brand">
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-      <rect width="22" height="22" rx="5" fill="#5E81F4"/>
+      <rect width="22" height="22" rx="5" fill="#E8622A"/>
       <rect x="3" y="12" width="16" height="7" rx="2" fill="white"/>
-      <rect x="5" y="14" width="3" height="3" rx="0.5" fill="#5E81F4"/>
-      <rect x="9.5" y="14" width="3" height="3" rx="0.5" fill="#5E81F4"/>
-      <rect x="14" y="14" width="3" height="3" rx="0.5" fill="#5E81F4"/>
+      <rect x="5" y="14" width="3" height="3" rx="0.5" fill="#E8622A"/>
+      <rect x="9.5" y="14" width="3" height="3" rx="0.5" fill="#E8622A"/>
+      <rect x="14" y="14" width="3" height="3" rx="0.5" fill="#E8622A"/>
       <rect x="14.5" y="7" width="2" height="5" fill="white"/>
       <path d="M11 4 Q15.5 4 15.5 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
       <path d="M11 6 Q14 6 14 7"    stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
@@ -313,14 +313,14 @@
       <div class="features">
         <div class="feature">
           <div class="feature-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#5E81F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#E8622A"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
           </div>
           <h3>One-tap tunnel</h3>
           <p>START launches the proxy immediately. No configuration wizards, no accounts, no cloud dependency.</p>
         </div>
         <div class="feature">
           <div class="feature-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#5E81F4"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#E8622A"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"/></svg>
           </div>
           <h3>QR code setup</h3>
           <p>Tap "Show QR" and point your phone's camera. Host and port fill in automatically on compatible clients.</p>
@@ -433,7 +433,7 @@
 
       /* ambient glow */
       var grad = ctx.createRadialGradient(cx, cy, 10, cx, cy, 170);
-      grad.addColorStop(0, 'rgba(94,129,244,0.07)');
+      grad.addColorStop(0, 'rgba(232,98,42,0.07)');
       grad.addColorStop(1, 'rgba(94,129,244,0)');
       ctx.beginPath();
       ctx.arc(cx, cy, 170, 0, Math.PI * 2);
@@ -445,7 +445,7 @@
         var alpha = 0.15 + 0.55 * (0.5 + 0.5 * Math.sin(t * 1.4 - a.phase));
         ctx.beginPath();
         ctx.arc(cx + 32, cy - 60, a.r, Math.PI * 1.15, Math.PI * 1.85);
-        ctx.strokeStyle = 'rgba(94,129,244,' + alpha + ')';
+        ctx.strokeStyle = 'rgba(232,98,42,' + alpha + ')';
         ctx.lineWidth = 14;
         ctx.lineCap = 'round';
         ctx.stroke();
@@ -453,7 +453,7 @@
 
       /* device body */
       var bx = cx - 110, by = cy + 20, bw = 220, bh = 80;
-      drawRoundRect(bx, by, bw, bh, 14, '#5E81F4');
+      drawRoundRect(bx, by, bw, bh, 14, '#E8622A');
       [bx + 22, bx + 80, bx + 138].forEach(function (hx) {
         drawRoundRect(hx, by + 22, 28, 28, 4, DARK);
       });
