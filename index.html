@@ -110,6 +110,33 @@
     }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); text-decoration: none; }
 
+    /* ── Play Store badge (big) ──────────── */
+    .play-badge {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: #000; color: #fff;
+      border: 1px solid #3c3c3c;
+      padding: 14px 28px; border-radius: 14px;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .play-badge:hover { transform: translateY(-2px); border-color: #6a6a6a; text-decoration: none; }
+    .play-badge svg { flex-shrink: 0; }
+    .play-badge .pb-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .play-badge .pb-eyebrow { font-size: 12px; color: #d0d0d0; letter-spacing: 0.02em; }
+    .play-badge .pb-word { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+
+    .cta-strip {
+      text-align: center;
+      padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 80px);
+      border-top: 1px solid var(--border);
+      background: radial-gradient(ellipse at center, rgba(232,98,42,0.08), transparent 70%);
+    }
+    .cta-strip h2 {
+      font-size: clamp(26px, 3.4vw, 38px);
+      font-weight: 800; letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .cta-strip p { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
+
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       color: var(--muted); font-size: 14px;
@@ -269,9 +296,31 @@
         data — bypassing carrier hotspot throttling without touching a remote server.
       </p>
       <div class="hero-actions">
-        <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.19L15.89 12 3.18.05C2.83 0 2.48.07 2.18.24 1.59.57 1.2 1.22 1.2 2v20c0 .78.39 1.43.98 1.76zM19.62 9.29l-2.94-1.7-3.27 3.27 3.27 3.27 2.97-1.72c.85-.49.85-1.63-.03-2.12zM4.14 1.37l12.22 7.07-3.27 3.27L4.14 1.37zm0 21.26l8.95-8.95 3.27 3.27-12.22 7.07z"/></svg>
-          Get on Google Play
+        <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="play-badge" aria-label="Get it on Google Play">
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <defs>
+              <linearGradient id="pbBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D8FF"/><stop offset="100%" stop-color="#0084FF"/>
+              </linearGradient>
+              <linearGradient id="pbGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5AE560"/><stop offset="100%" stop-color="#00C24C"/>
+              </linearGradient>
+              <linearGradient id="pbYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFE000"/><stop offset="100%" stop-color="#FFB000"/>
+              </linearGradient>
+              <linearGradient id="pbRed" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF6B6B"/><stop offset="100%" stop-color="#E8422E"/>
+              </linearGradient>
+            </defs>
+            <path d="M3.18 23.76c.3.17.64.24.99.19L15.89 12 3.18.05C2.83 0 2.48.07 2.18.24 1.59.57 1.2 1.22 1.2 2v20c0 .78.39 1.43.98 1.76z" fill="url(#pbBlue)"/>
+            <path d="M4.14 1.37l12.22 7.07-3.27 3.27L4.14 1.37z" fill="url(#pbGreen)"/>
+            <path d="M4.14 22.63l8.95-8.95 3.27 3.27-12.22 5.68z" fill="url(#pbRed)"/>
+            <path d="M19.62 9.29l-2.94-1.7-3.27 3.27 3.27 3.27 2.97-1.72c.85-.49.85-1.63-.03-2.12z" fill="url(#pbYellow)"/>
+          </svg>
+          <span class="pb-text">
+            <span class="pb-eyebrow">GET IT ON</span>
+            <span class="pb-word">Google Play</span>
+          </span>
         </a>
         <a href="https://gist.github.com/mazlumDemirel/5c3bbc0aa8a77e3979c8c62f3b6c1055" class="btn-ghost">Privacy Policy</a>
       </div>
@@ -382,6 +431,23 @@
     </section>
 
   </div>
+
+  <section class="cta-strip">
+    <h2>Ready to share your connection?</h2>
+    <p>Free to install. No account, no cloud server, no setup wizard.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="play-badge" aria-label="Get it on Google Play">
+      <svg width="30" height="30" viewBox="0 0 24 24">
+        <path d="M3.18 23.76c.3.17.64.24.99.19L15.89 12 3.18.05C2.83 0 2.48.07 2.18.24 1.59.57 1.2 1.22 1.2 2v20c0 .78.39 1.43.98 1.76z" fill="url(#pbBlue)"/>
+        <path d="M4.14 1.37l12.22 7.07-3.27 3.27L4.14 1.37z" fill="url(#pbGreen)"/>
+        <path d="M4.14 22.63l8.95-8.95 3.27 3.27-12.22 5.68z" fill="url(#pbRed)"/>
+        <path d="M19.62 9.29l-2.94-1.7-3.27 3.27 3.27 3.27 2.97-1.72c.85-.49.85-1.63-.03-2.12z" fill="url(#pbYellow)"/>
+      </svg>
+      <span class="pb-text">
+        <span class="pb-eyebrow">GET IT ON</span>
+        <span class="pb-word">Google Play</span>
+      </span>
+    </a>
+  </section>
 </main>
 
 <footer>
