@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://tetherlinkutility.com/privacy.html" />
+  <title>Privacy Policy — Tether Link Utility</title>
+  <meta name="description" content="Tether Link Utility's privacy policy: no personal data collected, no network traffic logged, all proxy operations run locally on your device.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ground:    #0C0C18;
+      --surface:   #141428;
+      --elevated:  #1E1E38;
+      --border:    #20203A;
+      --border-md: #2C2C50;
+      --accent:    #E8622A;
+      --success:   #00BF8A;
+      --text:      #ECEDFF;
+      --muted:     #8888B0;
+      --dim:       #4C4C6A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ground);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(12,12,24,0.90);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(20px, 5vw, 80px);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand {
+      font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
+      color: var(--text); display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    .lang-switch {
+      display: flex; gap: 8px; margin-bottom: 40px;
+    }
+    .lang-switch a {
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 14px;
+    }
+    .lang-switch a:hover { color: var(--text); border-color: var(--border-md); text-decoration: none; }
+
+    main {
+      max-width: 720px; margin: 0 auto;
+      padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px) clamp(80px, 10vw, 120px);
+    }
+
+    .page-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    h1 { font-size: clamp(28px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .effective-date { color: var(--dim); font-size: 13px; margin-bottom: 40px; }
+
+    .lang-divider {
+      display: flex; align-items: center; gap: 16px;
+      margin: 56px 0 32px; color: var(--dim); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .lang-divider::before, .lang-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    h2 {
+      font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
+      margin: 32px 0 12px;
+    }
+    h2:first-of-type { margin-top: 0; }
+    p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+    ul { color: var(--muted); font-size: 15px; line-height: 1.7; padding-left: 22px; margin-bottom: 12px; }
+    li { margin-bottom: 8px; }
+    strong { color: var(--text); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px clamp(20px, 5vw, 80px);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-brand { font-size: 13px; color: var(--dim); }
+    .footer-brand a { color: var(--muted); }
+    .footer-brand a:hover { color: var(--text); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--dim); }
+    .footer-links a:hover { color: var(--muted); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <rect width="22" height="22" rx="5" fill="#E8622A"/>
+      <rect x="3" y="12" width="16" height="7" rx="2" fill="white"/>
+      <rect x="5" y="14" width="3" height="3" rx="0.5" fill="#E8622A"/>
+      <rect x="9.5" y="14" width="3" height="3" rx="0.5" fill="#E8622A"/>
+      <rect x="14" y="14" width="3" height="3" rx="0.5" fill="#E8622A"/>
+      <rect x="14.5" y="7" width="2" height="5" fill="white"/>
+      <path d="M11 4 Q15.5 4 15.5 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M11 6 Q14 6 14 7"    stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    Tether Link Utility
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+  </div>
+</nav>
+
+<main>
+  <div id="en">
+  <div class="page-eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="lang-switch">
+    <a href="#en">English</a>
+    <a href="#tr">Türkçe</a>
+  </div>
+  <div class="effective-date">Effective Date: June 21, 2026</div>
+
+  <h2>1. Information Collection and Use</h2>
+  <p>Tether Link Utility is designed as a local system routing utility.</p>
+  <ul>
+    <li><strong>No Personal Data Collected:</strong> We do not collect, store, transmit, or share any personally identifiable information such as your name, phone number, or account details.</li>
+    <li><strong>No Network Traffic Logging:</strong> We do not monitor, log, inspect, or store any data packets, browsing history, or destination addresses passing through your tethering connection.</li>
+  </ul>
+
+  <h2>2. Use of Android VpnService</h2>
+  <p>Our application uses the Android VpnService API to establish a local SOCKS5 proxy server on your device.</p>
+  <ul>
+    <li><strong>Purpose:</strong> The VpnService is used strictly to protect local socket connections from being re-routed by the system, allowing the app to forward hotspot traffic through the device's active GSM network connection. It does not connect to any remote VPN server.</li>
+    <li><strong>Local Processing Only:</strong> All traffic handled by the service stays within your local hardware chain. Tether Link Utility never encapsulates or transmits your data to third parties.</li>
+  </ul>
+
+  <h2>3. Advertising &amp; Analytics</h2>
+  <p>The free version displays interstitial and banner ads served by Google AdMob. AdMob may collect device identifiers and usage data in accordance with Google's Privacy Policy. Premium subscribers do not see ads.</p>
+  <p>We also use Firebase Analytics (Google) to understand basic usage of the app — such as how many people open it and which features are used — so we can find problems and improve it. This data is not linked to your name or other personally identifiable information.</p>
+
+  <h2>4. In-App Purchases</h2>
+  <p>Subscriptions are processed securely through the Google Play Billing system. We do not receive or store your payment details.</p>
+
+  <h2>5. Data Security</h2>
+  <p>All proxy operations and DNS resolutions are performed locally on your device. Your network data never leaves your personal hardware ecosystem through this application.</p>
+
+  <h2>6. Children's Privacy</h2>
+  <p>This application is not directed at children under the age of 13. We do not knowingly collect any information from children.</p>
+
+  <h2>7. Changes to This Privacy Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Changes are effective when posted.</p>
+
+  <h2>8. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a></p>
+  </div>
+
+  <div class="lang-divider">Türkçe</div>
+
+  <div id="tr">
+  <h1 style="font-size: clamp(28px, 4vw, 36px);">Gizlilik Politikası</h1>
+  <div class="lang-switch">
+    <a href="#en">English</a>
+    <a href="#tr">Türkçe</a>
+  </div>
+  <div class="effective-date">Yürürlük Tarihi: 21 Haziran 2026</div>
+
+  <h2>1. Bilgi Toplama ve Kullanımı</h2>
+  <p>Tether Link Utility yerel bir sistem yönlendirme yardımcı programı olarak tasarlanmıştır.</p>
+  <ul>
+    <li><strong>Kişisel Veri Toplanmaz:</strong> Adınız, telefon numaranız veya hesap ayrıntılarınız gibi kişisel olarak tanımlanabilir hiçbir bilgiyi toplamaz, saklamaz, iletmez veya paylaşmayız.</li>
+    <li><strong>Ağ Trafiği Kaydedilmez:</strong> Tethering bağlantınızdan geçen veri paketlerini, tarama geçmişini veya hedef adresleri izlemez, kaydetmez, incelemez veya saklamayız.</li>
+  </ul>
+
+  <h2>2. Android VpnService Kullanımı</h2>
+  <p>Uygulamamız, cihazınızda yerel bir SOCKS5 proxy sunucusu oluşturmak için Android VpnService API'sini kullanır.</p>
+  <ul>
+    <li><strong>Amaç:</strong> VpnService yalnızca yerel soket bağlantılarının sistem tarafından yeniden yönlendirilmesini engellemek için kullanılır; bu sayede uygulama, hotspot trafiğini cihazın etkin GSM ağ bağlantısı üzerinden iletebilir. Herhangi bir uzak VPN sunucusuna bağlanılmaz.</li>
+    <li><strong>Yalnızca Yerel İşlem:</strong> Servis tarafından işlenen tüm trafik kişisel donanım zincirinizde kalır. Tether Link Utility verilerinizi asla üçüncü taraflara iletmez veya kapsüllemez.</li>
+  </ul>
+
+  <h2>3. Reklamcılık ve Analitik</h2>
+  <p>Ücretsiz sürüm, Google AdMob tarafından sunulan geçiş ve banner reklamları görüntüler. AdMob, Google'ın Gizlilik Politikası'na uygun olarak cihaz tanımlayıcıları ve kullanım verileri toplayabilir. Premium aboneler reklam görmez.</p>
+  <p>Uygulamanın nasıl kullanıldığını anlamak için — kaç kişinin uygulamayı açtığı, hangi özelliklerin kullanıldığı gibi temel bilgiler için — Firebase Analytics (Google) da kullanıyoruz; bu, sorunları bulup uygulamayı iyileştirmemize yardımcı olur. Bu veriler adınızla veya başka bir kişisel tanımlayıcı bilgiyle ilişkilendirilmez.</p>
+
+  <h2>4. Uygulama İçi Satın Almalar</h2>
+  <p>Abonelikler, Google Play Faturalama sistemi aracılığıyla güvenli bir şekilde işlenir. Ödeme bilgilerinizi almaz veya saklamayız.</p>
+
+  <h2>5. Veri Güvenliği</h2>
+  <p>Tüm proxy işlemleri ve DNS çözümlemeleri cihazınızda yerel olarak gerçekleştirilir. Ağ verileriniz bu uygulama aracılığıyla asla kişisel donanım ekosisteminizden çıkmaz.</p>
+
+  <h2>6. Çocukların Gizliliği</h2>
+  <p>Bu uygulama 13 yaşın altındaki çocuklara yönelik değildir. Çocuklardan bilerek herhangi bir bilgi toplamayız.</p>
+
+  <h2>7. Bu Gizlilik Politikasındaki Değişiklikler</h2>
+  <p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Değişiklikler yayınlandığında yürürlüğe girer.</p>
+
+  <h2>8. Bize Ulaşın</h2>
+  <p>Bu Gizlilik Politikası hakkında sorularınız için lütfen bizimle iletişime geçin: <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    © 2026 Tether Link Utility
+    &nbsp;·&nbsp;
+    <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a>
+  </div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility">Google Play</a>
+  </div>
+</footer>
+
+</body>
+</html>

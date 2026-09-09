@@ -5,8 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="3ZffoZuU2qaZoJJrMZoL8VImUVBLLHqg3b7jA_cN3Z4" />
   <link rel="canonical" href="https://tetherlinkutility.com/" />
-  <title>Tether Link Utility</title>
-  <meta name="description" content="Local SOCKS5 proxy for Android — route hotspot traffic through your mobile data connection without carrier restrictions.">
+  <title>Tether Link Utility — Bypass Carrier Hotspot Data Caps &amp; Throttling</title>
+  <meta name="description" content="Many carriers in the US, India, Türkiye and parts of Europe cap or throttle hotspot data separately from your main plan. Tether Link Utility routes shared traffic through a local SOCKS5 proxy that looks like normal on-device usage — no separate hotspot allowance, no throttling.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <!-- Open Graph (Facebook, WhatsApp, Slack, LinkedIn, Reddit link previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tether Link Utility">
+  <meta property="og:url" content="https://tetherlinkutility.com/">
+  <meta property="og:title" content="Tether Link Utility — Bypass Carrier Hotspot Data Caps &amp; Throttling">
+  <meta property="og:description" content="Many carriers cap or throttle hotspot data separately from your main plan. Tether Link Utility shares your connection without tripping that — no separate allowance, no throttling.">
+  <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tether Link Utility — Bypass Carrier Hotspot Data Caps &amp; Throttling">
+  <meta name="twitter:description" content="Many carriers cap or throttle hotspot data separately from your main plan. Tether Link Utility shares your connection without tripping that.">
+  <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tether Link Utility",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Android",
+    "url": "https://tetherlinkutility.com/",
+    "description": "Shares your Android phone's mobile data with other devices through a local SOCKS5 proxy, avoiding carrier hotspot throttling and separate hotspot data caps.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does Tether Link Utility bypass hotspot limits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It runs a local SOCKS5 proxy via Android's VpnService API, making traffic look like single-device usage to carrier DPI systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need root access?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, it works entirely without root privileges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it use a remote server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, everything runs locally on your device; no traffic leaves your hardware chain or gets logged."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -70,6 +141,14 @@
       margin: 0 auto;
     }
 
+    .hero-content {
+      /* Grid items default to min-width:auto, which refuses to shrink below the
+         content's intrinsic width (here, the side-by-side buttons in .hero-actions) —
+         this is what was pushing the whole hero wider than the viewport on mobile
+         instead of letting the text/buttons wrap. min-width:0 overrides that. */
+      min-width: 0;
+    }
+
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
@@ -123,6 +202,108 @@
     .play-badge .pb-text { display: flex; flex-direction: column; line-height: 1.1; }
     .play-badge .pb-eyebrow { font-size: 12px; color: #d0d0d0; letter-spacing: 0.02em; }
     .play-badge .pb-word { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+
+    /* ── Hotspot cap callout ─────────────── */
+    .cap-callout {
+      border-top: 1px solid var(--border);
+      padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px);
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .cap-callout .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .cap-callout h2 {
+      font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -0.02em;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .cap-callout p { color: var(--muted); font-size: 15px; line-height: 1.65; }
+    .cap-callout .countries-inline {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px;
+    }
+    .cap-callout .country-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 12px; font-size: 12px; color: var(--text);
+    }
+    .cap-visual {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 24px; font-size: 13px;
+    }
+    .cap-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+    }
+    .cap-row:last-child { border-bottom: none; }
+    .cap-row .label { color: var(--muted); }
+    .cap-row .value.blocked { color: #FF6B6B; font-weight: 600; }
+    .cap-row .value.ok { color: var(--success); font-weight: 600; }
+    @media (max-width: 860px) {
+      .cap-callout { grid-template-columns: 1fr; }
+    }
+
+    /* ── FAQ ───────────────── */
+    .faq {
+      border-top: 1px solid var(--border);
+      padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px);
+      max-width: 800px; margin: 0 auto;
+    }
+    .faq h2 {
+      font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -0.02em;
+      margin-bottom: 32px; text-align: center;
+    }
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      margin-bottom: 12px; overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none; cursor: pointer; padding: 18px 22px;
+      font-size: 15px; font-weight: 600; color: var(--text);
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; color: var(--accent); font-size: 20px; font-weight: 400; flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item summary:hover { color: var(--accent); }
+    .faq-item p {
+      color: var(--muted); font-size: 14px; line-height: 1.65;
+      padding: 0 22px 20px;
+    }
+
+    /* ── Countries marquee ───────────────── */
+    .countries-strip {
+      border-top: 1px solid var(--border);
+      padding: clamp(36px, 5vw, 56px) 0;
+      overflow: hidden;
+    }
+    .countries-strip .section-label {
+      padding: 0 clamp(20px, 5vw, 80px);
+      max-width: 1200px;
+      margin: 0 auto 22px;
+    }
+    .marquee-mask {
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 36px;
+      animation: marquee 34s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .country-chip {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 14px; color: var(--muted); white-space: nowrap;
+    }
+    .country-chip .flag { font-size: 20px; line-height: 1; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
 
     .cta-strip {
       text-align: center;
@@ -281,7 +462,8 @@
     <a href="#how">How it works</a>
     <a href="#features">Features</a>
     <a href="#platforms">Platforms</a>
-    <a href="https://gist.github.com/mazlumDemirel/5c3bbc0aa8a77e3979c8c62f3b6c1055">Privacy</a>
+    <a href="#faq">FAQ</a>
+    <a href="/privacy.html">Privacy</a>
   </div>
 </nav>
 
@@ -322,11 +504,45 @@
             <span class="pb-word">Google Play</span>
           </span>
         </a>
-        <a href="https://gist.github.com/mazlumDemirel/5c3bbc0aa8a77e3979c8c62f3b6c1055" class="btn-ghost">Privacy Policy</a>
+        <a href="/privacy.html" class="btn-ghost">Privacy Policy</a>
       </div>
     </div>
     <div class="hero-canvas-wrap">
       <canvas id="heroCanvas" width="380" height="380"></canvas>
+    </div>
+  </section>
+
+  <section class="cap-callout">
+    <div>
+      <div class="eyebrow">The real problem</div>
+      <h2>Hotspot data caps aren't the same as your data plan.</h2>
+      <p>
+        In the US, India, Türkiye, and parts of Europe, many carriers meter or throttle
+        tethered traffic separately from your regular data — even on plans advertised as
+        "unlimited." They detect tethering by how the traffic looks on the wire, not by
+        how much of your plan you've actually used.
+      </p>
+      <p style="margin-top: 12px;">
+        Tether Link Utility routes everything through a local proxy on the device itself —
+        so from the carrier's side, it's indistinguishable from normal, single-device usage.
+        No separate hotspot bucket to run out of.
+      </p>
+      <div class="countries-inline">
+        <span class="country-pill">🇺🇸 United States</span>
+        <span class="country-pill">🇮🇳 India</span>
+        <span class="country-pill">🇹🇷 Türkiye</span>
+        <span class="country-pill">🇪🇺 EU carriers</span>
+      </div>
+    </div>
+    <div class="cap-visual">
+      <div class="cap-row">
+        <span class="label">Regular hotspot on a metered plan</span>
+        <span class="value blocked">Throttled / capped</span>
+      </div>
+      <div class="cap-row">
+        <span class="label">Tether Link Utility</span>
+        <span class="value ok">Full speed</span>
+      </div>
     </div>
   </section>
 
@@ -348,7 +564,7 @@
         <div class="step">
           <div class="step-num">STEP 03</div>
           <h3>Connect your device</h3>
-          <p>Android: scan the QR code — Wi-Fi joins and the proxy connects automatically, one tap. Windows / macOS / iOS: join the Wi-Fi shown, then enter the IP and port in your SOCKS5 proxy settings.</p>
+          <p>Android: scan the QR code — on most devices, Wi-Fi joins and the proxy connects automatically. If it doesn't, join the Wi-Fi shown and scan again. Windows / macOS / iOS: join the Wi-Fi shown, then enter the IP and port in your SOCKS5 proxy settings.</p>
         </div>
         <div class="step">
           <div class="step-num">STEP 04</div>
@@ -373,7 +589,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#E8622A"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"/></svg>
           </div>
           <h3>QR code setup</h3>
-          <p>Tap "Show QR Code" on the server device. On the client Android phone, tap "Scan QR Code · Connect to Server" — Wi-Fi joins and the proxy connects automatically, no typing needed.</p>
+          <p>Tap "Show QR Code" on the server device. On the client Android phone, tap "Scan QR Code · Connect to Server" — on most devices, Wi-Fi joins and the proxy connects automatically, no typing needed.</p>
         </div>
         <div class="feature">
           <div class="feature-icon teal">
@@ -432,6 +648,51 @@
 
   </div>
 
+  <section class="countries-strip">
+    <div class="section-label">Available in 17 countries</div>
+    <div class="marquee-mask">
+      <div class="marquee-track" id="countriesMarquee">
+        <!-- duplicated in JS below for a seamless loop -->
+        <span class="country-chip"><span class="flag">🇩🇪</span>Germany</span>
+        <span class="country-chip"><span class="flag">🇺🇸</span>United States</span>
+        <span class="country-chip"><span class="flag">🇦🇺</span>Australia</span>
+        <span class="country-chip"><span class="flag">🇦🇪</span>United Arab Emirates</span>
+        <span class="country-chip"><span class="flag">🇬🇧</span>United Kingdom</span>
+        <span class="country-chip"><span class="flag">🇫🇷</span>France</span>
+        <span class="country-chip"><span class="flag">🇮🇳</span>India</span>
+        <span class="country-chip"><span class="flag">🇳🇱</span>Netherlands</span>
+        <span class="country-chip"><span class="flag">🇨🇦</span>Canada</span>
+        <span class="country-chip"><span class="flag">🇶🇦</span>Qatar</span>
+        <span class="country-chip"><span class="flag">🇲🇹</span>Malta</span>
+        <span class="country-chip"><span class="flag">🇷🇴</span>Romania</span>
+        <span class="country-chip"><span class="flag">🇷🇸</span>Serbia</span>
+        <span class="country-chip"><span class="flag">🇸🇦</span>Saudi Arabia</span>
+        <span class="country-chip"><span class="flag">🇹🇷</span>Türkiye</span>
+        <span class="country-chip"><span class="flag">🇪🇸</span>Spain</span>
+        <span class="country-chip"><span class="flag">🇮🇹</span>Italy</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2>Frequently asked questions</h2>
+
+    <details class="faq-item">
+      <summary>How does Tether Link Utility bypass hotspot limits?</summary>
+      <p>It runs a local SOCKS5 proxy via Android's VpnService API, making traffic look like single-device usage to carrier DPI systems.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need root access?</summary>
+      <p>No, it works entirely without root privileges.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does it use a remote server?</summary>
+      <p>No, everything runs locally on your device; no traffic leaves your hardware chain or gets logged.</p>
+    </details>
+  </section>
+
   <section class="cta-strip">
     <h2>Ready to share your connection?</h2>
     <p>Free to install. No account, no cloud server, no setup wizard.</p>
@@ -457,12 +718,24 @@
     <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a>
   </div>
   <div class="footer-links">
-    <a href="https://gist.github.com/mazlumDemirel/5c3bbc0aa8a77e3979c8c62f3b6c1055">Privacy Policy</a>
+    <a href="/privacy.html">Privacy Policy</a>
     <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility">Google Play</a>
   </div>
 </footer>
 
 <script>
+  (function () {
+    // Clone the marquee's country chips once so the track is exactly double its
+    // original width — the CSS animation slides it by -50%, landing back on an
+    // identical copy of the start, so the loop reads as seamless regardless of
+    // how many countries are listed (no need to hand-duplicate the HTML).
+    var track = document.getElementById('countriesMarquee');
+    if (track) {
+      var clone = track.innerHTML;
+      track.insertAdjacentHTML('beforeend', clone);
+    }
+  }());
+
   (function () {
     var canvas = document.getElementById('heroCanvas');
     if (!canvas) return;
