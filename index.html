@@ -327,8 +327,35 @@
     }
     .btn-ghost:hover { border-color: var(--dim); color: var(--text); text-decoration: none; }
 
+    /* ── Sticky CTA (appears after scrolling past the hero) ────── */
+    .sticky-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      padding: 12px 20px;
+      background: rgba(12,12,24,0.92);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border);
+      transform: translateY(100%);
+      transition: transform 0.25s ease;
+    }
+    .sticky-cta.is-visible { transform: translateY(0); }
+    .sticky-cta span { font-size: 13px; color: var(--muted); }
+    .sticky-cta .btn-primary { padding: 9px 18px; font-size: 14px; }
+    @media (max-width: 560px) {
+      .sticky-cta span { display: none; }
+    }
+
     .hero-canvas-wrap { display: flex; justify-content: center; align-items: center; }
-    #heroCanvas { display: block; }
+    .hero-phone-frame {
+      width: 240px;
+      border-radius: 32px;
+      border: 8px solid var(--elevated);
+      background: var(--elevated);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px var(--border);
+      overflow: hidden;
+      line-height: 0;
+    }
+    .hero-phone-frame img { display: block; width: 100%; }
 
     /* ── Sections ────────────────────────── */
     .strip {
@@ -521,7 +548,9 @@
       </div>
     </div>
     <div class="hero-canvas-wrap">
-      <canvas id="heroCanvas" width="380" height="380"></canvas>
+      <div class="hero-phone-frame">
+        <img src="/app-screenshot.png" alt="Tether Link Utility running on Android — Start Server screen" loading="lazy" />
+      </div>
     </div>
   </section>
 
@@ -562,6 +591,7 @@
         <span class="value ok">Full speed, for less</span>
       </div>
       <p style="font-size:11px; color:var(--dim); margin-top:14px;">*Verizon's own unlimited-hotspot add-on price, checked September 2026 — carrier pricing can change.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Get it on Google Play</a>
     </div>
   </section>
 
@@ -757,6 +787,11 @@
   </div>
 </footer>
 
+<div class="sticky-cta" id="stickyCta">
+  <span>Tether Link Utility — bypass carrier hotspot throttling</span>
+  <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary">Get it on Google Play</a>
+</div>
+
 <script>
   (function () {
     // Clone the marquee's country chips once so the track is exactly double its
@@ -771,77 +806,17 @@
   }());
 
   (function () {
-    var canvas = document.getElementById('heroCanvas');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var W = canvas.width, H = canvas.height;
-    var cx = W / 2 + 10, cy = H / 2 - 10;
-    var DARK = '#141428';
-    var t = 0;
-
-    var arcs = [
-      { r: 60,  phase: 0   },
-      { r: 100, phase: 0.4 },
-      { r: 140, phase: 0.8 },
-    ];
-
-    function drawRoundRect(x, y, w, h, r, fill) {
-      ctx.beginPath();
-      ctx.moveTo(x + r, y);
-      ctx.lineTo(x + w - r, y);
-      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-      ctx.lineTo(x + w, y + h - r);
-      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-      ctx.lineTo(x + r, y + h);
-      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-      ctx.lineTo(x, y + r);
-      ctx.quadraticCurveTo(x, y, x + r, y);
-      ctx.closePath();
-      ctx.fillStyle = fill;
-      ctx.fill();
-    }
-
-    function frame() {
-      ctx.clearRect(0, 0, W, H);
-      t += 0.018;
-
-      /* ambient glow */
-      var grad = ctx.createRadialGradient(cx, cy, 10, cx, cy, 170);
-      grad.addColorStop(0, 'rgba(232,98,42,0.07)');
-      grad.addColorStop(1, 'rgba(94,129,244,0)');
-      ctx.beginPath();
-      ctx.arc(cx, cy, 170, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
-      ctx.fill();
-
-      /* signal arcs */
-      arcs.forEach(function (a) {
-        var alpha = 0.15 + 0.55 * (0.5 + 0.5 * Math.sin(t * 1.4 - a.phase));
-        ctx.beginPath();
-        ctx.arc(cx + 32, cy - 60, a.r, Math.PI * 1.15, Math.PI * 1.85);
-        ctx.strokeStyle = 'rgba(232,98,42,' + alpha + ')';
-        ctx.lineWidth = 14;
-        ctx.lineCap = 'round';
-        ctx.stroke();
-      });
-
-      /* device body */
-      var bx = cx - 110, by = cy + 20, bw = 220, bh = 80;
-      drawRoundRect(bx, by, bw, bh, 14, '#E8622A');
-      [bx + 22, bx + 80, bx + 138].forEach(function (hx) {
-        drawRoundRect(hx, by + 22, 28, 28, 4, DARK);
-      });
-
-      /* antenna */
-      var ax = cx + 68;
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(ax - 7, by - 50, 14, 50);
-      ctx.fillRect(ax - 14, by - 56, 28, 10);
-
-      requestAnimationFrame(frame);
-    }
-
-    frame();
+    // Shows a compact install CTA once the user has scrolled past the hero (where the
+    // main CTA already lives), and hides it again near the very bottom so it doesn't
+    // sit on top of the footer's own CTA strip.
+    var bar = document.getElementById('stickyCta');
+    var hero = document.querySelector('.hero');
+    if (!bar || !hero) return;
+    window.addEventListener('scroll', function () {
+      var pastHero = window.scrollY > hero.offsetTop + hero.offsetHeight;
+      var nearBottom = window.scrollY + window.innerHeight > document.body.scrollHeight - 300;
+      bar.classList.toggle('is-visible', pastHero && !nearBottom);
+    }, { passive: true });
   }());
 </script>
 
