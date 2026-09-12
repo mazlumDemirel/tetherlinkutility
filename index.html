@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="3ZffoZuU2qaZoJJrMZoL8VImUVBLLHqg3b7jA_cN3Z4" />
   <link rel="canonical" href="https://tetherlinkutility.com/" />
   <title>Tether Link Utility — Bypass Carrier Hotspot Data Caps &amp; Throttling</title>
-  <meta name="description" content="Many carriers in the US, India, Türkiye and parts of Europe cap or throttle hotspot data separately from your main plan. Tether Link Utility routes shared traffic through a local SOCKS5 proxy that looks like normal on-device usage — no separate hotspot allowance, no throttling.">
+  <meta name="description" content="Share your Android phone's mobile data without using your carrier's hotspot quota. Tether Link Utility runs a local SOCKS5 proxy — no root, no remote server.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
@@ -72,6 +72,38 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No, everything runs locally on your device; no traffic leaves your hardware chain or gets logged."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I connect a Windows or Mac laptop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via FoxyProxy/Proxifier on Windows) at the IP and port shown in the app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with iPhone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many devices can connect at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The free tier connects 1 device; Pro raises that to 5 devices at once."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with 5G and 4G/LTE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — it shares whatever active mobile data connection your phone currently has, regardless of network generation."
         }
       }
     ]
@@ -164,6 +196,13 @@
     }
 
     h1 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .hero-tagline {
       font-size: clamp(38px, 5vw, 58px);
       font-weight: 800;
       line-height: 1.08;
@@ -171,7 +210,7 @@
       text-wrap: balance;
       margin-bottom: 20px;
     }
-    h1 span { color: var(--accent); }
+    .hero-tagline span { color: var(--accent); }
 
     .hero-body {
       font-size: 18px; color: var(--muted); line-height: 1.65;
@@ -511,7 +550,8 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="dot"></span>Android App</div>
-      <h1>Hotspot traffic,<br><span>no restrictions.</span></h1>
+      <h1>Bypass Carrier Hotspot Data Caps</h1>
+      <p class="hero-tagline">Hotspot traffic,<br><span>no restrictions.</span></p>
       <p class="hero-body">
         Tether Link Utility runs a local SOCKS5 proxy on your Android device,
         letting connected computers and phones route traffic through your mobile
@@ -739,6 +779,26 @@
     <details class="faq-item">
       <summary>Does it use a remote server?</summary>
       <p>No, everything runs locally on your device; no traffic leaves your hardware chain or gets logged.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I connect a Windows or Mac laptop?</summary>
+      <p>Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via FoxyProxy/Proxifier on Windows) at the IP and port shown in the app.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does it work with iPhone?</summary>
+      <p>iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How many devices can connect at once?</summary>
+      <p>The free tier connects 1 device; Pro raises that to 5 devices at once.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does it work with 5G and 4G/LTE?</summary>
+      <p>Yes — it shares whatever active mobile data connection your phone currently has, regardless of network generation.</p>
     </details>
   </section>
 
