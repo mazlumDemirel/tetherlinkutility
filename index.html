@@ -55,7 +55,7 @@
         "name": "How does Tether Link Utility bypass hotspot limits?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It runs a local SOCKS5 proxy via Android's VpnService API, making traffic look like single-device usage to carrier DPI systems."
+          "text": "It routes tethered traffic through a local SOCKS5 proxy via Android's VpnService API, which helps it avoid some common carrier hotspot restrictions."
         }
       },
       {
@@ -104,6 +104,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes — it shares whatever active mobile data connection your phone currently has, regardless of network generation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Tether Link Utility work with unlimited data plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many \"unlimited\" plans still cap or throttle hotspot/tethered traffic specifically, separate from on-device data. Tether Link Utility helps avoid that separate hotspot restriction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my carrier know I'm using tethering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Carriers typically detect tethering by how traffic looks on the wire, not by asking permission. Routing traffic through a local proxy changes that traffic pattern, which is how Tether Link Utility helps avoid common hotspot restrictions."
         }
       }
     ]
@@ -218,6 +234,10 @@
     }
 
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    .hero-trust {
+      margin-top: 16px; font-size: 13px; color: var(--muted); letter-spacing: 0.01em;
+    }
 
     .btn-primary {
       display: inline-flex; align-items: center; gap: 10px;
@@ -586,6 +606,7 @@
         </a>
         <a href="/privacy.html" class="btn-ghost">Privacy Policy</a>
       </div>
+      <p class="hero-trust">Free to install &middot; No account &middot; No remote server</p>
     </div>
     <div class="hero-canvas-wrap">
       <div class="hero-phone-frame">
@@ -607,7 +628,7 @@
       </p>
       <p style="margin-top: 12px;">
         Tether Link Utility routes everything through a local proxy on the device itself —
-        so from the carrier's side, it's indistinguishable from normal, single-device usage.
+        which helps it avoid common carrier hotspot detection methods.
         No separate hotspot bucket to run out of.
       </p>
       <div class="countries-inline">
@@ -685,7 +706,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#00BF8A"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
           </div>
           <h3>Fully local</h3>
-          <p>No remote VPN server. No traffic logging. Every packet stays within your own hardware chain.</p>
+          <p>No remote VPN server. No network traffic is routed through our servers or logged by the proxy.</p>
         </div>
         <div class="feature">
           <div class="feature-icon teal">
@@ -738,7 +759,7 @@
   </div>
 
   <section class="countries-strip">
-    <div class="section-label">Available in 17 countries</div>
+    <div class="section-label">Carrier hotspot throttling reported in these regions</div>
     <div class="marquee-mask">
       <div class="marquee-track" id="countriesMarquee">
         <!-- duplicated in JS below for a seamless loop -->
@@ -768,7 +789,7 @@
 
     <details class="faq-item">
       <summary>How does Tether Link Utility bypass hotspot limits?</summary>
-      <p>It runs a local SOCKS5 proxy via Android's VpnService API, making traffic look like single-device usage to carrier DPI systems.</p>
+      <p>It routes tethered traffic through a local SOCKS5 proxy via Android's VpnService API, which helps it avoid some common carrier hotspot restrictions.</p>
     </details>
 
     <details class="faq-item">
@@ -799,6 +820,16 @@
     <details class="faq-item">
       <summary>Does it work with 5G and 4G/LTE?</summary>
       <p>Yes — it shares whatever active mobile data connection your phone currently has, regardless of network generation.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does Tether Link Utility work with unlimited data plans?</summary>
+      <p>Yes. Many "unlimited" plans still cap or throttle hotspot/tethered traffic specifically, separate from on-device data. Tether Link Utility helps avoid that separate hotspot restriction.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does my carrier know I'm using tethering?</summary>
+      <p>Carriers typically detect tethering by how traffic looks on the wire, not by asking permission. Routing traffic through a local proxy changes that traffic pattern, which is how Tether Link Utility helps avoid common hotspot restrictions.</p>
     </details>
   </section>
 
