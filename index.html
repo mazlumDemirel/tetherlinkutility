@@ -565,6 +565,13 @@
       .hero { grid-template-columns: 1fr; }
       .hero-canvas-wrap { display: none; }
 
+      /* backdrop-filter on <nav> makes it a containing block for fixed-position
+         descendants — that breaks .nav-links' fixed positioning below (it ends up
+         boxed to nav's own ~60px height instead of the viewport). Dropping the blur
+         only on mobile, where the drawer needs real fixed positioning, fixes it;
+         desktop's frosted-glass nav bar is unaffected. */
+      nav { backdrop-filter: none; background: rgba(12,12,24,0.98); }
+
       .nav-toggle { display: flex; }
       .nav-links {
         position: fixed; top: 60px; right: 0; bottom: 0; width: min(70vw, 280px);
