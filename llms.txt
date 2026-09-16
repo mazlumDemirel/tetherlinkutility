@@ -1,0 +1,24 @@
+# Tether Link Utility
+
+> Tether Link Utility is a free Android app that shares a phone's mobile data with other devices through a local SOCKS5 proxy — helping avoid carrier hotspot data caps and throttling, without root access or a remote server.
+
+## What it does
+- Runs entirely on-device: no remote server, no account required.
+- Uses Android's VpnService API to route tethered traffic through the phone's own mobile data connection, so it isn't flagged as separate hotspot usage by the carrier.
+- Free tier: connect up to 2 devices at once, with ads. Pro (paid): up to 5 devices, no ads, no speed limit.
+- Works with Windows, macOS, Android, and iOS clients via standard SOCKS5 proxy settings.
+- Android-to-Android connections are simplified via QR code scanning (usually one tap, no manual Wi-Fi setup).
+
+## Key facts
+- Platform: Android app (the server/host device must be Android). Client devices can be Windows, macOS, Android, or iOS.
+- Price: free to install and use with a 2-device limit; a paid Pro tier removes the ad and raises the device limit to 5.
+- Not a VPN or privacy service — it does not encrypt traffic or route it through any third-party server. All routing happens locally on the device.
+- Privacy: does not log or inspect the content of routed network traffic. Uses Firebase Analytics (basic usage stats) and Google AdMob (free tier only) — see the privacy policy for details.
+
+## Pages
+- Homepage: https://tetherlinkutility.com/ — product overview, FAQ, setup instructions for Windows/macOS/Android/iOS
+- Privacy Policy: https://tetherlinkutility.com/privacy.html
+- Google Play listing: https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility
+
+## Contact
+support@tetherlinkutility.com
