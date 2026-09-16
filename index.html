@@ -201,6 +201,13 @@
     .nav-links a { color: var(--muted); font-size: 14px; }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
 
+    .nav-toggle {
+      display: none; background: none; border: none; color: var(--text);
+      width: 32px; height: 32px; padding: 0; cursor: pointer;
+      align-items: center; justify-content: center;
+    }
+    .nav-toggle svg { display: block; }
+
     /* ── Hero ────────────────────────────── */
     .hero {
       display: grid;
@@ -557,7 +564,17 @@
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; }
       .hero-canvas-wrap { display: none; }
-      .nav-links { display: none; }
+
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed; top: 60px; right: 0; bottom: 0; width: min(70vw, 280px);
+        background: var(--surface); border-left: 1px solid var(--border);
+        flex-direction: column; align-items: flex-start; gap: 4px;
+        padding: 20px; z-index: 9;
+        transform: translateX(100%); transition: transform 0.25s ease;
+      }
+      .nav-links.is-open { transform: translateX(0); }
+      .nav-links a { padding: 12px 4px; width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -577,7 +594,14 @@
     </svg>
     Tether Link Utility
   </div>
-  <div class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <line x1="3" y1="6" x2="19" y2="6"/>
+      <line x1="3" y1="11" x2="19" y2="11"/>
+      <line x1="3" y1="16" x2="19" y2="16"/>
+    </svg>
+  </button>
+  <div class="nav-links" id="navLinks">
     <a href="#how">How it works</a>
     <a href="#features">Features</a>
     <a href="#platforms">Platforms</a>
@@ -925,6 +949,29 @@
       var clone = track.innerHTML;
       track.insertAdjacentHTML('beforeend', clone);
     }
+  }());
+
+  (function () {
+    // Mobile hamburger menu — nav-links becomes a fixed slide-out drawer below 860px
+    // (see the matching @media block); this just toggles it open/closed and closes it
+    // again on link tap or an outside click, since it overlays page content.
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    function setOpen(open) {
+      links.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!links.classList.contains('is-open'));
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') setOpen(false);
+    });
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('is-open') && !links.contains(e.target)) setOpen(false);
+    });
   }());
 
   (function () {
