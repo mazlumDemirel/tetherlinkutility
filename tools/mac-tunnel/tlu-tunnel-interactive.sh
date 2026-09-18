@@ -171,6 +171,7 @@ if ! kill -0 "$SINGBOX_PID" 2>/dev/null; then
   exit 1
 fi
 
+echo "Tünel ayakta. Bu pencere şimdi küçültülecek."
 osascript -e 'tell application "Terminal" to set miniaturized of front window to true' 2>/dev/null
 
 # --- 6. Watch it; bring the window back if it dies unexpectedly ---
