@@ -170,7 +170,15 @@
         "name": "Can I connect a Windows or Mac laptop?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via FoxyProxy/Proxifier on Windows) at the IP and port shown in the app."
+          "text": "Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via Firefox/FoxyProxy on Windows) at the IP and port shown in the app. That covers apps which check that setting; for full system-wide coverage including DNS, use sing-box in TUN mode instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a SOCKS5 proxy setting protect all my traffic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it — DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run sing-box in TUN mode, which routes your whole system's traffic, DNS included, through the tunnel."
         }
       },
       {
@@ -178,7 +186,7 @@
         "name": "Does it work with iPhone?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way."
+          "text": "iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way — for that app's own traffic only, not the whole device. A verified full-device option isn't currently available on iOS."
         }
       },
       {
@@ -855,7 +863,7 @@
           <div class="platform-icon">🖥️</div>
           <div>
             <h3>Windows</h3>
-            <p>Firefox has built-in SOCKS5 support — no extension needed. Chrome/Edge: use FoxyProxy. System-wide: Proxifier.</p>
+            <p>Firefox has built-in SOCKS5 support — no extension needed. Chrome/Edge: use FoxyProxy. For full system-wide coverage (DNS included), use <strong>sing-box</strong> in TUN mode instead.</p>
             <span class="code-chip">SOCKS5</span>
           </div>
         </div>
@@ -863,7 +871,7 @@
           <div class="platform-icon">🍏</div>
           <div>
             <h3>macOS</h3>
-            <p>System Settings → Network → Wi-Fi → Details → Proxies → SOCKS Proxy.</p>
+            <p>System Settings → Network → Wi-Fi → Details → Proxies → SOCKS Proxy — or for full coverage including DNS, <strong>sing-box</strong> in TUN mode (<code>brew install sing-box</code>).</p>
             <span class="code-chip">native</span>
           </div>
         </div>
@@ -879,7 +887,7 @@
           <div class="platform-icon">📱</div>
           <div>
             <h3>iOS</h3>
-            <p>Shadowrocket (paid): open app → tap + → Scan QR — imported instantly. Potatso Lite (free): manual entry.</p>
+            <p>Shadowrocket (paid): open app → tap + → Scan QR — imported instantly. Potatso Lite (free): manual entry. Note: routes only that app's own traffic, not the whole device.</p>
             <span class="code-chip">SOCKS5</span>
           </div>
         </div>
@@ -934,12 +942,17 @@
 
     <details class="faq-item">
       <summary>Can I connect a Windows or Mac laptop?</summary>
-      <p>Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via FoxyProxy/Proxifier on Windows) at the IP and port shown in the app.</p>
+      <p>Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via Firefox/FoxyProxy on Windows) at the IP and port shown in the app. That covers apps which check that setting; for full system-wide coverage including DNS, use sing-box in TUN mode instead.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does a SOCKS5 proxy setting protect all my traffic?</summary>
+      <p>Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it — DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run <a href="/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box in TUN mode</a>, which routes your whole system's traffic, DNS included, through the tunnel.</p>
     </details>
 
     <details class="faq-item">
       <summary>Does it work with iPhone?</summary>
-      <p>iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way.</p>
+      <p>iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way — for that app's own traffic only, not the whole device. A verified full-device option isn't currently available on iOS.</p>
     </details>
 
     <details class="faq-item">
