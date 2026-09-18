@@ -221,7 +221,15 @@
     <p>No third-party app needed, but be aware macOS's native SOCKS setting doesn't route DNS through the proxy, so DNS queries can still leak outside the tunnel even though your browsing traffic doesn't.</p>
 
     <h3>Option B (recommended): full system coverage with sing-box</h3>
-    <p>For everything, every app, DNS included, run <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> in TUN mode instead of the native setting above:</p>
+    <p>For everything, every app, DNS included, run <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> in TUN mode instead of the native setting above.</p>
+
+    <div class="callout">
+      <p><strong>Easiest way:</strong> download our wrapper script, it checks for Homebrew, installs sing-box if needed, asks for your phone's IP and port, and runs everything in the background (the Terminal window minimizes and comes back only if something goes wrong).</p>
+      <p style="margin-top: 12px;"><a href="/downloads/tlu-mac-tunnel.zip" class="cta-button" style="display:inline-block;">Download tlu-mac-tunnel.zip</a></p>
+      <p style="margin-top: 12px; font-size: 14px;">Unzip it, then in Terminal: <code>chmod +x tlu-mac-tunnel.sh && ./tlu-mac-tunnel.sh</code></p>
+    </div>
+
+    <p>Or set it up by hand:</p>
     <ol>
       <li>Install via Homebrew: <code>brew install sing-box</code></li>
       <li>Save the config below as <code>~/config.json</code>, replacing the IP/port with what's shown in the app.</li>
