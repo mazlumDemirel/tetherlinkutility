@@ -183,7 +183,7 @@
     <h1>How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS</h1>
     <div class="post-meta">Published September 18, 2026</div>
 
-    <p>Tether Link Utility runs a local SOCKS5 proxy on your Android phone. Any device that supports SOCKS5 proxy settings can connect to it over the phone's own Wi-Fi hotspot — no separate client app required on Windows or macOS, and a lightweight one on iOS. Here's exactly how to point each platform at it.</p>
+    <p>Tether Link Utility runs a local SOCKS5 proxy on your Android phone. Any device that supports SOCKS5 proxy settings can connect to it over the phone's own Wi-Fi hotspot, no separate client app required on Windows or macOS, and a lightweight one on iOS. Here's exactly how to point each platform at it.</p>
 
     <h2>Before you start</h2>
     <p>Open Tether Link Utility, tap <strong>START SERVER</strong>, and note two things shown on screen: the <strong>IP address</strong> and the <strong>port</strong>. You'll enter both into whichever setup below matches your device.</p>
@@ -203,7 +203,7 @@
       <li>Switch FoxyProxy to that proxy from its toolbar icon.</li>
     </ol>
     <h3>Option C (recommended): full system coverage with sing-box</h3>
-    <p>Firefox and FoxyProxy only route that one browser's traffic — DNS lookups and background app traffic can still leave over the plain hotspot connection unprotected. For every app on Windows tunneled, DNS included, use <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> (open source, MIT-adjacent license, actively maintained) in TUN mode instead:</p>
+    <p>Firefox and FoxyProxy only route that one browser's traffic, DNS lookups and background app traffic can still leave over the plain hotspot connection unprotected. For every app on Windows tunneled, DNS included, use <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> (open source, MIT-adjacent license, actively maintained) in TUN mode instead:</p>
     <ol>
       <li>Download the latest Windows release from <a href="https://github.com/SagerNet/sing-box/releases" target="_blank" rel="noopener">github.com/SagerNet/sing-box/releases</a>.</li>
       <li>Save the config below as <code>config.json</code>, replacing the IP/port with what's shown in the app.</li>
@@ -218,19 +218,19 @@
       <li>Go to <strong>Proxies</strong>, check <strong>SOCKS Proxy</strong>.</li>
       <li>Enter the phone's IP address and port, then click <strong>OK → Apply</strong>.</li>
     </ol>
-    <p>No third-party app needed — but be aware macOS's native SOCKS setting doesn't route DNS through the proxy, so DNS queries can still leak outside the tunnel even though your browsing traffic doesn't.</p>
+    <p>No third-party app needed, but be aware macOS's native SOCKS setting doesn't route DNS through the proxy, so DNS queries can still leak outside the tunnel even though your browsing traffic doesn't.</p>
 
     <h3>Option B (recommended): full system coverage with sing-box</h3>
-    <p>For everything — every app, DNS included — run <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> in TUN mode instead of the native setting above:</p>
+    <p>For everything, every app, DNS included, run <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> in TUN mode instead of the native setting above:</p>
     <ol>
       <li>Install via Homebrew: <code>brew install sing-box</code></li>
       <li>Save the config below as <code>~/config.json</code>, replacing the IP/port with what's shown in the app.</li>
-      <li>Run it (needs <code>sudo</code> — it creates a virtual network interface and changes routing): <code>sudo sing-box run --config ~/config.json</code></li>
-      <li>Turn off the native SOCKS Proxy setting from Option A if you had it on — sing-box's TUN mode replaces it entirely.</li>
+      <li>Run it (needs <code>sudo</code>, it creates a virtual network interface and changes routing): <code>sudo sing-box run --config ~/config.json</code></li>
+      <li>Turn off the native SOCKS Proxy setting from Option A if you had it on, sing-box's TUN mode replaces it entirely.</li>
     </ol>
 
     <div class="callout">
-      <p><strong>sing-box config</strong> (works for both Windows and macOS — just swap the IP/port). Leave <code>interface_name</code> unset so it picks an available interface automatically:</p>
+      <p><strong>sing-box config</strong> (works for both Windows and macOS, just swap the IP/port). Leave <code>interface_name</code> unset so it picks an available interface automatically:</p>
       <pre style="background:var(--ground); border:1px solid var(--border); border-radius:10px; padding:16px; overflow-x:auto; font-size:13px; line-height:1.6; color:var(--muted);">{
   "dns": {
     "servers": [
@@ -254,7 +254,7 @@
     "default_domain_resolver": "remote"
   }
 }</pre>
-      <p>Replace both <code>PHONE_IP</code> and <code>PHONE_PORT</code> with the values shown in the app (and the <code>PHONE_IP/32</code> route rule too — that line keeps the tunnel from trying to route its own connection to the phone through itself). Verified working against a real carrier — QUIC/HTTP3 and DNS both tunnel correctly as of the app's latest version, which added SOCKS5 UDP ASSOCIATE support specifically for this.</p>
+      <p>Replace both <code>PHONE_IP</code> and <code>PHONE_PORT</code> with the values shown in the app (and the <code>PHONE_IP/32</code> route rule too, that line keeps the tunnel from trying to route its own connection to the phone through itself). Verified working against a real carrier, QUIC/HTTP3 and DNS both tunnel correctly as of the app's latest version, which added SOCKS5 UDP ASSOCIATE support specifically for this.</p>
     </div>
 
     <h2>iOS</h2>
@@ -269,19 +269,19 @@
     <ol>
       <li>Open Potatso Lite and add a new proxy profile.</li>
       <li>Select <strong>SOCKS5</strong>, enter the IP and port, and save.</li>
-      <li>Enable the VPN profile when iOS prompts you — this is how Potatso routes traffic through the SOCKS5 proxy, since iOS has no native SOCKS5 setting like macOS does.</li>
+      <li>Enable the VPN profile when iOS prompts you, this is how Potatso routes traffic through the SOCKS5 proxy, since iOS has no native SOCKS5 setting like macOS does.</li>
     </ol>
 
     <div class="callout">
-      <p><strong>DNS tip:</strong> On every platform, make sure DNS queries are also routed through the proxy where the option exists (Firefox's "Proxy DNS when using SOCKS v5," Shadowrocket's default behavior). Otherwise DNS lookups can leak outside the tunnel even though your actual traffic doesn't — this is exactly what sing-box's TUN mode above avoids by construction, since it captures DNS along with everything else rather than relying on each app to opt in.</p>
+      <p><strong>DNS tip:</strong> On every platform, make sure DNS queries are also routed through the proxy where the option exists (Firefox's "Proxy DNS when using SOCKS v5," Shadowrocket's default behavior). Otherwise DNS lookups can leak outside the tunnel even though your actual traffic doesn't, this is exactly what sing-box's TUN mode above avoids by construction, since it captures DNS along with everything else rather than relying on each app to opt in.</p>
     </div>
 
     <h2>Android-to-Android is simpler</h2>
-    <p>If both devices are Android, skip all of the above — tap <strong>Scan QR Code · Connect to Server</strong> on the client phone and point the camera at the QR code shown on the server phone. Wi-Fi and the proxy connection both complete in one tap on most devices.</p>
+    <p>If both devices are Android, skip all of the above, tap <strong>Scan QR Code · Connect to Server</strong> on the client phone and point the camera at the QR code shown on the server phone. Wi-Fi and the proxy connection both complete in one tap on most devices.</p>
 
     <div class="cta-box">
       <h3>Tether Link Utility</h3>
-      <p>A free Android app that runs a local SOCKS5 proxy to share your mobile data — no root, no remote server, no account required.</p>
+      <p>A free Android app that runs a local SOCKS5 proxy to share your mobile data, no root, no remote server, no account required.</p>
       <a class="cta-button" href="/">See how it works</a>
     </div>
 

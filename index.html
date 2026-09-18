@@ -32,7 +32,7 @@
   <link rel="alternate" hreflang="en" href="https://tetherlinkutility.com/" />
   <link rel="alternate" hreflang="tr" href="https://tetherlinkutility.com/tr/" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/" />
-  <title>Tether Link Utility — Bypass Carrier Hotspot Data Caps &amp; Throttling</title>
+  <title>Tether Link Utility: Bypass Carrier Hotspot Data Caps &amp; Throttling</title>
   <meta name="description" content="Share your Android phone's mobile data without using your carrier's hotspot quota. Local SOCKS5 proxy, no root, no remote server.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -44,15 +44,15 @@
   <meta property="og:url" content="https://tetherlinkutility.com/">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="tr_TR">
-  <meta property="og:title" content="Tether Link Utility — Bypass Carrier Hotspot Data Caps &amp; Throttling">
-  <meta property="og:description" content="Many carriers cap or throttle hotspot data separately from your main plan. Tether Link Utility shares your connection without tripping that — no separate allowance, no throttling.">
+  <meta property="og:title" content="Tether Link Utility: Bypass Carrier Hotspot Data Caps &amp; Throttling">
+  <meta property="og:description" content="Many carriers cap or throttle hotspot data separately from your main plan. Tether Link Utility shares your connection without tripping that, no separate allowance, no throttling.">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tether Link Utility — Bypass Carrier Hotspot Data Caps &amp; Throttling">
+  <meta name="twitter:title" content="Tether Link Utility: Bypass Carrier Hotspot Data Caps &amp; Throttling">
   <meta name="twitter:description" content="Many carriers cap or throttle hotspot data separately from your main plan. Tether Link Utility shares your connection without tripping that.">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
@@ -123,7 +123,7 @@
     "featureList": [
       "Bypasses carrier hotspot data caps and throttling",
       "Free tier shares your connection with up to 2 devices, no root required",
-      "No remote server — all proxy traffic is routed locally on the device",
+      "No remote server, all proxy traffic is routed locally on the device",
       "One-tap automatic hotspot and Wi-Fi connection between Android devices",
       "QR code setup for instant connection",
       "SOCKS5 proxy support for Windows, macOS, and iOS clients"
@@ -170,7 +170,7 @@
         "name": "Can I connect a Windows or Mac laptop?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via Firefox/FoxyProxy on Windows) at the IP and port shown in the app. That covers apps which check that setting; for full system-wide coverage including DNS, use sing-box in TUN mode instead."
+          "text": "Yes, point your laptop's SOCKS5 proxy settings (built into macOS, or via Firefox/FoxyProxy on Windows) at the IP and port shown in the app. That covers apps which check that setting; for full system-wide coverage including DNS, use sing-box in TUN mode instead."
         }
       },
       {
@@ -178,7 +178,7 @@
         "name": "Does a SOCKS5 proxy setting protect all my traffic?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it — DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run sing-box in TUN mode, which routes your whole system's traffic, DNS included, through the tunnel."
+          "text": "Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it, DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run sing-box in TUN mode, which routes your whole system's traffic, DNS included, through the tunnel."
         }
       },
       {
@@ -186,7 +186,7 @@
         "name": "Does it work with iPhone?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way — for that app's own traffic only, not the whole device. A verified full-device option isn't currently available on iOS."
+          "text": "iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way, for that app's own traffic only, not the whole device. A verified full-device option isn't currently available on iOS."
         }
       },
       {
@@ -202,7 +202,7 @@
         "name": "Does it work with 5G and 4G/LTE?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — it shares whatever active mobile data connection your phone currently has, regardless of network generation."
+          "text": "Yes, it shares whatever active mobile data connection your phone currently has, regardless of network generation."
         }
       },
       {
@@ -226,7 +226,7 @@
         "name": "Is this a free, unlimited hotspot app?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The free tier connects up to 2 devices at once, with ads — it's free to use, but not literally unlimited in device count. Pro removes ads and raises the limit to 5 devices. Either way, there's no separate hotspot data cap or speed throttling — you're sharing your own mobile data plan."
+          "text": "The free tier connects up to 2 devices at once, with ads, it's free to use, but not literally unlimited in device count. Pro removes ads and raises the limit to 5 devices. Either way, there's no separate hotspot data cap or speed throttling, you're sharing your own mobile data plan."
         }
       }
     ]
@@ -305,7 +305,7 @@
 
     .hero-content {
       /* Grid items default to min-width:auto, which refuses to shrink below the
-         content's intrinsic width (here, the side-by-side buttons in .hero-actions) —
+         content's intrinsic width (here, the side-by-side buttons in .hero-actions),
          this is what was pushing the whole hero wider than the viewport on mobile
          instead of letting the text/buttons wrap. min-width:0 overrides that. */
       min-width: 0;
@@ -649,7 +649,7 @@
       .hero-canvas-wrap { display: none; }
 
       /* backdrop-filter on <nav> makes it a containing block for fixed-position
-         descendants — that breaks .nav-links' fixed positioning below (it ends up
+         descendants, that breaks .nav-links' fixed positioning below (it ends up
          boxed to nav's own ~60px height instead of the viewport). Dropping the blur
          only on mobile, where the drawer needs real fixed positioning, fixes it;
          desktop's frosted-glass nav bar is unaffected. */
@@ -711,7 +711,7 @@
       <p class="hero-body">
         Tether Link Utility runs a local SOCKS5 proxy on your Android device,
         letting connected computers and phones route traffic through your mobile
-        data — bypassing carrier hotspot data caps and throttling without touching a remote server.
+        data, bypassing carrier hotspot data caps and throttling without touching a remote server.
       </p>
       <div class="hero-actions">
         <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="play-badge" aria-label="Get it on Google Play">
@@ -746,7 +746,7 @@
     </div>
     <div class="hero-canvas-wrap">
       <div class="hero-phone-frame">
-        <img src="/app-screenshot.png" alt="Tether Link Utility running on Android — Start Server screen" width="1080" height="2400" fetchpriority="high" />
+        <img src="/app-screenshot.png" alt="Tether Link Utility running on Android, Start Server screen" width="1080" height="2400" fetchpriority="high" />
       </div>
     </div>
   </section>
@@ -758,12 +758,12 @@
       <p>
         In the US (including Verizon, AT&amp;T, and T-Mobile), India (Jio, Airtel, Vi), Türkiye
         (Turkcell, Vodafone, Türk Telekom), and parts of Europe, many carriers meter or throttle
-        tethered traffic separately from your regular data — even on plans advertised as
+        tethered traffic separately from your regular data, even on plans advertised as
         "unlimited." They detect tethering by how the traffic looks on the wire, not by how much
         of your plan you've actually used.
       </p>
       <p style="margin-top: 12px;">
-        Tether Link Utility routes everything through a local proxy on the device itself —
+        Tether Link Utility routes everything through a local proxy on the device itself,
         which helps it avoid common carrier hotspot detection methods.
         No separate hotspot bucket to run out of.
         <a href="/blog/understanding-carrier-hotspot-throttling.html">Read how carrier hotspot detection actually works &rarr;</a>
@@ -789,7 +789,7 @@
         <span class="label">Tether Link Utility</span>
         <span class="value ok">Full speed, for less</span>
       </div>
-      <p style="font-size:11px; color:var(--dim); margin-top:14px;">*Verizon's own unlimited-hotspot add-on price, checked September 2026 — carrier pricing can change.</p>
+      <p style="font-size:11px; color:var(--dim); margin-top:14px;">*Verizon's own unlimited-hotspot add-on price, checked September 2026, carrier pricing can change.</p>
       <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Get it on Google Play</a>
     </div>
   </section>
@@ -802,7 +802,7 @@
         <div class="step">
           <div class="step-num">STEP 01</div>
           <h3>Tap START SERVER</h3>
-          <p>The Wi-Fi hotspot turns on automatically — no need to dig through system settings first. The app creates a local SOCKS5 proxy tunnel and displays the connection details.</p>
+          <p>The Wi-Fi hotspot turns on automatically, no need to dig through system settings first. The app creates a local SOCKS5 proxy tunnel and displays the connection details.</p>
         </div>
         <div class="step">
           <div class="step-num">STEP 02</div>
@@ -812,7 +812,7 @@
         <div class="step">
           <div class="step-num">STEP 03</div>
           <h3>Connect your device</h3>
-          <p>Android: scan the QR code — on most devices, Wi-Fi joins and the proxy connects automatically. If it doesn't, join the Wi-Fi shown and scan again. Windows / macOS / iOS: join the Wi-Fi shown, then enter the IP and port in your SOCKS5 proxy settings.</p>
+          <p>Android: scan the QR code, on most devices, Wi-Fi joins and the proxy connects automatically. If it doesn't, join the Wi-Fi shown and scan again. Windows / macOS / iOS: join the Wi-Fi shown, then enter the IP and port in your SOCKS5 proxy settings.</p>
         </div>
         <div class="step">
           <div class="step-num">STEP 04</div>
@@ -837,7 +837,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#E8622A"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"/></svg>
           </div>
           <h3>QR code setup</h3>
-          <p>Tap "Show QR Code" on the server device. On the client Android phone, tap "Scan QR Code · Connect to Server" — on most devices, Wi-Fi joins and the proxy connects automatically, no typing needed.</p>
+          <p>Tap "Show QR Code" on the server device. On the client Android phone, tap "Scan QR Code · Connect to Server", on most devices, Wi-Fi joins and the proxy connects automatically, no typing needed.</p>
         </div>
         <div class="feature">
           <div class="feature-icon teal">
@@ -863,7 +863,7 @@
           <div class="platform-icon">🖥️</div>
           <div>
             <h3>Windows</h3>
-            <p>Firefox has built-in SOCKS5 support — no extension needed. Chrome/Edge: use FoxyProxy. For full system-wide coverage (DNS included), use <strong>sing-box</strong> in TUN mode instead.</p>
+            <p>Firefox has built-in SOCKS5 support, no extension needed. Chrome/Edge: use FoxyProxy. For full system-wide coverage (DNS included), use <strong>sing-box</strong> in TUN mode instead.</p>
             <span class="code-chip">SOCKS5</span>
           </div>
         </div>
@@ -871,7 +871,7 @@
           <div class="platform-icon">🍏</div>
           <div>
             <h3>macOS</h3>
-            <p>System Settings → Network → Wi-Fi → Details → Proxies → SOCKS Proxy — or for full coverage including DNS, <strong>sing-box</strong> in TUN mode (<code>brew install sing-box</code>).</p>
+            <p>System Settings → Network → Wi-Fi → Details → Proxies → SOCKS Proxy, or for full coverage including DNS, <strong>sing-box</strong> in TUN mode (<code>brew install sing-box</code>).</p>
             <span class="code-chip">native</span>
           </div>
         </div>
@@ -879,7 +879,7 @@
           <div class="platform-icon">🤖</div>
           <div>
             <h3>Android</h3>
-            <p>Install TetherLink Utility, tap <em>Scan QR Code · Connect to Server</em>, and point the camera at the QR code — connected in one tap, no extra app needed.</p>
+            <p>Install TetherLink Utility, tap <em>Scan QR Code · Connect to Server</em>, and point the camera at the QR code, connected in one tap, no extra app needed.</p>
             <span class="code-chip">built-in</span>
           </div>
         </div>
@@ -887,7 +887,7 @@
           <div class="platform-icon">📱</div>
           <div>
             <h3>iOS</h3>
-            <p>Shadowrocket (paid): open app → tap + → Scan QR — imported instantly. Potatso Lite (free): manual entry. Note: routes only that app's own traffic, not the whole device.</p>
+            <p>Shadowrocket (paid): open app → tap + → Scan QR, imported instantly. Potatso Lite (free): manual entry. Note: routes only that app's own traffic, not the whole device.</p>
             <span class="code-chip">SOCKS5</span>
           </div>
         </div>
@@ -942,17 +942,17 @@
 
     <details class="faq-item">
       <summary>Can I connect a Windows or Mac laptop?</summary>
-      <p>Yes — point your laptop's SOCKS5 proxy settings (built into macOS, or via Firefox/FoxyProxy on Windows) at the IP and port shown in the app. That covers apps which check that setting; for full system-wide coverage including DNS, use sing-box in TUN mode instead.</p>
+      <p>Yes, point your laptop's SOCKS5 proxy settings (built into macOS, or via Firefox/FoxyProxy on Windows) at the IP and port shown in the app. That covers apps which check that setting; for full system-wide coverage including DNS, use sing-box in TUN mode instead.</p>
     </details>
 
     <details class="faq-item">
       <summary>Does a SOCKS5 proxy setting protect all my traffic?</summary>
-      <p>Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it — DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run <a href="/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box in TUN mode</a>, which routes your whole system's traffic, DNS included, through the tunnel.</p>
+      <p>Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it, DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run <a href="/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box in TUN mode</a>, which routes your whole system's traffic, DNS included, through the tunnel.</p>
     </details>
 
     <details class="faq-item">
       <summary>Does it work with iPhone?</summary>
-      <p>iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way — for that app's own traffic only, not the whole device. A verified full-device option isn't currently available on iOS.</p>
+      <p>iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way, for that app's own traffic only, not the whole device. A verified full-device option isn't currently available on iOS.</p>
     </details>
 
     <details class="faq-item">
@@ -962,7 +962,7 @@
 
     <details class="faq-item">
       <summary>Does it work with 5G and 4G/LTE?</summary>
-      <p>Yes — it shares whatever active mobile data connection your phone currently has, regardless of network generation.</p>
+      <p>Yes, it shares whatever active mobile data connection your phone currently has, regardless of network generation.</p>
     </details>
 
     <details class="faq-item">
@@ -977,7 +977,7 @@
 
     <details class="faq-item">
       <summary>Is this a free, unlimited hotspot app?</summary>
-      <p>The free tier connects up to 2 devices at once, with ads — it's free to use, but not literally unlimited in device count. Pro removes ads and raises the limit to 5 devices. Either way, there's no separate hotspot data cap or speed throttling — you're sharing your own mobile data plan.</p>
+      <p>The free tier connects up to 2 devices at once, with ads, it's free to use, but not literally unlimited in device count. Pro removes ads and raises the limit to 5 devices. Either way, there's no separate hotspot data cap or speed throttling, you're sharing your own mobile data plan.</p>
     </details>
   </section>
 
@@ -1031,14 +1031,14 @@
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <span>Tether Link Utility — bypass carrier hotspot data caps &amp; throttling</span>
+  <span>Tether Link Utility, bypass carrier hotspot data caps &amp; throttling</span>
   <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary">Get it on Google Play</a>
 </div>
 
 <script>
   (function () {
     // Clone the marquee's country chips once so the track is exactly double its
-    // original width — the CSS animation slides it by -50%, landing back on an
+    // original width, the CSS animation slides it by -50%, landing back on an
     // identical copy of the start, so the loop reads as seamless regardless of
     // how many countries are listed (no need to hand-duplicate the HTML).
     var track = document.getElementById('countriesMarquee');
@@ -1049,7 +1049,7 @@
   }());
 
   (function () {
-    // Mobile hamburger menu — nav-links becomes a fixed slide-out drawer below 860px
+    // Mobile hamburger menu, nav-links becomes a fixed slide-out drawer below 860px
     // (see the matching @media block); this just toggles it open/closed and closes it
     // again on link tap or an outside click, since it overlays page content.
     var toggle = document.getElementById('navToggle');
