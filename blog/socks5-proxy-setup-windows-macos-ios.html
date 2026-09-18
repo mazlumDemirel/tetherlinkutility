@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html" />
   <title>How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS</title>
-  <meta name="description" content="Step-by-step SOCKS5 proxy setup for Windows (Firefox, FoxyProxy, Proxifier), macOS (native Network settings), and iOS (Shadowrocket, Potatso Lite).">
+  <meta name="description" content="Step-by-step SOCKS5 proxy setup for Windows and macOS (including full-coverage sing-box TUN mode) and iOS (Shadowrocket, Potatso Lite).">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Tether Link Utility">
 
@@ -29,7 +29,7 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS">
-  <meta property="og:description" content="Step-by-step SOCKS5 proxy setup for Windows, macOS, and iOS clients.">
+  <meta property="og:description" content="Step-by-step SOCKS5 setup for Windows, macOS (with a full-coverage sing-box option), and iOS.">
   <meta property="og:url" content="https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html">
   <meta property="og:site_name" content="Tether Link Utility">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
@@ -38,7 +38,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS">
-  <meta name="twitter:description" content="Step-by-step SOCKS5 proxy setup for Windows, macOS, and iOS clients.">
+  <meta name="twitter:description" content="Step-by-step SOCKS5 setup for Windows, macOS (with a full-coverage sing-box option), and iOS.">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
   <script type="application/ld+json">
@@ -46,7 +46,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS",
-    "description": "Step-by-step SOCKS5 proxy setup for Windows (Firefox, FoxyProxy, Proxifier), macOS (native Network settings), and iOS (Shadowrocket, Potatso Lite).",
+    "description": "Step-by-step SOCKS5 proxy setup for Windows and macOS (including full-coverage sing-box TUN mode) and iOS (Shadowrocket, Potatso Lite).",
     "datePublished": "2026-09-18",
     "dateModified": "2026-09-18",
     "author": { "@type": "Organization", "name": "Tether Link Utility" },
@@ -76,13 +76,13 @@
       },
       {
         "@type": "HowToStep",
-        "name": "Windows: system-wide with Proxifier",
-        "text": "Install Proxifier, add a new proxy server with the IP/port as SOCKS5, and set it as the default rule to route all system traffic through it, not just one browser."
+        "name": "Windows and macOS: full system coverage with sing-box",
+        "text": "Firefox/FoxyProxy and macOS's native SOCKS setting only route traffic from apps that check them, leaking DNS and background traffic. For full coverage, install sing-box (brew install sing-box on macOS, or download the Windows release), configure a TUN inbound with a SOCKS outbound pointed at the phone's IP/port, and run it with elevated privileges."
       },
       {
         "@type": "HowToStep",
         "name": "macOS: native Network settings",
-        "text": "Go to System Settings > Network > Wi-Fi > Details > Proxies, check SOCKS Proxy, and enter the IP address and port."
+        "text": "Go to System Settings > Network > Wi-Fi > Details > Proxies, check SOCKS Proxy, and enter the IP address and port. Covers apps that check the system proxy setting, but not DNS."
       },
       {
         "@type": "HowToStep",
@@ -202,17 +202,60 @@
       <li>Add a new proxy: type <strong>SOCKS5</strong>, host = phone's IP, port = the port shown in the app.</li>
       <li>Switch FoxyProxy to that proxy from its toolbar icon.</li>
     </ol>
-    <h3>Option C: System-wide, via Proxifier</h3>
-    <p>Firefox and FoxyProxy only route that one browser's traffic. If you want every app on Windows tunneled — games, other browsers, background updates — use Proxifier: add the phone's IP/port as a SOCKS5 proxy server, then set it as the default rule so all outgoing connections use it.</p>
+    <h3>Option C (recommended): full system coverage with sing-box</h3>
+    <p>Firefox and FoxyProxy only route that one browser's traffic — DNS lookups and background app traffic can still leave over the plain hotspot connection unprotected. For every app on Windows tunneled, DNS included, use <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> (open source, MIT-adjacent license, actively maintained) in TUN mode instead:</p>
+    <ol>
+      <li>Download the latest Windows release from <a href="https://github.com/SagerNet/sing-box/releases" target="_blank" rel="noopener">github.com/SagerNet/sing-box/releases</a>.</li>
+      <li>Save the config below as <code>config.json</code>, replacing the IP/port with what's shown in the app.</li>
+      <li>Run it from an elevated (Administrator) terminal: <code>sing-box run --config config.json</code></li>
+    </ol>
 
     <h2>macOS</h2>
+    <h3>Option A: native Network settings</h3>
     <ol>
       <li>Open <strong>System Settings → Network</strong>.</li>
       <li>Select the Wi-Fi network you're connected to (the one the phone is broadcasting) and click <strong>Details…</strong></li>
       <li>Go to <strong>Proxies</strong>, check <strong>SOCKS Proxy</strong>.</li>
       <li>Enter the phone's IP address and port, then click <strong>OK → Apply</strong>.</li>
     </ol>
-    <p>This is a native macOS setting — no third-party app needed, and it applies system-wide rather than per-browser.</p>
+    <p>No third-party app needed — but be aware macOS's native SOCKS setting doesn't route DNS through the proxy, so DNS queries can still leak outside the tunnel even though your browsing traffic doesn't.</p>
+
+    <h3>Option B (recommended): full system coverage with sing-box</h3>
+    <p>For everything — every app, DNS included — run <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> in TUN mode instead of the native setting above:</p>
+    <ol>
+      <li>Install via Homebrew: <code>brew install sing-box</code></li>
+      <li>Save the config below as <code>~/config.json</code>, replacing the IP/port with what's shown in the app.</li>
+      <li>Run it (needs <code>sudo</code> — it creates a virtual network interface and changes routing): <code>sudo sing-box run --config ~/config.json</code></li>
+      <li>Turn off the native SOCKS Proxy setting from Option A if you had it on — sing-box's TUN mode replaces it entirely.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>sing-box config</strong> (works for both Windows and macOS — just swap the IP/port). Leave <code>interface_name</code> unset so it picks an available interface automatically:</p>
+      <pre style="background:var(--ground); border:1px solid var(--border); border-radius:10px; padding:16px; overflow-x:auto; font-size:13px; line-height:1.6; color:var(--muted);">{
+  "dns": {
+    "servers": [
+      { "type": "udp", "tag": "remote", "server": "8.8.8.8", "detour": "phone-socks5" },
+      { "type": "local", "tag": "local", "detour": "direct" }
+    ],
+    "final": "remote"
+  },
+  "inbounds": [
+    { "type": "tun", "tag": "tun-in", "address": ["172.19.0.1/30"], "mtu": 1500,
+      "auto_route": true, "strict_route": true, "stack": "system" }
+  ],
+  "outbounds": [
+    { "type": "socks", "tag": "phone-socks5", "server": "PHONE_IP", "server_port": PHONE_PORT, "version": "5" },
+    { "type": "direct", "tag": "direct" }
+  ],
+  "route": {
+    "rules": [ { "ip_cidr": ["PHONE_IP/32"], "outbound": "direct" } ],
+    "final": "phone-socks5",
+    "auto_detect_interface": true,
+    "default_domain_resolver": "remote"
+  }
+}</pre>
+      <p>Replace both <code>PHONE_IP</code> and <code>PHONE_PORT</code> with the values shown in the app (and the <code>PHONE_IP/32</code> route rule too — that line keeps the tunnel from trying to route its own connection to the phone through itself). Verified working against a real carrier — QUIC/HTTP3 and DNS both tunnel correctly as of the app's latest version, which added SOCKS5 UDP ASSOCIATE support specifically for this.</p>
+    </div>
 
     <h2>iOS</h2>
     <h3>Option A: Shadowrocket (paid, one-time purchase)</h3>
@@ -230,7 +273,7 @@
     </ol>
 
     <div class="callout">
-      <p><strong>DNS tip:</strong> On every platform, make sure DNS queries are also routed through the proxy where the option exists (Firefox's "Proxy DNS when using SOCKS v5," Shadowrocket's default behavior). Otherwise DNS lookups can leak outside the tunnel even though your actual traffic doesn't.</p>
+      <p><strong>DNS tip:</strong> On every platform, make sure DNS queries are also routed through the proxy where the option exists (Firefox's "Proxy DNS when using SOCKS v5," Shadowrocket's default behavior). Otherwise DNS lookups can leak outside the tunnel even though your actual traffic doesn't — this is exactly what sing-box's TUN mode above avoids by construction, since it captures DNS along with everything else rather than relying on each app to opt in.</p>
     </div>
 
     <h2>Android-to-Android is simpler</h2>

@@ -105,7 +105,15 @@
         "name": "Windows veya Mac dizüstü bilgisayar bağlayabilir miyim?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evet — dizüstü bilgisayarınızın SOCKS5 proxy ayarlarını (macOS'ta yerleşik, Windows'ta FoxyProxy/Proxifier ile) uygulamada gösterilen IP ve porta yönlendirin."
+          "text": "Evet — dizüstü bilgisayarınızın SOCKS5 proxy ayarlarını (macOS'ta yerleşik, Windows'ta Firefox/FoxyProxy ile) uygulamada gösterilen IP ve porta yönlendirin. Bu, sadece o ayarı kontrol eden uygulamaları kapsar; DNS dahil tam sistem kapsaması için sing-box'ı TUN modunda kullanın."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "SOCKS5 proxy ayarı tüm trafiğimi korur mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tam olarak değil. Bir tarayıcı ya da sistem SOCKS5 ayarı, sadece bu ayarı kontrol eden uygulamaların trafiğini yönlendirir — DNS sorguları ve diğer arka plan trafiği düz hotspot bağlantısından korumasız çıkabilir, ana gezinme trafiğiniz sorunsuz çalışsa bile bazı operatörler bunu tespit edebilir. Windows veya macOS'ta gerçek anlamda tam kapsama için, tüm sistem trafiğinizi (DNS dahil) tünelden geçiren sing-box'ı TUN modunda çalıştırın."
         }
       },
       {
@@ -113,7 +121,7 @@
         "name": "iPhone ile çalışıyor mu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "iOS'ta yerleşik bir SOCKS5 ayarı yok, ancak Shadowrocket veya Potatso gibi uygulamalar aynı şekilde proxy'ye bağlanabilir."
+          "text": "iOS'ta yerleşik bir SOCKS5 ayarı yok, ancak Shadowrocket veya Potatso gibi uygulamalar aynı şekilde proxy'ye bağlanabilir — sadece o uygulamanın kendi trafiği için, tüm cihaz için değil. iOS'ta doğrulanmış, tam cihaz kapsayan bir seçenek şu an mevcut değil."
         }
       },
       {
@@ -778,7 +786,7 @@
           <div class="platform-icon">🖥️</div>
           <div>
             <h3>Windows</h3>
-            <p>Firefox'ta yerleşik SOCKS5 desteği vardır — eklenti gerekmez. Chrome/Edge: FoxyProxy kullanın. Sistem geneli: Proxifier.</p>
+            <p>Firefox'ta yerleşik SOCKS5 desteği vardır — eklenti gerekmez. Chrome/Edge: FoxyProxy kullanın. DNS dahil tam sistem kapsaması için <strong>sing-box</strong>'ı TUN modunda kullanın.</p>
             <span class="code-chip">SOCKS5</span>
           </div>
         </div>
@@ -786,7 +794,7 @@
           <div class="platform-icon">🍏</div>
           <div>
             <h3>macOS</h3>
-            <p>Sistem Ayarları → Ağ → Wi-Fi → Detaylar → Proxy'ler → SOCKS Proxy.</p>
+            <p>Sistem Ayarları → Ağ → Wi-Fi → Detaylar → Proxy'ler → SOCKS Proxy — ya da DNS dahil tam kapsama için <strong>sing-box</strong>'ı TUN modunda çalıştırın (<code>brew install sing-box</code>).</p>
             <span class="code-chip">yerleşik</span>
           </div>
         </div>
@@ -802,7 +810,7 @@
           <div class="platform-icon">📱</div>
           <div>
             <h3>iOS</h3>
-            <p>Shadowrocket (ücretli): uygulamayı açın → + dokunun → QR Tara — anında içeri aktarılır. Potatso Lite (ücretsiz): manuel giriş.</p>
+            <p>Shadowrocket (ücretli): uygulamayı açın → + dokunun → QR Tara — anında içeri aktarılır. Potatso Lite (ücretsiz): manuel giriş. Not: sadece o uygulamanın trafiğini kapsar, tüm cihazı değil.</p>
             <span class="code-chip">SOCKS5</span>
           </div>
         </div>
@@ -856,12 +864,17 @@
 
     <details class="faq-item">
       <summary>Windows veya Mac dizüstü bilgisayar bağlayabilir miyim?</summary>
-      <p>Evet — dizüstü bilgisayarınızın SOCKS5 proxy ayarlarını (macOS'ta yerleşik, Windows'ta FoxyProxy/Proxifier ile) uygulamada gösterilen IP ve porta yönlendirin.</p>
+      <p>Evet — dizüstü bilgisayarınızın SOCKS5 proxy ayarlarını (macOS'ta yerleşik, Windows'ta Firefox/FoxyProxy ile) uygulamada gösterilen IP ve porta yönlendirin. Bu, sadece o ayarı kontrol eden uygulamaları kapsar; DNS dahil tam sistem kapsaması için sing-box'ı TUN modunda kullanın.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>SOCKS5 proxy ayarı tüm trafiğimi korur mu?</summary>
+      <p>Tam olarak değil. Bir tarayıcı ya da sistem SOCKS5 ayarı sadece bu ayarı kontrol eden uygulamaların trafiğini yönlendirir — DNS sorguları ve diğer arka plan trafiği düz hotspot bağlantısından korumasız çıkabilir, ana gezinme trafiğiniz sorunsuz çalışsa bile bazı operatörler bunu tespit edebilir. Windows veya macOS'ta gerçek anlamda tam kapsama için <a href="/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box'ı TUN modunda</a> çalıştırın — tüm sistem trafiğinizi, DNS dahil, tünelden geçirir.</p>
     </details>
 
     <details class="faq-item">
       <summary>iPhone ile çalışıyor mu?</summary>
-      <p>iOS'ta yerleşik bir SOCKS5 ayarı yok, ancak Shadowrocket veya Potatso gibi uygulamalar aynı şekilde proxy'ye bağlanabilir.</p>
+      <p>iOS'ta yerleşik bir SOCKS5 ayarı yok, ancak Shadowrocket veya Potatso gibi uygulamalar aynı şekilde proxy'ye bağlanabilir — sadece o uygulamanın kendi trafiği için, tüm cihaz için değil. iOS'ta doğrulanmış, tam cihaz kapsayan bir seçenek şu an mevcut değil.</p>
     </details>
 
     <details class="faq-item">
