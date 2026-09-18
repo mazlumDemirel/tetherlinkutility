@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-994847137"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+    });
+    gtag('js', new Date());
+    gtag('config', 'AW-994847137');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html" />
+  <title>How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS</title>
+  <meta name="description" content="Step-by-step SOCKS5 proxy setup for Windows (Firefox, FoxyProxy, Proxifier), macOS (native Network settings), and iOS (Shadowrocket, Potatso Lite).">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Tether Link Utility">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS">
+  <meta property="og:description" content="Step-by-step SOCKS5 proxy setup for Windows, macOS, and iOS clients.">
+  <meta property="og:url" content="https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html">
+  <meta property="og:site_name" content="Tether Link Utility">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS",
+    "description": "Step-by-step SOCKS5 proxy setup for Windows (Firefox, FoxyProxy, Proxifier), macOS (native Network settings), and iOS (Shadowrocket, Potatso Lite).",
+    "datePublished": "2026-09-18",
+    "dateModified": "2026-09-18",
+    "author": { "@type": "Organization", "name": "Tether Link Utility" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tether Link Utility",
+      "logo": { "@type": "ImageObject", "url": "https://tetherlinkutility.com/favicon.png" }
+    },
+    "mainEntityOfPage": "https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Get the proxy IP and port",
+        "text": "Open Tether Link Utility on the Android device sharing its connection, tap START SERVER, and note the IP address and port shown on screen."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Windows: Firefox (native) or FoxyProxy for Chrome/Edge",
+        "text": "In Firefox, go to Settings > General > Network Settings > Manual proxy configuration, enter the SOCKS Host and Port, and select SOCKS v5. In Chrome or Edge, install the FoxyProxy extension and enter the same IP/port as a SOCKS5 proxy."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Windows: system-wide with Proxifier",
+        "text": "Install Proxifier, add a new proxy server with the IP/port as SOCKS5, and set it as the default rule to route all system traffic through it, not just one browser."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "macOS: native Network settings",
+        "text": "Go to System Settings > Network > Wi-Fi > Details > Proxies, check SOCKS Proxy, and enter the IP address and port."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "iOS: Shadowrocket (paid)",
+        "text": "Open Shadowrocket, tap the + button, choose Socks5, enter the address and port, and save. Tap the toggle to connect."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "iOS: Potatso Lite (free)",
+        "text": "Open Potatso Lite, add a new SOCKS5 proxy profile with the IP and port from the app, save it, and enable the VPN profile when prompted."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ground: #0C0C18; --surface: #141428; --elevated: #1E1E38;
+      --border: #20203A; --border-md: #2C2C50; --accent: #E8622A;
+      --success: #00BF8A; --text: #ECEDFF; --muted: #8888B0; --dim: #4C4C6A;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ground); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(12,12,24,0.90); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(20px, 5vw, 80px);
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-brand { font-weight: 700; font-size: 15px; letter-spacing: 0.02em; color: var(--text); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    main { max-width: 720px; margin: 0 auto; padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px) clamp(80px, 10vw, 120px); }
+    .page-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    h1 { font-size: clamp(30px, 4.5vw, 42px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
+    .post-meta { color: var(--dim); font-size: 13px; margin-bottom: 40px; }
+    h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; margin: 40px 0 14px; }
+    h3 { font-size: 17px; font-weight: 700; color: var(--text); margin: 24px 0 10px; }
+    p { color: var(--muted); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+    ul, ol { color: var(--muted); font-size: 16px; line-height: 1.75; padding-left: 22px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; }
+    strong { color: var(--text); }
+    .callout { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin: 28px 0; }
+    .callout p:last-child { margin-bottom: 0; }
+    .cta-box { margin-top: 48px; padding: 28px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border-md); text-align: center; }
+    .cta-box h3 { font-size: 19px; margin-bottom: 8px; color: var(--text); }
+    .cta-box p { margin-bottom: 18px; }
+    .cta-button { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; font-size: 15px; padding: 12px 28px; border-radius: 10px; }
+    .cta-button:hover { text-decoration: none; opacity: 0.92; }
+    .related { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .related h3 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); margin-bottom: 12px; }
+    .related ul { padding-left: 0; list-style: none; }
+    .related li { margin-bottom: 6px; }
+    footer {
+      border-top: 1px solid var(--border); padding: 28px clamp(20px, 5vw, 80px);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-brand { font-size: 13px; color: var(--dim); }
+    .footer-brand a { color: var(--muted); }
+    .footer-brand a:hover { color: var(--text); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--dim); }
+    .footer-links a:hover { color: var(--muted); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <rect width="22" height="22" rx="5" fill="#E8622A"/>
+      <g transform="translate(3,3) scale(0.6667)" fill="white">
+        <path d="M20.2,5.9l0.8,-0.8C19.6,3.7 17.8,3 16,3s-3.6,0.7 -5,2.1l0.8,0.8C13,4.8 14.5,4.2 16,4.2s3,0.6 4.2,1.7zM19.3,6.7c-0.9,-0.9 -2.1,-1.4 -3.3,-1.4s-2.4,0.5 -3.3,1.4l0.8,0.8c0.7,-0.7 1.6,-1 2.5,-1 0.9,0 1.8,0.3 2.5,1l0.8,-0.8zM19,13h-2L17,9h-2v4L5,13c-1.1,0 -2,0.9 -2,2v4c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2v-4c0,-1.1 -0.9,-2 -2,-2zM8,18L6,18v-2h2v2zM11.5,18h-2v-2h2v2zM15,18h-2v-2h2v2z"/>
+      </g>
+    </svg>
+    Tether Link Utility
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#faq">FAQ</a>
+  </div>
+</nav>
+
+<main>
+  <article>
+    <div class="page-eyebrow">Blog</div>
+    <h1>How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS</h1>
+    <div class="post-meta">Published September 18, 2026</div>
+
+    <p>Tether Link Utility runs a local SOCKS5 proxy on your Android phone. Any device that supports SOCKS5 proxy settings can connect to it over the phone's own Wi-Fi hotspot — no separate client app required on Windows or macOS, and a lightweight one on iOS. Here's exactly how to point each platform at it.</p>
+
+    <h2>Before you start</h2>
+    <p>Open Tether Link Utility, tap <strong>START SERVER</strong>, and note two things shown on screen: the <strong>IP address</strong> and the <strong>port</strong>. You'll enter both into whichever setup below matches your device.</p>
+
+    <h2>Windows</h2>
+    <h3>Option A: Firefox (no extension needed)</h3>
+    <ol>
+      <li>Go to <strong>Settings → General → Network Settings → Settings</strong>.</li>
+      <li>Choose <strong>Manual proxy configuration</strong>.</li>
+      <li>Enter the phone's IP under <strong>SOCKS Host</strong>, the port under <strong>Port</strong>, and select <strong>SOCKS v5</strong>.</li>
+      <li>Check <strong>Proxy DNS when using SOCKS v5</strong> to avoid DNS leaks outside the tunnel.</li>
+    </ol>
+    <h3>Option B: Chrome or Edge, via FoxyProxy</h3>
+    <ol>
+      <li>Install the FoxyProxy extension from the Chrome Web Store.</li>
+      <li>Add a new proxy: type <strong>SOCKS5</strong>, host = phone's IP, port = the port shown in the app.</li>
+      <li>Switch FoxyProxy to that proxy from its toolbar icon.</li>
+    </ol>
+    <h3>Option C: System-wide, via Proxifier</h3>
+    <p>Firefox and FoxyProxy only route that one browser's traffic. If you want every app on Windows tunneled — games, other browsers, background updates — use Proxifier: add the phone's IP/port as a SOCKS5 proxy server, then set it as the default rule so all outgoing connections use it.</p>
+
+    <h2>macOS</h2>
+    <ol>
+      <li>Open <strong>System Settings → Network</strong>.</li>
+      <li>Select the Wi-Fi network you're connected to (the one the phone is broadcasting) and click <strong>Details…</strong></li>
+      <li>Go to <strong>Proxies</strong>, check <strong>SOCKS Proxy</strong>.</li>
+      <li>Enter the phone's IP address and port, then click <strong>OK → Apply</strong>.</li>
+    </ol>
+    <p>This is a native macOS setting — no third-party app needed, and it applies system-wide rather than per-browser.</p>
+
+    <h2>iOS</h2>
+    <h3>Option A: Shadowrocket (paid, one-time purchase)</h3>
+    <ol>
+      <li>Open Shadowrocket and tap the <strong>+</strong> button in the top right.</li>
+      <li>Choose type <strong>Socks5</strong>.</li>
+      <li>Enter the phone's IP as the address and the port shown in the app.</li>
+      <li>Save, then tap the toggle at the top to connect.</li>
+    </ol>
+    <h3>Option B: Potatso Lite (free)</h3>
+    <ol>
+      <li>Open Potatso Lite and add a new proxy profile.</li>
+      <li>Select <strong>SOCKS5</strong>, enter the IP and port, and save.</li>
+      <li>Enable the VPN profile when iOS prompts you — this is how Potatso routes traffic through the SOCKS5 proxy, since iOS has no native SOCKS5 setting like macOS does.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>DNS tip:</strong> On every platform, make sure DNS queries are also routed through the proxy where the option exists (Firefox's "Proxy DNS when using SOCKS v5," Shadowrocket's default behavior). Otherwise DNS lookups can leak outside the tunnel even though your actual traffic doesn't.</p>
+    </div>
+
+    <h2>Android-to-Android is simpler</h2>
+    <p>If both devices are Android, skip all of the above — tap <strong>Scan QR Code · Connect to Server</strong> on the client phone and point the camera at the QR code shown on the server phone. Wi-Fi and the proxy connection both complete in one tap on most devices.</p>
+
+    <div class="cta-box">
+      <h3>Tether Link Utility</h3>
+      <p>A free Android app that runs a local SOCKS5 proxy to share your mobile data — no root, no remote server, no account required.</p>
+      <a class="cta-button" href="/">See how it works</a>
+    </div>
+
+    <div class="related">
+      <h3>Related reading</h3>
+      <ul>
+        <li><a href="/blog/best-ways-to-bypass-hotspot-throttling.html">Best Ways to Bypass Hotspot Data Caps and Throttling in 2026</a></li>
+        <li><a href="/blog/understanding-carrier-hotspot-throttling.html">Understanding Carrier Hotspot Throttling</a></li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    © 2026 Tether Link Utility
+    &nbsp;·&nbsp;
+    <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a>
+  </div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility">Google Play</a>
+  </div>
+</footer>
+
+</body>
+</html>

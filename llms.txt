@@ -17,8 +17,18 @@
 
 ## Pages
 - Homepage: https://tetherlinkutility.com/ — product overview, FAQ, setup instructions for Windows/macOS/Android/iOS
+- Turkish homepage: https://tetherlinkutility.com/tr/ — same content, translated for the Turkish market
 - Privacy Policy: https://tetherlinkutility.com/privacy.html
 - Google Play listing: https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility
+
+## Blog
+- https://tetherlinkutility.com/blog/understanding-carrier-hotspot-throttling.html — how carriers detect tethering (TTL, DPI) and why hotspot data is capped separately from on-device data
+- https://tetherlinkutility.com/blog/best-ways-to-bypass-hotspot-throttling.html — comparison of every realistic bypass method: carrier add-ons, TTL modification, VPNs, and local proxy apps
+- https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html — step-by-step SOCKS5 proxy setup for Windows, macOS, and iOS clients
+- https://tetherlinkutility.com/blog/verizon-hotspot-data-cap.html — Verizon's hotspot data allotment and add-on pricing
+- https://tetherlinkutility.com/blog/att-hotspot-throttling.html — AT&T's hotspot allotment and deprioritization behavior
+- https://tetherlinkutility.com/blog/jio-hotspot-data-limit.html — Jio's daily hotspot data limit in India
+- https://tetherlinkutility.com/blog/turkcell-hotspot-data-limit.html — tethering quota on Turkcell, Vodafone Turkey, and Türk Telekom
 
 ## Contact
 support@tetherlinkutility.com
