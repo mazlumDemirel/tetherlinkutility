@@ -642,6 +642,13 @@
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-size: 13px; color: var(--dim); }
     .footer-links a:hover { color: var(--muted); text-decoration: none; }
+    .footer-mascots { width: 100%; display: flex; justify-content: center; gap: 14px; order: -1; }
+    .footer-mascots img { height: 44px; width: auto; opacity: 0.9; animation: mascot-bob 2.4s ease-in-out infinite; }
+    .footer-mascots img:last-child { animation-delay: 0.4s; }
+    @keyframes mascot-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @media (prefers-reduced-motion: reduce) {
+      .footer-mascots img { animation: none; }
+    }
 
     /* ── Responsive ──────────────────────── */
     @media (max-width: 860px) {
@@ -1018,6 +1025,10 @@
 </section>
 
 <footer>
+  <div class="footer-mascots" aria-hidden="true">
+    <img src="/barnah-adam.png" alt="">
+    <img src="/barnah-kiz.png" alt="">
+  </div>
   <div class="footer-brand">
     © 2026 Tether Link Utility
     &nbsp;·&nbsp;
