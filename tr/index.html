@@ -466,6 +466,37 @@
     }
     .hero-phone-frame img { display: block; width: 100%; height: auto; }
 
+    /* ── Video showcase ──────────────────── */
+    .video-showcase {
+      border-top: 1px solid var(--border);
+      padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px);
+      max-width: 1200px; margin: 0 auto;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .video-showcase h2 {
+      font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+    .video-frame {
+      position: relative;
+      width: min(360px, 90vw);
+      aspect-ratio: 9 / 16;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--elevated);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px var(--border);
+      cursor: pointer;
+    }
+    .video-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .video-facade-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.15s ease;
+    }
+    .video-facade:hover .video-facade-play,
+    .video-facade:focus-visible .video-facade-play { transform: scale(1.08); }
+
     .strip {
       border-top: 1px solid var(--border);
       padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 80px);
@@ -680,6 +711,20 @@
       <div class="hero-phone-frame">
         <img src="/app-screenshot.png" alt="Android'de çalışan Tether Link Utility, Sunucu Başlat ekranı" width="1080" height="2400" fetchpriority="high" />
       </div>
+    </div>
+  </section>
+
+  <section class="video-showcase">
+    <div class="hero-eyebrow"><span class="dot"></span>Uygulamayı görün</div>
+    <h2>Hotspot sınırını nasıl aştığını izleyin</h2>
+    <div class="video-frame video-facade" data-yt-id="8T_M4cgN8_E" role="button" tabindex="0" aria-label="Tanıtım videosunu oynat">
+      <img src="https://img.youtube.com/vi/8T_M4cgN8_E/hqdefault.jpg" alt="Tanıtım videosu önizlemesi" loading="lazy" width="480" height="360" />
+      <span class="video-facade-play" aria-hidden="true">
+        <svg width="72" height="72" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="30" fill="rgba(0,0,0,0.55)"/>
+          <path d="M24 18l20 12-20 12V18z" fill="#fff"/>
+        </svg>
+      </span>
     </div>
   </section>
 
@@ -1008,6 +1053,27 @@
       var nearBottom = window.scrollY + window.innerHeight > document.body.scrollHeight - 300;
       bar.classList.toggle('is-visible', pastHero && !nearBottom);
     }, { passive: true });
+  }());
+
+  (function () {
+    // Click-to-play YouTube facade: keeps the poster image as the LCP element and
+    // only loads the (heavy, third-party) iframe once the user actually asks for it.
+    document.querySelectorAll('.video-facade[data-yt-id]').forEach(function (el) {
+      function play() {
+        var id = el.getAttribute('data-yt-id');
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&playsinline=1&rel=0';
+        iframe.setAttribute('title', 'Tether Link Utility tanıtım videosu');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.cssText = 'width:100%;height:100%;display:block;border:0;';
+        el.replaceChildren(iframe);
+      }
+      el.addEventListener('click', play);
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+      });
+    });
   }());
 </script>
 
