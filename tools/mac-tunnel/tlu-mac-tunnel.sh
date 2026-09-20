@@ -171,8 +171,35 @@ if ! kill -0 "$SINGBOX_PID" 2>/dev/null; then
   exit 1
 fi
 
+minimize_window() {
+  case "${TERM_PROGRAM:-}" in
+    Apple_Terminal)
+      osascript -e 'tell application "Terminal" to set miniaturized of front window to true' 2>/dev/null
+      ;;
+    iTerm.app)
+      osascript -e 'tell application "iTerm2" to tell current window to set miniaturized to true' 2>/dev/null
+      ;;
+    *)
+      echo "(Not running in Terminal.app or iTerm2, skipping auto-minimize. You can minimize this window yourself.)"
+      ;;
+  esac
+}
+
+restore_window() {
+  case "${TERM_PROGRAM:-}" in
+    Apple_Terminal)
+      osascript -e 'tell application "Terminal" to set miniaturized of front window to false' \
+                -e 'tell application "Terminal" to activate' 2>/dev/null
+      ;;
+    iTerm.app)
+      osascript -e 'tell application "iTerm2" to tell current window to set miniaturized to false' \
+                -e 'tell application "iTerm2" to activate' 2>/dev/null
+      ;;
+  esac
+}
+
 echo "Tunnel is up. This window will minimize now."
-osascript -e 'tell application "Terminal" to set miniaturized of front window to true' 2>/dev/null
+minimize_window
 
 # --- 6. Watch it; bring the window back if it dies unexpectedly ---
 
@@ -180,7 +207,6 @@ while kill -0 "$SINGBOX_PID" 2>/dev/null; do
   sleep 2
 done
 
-osascript -e 'tell application "Terminal" to set miniaturized of front window to false' \
-          -e 'tell application "Terminal" to activate' 2>/dev/null
+restore_window
 echo "sing-box stopped unexpectedly."
 exit 1
