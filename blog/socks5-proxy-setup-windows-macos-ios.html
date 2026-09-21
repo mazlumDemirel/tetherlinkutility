@@ -230,6 +230,12 @@
       <p style="margin-top: 12px; font-size: 14px;">Unzip it, then in Terminal: <code>chmod +x tlu-mac-tunnel.sh && ./tlu-mac-tunnel.sh</code></p>
     </div>
 
+    <h3>Does it actually work? Here's proof</h3>
+    <p>We ran the script, downloaded a 1GB test file through the tunnel, and checked the phone's carrier account before and after. The hotspot-sharing data package showed the same amount left both times, nothing was counted against it, even though the app's own counter shows well over 1GB routed through the tunnel.</p>
+    <video controls playsinline preload="metadata" style="width:100%; border-radius: 8px; display: block; margin-top: 12px;" poster="/mac-tunnel-script-demo.png">
+      <source src="/sing-box-proof-demo.mp4" type="video/mp4">
+    </video>
+
     <p>Or set it up by hand:</p>
     <ol>
       <li>Install via Homebrew: <code>brew install sing-box</code></li>
