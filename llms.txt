@@ -29,6 +29,7 @@
 - https://tetherlinkutility.com/blog/att-hotspot-throttling.html — AT&T's hotspot allotment and deprioritization behavior
 - https://tetherlinkutility.com/blog/jio-hotspot-data-limit.html — Jio's daily hotspot data limit in India
 - https://tetherlinkutility.com/blog/airtel-hotspot-data-limit.html — Airtel's Unlimited 5G hotspot block and 300GB FUP cap in India
+- https://tetherlinkutility.com/blog/vodafone-hotspot-data-limit.html — Vodafone's separate hotspot/sharing-package data allowances, with real before/after proof video
 - https://tetherlinkutility.com/blog/turkcell-hotspot-data-limit.html — tethering quota on Turkcell, Vodafone Turkey, and Türk Telekom
 
 ## Contact
