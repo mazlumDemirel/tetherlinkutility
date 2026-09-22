@@ -31,6 +31,8 @@
 - https://tetherlinkutility.com/blog/airtel-hotspot-data-limit.html — Airtel's Unlimited 5G hotspot block and 300GB FUP cap in India
 - https://tetherlinkutility.com/blog/vodafone-hotspot-data-limit.html — Vodafone's separate hotspot/sharing-package data allowances, with real before/after proof video
 - https://tetherlinkutility.com/blog/turkcell-hotspot-data-limit.html — tethering quota on Turkcell, Vodafone Turkey, and Türk Telekom
+- https://tetherlinkutility.com/blog/turk-telekom-hotspot-data-limit.html — Türk Telekom's "paylaşım kotası" tethering allowance and how it's detected
+- https://tetherlinkutility.com/blog/nobody-reads-the-contract.html — opinion piece on hidden contract terms and hotspot data caps as a global pattern, with regulatory examples from the EU, India, Brazil, and the US
 
 ## Contact
 support@tetherlinkutility.com
