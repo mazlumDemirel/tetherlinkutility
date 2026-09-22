@@ -31,6 +31,7 @@
   <link rel="canonical" href="https://tetherlinkutility.com/" />
   <link rel="alternate" hreflang="en" href="https://tetherlinkutility.com/" />
   <link rel="alternate" hreflang="tr" href="https://tetherlinkutility.com/tr/" />
+  <link rel="alternate" hreflang="hi" href="https://tetherlinkutility.com/hi/" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/" />
   <title>Tether Link Utility: Bypass Carrier Hotspot Data Caps &amp; Throttling</title>
   <meta name="description" content="Bypass carrier hotspot throttling and data caps on Android. Tether Link Utility uses a local SOCKS5 tunnel, no root, no account, no remote server.">
@@ -445,37 +446,54 @@
       padding: 0 22px 20px;
     }
 
-    /* ── Countries marquee ───────────────── */
+    /* ── World availability globe ───────────────── */
     .countries-strip {
       border-top: 1px solid var(--border);
       padding: clamp(36px, 5vw, 56px) 0;
-      overflow: hidden;
+      display: flex; flex-direction: column; align-items: center;
     }
     .countries-strip .section-label {
-      padding: 0 clamp(20px, 5vw, 80px);
-      max-width: 1200px;
-      margin: 0 auto 22px;
+      text-align: center;
+      margin: 0 auto 28px;
     }
-    .marquee-mask {
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    .globe-wrap {
+      position: relative;
+      width: clamp(220px, 32vw, 320px);
+      height: clamp(220px, 32vw, 320px);
+      animation: globePulse 2.6s ease-in-out infinite;
     }
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      gap: 36px;
-      animation: marquee 34s linear infinite;
+    @keyframes globePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.055); }
     }
-    .marquee-track:hover { animation-play-state: paused; }
-    .country-chip {
-      display: inline-flex; align-items: center; gap: 9px;
-      font-size: 14px; color: var(--muted); white-space: nowrap;
+    .globe {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: radial-gradient(circle at 32% 28%, var(--elevated), var(--surface) 55%, var(--ground) 100%);
+      border: 1px solid var(--border-md);
+      box-shadow: 0 0 60px -10px rgba(232, 98, 42, 0.25), inset 0 0 40px rgba(0,0,0,0.4);
+      overflow: hidden;
     }
-    .country-chip .flag { font-size: 20px; line-height: 1; }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    .globe-dot {
+      position: absolute;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--dim);
+      transform: translate(-50%, -50%);
+      transition: background 0.4s ease, box-shadow 0.4s ease, width 0.4s ease, height 0.4s ease;
     }
+    .globe-dot.active {
+      width: 10px; height: 10px;
+      background: var(--accent);
+      box-shadow: 0 0 16px 4px rgba(232, 98, 42, 0.65);
+    }
+    .globe-label {
+      margin-top: 22px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 15px; color: var(--text); font-weight: 600;
+      opacity: 1; transition: opacity 0.35s ease;
+      min-height: 24px;
+    }
+    .globe-label.fading { opacity: 0; }
+    .globe-label .flag { font-size: 20px; line-height: 1; }
 
     .cta-strip {
       text-align: center;
@@ -950,28 +968,13 @@
   </div>
 
   <section class="countries-strip">
-    <div class="section-label">Carrier hotspot throttling reported in these regions</div>
-    <div class="marquee-mask">
-      <div class="marquee-track" id="countriesMarquee">
-        <!-- duplicated in JS below for a seamless loop -->
-        <span class="country-chip"><span class="flag">🇩🇪</span>Germany</span>
-        <span class="country-chip"><span class="flag">🇺🇸</span>United States</span>
-        <span class="country-chip"><span class="flag">🇦🇺</span>Australia</span>
-        <span class="country-chip"><span class="flag">🇦🇪</span>United Arab Emirates</span>
-        <span class="country-chip"><span class="flag">🇬🇧</span>United Kingdom</span>
-        <span class="country-chip"><span class="flag">🇫🇷</span>France</span>
-        <span class="country-chip"><span class="flag">🇮🇳</span>India</span>
-        <span class="country-chip"><span class="flag">🇳🇱</span>Netherlands</span>
-        <span class="country-chip"><span class="flag">🇨🇦</span>Canada</span>
-        <span class="country-chip"><span class="flag">🇶🇦</span>Qatar</span>
-        <span class="country-chip"><span class="flag">🇲🇹</span>Malta</span>
-        <span class="country-chip"><span class="flag">🇷🇴</span>Romania</span>
-        <span class="country-chip"><span class="flag">🇷🇸</span>Serbia</span>
-        <span class="country-chip"><span class="flag">🇸🇦</span>Saudi Arabia</span>
-        <span class="country-chip"><span class="flag">🇹🇷</span>Türkiye</span>
-        <span class="country-chip"><span class="flag">🇪🇸</span>Spain</span>
-        <span class="country-chip"><span class="flag">🇮🇹</span>Italy</span>
-      </div>
+    <div class="section-label">Now available in 171 countries</div>
+    <div class="globe-wrap">
+      <div class="globe" id="globe"></div>
+    </div>
+    <div class="globe-label" id="globeLabel">
+      <span class="flag" id="globeFlag">🌍</span>
+      <span id="globeCountry">Loading</span>
     </div>
   </section>
 
@@ -1092,15 +1095,87 @@
 
 <script>
   (function () {
-    // Clone the marquee's country chips once so the track is exactly double its
-    // original width, the CSS animation slides it by -50%, landing back on an
-    // identical copy of the start, so the loop reads as seamless regardless of
-    // how many countries are listed (no need to hand-duplicate the HTML).
-    var track = document.getElementById('countriesMarquee');
-    if (track) {
-      var clone = track.innerHTML;
-      track.insertAdjacentHTML('beforeend', clone);
+    // Decorative "world" animation: scatters dots inside a circle to suggest a globe,
+    // then randomly lights one up every couple seconds while cycling a country
+    // flag/name label, giving the impression of zooming around a world map without
+    // needing real geographic map data.
+    var WORLD_COUNTRIES = [
+      ["🇦🇫","Afghanistan"],["🇦🇱","Albania"],["🇩🇿","Algeria"],["🇦🇩","Andorra"],["🇦🇴","Angola"],
+      ["🇦🇬","Antigua and Barbuda"],["🇦🇷","Argentina"],["🇦🇲","Armenia"],["🇦🇺","Australia"],["🇦🇹","Austria"],
+      ["🇦🇿","Azerbaijan"],["🇧🇸","Bahamas"],["🇧🇭","Bahrain"],["🇧🇩","Bangladesh"],["🇧🇧","Barbados"],
+      ["🇧🇪","Belgium"],["🇧🇿","Belize"],["🇧🇯","Benin"],["🇧🇹","Bhutan"],["🇧🇴","Bolivia"],
+      ["🇧🇦","Bosnia and Herzegovina"],["🇧🇼","Botswana"],["🇧🇷","Brazil"],["🇧🇳","Brunei"],["🇧🇬","Bulgaria"],
+      ["🇧🇫","Burkina Faso"],["🇧🇮","Burundi"],["🇨🇻","Cabo Verde"],["🇰🇭","Cambodia"],["🇨🇲","Cameroon"],
+      ["🇨🇦","Canada"],["🇨🇫","Central African Republic"],["🇹🇩","Chad"],["🇨🇱","Chile"],["🇨🇴","Colombia"],
+      ["🇰🇲","Comoros"],["🇨🇬","Congo"],["🇨🇷","Costa Rica"],["🇨🇮","Cote d'Ivoire"],["🇭🇷","Croatia"],
+      ["🇨🇾","Cyprus"],["🇨🇿","Czechia"],["🇩🇰","Denmark"],["🇩🇯","Djibouti"],["🇩🇲","Dominica"],
+      ["🇩🇴","Dominican Republic"],["🇪🇨","Ecuador"],["🇪🇬","Egypt"],["🇸🇻","El Salvador"],["🇪🇪","Estonia"],
+      ["🇸🇿","Eswatini"],["🇪🇹","Ethiopia"],["🇫🇯","Fiji"],["🇫🇮","Finland"],["🇫🇷","France"],
+      ["🇬🇦","Gabon"],["🇬🇲","Gambia"],["🇬🇪","Georgia"],["🇩🇪","Germany"],["🇬🇭","Ghana"],
+      ["🇬🇷","Greece"],["🇬🇩","Grenada"],["🇬🇹","Guatemala"],["🇬🇳","Guinea"],["🇬🇼","Guinea-Bissau"],
+      ["🇬🇾","Guyana"],["🇭🇹","Haiti"],["🇭🇳","Honduras"],["🇭🇺","Hungary"],["🇮🇸","Iceland"],
+      ["🇮🇳","India"],["🇮🇩","Indonesia"],["🇮🇶","Iraq"],["🇮🇪","Ireland"],["🇮🇱","Israel"],
+      ["🇮🇹","Italy"],["🇯🇲","Jamaica"],["🇯🇵","Japan"],["🇯🇴","Jordan"],["🇰🇿","Kazakhstan"],
+      ["🇰🇪","Kenya"],["🇰🇮","Kiribati"],["🇰🇼","Kuwait"],["🇰🇬","Kyrgyzstan"],["🇱🇦","Laos"],
+      ["🇱🇻","Latvia"],["🇱🇧","Lebanon"],["🇱🇸","Lesotho"],["🇱🇷","Liberia"],["🇱🇾","Libya"],
+      ["🇱🇮","Liechtenstein"],["🇱🇹","Lithuania"],["🇱🇺","Luxembourg"],["🇲🇬","Madagascar"],["🇲🇼","Malawi"],
+      ["🇲🇾","Malaysia"],["🇲🇻","Maldives"],["🇲🇱","Mali"],["🇲🇹","Malta"],["🇲🇭","Marshall Islands"],
+      ["🇲🇷","Mauritania"],["🇲🇺","Mauritius"],["🇲🇽","Mexico"],["🇫🇲","Micronesia"],["🇲🇩","Moldova"],
+      ["🇲🇨","Monaco"],["🇲🇳","Mongolia"],["🇲🇪","Montenegro"],["🇲🇦","Morocco"],["🇲🇿","Mozambique"],
+      ["🇳🇦","Namibia"],["🇳🇷","Nauru"],["🇳🇵","Nepal"],["🇳🇱","Netherlands"],["🇳🇿","New Zealand"],
+      ["🇳🇮","Nicaragua"],["🇳🇪","Niger"],["🇳🇬","Nigeria"],["🇲🇰","North Macedonia"],["🇳🇴","Norway"],
+      ["🇵🇰","Pakistan"],["🇵🇼","Palau"],["🇵🇦","Panama"],["🇵🇬","Papua New Guinea"],["🇵🇾","Paraguay"],
+      ["🇵🇪","Peru"],["🇵🇭","Philippines"],["🇵🇱","Poland"],["🇵🇹","Portugal"],["🇶🇦","Qatar"],
+      ["🇷🇴","Romania"],["🇷🇼","Rwanda"],["🇰🇳","Saint Kitts and Nevis"],["🇱🇨","Saint Lucia"],
+      ["🇻🇨","Saint Vincent and the Grenadines"],["🇼🇸","Samoa"],["🇸🇲","San Marino"],["🇸🇹","Sao Tome and Principe"],
+      ["🇸🇦","Saudi Arabia"],["🇸🇳","Senegal"],["🇷🇸","Serbia"],["🇸🇨","Seychelles"],["🇸🇱","Sierra Leone"],
+      ["🇸🇬","Singapore"],["🇸🇰","Slovakia"],["🇸🇮","Slovenia"],["🇸🇧","Solomon Islands"],["🇿🇦","South Africa"],
+      ["🇰🇷","South Korea"],["🇪🇸","Spain"],["🇱🇰","Sri Lanka"],["🇸🇷","Suriname"],["🇸🇪","Sweden"],
+      ["🇨🇭","Switzerland"],["🇹🇼","Taiwan"],["🇹🇯","Tajikistan"],["🇹🇿","Tanzania"],["🇹🇭","Thailand"],
+      ["🇹🇱","Timor-Leste"],["🇹🇬","Togo"],["🇹🇴","Tonga"],["🇹🇹","Trinidad and Tobago"],["🇹🇳","Tunisia"],
+      ["🇹🇷","Turkiye"],["🇹🇻","Tuvalu"],["🇺🇬","Uganda"],["🇺🇦","Ukraine"],["🇦🇪","United Arab Emirates"],
+      ["🇬🇧","United Kingdom"],["🇺🇸","United States"],["🇺🇾","Uruguay"],["🇺🇿","Uzbekistan"],["🇻🇺","Vanuatu"],
+      ["🇻🇦","Vatican City"],["🇻🇪","Venezuela"],["🇻🇳","Vietnam"],["🇾🇪","Yemen"],["🇿🇲","Zambia"],["🇿🇼","Zimbabwe"]
+    ];
+
+    var globe = document.getElementById('globe');
+    var label = document.getElementById('globeLabel');
+    var flagEl = document.getElementById('globeFlag');
+    var nameEl = document.getElementById('globeCountry');
+    if (!globe || !label || !flagEl || !nameEl) return;
+
+    var DOT_COUNT = 42;
+    var dots = [];
+    for (var i = 0; i < DOT_COUNT; i++) {
+      var angle = Math.random() * Math.PI * 2;
+      var radius = Math.sqrt(Math.random()) * 42; // percent, kept inside the circle
+      var x = 50 + radius * Math.cos(angle);
+      var y = 50 + radius * Math.sin(angle);
+      var dot = document.createElement('div');
+      dot.className = 'globe-dot';
+      dot.style.left = x + '%';
+      dot.style.top = y + '%';
+      globe.appendChild(dot);
+      dots.push(dot);
     }
+
+    var activeDot = null;
+    function cycle() {
+      if (activeDot) activeDot.classList.remove('active');
+      activeDot = dots[Math.floor(Math.random() * dots.length)];
+      activeDot.classList.add('active');
+
+      var pick = WORLD_COUNTRIES[Math.floor(Math.random() * WORLD_COUNTRIES.length)];
+      label.classList.add('fading');
+      setTimeout(function () {
+        flagEl.textContent = pick[0];
+        nameEl.textContent = pick[1];
+        label.classList.remove('fading');
+      }, 350);
+    }
+
+    cycle();
+    setInterval(cycle, 2200);
   }());
 
   (function () {

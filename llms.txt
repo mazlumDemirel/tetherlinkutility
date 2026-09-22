@@ -18,7 +18,8 @@
 ## Pages
 - Homepage: https://tetherlinkutility.com/ — product overview, FAQ, setup instructions for Windows/macOS/Android/iOS
 - Turkish homepage: https://tetherlinkutility.com/tr/ — same content, translated for the Turkish market
-- Privacy Policy: https://tetherlinkutility.com/privacy.html
+- Hindi homepage: https://tetherlinkutility.com/hi/ — same content, translated for the Indian market
+- Privacy Policy: https://tetherlinkutility.com/privacy.html (English, Turkish, and Hindi sections on one page, via #en/#tr/#hi anchors)
 - Google Play listing: https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility
 
 ## Blog
@@ -33,6 +34,8 @@
 - https://tetherlinkutility.com/blog/turkcell-hotspot-data-limit.html — tethering quota on Turkcell, Vodafone Turkey, and Türk Telekom
 - https://tetherlinkutility.com/blog/turk-telekom-hotspot-data-limit.html — Türk Telekom's "paylaşım kotası" tethering allowance and how it's detected
 - https://tetherlinkutility.com/blog/nobody-reads-the-contract.html — opinion piece on hidden contract terms and hotspot data caps as a global pattern, with regulatory examples from the EU, India, Brazil, and the US
+
+All posts above are also available translated in full: Turkish (https://tetherlinkutility.com/tr/blog/) and Hindi (https://tetherlinkutility.com/hi/blog/), same filenames under each language's `/blog/` path.
 
 ## Contact
 support@tetherlinkutility.com
