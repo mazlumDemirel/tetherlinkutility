@@ -55,6 +55,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://tetherlinkutility.com/blog/us-cellular-hotspot-data-cap.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://tetherlinkutility.com/blog/att-hotspot-throttling.html</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -272,6 +278,18 @@
   </url>
   <url>
     <loc>https://tetherlinkutility.com/hi/blog/iphone-hotspot-limit-bypass.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tetherlinkutility.com/tr/blog/us-cellular-hotspot-data-cap.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tetherlinkutility.com/hi/blog/us-cellular-hotspot-data-cap.html</loc>
     <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
