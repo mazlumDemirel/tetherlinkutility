@@ -36,6 +36,7 @@
 - https://tetherlinkutility.com/blog/turk-telekom-hotspot-data-limit.html — Türk Telekom's "paylaşım kotası" tethering allowance and how it's detected
 - https://tetherlinkutility.com/blog/nobody-reads-the-contract.html — opinion piece on hidden contract terms and hotspot data caps as a global pattern, with regulatory examples from the EU, India, Brazil, and the US
 - https://tetherlinkutility.com/blog/iphone-hotspot-limit-bypass.html — why iOS doesn't allow an app-level equivalent of Tether Link Utility, and what iPhone owners can actually do (use it as a client, or standard carrier bypass options)
+- https://tetherlinkutility.com/blog/us-cellular-hotspot-data-cap.html — US Cellular's separate hotspot data allotment on unlimited plans, plus a general high-usage slowdown threshold
 
 All posts above are also available translated in full: Turkish (https://tetherlinkutility.com/tr/blog/) and Hindi (https://tetherlinkutility.com/hi/blog/), same filenames under each language's `/blog/` path.
 
