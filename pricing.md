@@ -12,4 +12,4 @@
 
 Purchased and managed through Google Play Billing on the Android app. No web checkout, no custom/enterprise tier currently offered.
 
-Prices above are shown in USD as a reference point. Google Play converts and displays the actual charge in each buyer's local currency, so the exact local-currency amount can differ slightly from a direct USD conversion.
+Prices above are a USD reference point, not a universal price. Actual pricing is set per country in Google Play and varies by market, some countries use a straight currency conversion, others are set independently to reflect local purchasing power, so the local-currency price a buyer sees can differ meaningfully from a direct USD conversion. Check the Google Play listing in your own country for the exact price.
