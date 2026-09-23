@@ -11,3 +11,5 @@
 - Features: Everything in Free, plus no speed limit and no advertising
 
 Purchased and managed through Google Play Billing on the Android app. No web checkout, no custom/enterprise tier currently offered.
+
+Prices above are shown in USD as a reference point. Google Play converts and displays the actual charge in each buyer's local currency, so the exact local-currency amount can differ slightly from a direct USD conversion.
