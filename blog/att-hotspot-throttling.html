@@ -90,6 +90,31 @@
     .nav-links { display: flex; gap: 28px; }
     .nav-links a { color: var(--muted); font-size: 14px; }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    .lang-dropdown { position: relative; }
+    .lang-dropdown-toggle {
+      display: flex; align-items: center; gap: 6px;
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 14px; font-family: inherit; padding: 0;
+    }
+    .lang-dropdown-toggle:hover { color: var(--text); }
+    .lang-dropdown-toggle svg { transition: transform 0.2s ease; }
+    .lang-dropdown.is-open .lang-dropdown-toggle svg { transform: rotate(180deg); }
+    .lang-dropdown-menu {
+      position: absolute; top: calc(100% + 14px); right: 0;
+      background: var(--surface); border: 1px solid var(--border-md); border-radius: 10px;
+      padding: 6px; min-width: 140px;
+      display: none; flex-direction: column;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.5);
+      z-index: 20;
+    }
+    .lang-dropdown.is-open .lang-dropdown-menu { display: flex; }
+    .lang-dropdown-menu a {
+      padding: 8px 12px; border-radius: 6px; font-size: 14px; color: var(--muted);
+      white-space: nowrap;
+    }
+    .lang-dropdown-menu a:hover { background: var(--elevated); color: var(--text); text-decoration: none; }
+    .lang-dropdown-menu a.is-current { color: var(--accent); font-weight: 600; }
     main { max-width: 720px; margin: 0 auto; padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px) clamp(80px, 10vw, 120px); }
     .page-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
     h1 { font-size: clamp(30px, 4.5vw, 42px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
@@ -138,6 +163,17 @@
     <a href="/">Home</a>
     <a href="/#faq">FAQ</a>
     <a href="/blog/">Blog</a>
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-dropdown-toggle" id="langDropdownToggle" aria-haspopup="true" aria-expanded="false" aria-controls="langDropdownMenu">
+        <span>English</span>
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 3.5L5 7l3.5-3.5"/></svg>
+      </button>
+      <div class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
+        <a href="https://tetherlinkutility.com/blog/att-hotspot-throttling.html" class="is-current" role="menuitem">English</a>
+        <a href="https://tetherlinkutility.com/tr/blog/att-hotspot-throttling.html" role="menuitem">Türkçe</a>
+        <a href="https://tetherlinkutility.com/hi/blog/att-hotspot-throttling.html" role="menuitem">हिन्दी</a>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -196,5 +232,25 @@
   </div>
 </footer>
 
+
+<script>
+  (function () {
+    var dropdown = document.getElementById('langDropdown');
+    var langToggle = document.getElementById('langDropdownToggle');
+    if (!dropdown || !langToggle) return;
+    langToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !dropdown.classList.contains('is-open');
+      dropdown.classList.toggle('is-open', open);
+      langToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('is-open');
+        langToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }());
+</script>
 </body>
 </html>
