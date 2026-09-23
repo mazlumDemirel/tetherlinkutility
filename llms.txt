@@ -20,6 +20,7 @@
 - Turkish homepage: https://tetherlinkutility.com/tr/ — same content, translated for the Turkish market
 - Hindi homepage: https://tetherlinkutility.com/hi/ — same content, translated for the Indian market
 - Privacy Policy: https://tetherlinkutility.com/privacy.html (English, Turkish, and Hindi sections on one page, via #en/#tr/#hi anchors)
+- Pricing (structured, machine-readable): https://tetherlinkutility.com/pricing.md
 - Google Play listing: https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility
 
 ## Blog
