@@ -323,6 +323,7 @@
     }
     .pill-accent { color: var(--accent); background: rgba(232,98,42,0.08); border: 1px solid rgba(232,98,42,0.3); }
     .pill-muted { color: var(--muted); border: 1px solid var(--border-md); }
+    .keep-case { text-transform: none; }
 
     h1 {
       font-size: clamp(40px, 6vw, 64px);
@@ -669,7 +670,7 @@
 <main>
   <section class="hero wrap">
     <div class="hero-content">
-      <div class="hero-pills"><span class="pill pill-accent">Android</span><span class="pill pill-muted">iOS çok yakında</span></div>
+      <div class="hero-pills"><span class="pill pill-accent">Android</span><span class="pill pill-muted"><span><span class="keep-case">iOS</span> çok yakında</span></span></div>
       <h1>Telefonunuzun mobil verisi, <span>tüm cihazlarınızda.</span></h1>
       <p class="hero-body">Tether Link Utility, Android telefonunuzda yerel bir SOCKS5 proxy çalıştırır ve bunu Wi-Fi hotspot üzerinden paylaşır; böylece dizüstü bilgisayarınız, tabletiniz veya başka bir telefon mobil verinizi kullanabilir. Her şey cihazınızda çalışır.</p>
       <div class="hero-actions">
