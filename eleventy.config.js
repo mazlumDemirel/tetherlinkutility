@@ -35,6 +35,18 @@ export default function (eleventyConfig) {
     return [...items].filter((p) => val(p) !== undefined).sort((a, b) => val(a) - val(b));
   });
 
+  // sitemap.xml entries: every page with `sitemap` front matter, plus files listed in
+  // src/_data/sitemapExtra.json (for passthrough files such as pricing.md), sorted by `order`.
+  // Pages without an `order` go last, sorted by URL.
+  eleventyConfig.addFilter("sitemapEntries", (pages, extra) => {
+    const entries = pages
+      .filter((p) => p.data.sitemap)
+      .map((p) => ({ url: p.url, ...p.data.sitemap }))
+      .concat(extra || []);
+    const key = (e) => (e.order === undefined ? Infinity : e.order);
+    return entries.sort((a, b) => key(a) - key(b) || a.url.localeCompare(b.url));
+  });
+
   // Human-readable dates for the blog index cards, e.g. "September 25, 2026",
   // "25 Eylül 2026", "25 सितंबर, 2026".
   const MONTHS = {
