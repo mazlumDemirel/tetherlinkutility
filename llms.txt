@@ -25,7 +25,7 @@
 - Pricing (structured, machine-readable): https://tetherlinkutility.com/pricing.md
 - Google Play listing: https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility
 
-## Guides (blog)
+## Blog
 - https://tetherlinkutility.com/blog/share-mobile-data-android-to-android-qr.html : Share Mobile Data From Android to Android With a QR Code: how QR-based setup connects a second Android phone to the host phone's local proxy
 - https://tetherlinkutility.com/blog/android-socks5-proxy-server.html : Android SOCKS5 Proxy Server: What It Is and How to Use It: how a SOCKS5 proxy on an Android phone works and how Windows, macOS, iOS and Android clients connect
 - https://tetherlinkutility.com/blog/best-ways-to-bypass-hotspot-throttling.html : 5 Ways to Share Your Phone's Internet With a Laptop (2026): Wi-Fi hotspot, USB, Bluetooth, SOCKS5 proxy app and dedicated device compared
