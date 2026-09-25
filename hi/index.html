@@ -187,7 +187,7 @@
         "name": "क्या यह iPhone पर काम करता है?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "iOS में native SOCKS5 सेटिंग नहीं होती, लेकिन Shadowrocket या Potatso जैसे ऐप्स उसी तरह प्रॉक्सी से कनेक्ट हो सकते हैं, सिर्फ उस ऐप के अपने ट्रैफ़िक के लिए, पूरे डिवाइस के लिए नहीं। iOS पर फिलहाल कोई सत्यापित फुल-डिवाइस विकल्प उपलब्ध नहीं है।"
+          "text": "iOS में native SOCKS5 सेटिंग नहीं होती, लेकिन Shadowrocket या Potatso जैसे ऐप्स उसी तरह प्रॉक्सी से कनेक्ट हो सकते हैं, सिर्फ उस ऐप के अपने ट्रैफ़िक के लिए, पूरे डिवाइस के लिए नहीं। iOS पर फिलहाल कोई सत्यापित फुल-डिवाइस विकल्प उपलब्ध नहीं है। iOS के लिए एक नेटिव ऐप बनाया जा रहा है और जल्द ही उपलब्ध होगा।"
         }
       },
       {
@@ -401,6 +401,20 @@
     .play-badge .pb-text { display: flex; flex-direction: column; line-height: 1.1; }
     .play-badge .pb-eyebrow { font-size: 12px; color: #d0d0d0; letter-spacing: 0.02em; }
     .play-badge .pb-word { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+
+    /* ── iOS coming-soon badge ───────────── */
+    .ios-soon-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: #000; color: #fff;
+      border: 1px dashed #4a4a4a;
+      padding: 14px 24px; border-radius: 14px;
+      opacity: 0.8; cursor: default; user-select: none;
+    }
+    .ios-soon-badge .pb-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .ios-soon-badge .pb-eyebrow { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 0.04em; }
+    .ios-soon-badge .pb-word { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+    .cta-strip .ios-soon-badge { margin-left: 12px; }
+    @media (max-width: 520px) { .cta-strip .ios-soon-badge { margin: 12px 0 0; } }
 
     /* ── Hotspot cap callout ─────────────── */
     .cap-callout {
@@ -843,6 +857,7 @@
             <span class="pb-word">Google Play</span>
           </span>
         </a>
+        <div class="ios-soon-badge" role="img" aria-label="iOS वर्ज़न जल्द आ रहा है" title="iOS वर्ज़न जल्द आ रहा है"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.51 2.68-1.27z"/></svg><span class="pb-text"><span class="pb-eyebrow">जल्द आ रहा है</span><span class="pb-word">App Store</span></span></div>
         <a href="/privacy.html#hi" class="btn-ghost">प्राइवेसी पॉलिसी</a>
       </div>
       <p class="hero-trust">इंस्टॉल करना मुफ़्त &middot; कोई अकाउंट नहीं &middot; कोई रिमोट सर्वर नहीं</p>
@@ -1058,7 +1073,7 @@
 
     <details class="faq-item">
       <summary>क्या यह iPhone पर काम करता है?</summary>
-      <p>iOS में native SOCKS5 सेटिंग नहीं होती, लेकिन Shadowrocket या Potatso जैसे ऐप्स उसी तरह प्रॉक्सी से कनेक्ट हो सकते हैं, सिर्फ उस ऐप के ट्रैफ़िक के लिए। iOS पर फिलहाल कोई सत्यापित फुल-डिवाइस विकल्प नहीं है।</p>
+      <p>iOS में native SOCKS5 सेटिंग नहीं होती, लेकिन Shadowrocket या Potatso जैसे ऐप्स उसी तरह प्रॉक्सी से कनेक्ट हो सकते हैं, सिर्फ उस ऐप के ट्रैफ़िक के लिए। iOS पर फिलहाल कोई सत्यापित फुल-डिवाइस विकल्प नहीं है। iOS के लिए एक नेटिव ऐप बनाया जा रहा है और जल्द ही उपलब्ध होगा।</p>
     </details>
 
     <details class="faq-item">
@@ -1102,6 +1117,7 @@
         <span class="pb-word">Google Play</span>
       </span>
     </a>
+    <div class="ios-soon-badge" role="img" aria-label="iOS वर्ज़न जल्द आ रहा है" title="iOS वर्ज़न जल्द आ रहा है"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.51 2.68-1.27z"/></svg><span class="pb-text"><span class="pb-eyebrow">जल्द आ रहा है</span><span class="pb-word">App Store</span></span></div>
   </section>
 </main>
 
