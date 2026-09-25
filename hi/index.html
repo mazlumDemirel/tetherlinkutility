@@ -357,6 +357,7 @@
     }
     .pill-accent { color: var(--accent); background: rgba(232,98,42,0.08); border: 1px solid rgba(232,98,42,0.3); }
     .pill-muted { color: var(--muted); border: 1px solid var(--border-md); }
+    .keep-case { text-transform: none; }
 
     h1 {
       font-size: clamp(40px, 6vw, 64px);
@@ -703,7 +704,7 @@
 <main>
   <section class="hero wrap">
     <div class="hero-content">
-      <div class="hero-pills"><span class="pill pill-accent">Android</span><span class="pill pill-muted">iOS जल्द आ रहा है</span></div>
+      <div class="hero-pills"><span class="pill pill-accent">Android</span><span class="pill pill-muted"><span><span class="keep-case">iOS</span> जल्द आ रहा है</span></span></div>
       <h1>आपके फ़ोन का मोबाइल डेटा, <span>हर डिवाइस पर।</span></h1>
       <p class="hero-body">Tether Link Utility आपके Android फ़ोन पर एक लोकल SOCKS5 प्रॉक्सी चलाता है और उसे Wi-Fi हॉटस्पॉट पर शेयर करता है, ताकि आपका लैपटॉप, टैबलेट या दूसरा फ़ोन आपका मोबाइल डेटा इस्तेमाल कर सके। सब कुछ आपके डिवाइस पर चलता है।</p>
       <div class="hero-actions">
