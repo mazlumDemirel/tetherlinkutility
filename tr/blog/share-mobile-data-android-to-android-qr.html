@@ -219,9 +219,12 @@
     <p><strong>socks5://IP:PORT?ssid=AĞ_ADI&amp;pass=ŞİFRE#TetherLink</strong></p>
     <p>Hotspot WPA3 kullanıyorsa sona <strong>&amp;sec=wpa3</strong> eklenir. Aynı metin QR kodun altında da yazılıdır; böylece kod okutamayan bir cihazda değerleri elle girebilirsiniz. QR kod Wi-Fi şifresini de içerdiği için onu yalnızca bağlantınızı paylaşmak istediğiniz kişilere gösterin.</p>
 
+    <h2>Telefonunuzun kendi hotspot'unu kullanmak</h2>
+    <p>Hotspot'u uygulamanın başlatması yerine telefonunuzun sistem hotspot'unu kendiniz açıyorsanız (Android'de Mobil Hotspot, iPhone'da Kişisel Erişim Noktası), uygulamada <strong>WI-FI</strong> seçeneğine dokunup hotspot'un adını ve şifresini bir kez kaydedin. Bu bilgiler yalnızca cihazınızda saklanır ve uygulama hotspot'unuzu değiştirmez. Bilgiler QR koda eklenir, böylece diğer cihazlar kodu tarayarak ağa katılabilir. iPhone'da şifre <strong>Ayarlar &gt; Kişisel Erişim Noktası</strong> bölümündedir. Android uygulaması hotspot'u otomatik olarak kendisi başlattığında bu adımı atlayabilirsiniz.</p>
+
     <h2>Sorun giderme</h2>
     <ul>
-      <li><strong>Sunucu başlamıyor.</strong> Konum iznini (Android 13 ve üstünde yakındaki Wi-Fi cihazları iznini) kontrol edin ve telefonun normal Wi-Fi hotspot'u açıksa kapatın. Bazı telefonlar ikisini aynı anda çalıştıramaz.</li>
+      <li><strong>Sunucu başlamıyor.</strong> Konum iznini (Android 13 ve üstünde yakındaki Wi-Fi cihazları iznini) kontrol edin. Telefonun normal Mobil Hotspot'u zaten açıksa uygulama kendi hotspot'unu başlatamaz ve sunucuyu bunun yerine normal hotspot üzerinden çalıştırır. Normal hotspot'u kapatıp uygulamanın kendi hotspot'unu oluşturmasına izin verebilir ya da açık bırakıp ağ adını ve şifresini <strong>WI-FI</strong> bölümüne bir kez kaydedebilirsiniz; böylece bu bilgiler QR koda eklenir.</li>
       <li><strong>İstemci Wi-Fi ağına katılmıyor.</strong> Ağı onaylamanızı isteyen bir sistem penceresi veya bildirimi arayın. Kapattıysanız QR kodu tekrar okutun.</li>
       <li><strong>İstemci Android 9 veya daha eski.</strong> Otomatik katılma bu sürümlerde yok. QR metnindeki ağ adı ve şifreyle Wi-Fi ağına elle bağlanın, ardından kodu okutun ya da IP ve portu girin.</li>
       <li><strong>Önce çalışıyordu, sonra durdu.</strong> Hotspot yeniden başladığında sunucu telefonun IP adresi değişebilir. Uygulama bu durumda bir uyarı gösterir. Yeni QR kodu açıp tekrar okutun.</li>
