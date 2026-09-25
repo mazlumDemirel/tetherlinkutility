@@ -24,8 +24,8 @@
   <link rel="alternate" hreflang="tr" href="https://tetherlinkutility.com/tr/" />
   <link rel="alternate" hreflang="hi" href="https://tetherlinkutility.com/hi/" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/" />
-  <title>Tether Link Utility: Operatör Hotspot Veri Sınırlarını ve Hız Kısıtlamasını Aşın</title>
-  <meta name="description" content="Android telefonunuzun mobil verisini operatörünüzün hotspot kotasını kullanmadan paylaşın. Yerel SOCKS5 proxy, root gerekmez, uzak sunucu yok.">
+  <title>Tether Link Utility: Mobil Veriyi Wi-Fi ile Paylaşın, Hotspot Kotalı Paketlerde Bile</title>
+  <meta name="description" content="Android telefonunuzun mobil verisini Wi-Fi üzerinden diğer cihazlarınızla paylaşın. Telefonunuzda yerel bir SOCKS5 proxy çalışır, root gerekmez, hesap yok, uzak sunucu yok.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
@@ -36,16 +36,16 @@
   <meta property="og:url" content="https://tetherlinkutility.com/tr/">
   <meta property="og:locale" content="tr_TR">
   <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:title" content="Tether Link Utility: Operatör Hotspot Veri Sınırlarını Aşın">
-  <meta property="og:description" content="Birçok operatör, hotspot verisini ana paketinizden ayrı olarak sınırlar veya hız keser. Tether Link Utility bunu ayrı bir kota veya hız kısıtlaması olmadan paylaşmanızı sağlar.">
+  <meta property="og:title" content="Tether Link Utility: Mobil Veriyi Wi-Fi ile Paylaşın, Hotspot Kotalı Paketlerde Bile">
+  <meta property="og:description" content="Telefonunuzun mobil verisini dizüstü bilgisayarınız, tabletiniz veya başka bir telefonla Wi-Fi üzerinden paylaşın. Android cihazınızda yerel SOCKS5 proxy, root yok, hesap yok, uzak sunucu yok.">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@tetherlinkutili">
-  <meta name="twitter:title" content="Tether Link Utility: Operatör Hotspot Veri Sınırlarını Aşın">
-  <meta name="twitter:description" content="Birçok operatör hotspot verisini ana paketinizden ayrı sınırlar. Tether Link Utility bunu aşmanıza yardımcı olur.">
+  <meta name="twitter:title" content="Tether Link Utility: Mobil Veriyi Wi-Fi ile Paylaşın, Hotspot Kotalı Paketlerde Bile">
+  <meta name="twitter:description" content="Telefonunuzun mobil verisini Wi-Fi üzerinden diğer cihazlarınızla paylaşın. Yerel SOCKS5 proxy, root yok, uzak sunucu yok.">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
   <script type="application/ld+json">
@@ -56,20 +56,35 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Android",
     "url": "https://tetherlinkutility.com/",
-    "description": "Android telefonunuzun mobil verisini yerel bir SOCKS5 proxy üzerinden diğer cihazlarla paylaştırır, operatör hotspot hız kısıtlamasını ve ayrı hotspot veri sınırlarını aşmaya yardımcı olur.",
+    "description": "Android telefonunuzun mobil verisini yerel bir SOCKS5 proxy ile Wi-Fi üzerinden diğer cihazlarınızla paylaştırır. Root yok, hesap yok, uzak sunucu yok.",
     "featureList": [
-      "Operatör hotspot veri sınırlarını ve hız kısıtlamasını aşar",
+      "Mobil veriyi dizüstü bilgisayar, tablet ve telefonlarla Wi-Fi üzerinden paylaşma",
       "Ücretsiz katman root gerektirmeden en fazla 2 cihazla bağlantı paylaşır",
       "Uzak sunucu yok, tüm proxy trafiği cihaz üzerinde yerel olarak yönlendirilir",
       "Android cihazlar arasında tek dokunuşla otomatik hotspot ve Wi-Fi bağlantısı",
       "Anında bağlantı için QR kod kurulumu",
       "Windows, macOS ve iOS istemcileri için SOCKS5 proxy desteği"
     ],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Ücretsiz",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro (aylık)",
+        "price": "2.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro (yıllık)",
+        "price": "12.99",
+        "priceCurrency": "USD"
+      }
+    ]
   }
   </script>
 
@@ -80,10 +95,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Tether Link Utility hotspot sınırlarını nasıl aşıyor?",
+        "name": "Tether Link Utility nasıl çalışır?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Wi-Fi hotspot üzerinden paylaşılan trafiği (USB kablo değil), Android'in VpnService API'si üzerinden yerel bir SOCKS5 proxy'den geçirir; bu da yaygın operatör hotspot kısıtlamalarının bazılarını aşmaya yardımcı olur."
+          "text": "Android telefonunuzda, Android'in VpnService API'sini kullanarak yerel bir SOCKS5 proxy çalıştırır ve bunu telefonun Wi-Fi hotspot'u üzerinden paylaşır (USB kablo yok). Diğer cihazlarınız trafiklerini bu proxy'ye gönderir, telefon da bunu mobil veri bağlantısı üzerinden iletir. Arada uzak bir sunucu yoktur."
         }
       },
       {
@@ -99,7 +114,7 @@
         "name": "Uzak bir sunucu kullanıyor mu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hayır, her şey cihazınızda yerel olarak çalışır; hiçbir trafik donanım zincirinizden çıkmaz veya kaydedilmez."
+          "text": "Hayır. Proxy trafiği cihazlarınızdan telefonunuza, oradan mobil verinize gider; sunucularımızdan geçirilmez, kaydedilmez veya saklanmaz. Ücretsiz sürüm Google AdMob reklamları gösterir ve uygulama Firebase Analytics ile Crashlytics kullanır; bunlar gizlilik politikamızda açıklandığı gibi cihaz tanımlayıcıları ile kullanım ve çökme verilerini toplar."
         }
       },
       {
@@ -115,7 +130,7 @@
         "name": "SOCKS5 proxy ayarı tüm trafiğimi korur mu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tam olarak değil. Bir tarayıcı ya da sistem SOCKS5 ayarı, sadece bu ayarı kontrol eden uygulamaların trafiğini yönlendirir, DNS sorguları ve diğer arka plan trafiği düz hotspot bağlantısından korumasız çıkabilir, ana gezinme trafiğiniz sorunsuz çalışsa bile bazı operatörler bunu tespit edebilir. Windows veya macOS'ta gerçek anlamda tam kapsama için, tüm sistem trafiğinizi (DNS dahil) tünelden geçiren sing-box'ı TUN modunda çalıştırın."
+          "text": "Tam olarak değil. Bir tarayıcı ya da sistem SOCKS5 ayarı sadece bu ayarı kontrol eden uygulamaların trafiğini yönlendirir; DNS sorguları ve diğer arka plan trafiği proxy yerine düz hotspot bağlantısından gidebilir. Windows veya macOS'ta tam kapsama için sing-box'ı TUN modunda çalıştırın, tüm sistem trafiğinizi, DNS dahil, tünelden geçirir."
         }
       },
       {
@@ -131,7 +146,7 @@
         "name": "Aynı anda kaç cihaz bağlanabilir?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ücretsiz katman 2 cihaz bağlar; Pro bunu aynı anda 5 cihaza çıkarır."
+          "text": "Ücretsiz katman aynı anda 2 cihaza kadar bağlar; Pro bunu 5 cihaza çıkarır. Pro ayda $2.99 veya yılda $12.99'dur (USD), fiyatlar ülkeye göre değişebilir."
         }
       },
       {
@@ -147,15 +162,15 @@
         "name": "Tether Link Utility sınırsız veri paketleriyle çalışıyor mu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evet. Birçok 'sınırsız' paket hâlâ hotspot/tethering trafiğini cihaz üzerindeki veriden ayrı olarak sınırlar veya hız keser. Tether Link Utility bu ayrı hotspot kısıtlamasını aşmaya yardımcı olur."
+          "text": "Telefonunuzdaki mobil veri bağlantısını, paketiniz ne olursa olsun paylaşır. Ancak birçok \"sınırsız\" pakette hotspot ve tethering için ayrı kurallar veya kotalar bulunur; kullanmadan önce paketinizi ve operatörünüzün koşullarını kontrol edin."
         }
       },
       {
         "@type": "Question",
-        "name": "Operatörüm tethering kullandığımı biliyor mu?",
+        "name": "Paketimde tethering kullanmama izin var mı?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Operatörler tethering'i genellikle izin isteyerek değil, trafiğin hat üzerinde nasıl göründüğüne bakarak tespit eder. Trafiği yerel bir proxy üzerinden geçirmek bu trafik desenini değiştirir, bu da Tether Link Utility'nin yaygın hotspot kısıtlamalarını aşmaya yardımcı olma şeklidir."
+          "text": "Bu, operatörünüze ve paketinize bağlıdır. Tether Link Utility paketinizin koşullarını değiştirmez ve bazı operatörler tethering'i sınırlar veya izin vermez. Kullanmadan önce paketinizi ve operatörünüzün kullanım koşullarını kontrol edin."
         }
       },
       {
@@ -163,7 +178,7 @@
         "name": "Bu ücretsiz, sınırsız bir hotspot uygulaması mı?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ücretsiz katman reklamlı olarak aynı anda 2 cihaza kadar bağlanır, kullanımı ücretsizdir ama cihaz sayısında tam anlamıyla sınırsız değildir. Pro, reklamları kaldırır ve sınırı 5 cihaza çıkarır. Her iki durumda da ayrı bir hotspot veri sınırı veya hız kısıtlaması yoktur, kendi mobil veri paketinizi paylaşırsınız."
+          "text": "Ücretsiz katman reklamlı olarak aynı anda 2 cihaza kadar bağlanır; kullanımı ücretsizdir ama cihaz sayısında sınırsız değildir. Pro reklamları kaldırır ve sınırı 5 cihaza çıkarır. Uygulamanın kendisi şu anda bir hız sınırı eklemiyor; gerçek hız operatörünüze, paketinize ve sinyale bağlıdır."
         }
       }
     ]
@@ -174,12 +189,28 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Tether Link Utility ile operatör hotspot hız kısıtlaması nasıl aşılır",
+    "name": "Tether Link Utility ile telefonun mobil verisi Wi-Fi üzerinden nasıl paylaşılır",
     "step": [
-      { "@type": "HowToStep", "name": "SUNUCUYU BAŞLAT'a dokunun", "text": "Wi-Fi hotspot otomatik olarak açılır. Uygulama yerel bir SOCKS5 proxy tüneli oluşturur ve bağlantı bilgilerini gösterir." },
-      { "@type": "HowToStep", "name": "QR kodu gösterin", "text": "Bir QR kod, Wi-Fi ağını ve proxy adresini birlikte taşır. Ağ adı ve şifresi dizüstü bilgisayarlar için düz metin olarak da gösterilir." },
-      { "@type": "HowToStep", "name": "Cihazınızı bağlayın", "text": "Android: QR kodu tarayın, Wi-Fi ve proxy otomatik bağlanır. Windows / macOS / iOS: gösterilen Wi-Fi'a katılın, ardından SOCKS5 proxy ayarlarınıza IP ve portu girin." },
-      { "@type": "HowToStep", "name": "Özgürce gezinin", "text": "Trafik mobil verinizden geçer. Operatör hız kısıtlaması yok, uzak sunucu yok, donanımınızdan hiçbir şey çıkmaz." }
+      {
+        "@type": "HowToStep",
+        "name": "SUNUCUYU BAŞLAT'a dokunun",
+        "text": "Wi-Fi hotspot otomatik olarak açılır. Uygulama yerel bir SOCKS5 proxy tüneli oluşturur ve bağlantı bilgilerini gösterir."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "QR kodu gösterin",
+        "text": "Bir QR kod, Wi-Fi ağını ve proxy adresini birlikte taşır. Ağ adı ve şifresi dizüstü bilgisayarlar için düz metin olarak da gösterilir."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Cihazınızı bağlayın",
+        "text": "Android: QR kodu tarayın, Wi-Fi ve proxy otomatik bağlanır. Windows / macOS / iOS: gösterilen Wi-Fi'a katılın, ardından SOCKS5 proxy ayarlarınıza IP ve portu girin."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Gezinmeye başlayın",
+        "text": "Bağlı cihazlar, yerel proxy üzerinden telefonunuzun mobil verisini kullanır. Arada uzak sunucu yok: trafik cihazlarınızdan telefonunuza, oradan mobil bağlantınıza gider."
+      }
     ]
   }
   </script>
@@ -595,6 +626,13 @@
       display: flex; flex-wrap: wrap; justify-content: center;
       align-items: center; gap: 20px;
     }
+    .badge-pill {
+      display: inline-flex; align-items: center;
+      padding: 8px 16px; border: 1px solid var(--border); border-radius: 999px;
+      font-size: 14px; font-weight: 600; color: var(--text); text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .badge-pill:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 
     .steps {
       display: grid;
@@ -614,7 +652,7 @@
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
     .feature {
@@ -708,6 +746,13 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+    /* ── Pricing + mascot caption ────────── */
+    @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
+    .feature .price { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+    .price-note { font-size: 12px; color: var(--dim); margin-top: 14px; }
+    .footer-mascots { flex-direction: column; align-items: center; gap: 6px; }
+    .footer-mascots-imgs { display: flex; justify-content: center; gap: 14px; }
+    .footer-mascots-caption { font-size: 12px; color: var(--dim); text-align: center; }
   </style>
 </head>
 <body>
@@ -754,13 +799,13 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="dot"></span>Android Uygulaması</div>
-      <h1>Operatör Hotspot Veri Sınırlarını Aşın</h1>
-      <p class="hero-tagline">Hotspot trafiği,<br><span>sınır yok.</span></p>
+      <h1>Telefonunuzun Mobil Verisini Wi-Fi ile Paylaşın, Hotspot Kotalı Paketlerde Bile</h1>
+      <p class="hero-tagline">Telefonunuzun verisi,<br><span>tüm cihazlarınızda.</span></p>
       <p class="hero-body">
-        Tether Link Utility, Android cihazınızda yerel bir SOCKS5 proxy çalıştırır ve bunu
-        <strong>Wi-Fi hotspot</strong> üzerinden paylaşır (USB kablo değil); bağlı bilgisayarlar
-        ve telefonlar trafiği mobil verinizden geçirir, uzak bir sunucuya dokunmadan operatör
-        hotspot veri sınırını ve hız kısıtlamasını aşar.
+        Tether Link Utility, Android telefonunuzda yerel bir SOCKS5 proxy çalıştırır ve bunu
+        <strong>Wi-Fi hotspot</strong> üzerinden paylaşır (USB kablo değil); böylece dizüstü
+        bilgisayarınız, tabletiniz veya başka bir telefon mobil verinizi kullanabilir. Trafik
+        cihazlarınızdan telefonunuza, oradan da mobil bağlantınıza gider, arada uzak bir sunucu yoktur.
       </p>
       <div class="hero-actions">
         <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="play-badge" aria-label="Google Play'den indirin">
@@ -803,7 +848,7 @@
 
   <section class="video-showcase">
     <div class="hero-eyebrow"><span class="dot"></span>Uygulamayı görün</div>
-    <h2>Hotspot sınırını nasıl aştığını izleyin</h2>
+    <h2>Kısa tanıtımı izleyin</h2>
     <div class="video-frame video-facade" data-yt-id="8T_M4cgN8_E" role="button" tabindex="0" aria-label="Tanıtım videosunu oynat">
       <img src="https://img.youtube.com/vi/8T_M4cgN8_E/hqdefault.jpg" alt="Tanıtım videosu önizlemesi" loading="lazy" width="480" height="360" />
       <span class="video-facade-play" aria-hidden="true">
@@ -823,14 +868,13 @@
         ABD'de (Verizon, AT&amp;T ve T-Mobile dahil), Hindistan'da (Jio, Airtel, Vi), Türkiye'de
         (Turkcell, Vodafone, Türk Telekom) ve Avrupa'nın bazı bölgelerinde birçok operatör,
         "sınırsız" olarak pazarlanan paketlerde bile hotspot (paylaşım) trafiğini normal
-        verinizden ayrı olarak sınırlandırır veya hız keser. Bunu, paketinizden ne kadar
-        kullandığınıza bakarak değil, trafiğin hat üzerinde nasıl göründüğüne bakarak tespit ederler.
+        verinizden ayrı olarak sınırlandırır veya hız keser.
       </p>
       <p style="margin-top: 12px;">
-        Tether Link Utility, her şeyi cihazın kendisindeki yerel bir proxy üzerinden yönlendirir,
-        bu da yaygın operatör hotspot tespit yöntemlerini aşmasına yardımcı olur.
-        Tükenecek ayrı bir hotspot kotası yok.
-        <a href="/tr/blog/understanding-carrier-hotspot-throttling.html">Operatör hotspot tespitinin nasıl çalıştığını okuyun &rarr;</a>
+        Tether Link Utility, bağlantınızı telefonunuzdaki yerel bir SOCKS5 proxy ile, telefonun
+        kendi Wi-Fi hotspot'u üzerinden paylaşır. Uzak sunucu yok, hesap yok. Hotspot ve tethering
+        kuralları paketten pakete değişir; kullanmadan önce paketinizi ve operatörünüzün koşullarını kontrol edin.
+        <a href="/tr/blog/understanding-carrier-hotspot-throttling.html">Operatör hotspot sınırlarının nasıl işlediğini okuyun &rarr;</a>
       </p>
       <div class="countries-inline">
         <span class="country-pill">🇺🇸 Amerika Birleşik Devletleri</span>
@@ -857,9 +901,9 @@
       </div>
       <div class="cap-row">
         <span class="label">Tether Link Utility</span>
-        <span class="value ok">Tam hız, daha az ücretle</span>
+        <span class="value ok">Ücretsiz, Pro ayda $2.99**</span>
       </div>
-      <p style="font-size:11px; color:var(--dim); margin-top:14px;">*Verizon'un kendi sınırsız hotspot ek paketi fiyatı, Eylül 2026'da kontrol edilmiştir, operatör fiyatları değişebilir.</p>
+      <p style="font-size:11px; color:var(--dim); margin-top:14px;">*Verizon'un kendi sınırsız hotspot ek paketi fiyatı, Eylül 2026'da kontrol edilmiştir, operatör fiyatları değişebilir.<br>**USD referans fiyatı, ülkeye göre değişebilir. Paketinizin koşulları yine geçerlidir.</p>
       <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Google Play'den İndirin</a>
     </div>
   </section>
@@ -886,8 +930,8 @@
         </div>
         <div class="step">
           <div class="step-num">ADIM 04</div>
-          <h3>Özgürce gezinin</h3>
-          <p>Trafik mobil verinizden geçer. Operatör hız kısıtlaması yok, uzak sunucu yok, donanımınızdan hiçbir şey çıkmaz.</p>
+          <h3>Gezinmeye başlayın</h3>
+          <p>Bağlı cihazlar, yerel proxy üzerinden telefonunuzun mobil verisini kullanır. Arada uzak sunucu yok: trafik cihazlarınızdan telefonunuza, oradan mobil bağlantınıza gider.</p>
         </div>
       </div>
     </section>
@@ -913,8 +957,8 @@
           <div class="feature-icon teal">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#00BF8A"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
           </div>
-          <h3>Tamamen yerel</h3>
-          <p>Uzak VPN sunucusu yok. Ağ trafiği sunucularımızdan geçirilmez veya proxy tarafından kaydedilmez.</p>
+          <h3>Uzak sunucu yok</h3>
+          <p>Uzak VPN sunucusu yok. Proxy trafiği cihazlarınızdan doğrudan telefonunuza, oradan mobil verinize gider; uygulama bu trafiği kaydetmez, saklamaz veya sunucularımıza göndermez.</p>
         </div>
         <div class="feature">
           <div class="feature-icon teal">
@@ -924,6 +968,23 @@
           <p>Operatör IP'leri oturumlar arasında değişebilir. Uygulama değişiklikleri tespit eder ve bağlı cihazları otomatik olarak uyarır.</p>
         </div>
       </div>
+    </section>
+
+    <section class="strip" id="pricing">
+      <div class="section-label">Fiyatlandırma</div>
+      <div class="features">
+        <div class="feature">
+          <h3>Ücretsiz</h3>
+          <p class="price">$0</p>
+          <p>Aynı anda 2 cihaza kadar, banner ve geçiş reklamlarıyla. Hesap gerekmez.</p>
+        </div>
+        <div class="feature">
+          <h3>Pro</h3>
+          <p class="price">$2.99/ay veya $12.99/yıl</p>
+          <p>Aynı anda 5 cihaza kadar, reklamsız.</p>
+        </div>
+      </div>
+      <p class="price-note">Fiyatlar referans olarak USD cinsinden gösterilmiştir. Gerçek fiyatlar Google Play'de ülkeye göre belirlenir ve farklılık gösterebilir; yerel fiyat için Play Store sayfasını kontrol edin.</p>
     </section>
 
     <section class="strip" id="platforms">
@@ -985,8 +1046,8 @@
     <h2>Sıkça sorulan sorular</h2>
 
     <details class="faq-item">
-      <summary>Tether Link Utility hotspot sınırlarını nasıl aşıyor?</summary>
-      <p>Wi-Fi hotspot üzerinden paylaşılan trafiği (USB kablo değil), Android'in VpnService API'si üzerinden yerel bir SOCKS5 proxy'den geçirir; bu da yaygın operatör hotspot kısıtlamalarının bazılarını aşmaya yardımcı olur.</p>
+      <summary>Tether Link Utility nasıl çalışır?</summary>
+      <p>Android telefonunuzda, Android'in VpnService API'sini kullanarak yerel bir SOCKS5 proxy çalıştırır ve bunu telefonun Wi-Fi hotspot'u üzerinden paylaşır (USB kablo yok). Diğer cihazlarınız trafiklerini bu proxy'ye gönderir, telefon da bunu mobil veri bağlantısı üzerinden iletir. Arada uzak bir sunucu yoktur.</p>
     </details>
 
     <details class="faq-item">
@@ -996,7 +1057,7 @@
 
     <details class="faq-item">
       <summary>Uzak bir sunucu kullanıyor mu?</summary>
-      <p>Hayır, her şey cihazınızda yerel olarak çalışır; hiçbir trafik donanım zincirinizden çıkmaz veya kaydedilmez.</p>
+      <p>Hayır. Proxy trafiği cihazlarınızdan telefonunuza, oradan mobil verinize gider; sunucularımızdan geçirilmez, kaydedilmez veya saklanmaz. Ücretsiz sürüm Google AdMob reklamları gösterir ve uygulama Firebase Analytics ile Crashlytics kullanır; bunlar <a href="/privacy.html#tr">gizlilik politikamızda</a> açıklandığı gibi cihaz tanımlayıcıları ile kullanım ve çökme verilerini toplar.</p>
     </details>
 
     <details class="faq-item">
@@ -1006,7 +1067,7 @@
 
     <details class="faq-item">
       <summary>SOCKS5 proxy ayarı tüm trafiğimi korur mu?</summary>
-      <p>Tam olarak değil. Bir tarayıcı ya da sistem SOCKS5 ayarı sadece bu ayarı kontrol eden uygulamaların trafiğini yönlendirir, DNS sorguları ve diğer arka plan trafiği düz hotspot bağlantısından korumasız çıkabilir, ana gezinme trafiğiniz sorunsuz çalışsa bile bazı operatörler bunu tespit edebilir. Windows veya macOS'ta gerçek anlamda tam kapsama için <a href="/tr/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box'ı TUN modunda</a> çalıştırın, tüm sistem trafiğinizi, DNS dahil, tünelden geçirir.</p>
+      <p>Tam olarak değil. Bir tarayıcı ya da sistem SOCKS5 ayarı sadece bu ayarı kontrol eden uygulamaların trafiğini yönlendirir; DNS sorguları ve diğer arka plan trafiği proxy yerine düz hotspot bağlantısından gidebilir. Windows veya macOS'ta tam kapsama için <a href="/tr/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box'ı TUN modunda</a> çalıştırın, tüm sistem trafiğinizi, DNS dahil, tünelden geçirir.</p>
     </details>
 
     <details class="faq-item">
@@ -1016,7 +1077,7 @@
 
     <details class="faq-item">
       <summary>Aynı anda kaç cihaz bağlanabilir?</summary>
-      <p>Ücretsiz katman 2 cihaz bağlar; Pro bunu aynı anda 5 cihaza çıkarır.</p>
+      <p>Ücretsiz katman aynı anda 2 cihaza kadar bağlar; Pro bunu 5 cihaza çıkarır. Pro ayda $2.99 veya yılda $12.99'dur (USD), fiyatlar ülkeye göre değişebilir.</p>
     </details>
 
     <details class="faq-item">
@@ -1026,17 +1087,17 @@
 
     <details class="faq-item">
       <summary>Tether Link Utility sınırsız veri paketleriyle çalışıyor mu?</summary>
-      <p>Evet. Birçok "sınırsız" paket hâlâ hotspot/tethering trafiğini cihaz üzerindeki veriden ayrı olarak sınırlar veya hız keser. Tether Link Utility bu ayrı hotspot kısıtlamasını aşmaya yardımcı olur.</p>
+      <p>Telefonunuzdaki mobil veri bağlantısını, paketiniz ne olursa olsun paylaşır. Ancak birçok "sınırsız" pakette hotspot ve tethering için ayrı kurallar veya kotalar bulunur; kullanmadan önce paketinizi ve operatörünüzün koşullarını kontrol edin.</p>
     </details>
 
     <details class="faq-item">
-      <summary>Operatörüm tethering kullandığımı biliyor mu?</summary>
-      <p>Operatörler tethering'i genellikle izin isteyerek değil, trafiğin hat üzerinde nasıl göründüğüne bakarak tespit eder. Trafiği yerel bir proxy üzerinden geçirmek bu trafik desenini değiştirir, bu da Tether Link Utility'nin yaygın hotspot kısıtlamalarını aşmaya yardımcı olma şeklidir.</p>
+      <summary>Paketimde tethering kullanmama izin var mı?</summary>
+      <p>Bu, operatörünüze ve paketinize bağlıdır. Tether Link Utility paketinizin koşullarını değiştirmez ve bazı operatörler tethering'i sınırlar veya izin vermez. Kullanmadan önce paketinizi ve operatörünüzün kullanım koşullarını kontrol edin.</p>
     </details>
 
     <details class="faq-item">
       <summary>Bu ücretsiz, sınırsız bir hotspot uygulaması mı?</summary>
-      <p>Ücretsiz katman reklamlı olarak aynı anda 2 cihaza kadar bağlanır, kullanımı ücretsizdir ama cihaz sayısında tam anlamıyla sınırsız değildir. Pro, reklamları kaldırır ve sınırı 5 cihaza çıkarır. Her iki durumda da ayrı bir hotspot veri sınırı veya hız kısıtlaması yoktur, kendi mobil veri paketinizi paylaşırsınız.</p>
+      <p>Ücretsiz katman reklamlı olarak aynı anda 2 cihaza kadar bağlanır; kullanımı ücretsizdir ama cihaz sayısında sınırsız değildir. Pro reklamları kaldırır ve sınırı 5 cihaza çıkarır. Uygulamanın kendisi şu anda bir hız sınırı eklemiyor; gerçek hız operatörünüze, paketinize ve sinyale bağlıdır.</p>
     </details>
   </section>
 
@@ -1062,22 +1123,21 @@
 <section class="badges-strip">
   <div class="section-label">Bizi şurada bulabilirsiniz</div>
   <div class="badges-row">
-    <a href="https://www.producthunt.com/products/tether-link-utility?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-tether-link-utility" target="_blank" rel="noopener noreferrer">
-      <img alt="Tether Link Utility - Share your phone's hotspot without the carrier's data cap | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1245990&amp;theme=dark" />
-    </a>
+    <a href="https://www.producthunt.com/products/tether-link-utility?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-tether-link-utility" target="_blank" rel="noopener noreferrer" class="badge-pill">Product Hunt</a>
     <a href="https://www.nxgntools.com/tools/tether-link-utility?utm_source=tether-link-utility" target="_blank" rel="noopener">
       <img src="https://www.nxgntools.com/api/embed/tether-link-utility?type=FIND_US_ON&amp;hideUpvotes=true" alt="Find us on NxGn Tools" style="height: 48px; width: auto;" />
     </a>
-    <a href="https://viberank.dev/apps/Tether%20Link%20Utility" target="_blank" rel="noopener noreferrer">
-      <img src="https://viberank.dev/badge?app=Tether%20Link%20Utility&amp;theme=dark" alt="Tether Link Utility on VibeRank" width="180" height="40" />
-    </a>
+    <a href="https://viberank.dev/apps/Tether%20Link%20Utility" target="_blank" rel="noopener noreferrer" class="badge-pill">VibeRank</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-mascots" aria-hidden="true">
-    <img src="/barnah-adam.png" alt="">
-    <img src="/barnah-kiz.png" alt="">
+  <div class="footer-mascots">
+    <div class="footer-mascots-imgs" aria-hidden="true">
+      <img src="/barnah-adam.png" alt="">
+      <img src="/barnah-kiz.png" alt="">
+    </div>
+    <p class="footer-mascots-caption">Tether Link Utility maskotları Barnah Adam ve Barnah Kız ile tanışın</p>
   </div>
   <div class="footer-brand">
     © 2026 Tether Link Utility
@@ -1094,7 +1154,7 @@
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <span>Tether Link Utility, operatör hotspot veri sınırını ve hız kısıtlamasını aşın</span>
+  <span>Tether Link Utility, telefonunuzun mobil verisini Wi-Fi ile paylaşın</span>
   <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary">Google Play'den İndirin</a>
 </div>
 
