@@ -24,7 +24,7 @@
   <link rel="alternate" hreflang="hi" href="https://tetherlinkutility.com/hi/blog/att-hotspot-throttling.html" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/blog/att-hotspot-throttling.html" />
   <title>AT&amp;T Hotspot Throttling Explained: How It Works</title>
-  <meta name="description" content="How AT&T's hotspot data allotment and deprioritization work on unlimited plans, why it's separate from your on-device data, and what your real options are.">
+  <meta name="description" content="How AT&T's hotspot data allowance works on unlimited plans, why hotspot speed drops to 128 Kbps once it is used, and what your real options are.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Tether Link Utility">
 
@@ -33,7 +33,7 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="AT&amp;T Hotspot Throttling Explained">
-  <meta property="og:description" content="How AT&T's hotspot data allotment and deprioritization work, and what your real options are.">
+  <meta property="og:description" content="How AT&T's hotspot data allowance works, why hotspot speed drops to 128 Kbps once it is used, and what your real options are.">
   <meta property="og:url" content="https://tetherlinkutility.com/blog/att-hotspot-throttling.html">
   <meta property="og:site_name" content="Tether Link Utility">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
@@ -43,7 +43,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@tetherlinkutili">
   <meta name="twitter:title" content="AT&amp;T Hotspot Throttling Explained">
-  <meta name="twitter:description" content="How AT&T's hotspot data allotment and deprioritization work, and what your real options are.">
+  <meta name="twitter:description" content="How AT&T's hotspot data allowance works, why hotspot speed drops to 128 Kbps once it is used, and what your real options are.">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
   <script type="application/ld+json">
@@ -51,9 +51,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "AT&T Hotspot Throttling Explained: How It Works",
-    "description": "How AT&T's hotspot data allotment and deprioritization work on unlimited plans, why it's separate from your on-device data, and what your real options are.",
+    "description": "How AT&T's hotspot data allowance works on unlimited plans, why hotspot speed drops to 128 Kbps once it is used, and what your real options are.",
     "datePublished": "2026-09-18",
-    "dateModified": "2026-09-18",
+    "dateModified": "2026-09-25",
     "author": { "@type": "Organization", "name": "Tether Link Utility" },
     "publisher": {
       "@type": "Organization",
@@ -182,18 +182,18 @@
   <article>
     <div class="page-eyebrow">Blog</div>
     <h1>AT&amp;T Hotspot Throttling Explained</h1>
-    <div class="post-meta">Published September 18, 2026</div>
+    <div class="post-meta">Published September 18, 2026 &middot; Updated September 25, 2026</div>
 
     <p>AT&amp;T's unlimited plans separate "on-device" data from "hotspot" data the same way most major US carriers do, and hotspot data is the one that runs out first if you're using your phone as your main connection for a laptop.</p>
 
     <h2>How AT&amp;T's hotspot allotment works</h2>
-    <p>AT&amp;T's unlimited tiers have historically included a monthly high-speed hotspot data allotment that varies significantly by plan level, lower tiers see a smaller allotment after which the carrier's network can deprioritize hotspot traffic during congestion, while the top-tier plan has historically carried little to no hotspot-specific deprioritization at all. <strong>Exact allotments and deprioritization rules change between plan revisions and differ by tier, check your current plan's terms on AT&amp;T's own site for the number that applies to you.</strong></p>
+    <p>Checked September 2026 against AT&amp;T's "Use Your Device's Hotspot" support page (last updated August 26, 2026) and its Unlimited plan terms. AT&amp;T's unlimited plans include a set amount of high-speed hotspot data per line each month, and the amount varies by plan. Once you use all of it, AT&amp;T says your hotspot speed slows to a maximum of <strong>128 Kbps</strong> unless you buy additional hotspot data. That is a speed cap, not congestion-based deprioritization, so it applies whether or not the local network is busy. <strong>Allowances change between plan revisions and differ by tier, check your current plan in myAT&amp;T for the number that applies to you, and <a href="/blog/how-to-check-if-hotspot-is-unlimited.html">our guide to checking whether your hotspot is really unlimited</a> walks through it.</strong></p>
 
     <h2>How AT&amp;T detects tethered traffic</h2>
     <p>As with other carriers, AT&amp;T doesn't need you to declare tethering, it's inferred from traffic characteristics like TTL (Time To Live) decrement and deep packet inspection (DPI) patterns. <a href="/blog/understanding-carrier-hotspot-throttling.html">Read the full mechanics of how this detection works</a>.</p>
 
     <div class="callout">
-      <p>Deprioritization is a softer form of throttling than a hard speed cap, it only bites during network congestion. On an uncongested tower at 2am, hotspot traffic that's technically "used up its allotment" may still run at full speed; the slowdown shows up specifically when the local network is busy.</p>
+      <p>A 128 Kbps cap is a ceiling, not a congestion rule: an empty tower at 2am does not lift it. At that speed messaging and basic email usually still work, while video calls, streaming, and large downloads generally do not.</p>
     </div>
 
     <h2>Your options</h2>
@@ -215,6 +215,10 @@
         <li><a href="/blog/verizon-hotspot-data-cap.html">Verizon Hotspot Data Cap Explained</a></li>
         <li><a href="/blog/understanding-carrier-hotspot-throttling.html">Understanding Carrier Hotspot Throttling</a></li>
         <li><a href="/blog/best-ways-to-bypass-hotspot-throttling.html">Best Ways to Bypass Hotspot Data Caps and Throttling in 2026</a></li>
+        <li><a href="/blog/us-cellular-hotspot-data-cap.html">US Cellular Hotspot Data Cap Explained</a></li>
+        <li><a href="/blog/firstnet-hotspot-data-limit.html">Does FirstNet Throttle Hotspot Data?</a></li>
+        <li><a href="/blog/t-mobile-hotspot-data-limit.html">T-Mobile Hotspot Data Limit Explained</a></li>
+        <li><a href="/blog/how-to-check-if-hotspot-is-unlimited.html">How to Check If Your Hotspot Is Really Unlimited</a></li>
       </ul>
     </div>
   </article>
