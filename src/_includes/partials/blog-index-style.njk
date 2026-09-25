@@ -1,0 +1,106 @@
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ground:    #0C0C18;
+      --surface:   #141428;
+      --elevated:  #1E1E38;
+      --border:    #20203A;
+      --border-md: #2C2C50;
+      --accent:    #E8622A;
+      --success:   #00BF8A;
+      --text:      #ECEDFF;
+      --muted:     #8888B0;
+      --dim:       #7C7CA2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ground);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(12,12,24,0.90);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(20px, 5vw, 80px);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand {
+      font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
+      color: var(--text); display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    .lang-dropdown { position: relative; }
+    .lang-dropdown-toggle {
+      display: flex; align-items: center; gap: 6px;
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 14px; font-family: inherit; padding: 0;
+    }
+    .lang-dropdown-toggle:hover { color: var(--text); }
+    .lang-dropdown-toggle svg { transition: transform 0.2s ease; }
+    .lang-dropdown.is-open .lang-dropdown-toggle svg { transform: rotate(180deg); }
+    .lang-dropdown-menu {
+      position: absolute; top: calc(100% + 14px); right: 0;
+      background: var(--surface); border: 1px solid var(--border-md); border-radius: 10px;
+      padding: 6px; min-width: 140px;
+      display: none; flex-direction: column;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.5);
+      z-index: 20;
+    }
+    .lang-dropdown.is-open .lang-dropdown-menu { display: flex; }
+    .lang-dropdown-menu a {
+      padding: 8px 12px; border-radius: 6px; font-size: 14px; color: var(--muted);
+      white-space: nowrap;
+    }
+    .lang-dropdown-menu a:hover { background: var(--elevated); color: var(--text); text-decoration: none; }
+    .lang-dropdown-menu a.is-current { color: var(--accent); font-weight: 600; }
+
+    main {
+      max-width: 720px; margin: 0 auto;
+      padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px) clamp(80px, 10vw, 120px);
+    }
+
+    .page-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    h1 { font-size: clamp(28px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 40px; }
+
+    .post-card {
+      display: block; padding: 24px 0; border-bottom: 1px solid var(--border);
+    }
+    .post-card:hover { text-decoration: none; }
+    .post-card:hover .post-title { color: var(--accent); }
+    .post-date { color: var(--dim); font-size: 13px; margin-bottom: 6px; }
+    .post-title { color: var(--text); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .post-excerpt { color: var(--muted); font-size: 15px; line-height: 1.6; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px clamp(20px, 5vw, 80px);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-brand { font-size: 13px; color: var(--dim); }
+    .footer-brand a { color: var(--muted); }
+    .footer-brand a:hover { color: var(--text); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--dim); }
+    .footer-links a:hover { color: var(--muted); text-decoration: none; }
+  </style>

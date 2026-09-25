@@ -1,2 +1,5 @@
 .DS_Store
 imgs/
+node_modules/
+_site/
+.compare/

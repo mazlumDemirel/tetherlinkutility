@@ -1,0 +1,16 @@
+{
+  "name": "tetherlinkutility-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "compare": "node scripts/compare.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6"
+  }
+}
