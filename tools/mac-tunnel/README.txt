@@ -4,12 +4,11 @@ Tether Link Utility, Mac Full-Coverage Tunnel
 What this does
 --------------
 A per-app or system SOCKS5 proxy setting on macOS only routes traffic from
-apps that check it. DNS lookups and background app traffic can still leak
-over the plain hotspot connection unprotected, which some carriers can
-detect even if your main browsing works fine.
+apps that check it. DNS lookups and background app traffic can still go
+over the plain hotspot connection instead of through the proxy.
 
-This script wraps sing-box (https://github.com/SagerNet/sing-box, MIT-style
-open source project) in TUN mode instead, so your whole Mac's traffic, DNS
+This script wraps sing-box (https://github.com/SagerNet/sing-box, an open
+source project) in TUN mode instead, so your whole Mac's traffic, DNS
 included, routes through your phone's SOCKS5 proxy.
 
 Requirements

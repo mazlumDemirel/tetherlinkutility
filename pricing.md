@@ -1,4 +1,4 @@
-# Pricing — Tether Link Utility
+# Pricing: Tether Link Utility
 
 ## Free
 - Price: $0
@@ -8,7 +8,7 @@
 ## Pro
 - Price: $2.99/month, or $12.99/year (billed annually)
 - Limits: 5 connected devices at once, no ads
-- Features: Everything in Free, plus no speed limit and no advertising
+- Features: Everything in Free, with no ads and up to 5 devices at once
 
 Purchased and managed through Google Play Billing on the Android app. No web checkout, no custom/enterprise tier currently offered.
 

@@ -23,8 +23,8 @@
   <link rel="alternate" hreflang="tr" href="https://tetherlinkutility.com/tr/blog/understanding-carrier-hotspot-throttling.html" />
   <link rel="alternate" hreflang="hi" href="https://tetherlinkutility.com/hi/blog/understanding-carrier-hotspot-throttling.html" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/blog/understanding-carrier-hotspot-throttling.html" />
-  <title>Operatörler Hotspot'u Neden Kısıtlar: Tether Link Utility</title>
-  <meta name="description" content="Verizon, AT&T, Jio ve Turkcell gibi operatörler hotspot verisini neden paketinizden ayrı tutup kısıtlıyor, bunu nasıl tespit ediyorlar ve gerçek seçenekleriniz neler.">
+  <title>Hotspot'um Neden Yavaş? Operatör Hotspot Sınırları Açıklaması</title>
+  <meta name="description" content="Hotspot hızı neden telefon hızından farklı olabilir, operatörler paylaşılan veriyi nasıl sayar ve tarifenizin hotspot hakkının gerçekten sınırsız olup olmadığını nasıl kontrol edersiniz.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Tether Link Utility">
 
@@ -32,8 +32,8 @@
   <link rel="apple-touch-icon" href="/favicon.png">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Operatörler Hotspot'u Neden Kısıtlar">
-  <meta property="og:description" content="Operatörler hotspot verisini neden paketinizden ayrı tutup kısıtlıyor, bunu nasıl tespit ediyorlar ve gerçek seçenekleriniz neler.">
+  <meta property="og:title" content="Hotspot'um Neden Yavaş? Operatör Hotspot Sınırları Açıklaması">
+  <meta property="og:description" content="Hotspot hızı neden telefon hızından farklı olabilir, operatörler paylaşılan veriyi nasıl sayar ve tarifenizin hotspot hakkının gerçekten sınırsız olup olmadığını nasıl kontrol edersiniz.">
   <meta property="og:url" content="https://tetherlinkutility.com/tr/blog/understanding-carrier-hotspot-throttling.html">
   <meta property="og:site_name" content="Tether Link Utility">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
@@ -42,18 +42,18 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@tetherlinkutili">
-  <meta name="twitter:title" content="Operatörler Hotspot'u Neden Kısıtlar">
-  <meta name="twitter:description" content="Operatörler hotspot verisini neden paketinizden ayrı tutup kısıtlıyor, bunu nasıl tespit ediyorlar ve gerçek seçenekleriniz neler.">
+  <meta name="twitter:title" content="Hotspot'um Neden Yavaş? Operatör Hotspot Sınırları Açıklaması">
+  <meta name="twitter:description" content="Hotspot hızı neden telefon hızından farklı olabilir, operatörler paylaşılan veriyi nasıl sayar ve tarifenizin hotspot hakkının gerçekten sınırsız olup olmadığını nasıl kontrol edersiniz.">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Operatörler Hotspot'u Neden Kısıtlar",
-    "description": "Verizon, AT&T, Jio ve Turkcell gibi operatörler hotspot verisini neden paketinizden ayrı tutup kısıtlıyor, bunu nasıl tespit ediyorlar ve gerçek seçenekleriniz neler.",
+    "headline": "Hotspot'um Neden Yavaş? Operatör Hotspot Sınırları Açıklaması",
+    "description": "Hotspot hızı neden telefon hızından farklı olabilir, operatörler paylaşılan veriyi nasıl sayar ve tarifenizin hotspot hakkının gerçekten sınırsız olup olmadığını nasıl kontrol edersiniz.",
     "datePublished": "2026-09-16",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-25",
     "author": { "@type": "Organization", "name": "Tether Link Utility" },
     "publisher": {
       "@type": "Organization",
@@ -239,60 +239,62 @@
 <main>
   <article>
     <div class="page-eyebrow">Blog</div>
-    <h1>Operatörler Hotspot'u Neden Kısıtlar</h1>
-    <div class="post-meta">16 Eylül 2026'da yayınlandı</div>
+    <h1>Hotspot'um Neden Yavaş? Operatör Hotspot Sınırları Açıklaması</h1>
+    <div class="post-meta">16 Eylül 2026'da yayınlandı &middot; 25 Eylül 2026'da güncellendi</div>
 
-    <p>Telefonunuzun hotspot'u aniden yavaşladıysa veya "sınırsız" bir tarifeniz olmasına rağmen operatörünüz bunu ayrıca ücretlendiriyorsa, hayal görmüyorsunuz. Çoğu büyük operatör, hotspot (tethering) trafiğini cihaz üzerindeki veriden farklı ele alıyor, bunun tam olarak nasıl ve neden olduğunu anlamaya değer.</p>
+    <p>Telefonunuzda internet hızlıyken ona bağladığınız dizüstü bilgisayar yavaşsa, bunun birkaç olası nedeni var. Bazıları teknik (sinyal, Wi-Fi bandı, cihaz sayısı), bazıları ise tarifenizle ilgili: birçok operatör, hotspot ile paylaşılan veriyi telefonda doğrudan kullanılan veriden ayrı sayar ve buna ayrı bir sınır koyar. Bu yazı ikisini ayırt etmenize yardımcı oluyor.</p>
 
-    <h2>Normal verinizle aynı kova değil</h2>
-    <p>Çoğu "sınırsız" mobil tarife, doğrudan telefonda üretilen trafik için sınırsızdır, gezinme, video, uygulamalar. Aynı bağlantı bir dizüstü bilgisayar, tablet veya başka bir telefonla hotspot üzerinden paylaşıldığı anda, birçok operatör bunu ayrı ölçer, genellikle çok daha küçük bir sınırla (yaygın olarak 5-15GB) ve bu sınır dolduğunda, ana tarifede ne kadar "sınırsız" veri kalırsa kalsın, hız 2G seviyesine düşürülür.</p>
+    <h2>Hotspot verisi çoğu zaman ayrı bir kalemdir</h2>
+    <p>"Sınırsız" diye satılan birçok mobil tarife, telefonun kendisinde kullanılan veri için geçerlidir. Aynı bağlantı bir dizüstü bilgisayar, tablet veya başka bir telefonla paylaşıldığında, tarife bunu ayrı bir "hotspot", "mobile hotspot" veya Türkiye'de "paylaşım kotası" hakkı olarak sayabilir. Bu hak bittiğinde paylaşım hızı düşebilir, telefonun kendi interneti ise normal devam edebilir.</p>
+    <p>Operatörler bu ayrımı tarife koşullarında tanımlar ve paylaşım kullanımını ağ tarafında ölçer. Bunu kendi faturanızda veya uygulamanızda ayrı bir satır olarak görürsünüz. Neyin nasıl sayıldığını en doğru şekilde tarifenizin resmi koşulları anlatır.</p>
 
-    <h2>Operatörler tethering'i gerçekte nasıl tespit ediyor</h2>
-    <p>Operatörler genellikle izin istemez veya tethering yaptığınızı "beyan etmenizi" istemez, bunu trafiğin hat üzerinde nasıl göründüğünden çıkarırlar. İki yaygın sinyal:</p>
-    <ul>
-      <li><strong>TTL (Time To Live) düşüşü:</strong> bir paketin bir router üzerinden geçtiği her adım, TTL değerini bir azaltır. Telefonunuzun hotspot'u üzerinden ikinci bir cihaza yönlendirilmiş bir paket, genellikle telefonun kendisinde üretilen bir paketten bir düşük TTL ile operatörün ağına ulaşır, basit ama güvenilir bir tethering sinyali.</li>
-      <li><strong>Trafik deseni / derin paket incelemesi (DPI):</strong> aynı anda birden fazla TCP akışı, sadece masaüstünde görülen user-agent dizeleri veya tipik telefon kullanımıyla tutarsız trafik hacmi/zamanlama desenleri de bir bağlantıyı paylaşılmış olarak işaretleyebilir.</li>
-    </ul>
-    <p>Bunların hiçbiri operatörün trafiğinizin içeriğini incelemesini gerektirmez, sadece şeklini.</p>
-
-    <h2>Ülkelere göre gerçek örnekler</h2>
-    <p>Bu, nadir görülen bir sorun değil. Büyük pazarlarda farklı isimler altında karşımıza çıkıyor:</p>
+    <h2>Bölgelere göre genel tablo</h2>
     <table class="carrier-table">
-      <tr><th>Bölge</th><th>Operatörler</th><th>Kullanıcıların bildirdiği durum</th></tr>
-      <tr><td>Amerika Birleşik Devletleri</td><td>Verizon, AT&amp;T, T-Mobile</td><td>"Sınırsız" tarifelerde ayrı hotspot veri tahsisi, çoğunlukla ayrıca satılan özel bir sınırsız hotspot eki</td></tr>
-      <tr><td>Hindistan</td><td>Jio, Airtel, Vi</td><td>Ana veri tahsisinden ayrı, günlük hotspot veri sınırları</td></tr>
-      <tr><td>Türkiye</td><td>Turkcell, Vodafone, Türk Telekom</td><td>Tethering kotası, telefonun kendi paketinden ayrı takip edilir ve sınırlandırılır</td></tr>
+      <tr><th>Bölge</th><th>Operatörler</th><th>Tarifelerde sık görülen yapı</th></tr>
+      <tr><td>Amerika Birleşik Devletleri</td><td>Verizon, AT&amp;T, T-Mobile</td><td>Sınırsız tarifelerde belirli bir yüksek hızlı hotspot hakkı, sonrasında düşük hız</td></tr>
+      <tr><td>Hindistan</td><td>Jio, Airtel, Vi</td><td>Günlük veri kotası; hotspot çoğu zaman aynı günlük kotadan düşer</td></tr>
+      <tr><td>Türkiye</td><td>Turkcell, Vodafone, Türk Telekom</td><td>Paylaşım kotası, tarifeye göre ana internet paketinden ayrı gösterilebilir</td></tr>
     </table>
-    <div class="callout">
-      <p>Somut bir veri noktası olarak: Verizon'un kendi özel sınırsız hotspot eklerinin fiyatı birden fazla seviyede listelenmişti, mevcut sınırsız tarifenin üzerine ekstra olarak yaklaşık <strong>ayda 10-20 dolar</strong> (Eylül 2026'da kontrol edildi, operatör fiyatları değişir, bunu güncel bir teklif değil, o anki bir kesit olarak değerlendirin).</p>
-    </div>
+    <p>Rakamlar tarifeye göre değişir. Operatör bazında ayrıntılar için ilgili yazılara bakın: <a href="/tr/blog/verizon-hotspot-data-cap.html">Verizon</a>, <a href="/tr/blog/att-hotspot-throttling.html">AT&amp;T</a>, <a href="/tr/blog/jio-hotspot-data-limit.html">Jio</a>, <a href="/tr/blog/turkcell-hotspot-data-limit.html">Turkcell</a>. <em>(Eylül 2026'da kontrol edildi. Tarifeler değişebilir, güncel bilgi için operatörünüzün resmi kanallarına bakın.)</em></p>
+
+    <h2>Yavaşlığın tarifeden mi yoksa bağlantıdan mı geldiğini anlamak</h2>
+    <ul>
+      <li><strong>Aynı anda iki hız testi yapın.</strong> Biri telefonda, biri bağlı cihazda. Telefon hızlı, dizüstü sürekli yavaşsa ve hız düşük, yuvarlak bir değerde sabit duruyorsa, paylaşım hakkınız bitmiş olabilir.</li>
+      <li><strong>Hız dalgalanıyorsa</strong> neden büyük ihtimalle yoğunluk, zayıf sinyal veya Wi-Fi bağlantısıdır. Telefonu pencereye yaklaştırmak, 5 GHz bandını denemek veya bağlı cihaz sayısını azaltmak işe yarayabilir.</li>
+      <li><strong>Yavaşlık dönemin ortasında başladıysa</strong> ve fatura döneminizle birlikte düzeliyorsa, bu tarifedeki bir paylaşım sınırına işaret eder.</li>
+      <li><strong>Operatör uygulamanıza bakın.</strong> Paylaşım hakkı ayrı bir satırda gösteriliyorsa kalan miktarı oradan görebilirsiniz.</li>
+    </ul>
+    <p>Operatörlere göre nereye bakacağınızı <a href="/tr/blog/how-to-check-if-hotspot-is-unlimited.html">hotspot kontrol rehberimizde</a> adım adım anlattık.</p>
 
     <h2>Operatörler bunu neden yapıyor</h2>
-    <p>Hotspot kullanımı genellikle bir ev genişbant bağlantısının veya ikinci bir cihazın bağlantısının tamamen yerini alır, bu da tipik cihaz-üstü gezinmeden esaslı biçimde farklı (ve karşılamak için daha maliyetli) bir kullanım deseni oluşturur, bu yüzden operatörler bunu aynı "sınırsız" kovaya dahil etmek yerine ayrıca fiyatlandırıp sınırlandırır. Bu, belirli bir müşteri için doğru bir denge olsun ya da olmasın, arkasındaki ekonomik mantık bu.</p>
+    <p>Hotspot kullanımı çoğu zaman bir ev internetinin veya ikinci bir cihazın bağlantısının yerini alır. Dizüstü bilgisayarlar büyük güncellemeler, bulut senkronizasyonu ve yüksek çözünürlüklü video ile telefondan çok daha fazla veri kullanabilir. Operatörler bu farklı kullanım biçimini tarifelerinde ayrıca fiyatlandırıyor ve sınırlıyor. Bunun her müşteri için adil bir denge olup olmadığı ayrı bir tartışma, ama tarifelerin arkasındaki mantık bu.</p>
 
-    <h2>Gerçek seçenekleriniz neler?</h2>
+    <h2>Resmi seçenekleriniz</h2>
     <ol>
-      <li><strong>Operatörün ekini satın alın.</strong> Operatörünüz bir tane satıyorsa ve fiyat sizin için uygunsa, en basit ve tam destekli yol.</li>
-      <li><strong>Trafiğinizin "tethering gibi" görünmesini azaltın.</strong> Tether Link Utility'nin girdiği teknik kategori bu: bir telefonun düz bir Wi-Fi hotspot'u gibi davranması yerine (burada bağlı cihazların trafiği büyük ölçüde değişmeden geçer), uygulama telefonun kendi üzerinde yerel bir SOCKS5 proxy çalıştırır. Bağlı cihazlar bu yerel proxy üzerinden yönlendirilir, bu da trafiğin imzasını operatörün ağına ulaşmadan önce değiştirir, Android, Windows, macOS ve iOS istemcileri arasında bunun nasıl karşılaştırıldığına dair ayrıntılar için <a href="/tr/#faq">SSS bölümüne bakın</a>.</li>
-      <li><strong>Mümkün olduğunda kablolu bağlantı kullanın.</strong> USB tethering'in de kendi tespit yöntemleri var, yani otomatik olarak muaf değil, ama bazı operatörler tarihsel olarak bunu Wi-Fi hotspot'tan farklı ele aldı.</li>
+      <li><strong>Operatörünüzün hotspot veya paylaşım ek paketini alın.</strong> Sunuluyorsa en basit ve doğrudan desteklenen yol.</li>
+      <li><strong>Daha fazla hotspot hakkı olan bir tarifeye geçin.</strong> Düzenli paylaşım yapıyorsanız tarife karşılaştırması yapmaya değer.</li>
+      <li><strong>Dönem yenilenmesini bekleyin</strong> ve büyük indirmeleri Wi-Fi ağına bırakın.</li>
+      <li><strong>Bağlantı yöntemini seçin.</strong> Wi-Fi hotspot, USB ve Bluetooth arasındaki farklar için <a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">telefon internetini bilgisayarla paylaşma rehberimize</a> bakın.</li>
     </ol>
-    <p>2. seçeneğin gerçekte ne vaat ettiği konusunda net olmak gerekirse: bu, tethering yapılan trafiğin operatörün tespit yöntemlerine nasıl göründüğünü değiştirir, bu yüzden pratikte birçok kullanıcı için işe yarar, ama herhangi bir operatörün şimdi ya da gelecekte kullanabileceği her tespit yöntemine karşı bir garanti değildir.</p>
+
+    <p>Telefonunuzun mobil verisini bir dizüstü bilgisayar veya başka bir telefonla paylaşmak isterseniz, Tether Link Utility bunu yerel bir SOCKS5 proxy üzerinden yapan bir Android uygulamasıdır. Bağlı cihazların kullandığı veri yine mobil tarifenizden düşer, bu yüzden operatörünüzün paylaşım (tethering) koşullarını kontrol edin.</p>
 
     <div class="cta-box">
       <h3>Tether Link Utility</h3>
-      <p>Mobil verinizi paylaşmak için yerel bir SOCKS5 proxy çalıştıran, root gerektirmeyen, uzak sunucu kullanmayan, hesap gerektirmeyen ücretsiz bir Android uygulaması.</p>
+      <p>Telefonunuzun mobil verisini yerel bir SOCKS5 proxy üzerinden diğer cihazlarınızla paylaşan bir Android uygulaması. Root yok, hesap yok, uzak sunucu yok.</p>
       <a class="cta-button" href="/tr/">Nasıl çalıştığını görün</a>
     </div>
 
     <div class="related">
       <h3>İlgili yazılar</h3>
       <ul>
-        <li><a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">2026'da Hotspot Veri Sınırlarını ve Kısıtlamalarını Aşmanın En İyi Yolları</a></li>
-        <li><a href="/tr/blog/verizon-hotspot-data-cap.html">Verizon Hotspot Veri Sınırı Açıklaması</a></li>
-        <li><a href="/tr/blog/att-hotspot-throttling.html">AT&amp;T Hotspot Kısıtlaması Açıklaması</a></li>
-        <li><a href="/tr/blog/jio-hotspot-data-limit.html">Jio Hotspot Veri Sınırı Açıklaması</a></li>
-        <li><a href="/tr/blog/turkcell-hotspot-data-limit.html">Turkcell Hotspot Veri Sınırı Açıklaması</a></li>
-        <li><a href="/tr/blog/socks5-proxy-setup-windows-macos-ios.html">Windows, macOS ve iOS'ta SOCKS5 Proxy Nasıl Kurulur</a></li>
+        <li><a href="/tr/blog/how-to-check-if-hotspot-is-unlimited.html">Hotspot'unuz Gerçekten Sınırsız mı? Nasıl Kontrol Edilir (2026)</a></li>
+        <li><a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">Telefonun İnternetini Bilgisayarla Paylaşmanın 5 Yolu (2026)</a></li>
+        <li><a href="/tr/blog/verizon-hotspot-data-cap.html">Verizon Hotspot Veri Sınırları Açıklaması (2026)</a></li>
+        <li><a href="/tr/blog/att-hotspot-throttling.html">AT&amp;T Hotspot Hız ve Veri Sınırları Açıklaması (2026)</a></li>
+        <li><a href="/tr/blog/jio-hotspot-data-limit.html">Jio Hotspot Veri Sınırı Açıklaması (2026): Kendi Sınırınızı Nasıl Kontrol Edersiniz</a></li>
+        <li><a href="/tr/blog/turkcell-hotspot-data-limit.html">Turkcell Hotspot (Paylaşım) Kotası Nedir? 2026'da Nasıl Kontrol Edilir</a></li>
+        <li><a href="/tr/blog/socks5-proxy-setup-windows-macos-ios.html">SOCKS5 Proxy Kurulumu: Windows, macOS ve iOS</a></li>
       </ul>
     </div>
   </article>
