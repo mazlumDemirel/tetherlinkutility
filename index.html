@@ -33,8 +33,8 @@
   <link rel="alternate" hreflang="tr" href="https://tetherlinkutility.com/tr/" />
   <link rel="alternate" hreflang="hi" href="https://tetherlinkutility.com/hi/" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/" />
-  <title>Tether Link Utility: Bypass Carrier Hotspot Data Caps &amp; Throttling</title>
-  <meta name="description" content="Bypass carrier hotspot throttling and data caps on Android. Tether Link Utility uses a local SOCKS5 tunnel, no root, no account, no remote server.">
+  <title>Tether Link Utility: Share Mobile Data Over Wi-Fi, Even on Plans With Hotspot Caps</title>
+  <meta name="description" content="Share your Android phone&#x27;s mobile data with your other devices over Wi-Fi. Tether Link Utility runs a local SOCKS5 proxy on your phone, no root, no account, no remote server.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
@@ -45,8 +45,8 @@
   <meta property="og:url" content="https://tetherlinkutility.com/">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="tr_TR">
-  <meta property="og:title" content="Tether Link Utility: Bypass Carrier Hotspot Data Caps &amp; Throttling">
-  <meta property="og:description" content="Many carriers cap or throttle hotspot data separately from your main plan. Tether Link Utility shares your connection without tripping that, no separate allowance, no throttling.">
+  <meta property="og:title" content="Tether Link Utility: Share Mobile Data Over Wi-Fi, Even on Plans With Hotspot Caps">
+  <meta property="og:description" content="Share your phone&#x27;s mobile data with your laptop, tablet or another phone over Wi-Fi. A local SOCKS5 proxy on your Android device, no root, no account, no remote server.">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -54,8 +54,8 @@
   <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@tetherlinkutili">
-  <meta name="twitter:title" content="Tether Link Utility: Bypass Carrier Hotspot Data Caps &amp; Throttling">
-  <meta name="twitter:description" content="Many carriers cap or throttle hotspot data separately from your main plan. Tether Link Utility shares your connection without tripping that.">
+  <meta name="twitter:title" content="Tether Link Utility: Share Mobile Data Over Wi-Fi, Even on Plans With Hotspot Caps">
+  <meta name="twitter:description" content="Share your phone&#x27;s mobile data with your other devices over Wi-Fi. Local SOCKS5 proxy, no root, no remote server.">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
   <!-- Structured data for search engines -->
@@ -87,7 +87,7 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to bypass carrier hotspot throttling with Tether Link Utility",
+    "name": "How to share your phone's mobile data over Wi-Fi with Tether Link Utility",
     "step": [
       {
         "@type": "HowToStep",
@@ -106,8 +106,8 @@
       },
       {
         "@type": "HowToStep",
-        "name": "Browse freely",
-        "text": "Traffic routes through your mobile data. No carrier throttling, no remote server, nothing leaves your hardware."
+        "name": "Start browsing",
+        "text": "Connected devices use your phone's mobile data through the local proxy. No remote server is involved: traffic goes from your devices to your phone and out over your mobile connection."
       }
     ]
   }
@@ -120,20 +120,35 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Android",
     "url": "https://tetherlinkutility.com/",
-    "description": "Shares your Android phone's mobile data with other devices through a local SOCKS5 proxy, avoiding carrier hotspot throttling and separate hotspot data caps.",
+    "description": "Shares your Android phone's mobile data with your other devices over Wi-Fi through a local SOCKS5 proxy. No root, no account, no remote server.",
     "featureList": [
-      "Bypasses carrier hotspot data caps and throttling",
+      "Share mobile data with laptops, tablets and phones over Wi-Fi",
       "Free tier shares your connection with up to 2 devices, no root required",
       "No remote server, all proxy traffic is routed locally on the device",
       "One-tap automatic hotspot and Wi-Fi connection between Android devices",
       "QR code setup for instant connection",
       "SOCKS5 proxy support for Windows, macOS, and iOS clients"
     ],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro (monthly)",
+        "price": "2.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro (yearly)",
+        "price": "12.99",
+        "priceCurrency": "USD"
+      }
+    ]
   }
   </script>
 
@@ -144,10 +159,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How does Tether Link Utility bypass hotspot limits?",
+        "name": "How does Tether Link Utility work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It routes traffic shared over your phone's Wi-Fi hotspot (no USB cable involved) through a local SOCKS5 proxy via Android's VpnService API, which helps it avoid some common carrier hotspot restrictions."
+          "text": "It runs a local SOCKS5 proxy on your Android phone, using Android's VpnService API, and shares it over the phone's Wi-Fi hotspot (no USB cable involved). Your other devices send their traffic to that proxy, and the phone forwards it over its mobile data connection. There's no remote server in between."
         }
       },
       {
@@ -163,7 +178,7 @@
         "name": "Does it use a remote server?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, everything runs locally on your device; no traffic leaves your hardware chain or gets logged."
+          "text": "No. Proxied traffic goes from your devices to your phone and out over your mobile data; it is not routed through, logged, or stored on any server of ours. The free version shows Google AdMob ads, and the app uses Firebase Analytics and Crashlytics, which collect device identifiers and usage and crash data, as described in our privacy policy."
         }
       },
       {
@@ -179,7 +194,7 @@
         "name": "Does a SOCKS5 proxy setting protect all my traffic?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it, DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run sing-box in TUN mode, which routes your whole system's traffic, DNS included, through the tunnel."
+          "text": "Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it; DNS lookups and other background traffic can still go over the plain hotspot connection instead of the proxy. For full coverage on Windows or macOS, run sing-box in TUN mode, which routes your whole system's traffic, DNS included, through the tunnel."
         }
       },
       {
@@ -195,7 +210,7 @@
         "name": "How many devices can connect at once?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The free tier connects 2 devices; Pro raises that to 5 devices at once."
+          "text": "The free tier connects up to 2 devices at once; Pro raises that to 5. Pro is $2.99/month or $12.99/year (USD), and prices may vary by country."
         }
       },
       {
@@ -211,15 +226,15 @@
         "name": "Does Tether Link Utility work with unlimited data plans?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Many \"unlimited\" plans still cap or throttle hotspot/tethered traffic specifically, separate from on-device data. Tether Link Utility helps avoid that separate hotspot restriction."
+          "text": "It shares whatever mobile data connection your phone has, on any plan. Keep in mind that many \"unlimited\" plans have separate rules or caps for hotspot and tethering use, so check your plan and your carrier's terms before you rely on it."
         }
       },
       {
         "@type": "Question",
-        "name": "Does my carrier know I'm using tethering?",
+        "name": "Is tethering allowed on my plan?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Carriers typically detect tethering by how traffic looks on the wire, not by asking permission. Routing traffic through a local proxy changes that traffic pattern, which is how Tether Link Utility helps avoid common hotspot restrictions."
+          "text": "That depends on your carrier and plan. Tether Link Utility doesn't change your plan's terms, and some carriers limit or don't allow tethering. Check your plan and your carrier's terms of service before using it."
         }
       },
       {
@@ -227,7 +242,7 @@
         "name": "Is this a free, unlimited hotspot app?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The free tier connects up to 2 devices at once, with ads, it's free to use, but not literally unlimited in device count. Pro removes ads and raises the limit to 5 devices. Either way, there's no separate hotspot data cap or speed throttling, you're sharing your own mobile data plan."
+          "text": "The free tier connects up to 2 devices at once and shows ads; it's free to use, but not unlimited in device count. Pro removes ads and raises the limit to 5 devices. The app itself doesn't currently add a speed limit; actual speed depends on your carrier, plan and signal."
         }
       }
     ]
@@ -659,6 +674,13 @@
       display: flex; flex-wrap: wrap; justify-content: center;
       align-items: center; gap: 20px;
     }
+    .badge-pill {
+      display: inline-flex; align-items: center;
+      padding: 8px 16px; border: 1px solid var(--border); border-radius: 999px;
+      font-size: 14px; font-weight: 600; color: var(--text); text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .badge-pill:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 
     /* ── Steps ───────────────────────────── */
     .steps {
@@ -680,7 +702,7 @@
     /* ── Features ────────────────────────── */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
     .feature {
@@ -782,6 +804,13 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+    /* ── Pricing + mascot caption ────────── */
+    @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
+    .feature .price { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+    .price-note { font-size: 12px; color: var(--dim); margin-top: 14px; }
+    .footer-mascots { flex-direction: column; align-items: center; gap: 6px; }
+    .footer-mascots-imgs { display: flex; justify-content: center; gap: 14px; }
+    .footer-mascots-caption { font-size: 12px; color: var(--dim); text-align: center; }
   </style>
 </head>
 <body>
@@ -828,13 +857,13 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="dot"></span>Android App</div>
-      <h1>Bypass Carrier Hotspot Data Caps</h1>
-      <p class="hero-tagline">Hotspot traffic,<br><span>no restrictions.</span></p>
+      <h1>Share Your Phone's Mobile Data Over Wi-Fi, Even on Plans With Hotspot Caps</h1>
+      <p class="hero-tagline">Your phone's data,<br><span>on all your devices.</span></p>
       <p class="hero-body">
-        Tether Link Utility runs a local SOCKS5 proxy on your Android device, shared over
-        <strong>Wi-Fi hotspot</strong> (not a USB cable), letting connected computers and phones
-        route traffic through your mobile data, bypassing carrier hotspot data caps and
-        throttling without touching a remote server.
+        Tether Link Utility runs a local SOCKS5 proxy on your Android phone and shares it over
+        <strong>Wi-Fi hotspot</strong> (not a USB cable), so your laptop, tablet or another phone
+        can use your mobile data. Traffic goes from your devices to your phone and out over your
+        mobile connection, with no remote server in between.
       </p>
       <div class="hero-actions">
         <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="play-badge" aria-label="Get it on Google Play">
@@ -877,7 +906,7 @@
 
   <section class="video-showcase">
     <div class="hero-eyebrow"><span class="dot"></span>See it in action</div>
-    <h2>Watch it bypass the hotspot cap</h2>
+    <h2>Watch a quick demo</h2>
     <div class="video-frame video-facade" data-yt-id="XdQTXdNc_4w" role="button" tabindex="0" aria-label="Play demo video">
       <img src="https://img.youtube.com/vi/XdQTXdNc_4w/hqdefault.jpg" alt="Demo video preview" loading="lazy" width="480" height="360" />
       <span class="video-facade-play" aria-hidden="true">
@@ -897,15 +926,14 @@
         In the US (including Verizon, AT&amp;T, and T-Mobile), India (Jio, Airtel, Vi), Türkiye
         (Turkcell, Vodafone, Türk Telekom), and parts of Europe, many carriers meter or throttle
         Wi-Fi hotspot traffic separately from your regular data, even on plans advertised as
-        "unlimited." They detect it by how the traffic looks on the wire, not by how much
-        of your plan you've actually used.
+        "unlimited."
       </p>
       <p style="margin-top: 12px;">
-        Tether Link Utility routes everything through a local proxy on the device itself,
-        which helps it avoid common carrier hotspot detection methods.
-        No separate hotspot bucket to run out of.
-        <a href="/blog/understanding-carrier-hotspot-throttling.html">Read how carrier hotspot detection actually works &rarr;</a>
-        &middot; <a href="/blog/best-ways-to-bypass-hotspot-throttling.html">compare every bypass method &rarr;</a>
+        Tether Link Utility shares your connection through a local SOCKS5 proxy on your phone,
+        over the phone's own Wi-Fi hotspot. No remote server, no account. Hotspot and tethering rules
+        differ from plan to plan, so check your plan and your carrier's terms before you rely on it.
+        <a href="/blog/understanding-carrier-hotspot-throttling.html">Read how carrier hotspot limits work &rarr;</a>
+        &middot; <a href="/blog/best-ways-to-bypass-hotspot-throttling.html">compare the options &rarr;</a>
       </p>
       <div class="countries-inline">
         <span class="country-pill">🇺🇸 United States</span>
@@ -932,9 +960,9 @@
       </div>
       <div class="cap-row">
         <span class="label">Tether Link Utility</span>
-        <span class="value ok">Full speed, for less</span>
+        <span class="value ok">Free, Pro $2.99/mo**</span>
       </div>
-      <p style="font-size:11px; color:var(--dim); margin-top:14px;">*Verizon's own unlimited-hotspot add-on price, checked September 2026, carrier pricing can change.</p>
+      <p style="font-size:11px; color:var(--dim); margin-top:14px;">*Verizon's own unlimited-hotspot add-on price, checked September 2026, carrier pricing can change.<br>**USD reference price, may vary by country. Your plan's terms still apply.</p>
       <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Get it on Google Play</a>
     </div>
   </section>
@@ -961,8 +989,8 @@
         </div>
         <div class="step">
           <div class="step-num">STEP 04</div>
-          <h3>Browse freely</h3>
-          <p>Traffic routes through your mobile data. No carrier throttling, no remote server, nothing leaves your hardware.</p>
+          <h3>Start browsing</h3>
+          <p>Connected devices use your phone's mobile data through the local proxy. No remote server is involved: traffic goes from your devices to your phone and out over your mobile connection.</p>
         </div>
       </div>
     </section>
@@ -988,8 +1016,8 @@
           <div class="feature-icon teal">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#00BF8A"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
           </div>
-          <h3>Fully local</h3>
-          <p>No remote VPN server. No network traffic is routed through our servers or logged by the proxy.</p>
+          <h3>No remote server</h3>
+          <p>No remote VPN server. Proxied traffic goes straight from your devices to your phone and out over your mobile data; the app does not log it, store it, or send it to our servers.</p>
         </div>
         <div class="feature">
           <div class="feature-icon teal">
@@ -999,6 +1027,23 @@
           <p>Carrier IPs shift between sessions. The app detects changes and alerts connected devices automatically.</p>
         </div>
       </div>
+    </section>
+
+    <section class="strip" id="pricing">
+      <div class="section-label">Pricing</div>
+      <div class="features">
+        <div class="feature">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <p>Up to 2 devices at once, with banner and interstitial ads. No account needed.</p>
+        </div>
+        <div class="feature">
+          <h3>Pro</h3>
+          <p class="price">$2.99/month or $12.99/year</p>
+          <p>Up to 5 devices at once, no ads.</p>
+        </div>
+      </div>
+      <p class="price-note">Prices shown in USD as a reference. Actual prices are set per country in Google Play and may vary; check the Play Store listing for your local price.</p>
     </section>
 
     <section class="strip" id="platforms">
@@ -1060,8 +1105,8 @@
     <h2>Frequently asked questions</h2>
 
     <details class="faq-item">
-      <summary>How does Tether Link Utility bypass hotspot limits?</summary>
-      <p>It routes traffic shared over your phone's Wi-Fi hotspot (no USB cable involved) through a local SOCKS5 proxy via Android's VpnService API, which helps it avoid some common carrier hotspot restrictions.</p>
+      <summary>How does Tether Link Utility work?</summary>
+      <p>It runs a local SOCKS5 proxy on your Android phone, using Android's VpnService API, and shares it over the phone's Wi-Fi hotspot (no USB cable involved). Your other devices send their traffic to that proxy, and the phone forwards it over its mobile data connection. There's no remote server in between.</p>
     </details>
 
     <details class="faq-item">
@@ -1071,7 +1116,7 @@
 
     <details class="faq-item">
       <summary>Does it use a remote server?</summary>
-      <p>No, everything runs locally on your device; no traffic leaves your hardware chain or gets logged.</p>
+      <p>No. Proxied traffic goes from your devices to your phone and out over your mobile data; it is not routed through, logged, or stored on any server of ours. The free version shows Google AdMob ads, and the app uses Firebase Analytics and Crashlytics, which collect device identifiers and usage and crash data, as described in our <a href="/privacy.html">privacy policy</a>.</p>
     </details>
 
     <details class="faq-item">
@@ -1081,7 +1126,7 @@
 
     <details class="faq-item">
       <summary>Does a SOCKS5 proxy setting protect all my traffic?</summary>
-      <p>Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it, DNS lookups and other background traffic can still leave over the plain hotspot connection unprotected, which some carriers can detect even if your main browsing works fine. For genuinely full coverage on Windows or macOS, run <a href="/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box in TUN mode</a>, which routes your whole system's traffic, DNS included, through the tunnel.</p>
+      <p>Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it; DNS lookups and other background traffic can still go over the plain hotspot connection instead of the proxy. For full coverage on Windows or macOS, run <a href="/blog/socks5-proxy-setup-windows-macos-ios.html">sing-box in TUN mode</a>, which routes your whole system's traffic, DNS included, through the tunnel.</p>
     </details>
 
     <details class="faq-item">
@@ -1091,7 +1136,7 @@
 
     <details class="faq-item">
       <summary>How many devices can connect at once?</summary>
-      <p>The free tier connects 2 devices; Pro raises that to 5 devices at once.</p>
+      <p>The free tier connects up to 2 devices at once; Pro raises that to 5. Pro is $2.99/month or $12.99/year (USD), and prices may vary by country.</p>
     </details>
 
     <details class="faq-item">
@@ -1101,17 +1146,17 @@
 
     <details class="faq-item">
       <summary>Does Tether Link Utility work with unlimited data plans?</summary>
-      <p>Yes. Many "unlimited" plans still cap or throttle hotspot/tethered traffic specifically, separate from on-device data. Tether Link Utility helps avoid that separate hotspot restriction.</p>
+      <p>It shares whatever mobile data connection your phone has, on any plan. Keep in mind that many "unlimited" plans have separate rules or caps for hotspot and tethering use, so check your plan and your carrier's terms before you rely on it.</p>
     </details>
 
     <details class="faq-item">
-      <summary>Does my carrier know I'm using tethering?</summary>
-      <p>Carriers typically detect tethering by how traffic looks on the wire, not by asking permission. Routing traffic through a local proxy changes that traffic pattern, which is how Tether Link Utility helps avoid common hotspot restrictions.</p>
+      <summary>Is tethering allowed on my plan?</summary>
+      <p>That depends on your carrier and plan. Tether Link Utility doesn't change your plan's terms, and some carriers limit or don't allow tethering. Check your plan and your carrier's terms of service before using it.</p>
     </details>
 
     <details class="faq-item">
       <summary>Is this a free, unlimited hotspot app?</summary>
-      <p>The free tier connects up to 2 devices at once, with ads, it's free to use, but not literally unlimited in device count. Pro removes ads and raises the limit to 5 devices. Either way, there's no separate hotspot data cap or speed throttling, you're sharing your own mobile data plan.</p>
+      <p>The free tier connects up to 2 devices at once and shows ads; it's free to use, but not unlimited in device count. Pro removes ads and raises the limit to 5 devices. The app itself doesn't currently add a speed limit; actual speed depends on your carrier, plan and signal.</p>
     </details>
   </section>
 
@@ -1137,22 +1182,21 @@
 <section class="badges-strip">
   <div class="section-label">Find us on</div>
   <div class="badges-row">
-    <a href="https://www.producthunt.com/products/tether-link-utility?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-tether-link-utility" target="_blank" rel="noopener noreferrer">
-      <img alt="Tether Link Utility - Share your phone's hotspot without the carrier's data cap | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1245990&amp;theme=dark" />
-    </a>
+    <a href="https://www.producthunt.com/products/tether-link-utility?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-tether-link-utility" target="_blank" rel="noopener noreferrer" class="badge-pill">Product Hunt</a>
     <a href="https://www.nxgntools.com/tools/tether-link-utility?utm_source=tether-link-utility" target="_blank" rel="noopener">
       <img src="https://www.nxgntools.com/api/embed/tether-link-utility?type=FIND_US_ON&amp;hideUpvotes=true" alt="Find us on NxGn Tools" style="height: 48px; width: auto;" />
     </a>
-    <a href="https://viberank.dev/apps/Tether%20Link%20Utility" target="_blank" rel="noopener noreferrer">
-      <img src="https://viberank.dev/badge?app=Tether%20Link%20Utility&amp;theme=dark" alt="Tether Link Utility on VibeRank" />
-    </a>
+    <a href="https://viberank.dev/apps/Tether%20Link%20Utility" target="_blank" rel="noopener noreferrer" class="badge-pill">VibeRank</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-mascots" aria-hidden="true">
-    <img src="/barnah-adam.png" alt="">
-    <img src="/barnah-kiz.png" alt="">
+  <div class="footer-mascots">
+    <div class="footer-mascots-imgs" aria-hidden="true">
+      <img src="/barnah-adam.png" alt="">
+      <img src="/barnah-kiz.png" alt="">
+    </div>
+    <p class="footer-mascots-caption">Meet Barnah Adam and Barnah Kız, the Tether Link Utility mascots</p>
   </div>
   <div class="footer-brand">
     © 2026 Tether Link Utility
@@ -1169,7 +1213,7 @@
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <span>Tether Link Utility, bypass carrier hotspot data caps &amp; throttling</span>
+  <span>Tether Link Utility, share your phone's mobile data over Wi-Fi</span>
   <a href="https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility" class="btn-primary">Get it on Google Play</a>
 </div>
 
