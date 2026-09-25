@@ -1,0 +1,70 @@
+---
+title: "Android SOCKS5 Proxy Sunucusu Nedir, Nasıl Kullanılır?"
+description: "Android telefonda çalışan bir SOCKS5 proxy sunucusu ne yapar, cihazlar ona Wi-Fi üzerinden nasıl bağlanır ve Windows, macOS, iOS ve Android istemcileri nasıl ayarlanır."
+published: "2026-09-25"
+modified: "2026-09-25"
+sitemap:
+  order: 60
+  lastmod: "2026-09-25"
+  changefreq: "monthly"
+  priority: "0.7"
+index:
+  order: 2
+---
+    <div class="page-eyebrow">Blog</div>
+    <h1>Android SOCKS5 Proxy Sunucusu Nedir, Nasıl Kullanılır?</h1>
+    <div class="post-meta">25 Eylül 2026'da yayınlandı</div>
+
+    <p>SOCKS5 proxy sunucusu genellikle bir bilgisayarda ya da veri merkezinde çalışır. Ancak bir Android telefonda da çalışabilir ve bu, telefonun mobil verisini aynı Wi-Fi ağındaki diğer cihazlarla paylaşmanın pratik bir yoludur. Bu rehberde SOCKS5'in ne olduğunu, neden bir telefonda çalıştırılabileceğini, Android'in yerel hotspot'uyla nasıl birlikte çalıştığını ve her cihaz türünün nasıl bağlanacağını anlatıyoruz.</p>
+
+    <h2>SOCKS5 nedir?</h2>
+    <p>SOCKS5 genel amaçlı bir proxy protokolüdür. Bir istemci (tarayıcı, uygulama ya da sistem genelinde çalışan bir araç) proxy'ye bağlanır ve onun adına bir adrese bağlantı açmasını ister. Proxy bu bağlantıyı kurar ve veriyi iki yönde taşır. SOCKS5 her türlü TCP bağlantısıyla çalışır; ayrıca UDP ASSOCIATE adlı özellik sayesinde DNS ve QUIC gibi bazı yeni protokollerin kullandığı UDP'yi de destekler.</p>
+    <p>HTTP proxy'nin aksine SOCKS5'in taşıdığı trafiği anlaması gerekmez. Bu yüzden bağlantı paylaşımına uygundur: web siteleri, oyunlar, mesajlaşma uygulamaları ve dosya aktarımları aynı proxy üzerinden geçebilir.</p>
+
+    <h2>Neden telefonda SOCKS5 proxy çalıştırılır?</h2>
+    <ul>
+      <li><strong>Mobil veriyi diğer cihazlarla paylaşmak.</strong> Aynı Wi-Fi ağındaki dizüstü bilgisayar, tablet ya da ikinci bir telefon trafiğini proxy'ye gönderir; telefon da bunu mobil veri bağlantısı üzerinden iletir.</li>
+      <li><strong>Birçok istemciyle uyumlu.</strong> Tarayıcılar, işletim sistemleri ve pek çok uygulama zaten SOCKS5'i destekler; masaüstünde çoğu zaman ek uygulama gerekmez.</li>
+      <li><strong>Her şey yerelde kalır.</strong> Proxy sizin telefonunuzda çalışır. Trafik cihazınızdan telefona, oradan mobil bağlantıyla internete gider; arada uzak bir sunucu yoktur.</li>
+      <li><strong>Root gerekmez.</strong> Sıradan bir Android uygulaması SOCKS5 sunucusu çalıştırabilir.</li>
+    </ul>
+
+    <h2>LocalOnlyHotspot ile nasıl çalışır?</h2>
+    <p>Diğer cihazların telefona ulaşabileceği bir ağ gerekir. Tether Link Utility bunu Android'in <strong>LocalOnlyHotspot</strong> özelliğiyle (Android 8'den beri var) sağlar: sistem, adı ve şifresi otomatik üretilen bir Wi-Fi ağı oluşturur. LocalOnlyHotspot tek başına bağlı cihazlara telefona erişim verir ama internete erişim vermez. SOCKS5 proxy bu boşluğu doldurur: yerel Wi-Fi'deki cihazlar proxy'nin IP adresi ve portuna bağlanır, proxy de bağlantılarını telefonun mobil verisi üzerinden iletir.</p>
+    <p>Uygulamada <strong>START SERVER</strong> düğmesine dokunun. Hotspot ve proxy çalıştığında ekranda IP adresi ve port görünür; <strong>Show QR Code</strong> ise hem Wi-Fi bilgilerini hem de proxy adresini içeren bir kod gösterir.</p>
+
+    <h2>İstemcileri bağlama</h2>
+    <p>Önce her istemci telefonun Wi-Fi ağına katılır. Ardından proxy'yi kullanması için ayarlanır:</p>
+    <ul>
+      <li><strong>Android:</strong> diğer telefona da Tether Link Utility'yi yükleyip QR kodu okutun. Android 10 ve üstünde Wi-Fi ağına otomatik katılır, ardından Android'in VpnService özelliğiyle (uzak sunucu olmayan yerel bir VPN arayüzü) telefonun trafiğini proxy'ye yönlendirir. Ayrıntılar: <a href="/tr/blog/share-mobile-data-android-to-android-qr.html">QR Kod ile Android'den Android'e Mobil Veri Paylaşımı</a>.</li>
+      <li><strong>Windows:</strong> Firefox'ta SOCKS5 ayarlayın ya da Chrome veya Edge'de FoxyProxy gibi bir proxy eklentisi kullanın. Yalnızca tarayıcının değil tüm uygulamaların ve DNS'in proxy'den geçmesi için sing-box'ı TUN modunda çalıştırın.</li>
+      <li><strong>macOS:</strong> IP ve portu Sistem Ayarları, Ağ, Wi-Fi, Ayrıntılar, Proxy'ler, SOCKS Proxy bölümüne girin. Tüm uygulamalar ve DNS için sing-box TUN modu daha kapsamlı bir seçenektir.</li>
+      <li><strong>Linux:</strong> masaüstü ortamınızın ağ proxy ayarlarını ya da uygulamanın SOCKS5 seçeneğini kullanın; sing-box Linux'ta da çalışır.</li>
+      <li><strong>iOS ve iPadOS:</strong> iOS'ta yerleşik bir SOCKS5 ayarı yoktur; Shadowrocket veya Potatso Lite gibi SOCKS5 destekleyen bir uygulama kullanın.</li>
+    </ul>
+    <p>Her platform için adım adım anlatım ve örnek bir sing-box yapılandırması <a href="/tr/blog/socks5-proxy-setup-windows-macos-ios.html">SOCKS5 Proxy Kurulumu: Windows, macOS ve iOS</a> rehberinde.</p>
+
+    <h2>Güvenlik notları</h2>
+    <ul>
+      <li><strong>Yalnızca yerel ağ.</strong> Proxy, telefonun yerel hotspot ağında dinler. Ona yalnızca bu Wi-Fi ağına katılan cihazlar ulaşabilir; bu yüzden Wi-Fi şifresini (ve onu içeren QR kodu) yalnızca güvendiğiniz kişilerle paylaşın.</li>
+      <li><strong>SOCKS5 şifreleme yapmaz.</strong> Protokol trafiği iletir ama şifrelemez. Telefonla aranızdaki Wi-Fi bağlantısı hotspot'un WPA2 veya WPA3 güvenliğiyle korunur; telefondan sonrası ise kullandığınız site ve uygulamaların sağladığı korumaya bağlıdır. HTTPS kullanan siteleri ve şifreli bağlantı kuran uygulamaları tercih edin.</li>
+      <li><strong>İşiniz bitince sunucuyu durdurun.</strong> Durdurmak hotspot'u ve proxy'yi kapatır.</li>
+    </ul>
+
+    <h2>Sınırlar ve maliyet</h2>
+    <p>Tether Link Utility'nin ücretsiz sürümü en fazla 2 bağlı cihaza izin verir ve reklam gösterir. Pro sürüm reklamsız olarak en fazla 5 cihaza izin verir. Bağlı cihazların kullandığı tüm veri telefonun mobil tarifesinden düşer ve operatörler kendi paylaşım kurallarını belirler; çok veri paylaşmadan önce tarifenizin koşullarını kontrol edin.</p>
+
+    <div class="cta-box">
+      <h3>Tether Link Utility</h3>
+      <p>Telefonunuzun mobil verisini yerel bir SOCKS5 proxy üzerinden diğer cihazlarınızla paylaşan bir Android uygulaması. Root yok, hesap yok, uzak sunucu yok.</p>
+      <a class="cta-button" href="/tr/">Nasıl çalıştığını görün</a>
+    </div>
+
+    <div class="related">
+      <h3>İlgili yazılar</h3>
+      <ul>
+        <li><a href="/tr/blog/socks5-proxy-setup-windows-macos-ios.html">SOCKS5 Proxy Kurulumu: Windows, macOS ve iOS</a></li>
+        <li><a href="/tr/blog/share-mobile-data-android-to-android-qr.html">QR Kod ile Android'den Android'e Mobil Veri Paylaşımı</a></li>
+        <li><a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">Telefonun İnternetini Bilgisayarla Paylaşmanın 5 Yolu (2026)</a></li>
+      </ul>
+    </div>

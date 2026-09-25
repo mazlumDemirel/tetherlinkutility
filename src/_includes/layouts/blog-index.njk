@@ -1,0 +1,74 @@
+{%- set t = i18n[lang] -%}
+{%- set pageUrl = site.url + t.prefix + "blog/" -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+{% include "partials/gtag.njk" %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="{{ pageUrl }}" />
+{% for l in site.languages %}  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ i18n[l].prefix }}blog/index.html" />
+{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/blog/index.html" />
+  <title>{{ t.blog }}: Tether Link Utility</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ t.blog }}: Tether Link Utility">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ pageUrl }}">
+  <meta property="og:site_name" content="Tether Link Utility">
+  <meta property="og:image" content="{{ site.url }}/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ site.twitter }}">
+  <meta name="twitter:title" content="{{ t.blog }}: Tether Link Utility">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ site.url }}/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Tether Link Utility Blog",
+    "url": "{{ pageUrl }}",
+    "publisher": { "@type": "Organization", "name": "Tether Link Utility" },
+    "blogPost": [
+{% for post in collections["posts_" + lang] | sortByKey("index", "ldOrder", "order") %}      {
+        "@type": "BlogPosting",
+        "headline": "{{ post.data.index.ldHeadline or post.data.index.title or post.data.title }}",
+        "url": "{{ site.url }}{{ post.url }}",
+        "datePublished": "{{ post.data.index.published or post.data.published }}"
+      }{% if not loop.last %},{% endif %}
+{% endfor %}    ]
+  }
+  </script>
+
+{% include "partials/blog-index-style.njk" %}
+</head>
+<body>
+
+{% set langPath = "blog/" %}{% set hideBlogLink = true %}{% include "partials/blog-nav.njk" %}
+
+<main>
+  <div class="page-eyebrow">{{ eyebrow }}</div>
+  <h1>{{ t.blog }}</h1>
+{% for post in collections["posts_" + lang] | sortByKey("index", "order") %}
+  <a class="post-card" href="{{ post.url }}">
+    <div class="post-date">{{ post.data.index.displayDate or ((post.data.index.published or post.data.published) | displayDate(lang)) }}</div>
+    <div class="post-title">{{ post.data.index.title or post.data.title }}</div>
+    <div class="post-excerpt">{{ post.data.index.excerpt or post.data.description }}</div>
+  </a>
+{% endfor %}</main>
+
+{% include "partials/blog-footer.njk" %}
+
+
+{% include "partials/lang-dropdown-script.njk" %}
+</body>
+</html>

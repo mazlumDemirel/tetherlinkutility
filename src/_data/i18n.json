@@ -1,0 +1,77 @@
+{
+  "en": {
+    "prefix": "/",
+    "name": "English",
+    "code": "EN",
+    "ogLocale": "en_US",
+    "publisher": "by Steadyline Labs",
+    "home": "Home",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "privacy": "Privacy",
+    "privacyHref": "/privacy.html",
+    "homeNav": {
+      "openMenu": "Open menu",
+      "how": "How it works",
+      "platforms": "Platforms",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "language": "Language",
+      "getApp": "Get the app",
+      "findUsOn": "Find us on",
+      "sticky": "Share your phone's mobile data in one tap",
+      "stickyButton": "Get it on Google Play",
+      "videoTitle": "Tether Link Utility demo video"
+    }
+  },
+  "tr": {
+    "prefix": "/tr/",
+    "name": "Türkçe",
+    "code": "TR",
+    "ogLocale": "tr_TR",
+    "publisher": "Steadyline Labs",
+    "home": "Ana Sayfa",
+    "faq": "SSS",
+    "blog": "Blog",
+    "privacy": "Gizlilik",
+    "privacyHref": "/privacy.html#tr",
+    "homeNav": {
+      "openMenu": "Menüyü aç",
+      "how": "Nasıl çalışır",
+      "platforms": "Platformlar",
+      "pricing": "Fiyatlar",
+      "faq": "SSS",
+      "language": "Dil",
+      "getApp": "Uygulamayı indirin",
+      "findUsOn": "Bizi şurada bulabilirsiniz",
+      "sticky": "Telefonunuzun mobil verisini tek dokunuşla paylaşın",
+      "stickyButton": "Google Play'den İndirin",
+      "videoTitle": "Tether Link Utility tanıtım videosu"
+    }
+  },
+  "hi": {
+    "prefix": "/hi/",
+    "name": "हिन्दी",
+    "code": "HI",
+    "ogLocale": "hi_IN",
+    "publisher": "Steadyline Labs",
+    "home": "होम",
+    "faq": "FAQ",
+    "blog": "ब्लॉग",
+    "privacy": "प्राइवेसी",
+    "privacyHref": "/privacy.html#hi",
+    "homeNav": {
+      "openMenu": "मेनू खोलें",
+      "how": "यह कैसे काम करता है",
+      "platforms": "प्लेटफ़ॉर्म",
+      "pricing": "कीमत",
+      "faq": "FAQ",
+      "language": "भाषा",
+      "getApp": "ऐप पाएं",
+      "findUsOn": "हमें यहां देखें",
+      "sticky": "एक टैप में अपने फ़ोन का मोबाइल डेटा शेयर करें",
+      "stickyButton": "Google Play पर पाएं",
+      "videoTitle": "Tether Link Utility डेमो वीडियो"
+    }
+  }
+}

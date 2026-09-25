@@ -1,0 +1,69 @@
+{%- set t = i18n[lang] -%}
+{%- set pageUrl = site.url + t.prefix + "blog/" + slug + ".html" -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+{% include "partials/gtag.njk" %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="{{ pageUrl }}" />
+{% for l in site.languages %}  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ i18n[l].prefix }}blog/{{ slug }}.html" />
+{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/blog/{{ slug }}.html" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Tether Link Utility">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ ogTitle or title }}">
+  <meta property="og:description" content="{{ ogDescription or description }}">
+  <meta property="og:url" content="{{ pageUrl }}">
+  <meta property="og:site_name" content="Tether Link Utility">
+  <meta property="og:image" content="{{ site.url }}/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ site.twitter }}">
+  <meta name="twitter:title" content="{{ twitterTitle or ogTitle or title }}">
+  <meta name="twitter:description" content="{{ twitterDescription or ogDescription or description }}">
+  <meta name="twitter:image" content="{{ site.url }}/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ ldHeadline or title }}",
+    "description": "{{ ldDescription or description }}",
+    "datePublished": "{{ published }}",
+    "dateModified": "{{ modified }}",
+    "author": { "@type": "Organization", "name": "Tether Link Utility" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tether Link Utility",
+      "logo": { "@type": "ImageObject", "url": "{{ site.url }}/favicon.png" }
+    },
+    "mainEntityOfPage": "{{ pageUrl }}"
+  }
+  </script>
+{% if extraJsonLd %}{{ extraJsonLd }}{% endif %}
+{% include "partials/post-style.njk" %}
+</head>
+<body>
+
+{% set langPath = "blog/" + slug + ".html" %}{% include "partials/blog-nav.njk" %}
+
+<main>
+  <article>
+{{ content }}  </article>
+</main>
+
+{% include "partials/blog-footer.njk" %}
+
+
+{% include "partials/lang-dropdown-script.njk" %}
+</body>
+</html>

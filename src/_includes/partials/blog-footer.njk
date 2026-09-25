@@ -1,0 +1,15 @@
+<footer>
+  <div class="footer-brand">
+    © 2026 Tether Link Utility
+    &nbsp;·&nbsp;
+    {{ t.publisher }}
+    &nbsp;·&nbsp;
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </div>
+  <div class="footer-links">
+    <a href="{{ t.prefix }}">{{ t.home }}</a>
+{% if not hidePrivacyLink %}    <a href="{{ t.privacyHref }}">{{ t.privacy }}</a>
+{% endif %}    <a href="{{ site.playUrl }}">Google Play</a>
+    <a href="https://x.com/tetherlinkutili" target="_blank" rel="noopener" aria-label="Follow on X" style="display:inline-flex; align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  </div>
+</footer>
