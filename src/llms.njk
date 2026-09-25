@@ -30,7 +30,7 @@ eleventyExcludeFromCollections: true
 - Google Play listing: https://play.google.com/store/apps/details?id=com.alparslan.tetherlinkutility
 
 ## Blog
-{% for post in collections.posts_en | sortByKey("llms", "order") %}- {{ site.url }}{{ post.url }} : {{ post.data.llms.text }}
+{% for post in collections.posts_en | sortByKey("llms", "order") %}- {{ site.url }}{{ post.url }} : {{ post.data.llms.text if post.data.llms else (post.data.title | plainText) }}
 {% endfor %}
 Most guides are also available in Turkish (https://tetherlinkutility.com/tr/blog/) and Hindi (https://tetherlinkutility.com/hi/blog/), same filenames under each language's `/blog/` path.
 

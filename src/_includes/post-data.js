@@ -7,6 +7,9 @@ export default function postData(lang) {
     lang,
     isPost: true,
     layout: "layouts/post.njk",
+    // Defaults for sitemap.xml; a post can override any of these (and set `order`)
+    // in its own front matter. lastmod defaults to the post's `modified` date.
+    sitemap: { changefreq: "monthly", priority: "0.6" },
     eleventyComputed: {
       slug: (data) => data.page.fileSlug,
     },

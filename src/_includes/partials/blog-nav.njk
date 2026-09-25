@@ -18,7 +18,7 @@
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 3.5L5 7l3.5-3.5"/></svg>
       </button>
       <div class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-{% for l in site.languages %}        <a href="{{ site.url }}{{ i18n[l].prefix }}{{ langPath }}"{% if l == lang %} class="is-current"{% endif %} role="menuitem">{{ i18n[l].name }}</a>
+{% for l in site.languages %}        <a href="{{ site.url }}{{ i18n[l].prefix }}{% if slug and not (collections | hasPost(l, slug)) %}blog/{% else %}{{ langPath }}{% endif %}"{% if l == lang %} class="is-current"{% endif %} role="menuitem">{{ i18n[l].name }}</a>
 {% endfor %}      </div>
     </div>
   </div>

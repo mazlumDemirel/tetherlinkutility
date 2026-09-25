@@ -39,7 +39,7 @@
     "url": "{{ pageUrl }}",
     "publisher": { "@type": "Organization", "name": "Tether Link Utility" },
     "blogPost": [
-{% for post in collections["posts_" + lang] | sortByKey("index", "ldOrder", "order") %}      {
+{% for post in collections["posts_" + lang] | sortByKey("index", "ldOrder", "order", "first") %}      {
         "@type": "BlogPosting",
         "headline": "{{ post.data.index.ldHeadline or post.data.index.title or post.data.title }}",
         "url": "{{ site.url }}{{ post.url }}",
@@ -58,7 +58,7 @@
 <main>
   <div class="page-eyebrow">{{ eyebrow }}</div>
   <h1>{{ t.blog }}</h1>
-{% for post in collections["posts_" + lang] | sortByKey("index", "order") %}
+{% for post in collections["posts_" + lang] | sortByKey("index", "order", null, "first") %}
   <a class="post-card" href="{{ post.url }}">
     <div class="post-date">{{ post.data.index.displayDate or ((post.data.index.published or post.data.published) | displayDate(lang)) }}</div>
     <div class="post-title">{{ post.data.index.title or post.data.title }}</div>
