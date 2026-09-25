@@ -28,7 +28,7 @@
 - https://tetherlinkutility.com/blog/best-ways-to-bypass-hotspot-throttling.html — comparison of every realistic bypass method: carrier add-ons, TTL modification, VPNs, and local proxy apps
 - https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html — step-by-step SOCKS5 proxy setup for Windows, macOS, and iOS clients
 - https://tetherlinkutility.com/blog/verizon-hotspot-data-cap.html — Verizon's hotspot data allotment and add-on pricing
-- https://tetherlinkutility.com/blog/att-hotspot-throttling.html — AT&T's hotspot allotment and deprioritization behavior
+- https://tetherlinkutility.com/blog/att-hotspot-throttling.html — AT&T's hotspot allowance and the 128 Kbps hotspot speed after it is used
 - https://tetherlinkutility.com/blog/firstnet-hotspot-data-limit.html — how FirstNet's hotspot/tethering rules for verified first responders differ from consumer AT&T plans
 - https://tetherlinkutility.com/blog/jio-hotspot-data-limit.html — Jio's daily hotspot data limit in India
 - https://tetherlinkutility.com/blog/airtel-hotspot-data-limit.html — Airtel's Unlimited 5G hotspot block and 300GB FUP cap in India
@@ -38,6 +38,8 @@
 - https://tetherlinkutility.com/blog/nobody-reads-the-contract.html — opinion piece on hidden contract terms and hotspot data caps as a global pattern, with regulatory examples from the EU, India, Brazil, and the US
 - https://tetherlinkutility.com/blog/iphone-hotspot-limit-bypass.html — why iOS doesn't allow an app-level equivalent of Tether Link Utility, and what iPhone owners can actually do (use it as a client, or standard carrier bypass options)
 - https://tetherlinkutility.com/blog/us-cellular-hotspot-data-cap.html — US Cellular's separate hotspot data allotment on unlimited plans, plus a general high-usage slowdown threshold
+- https://tetherlinkutility.com/blog/t-mobile-hotspot-data-limit.html - T-Mobile's high-speed hotspot allowance by plan, the 600 Kbps speed after it, and what the UScellular acquisition means for hotspot rules
+- https://tetherlinkutility.com/blog/how-to-check-if-hotspot-is-unlimited.html - how to check whether your hotspot is really unlimited: where each covered carrier shows its hotspot allowance, the phone's own hotspot counter, and signs you've hit a cap
 
 All posts above are also available translated in full: Turkish (https://tetherlinkutility.com/tr/blog/) and Hindi (https://tetherlinkutility.com/hi/blog/), same filenames under each language's `/blog/` path.
 

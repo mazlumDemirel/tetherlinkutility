@@ -53,7 +53,7 @@
     "headline": "US Cellular Hotspot Data Cap Explained",
     "description": "US Cellular's unlimited plans still cap mobile hotspot data separately from on-device use. Here's how the allotment works and what your real options are.",
     "datePublished": "2026-09-23",
-    "dateModified": "2026-09-23",
+    "dateModified": "2026-09-25",
     "author": { "@type": "Organization", "name": "Tether Link Utility" },
     "publisher": {
       "@type": "Organization",
@@ -182,12 +182,23 @@
   <article>
     <div class="page-eyebrow">Blog</div>
     <h1>US Cellular Hotspot Data Cap Explained</h1>
-    <div class="post-meta">Published September 23, 2026</div>
+    <div class="post-meta">Published September 23, 2026 &middot; Updated September 25, 2026</div>
 
     <p>US Cellular's unlimited plans work the same way most major US carriers' plans do: the data you use directly on your phone is unlimited, but mobile hotspot data is tracked as its own separate, smaller bucket, and it runs out well before your on-device data ever would.</p>
 
+    <h2>US Cellular is now part of T-Mobile</h2>
+    <p>T-Mobile completed its purchase of UScellular's wireless operations (customers, stores and part of its spectrum) in August 2025. UScellular no longer signs up new customers on its own plans; new sign-ups go to T-Mobile. Existing UScellular customers were told they could keep their current plans for now or move to a T-Mobile plan without switching costs. In practice, that means the hotspot rules that apply to you depend on which plan you are on today: a grandfathered UScellular plan or a T-Mobile plan. <em>(Checked September 2026. Plan transitions are still ongoing and can change.)</em></p>
+
     <h2>How US Cellular's hotspot allotment works</h2>
-    <p>US Cellular's unlimited tiers commonly include a set amount of high-speed mobile hotspot data bundled into the plan, historically in the range of a few GB up to around 10GB depending on the specific plan and pricing tier. Once that bundled hotspot allotment is used up, hotspot speed is typically reduced for the rest of the billing cycle, even though your phone's own on-device data keeps working at full speed. Prepaid plans work a bit differently: hotspot use draws from the plan's overall high-speed data pool, and once that's gone the whole line, not just hotspot, drops to a much slower fallback speed. <strong>Exact allotments, pricing, and rules change between plan revisions, always check your current plan's terms on US Cellular's own site or app for the number that applies to you.</strong></p>
+    <p>US Cellular's unlimited tiers commonly include a set amount of high-speed mobile hotspot data bundled into the plan, with the amount varying a lot by plan and pricing tier, from a modest allotment on entry-level tiers to far more on premium ones. Once that bundled hotspot allotment is used up, hotspot speed is typically reduced for the rest of the billing cycle, even though your phone's own on-device data keeps working at full speed. Prepaid plans work a bit differently: hotspot use draws from the plan's overall high-speed data pool, and once that's gone the whole line, not just hotspot, drops to a much slower fallback speed. <strong>Exact allotments, pricing, and rules change between plan revisions, always check your current plan's terms in your UScellular or T-Mobile account for the number that applies to you.</strong></p>
+
+    <h2>Does US Cellular block or throttle tethering?</h2>
+    <p>It depends on the plan, and it can be either one:</p>
+    <ul>
+      <li><strong>Throttled:</strong> on plans that include hotspot, tethering usually works at full speed until the hotspot allotment runs out, then drops to a much slower speed for the rest of the billing cycle. That is the most common complaint, and it is a throttle, not a block.</li>
+      <li><strong>Blocked:</strong> on plans or lines that don't include hotspot at all, the phone's hotspot feature may refuse to turn on, or tethered devices may connect but get no data. Carriers commonly check a line's hotspot entitlement when you enable tethering, so this is usually a plan setting rather than a technical fault.</li>
+    </ul>
+    <p>Carriers generally tell tethered traffic apart from on-device traffic by how it looks on the network, commonly through TTL (Time To Live) values and traffic patterns. <a href="/blog/understanding-carrier-hotspot-throttling.html">Our explanation of carrier hotspot detection</a> covers how that works. If you moved to a T-Mobile plan, T-Mobile's hotspot rules for that plan apply instead. <em>(Checked September 2026.)</em></p>
 
     <h2>Heavy overall usage can also trigger a slowdown</h2>
     <p>Separately from the hotspot-specific allotment, US Cellular plans commonly include a general high-usage threshold, historically discussed around the 100GB per line per month mark, where total data use (on-device and hotspot combined) can trigger reduced speeds for the rest of the cycle during network congestion. This is a different mechanism from the hotspot-specific cap above, it's about overall heavy use rather than hotspot specifically.</p>
@@ -198,7 +209,7 @@
 
     <h2>Your options</h2>
     <ol>
-      <li><strong>Check if US Cellular offers a hotspot add-on</strong> for your specific plan, availability and pricing vary by tier.</li>
+      <li><strong>Check whether your plan offers a hotspot add-on</strong>, or whether a T-Mobile plan with a larger hotspot allotment makes sense for you. Availability and pricing vary by tier.</li>
       <li><strong>Run a local proxy instead of a plain hotspot</strong>, apps like Tether Link Utility route that traffic through a local SOCKS5 proxy instead of a plain hotspot connection, without root or a remote server.</li>
       <li><strong>See the full comparison</strong> of every realistic bypass method in <a href="/blog/best-ways-to-bypass-hotspot-throttling.html">our hotspot bypass guide</a>.</li>
     </ol>
@@ -215,6 +226,9 @@
         <li><a href="/blog/verizon-hotspot-data-cap.html">Verizon Hotspot Data Cap Explained</a></li>
         <li><a href="/blog/att-hotspot-throttling.html">AT&amp;T Hotspot Throttling Explained</a></li>
         <li><a href="/blog/best-ways-to-bypass-hotspot-throttling.html">Best Ways to Bypass Hotspot Data Caps and Throttling in 2026</a></li>
+        <li><a href="/blog/firstnet-hotspot-data-limit.html">Does FirstNet Throttle Hotspot Data?</a></li>
+        <li><a href="/blog/t-mobile-hotspot-data-limit.html">T-Mobile Hotspot Data Limit Explained</a></li>
+        <li><a href="/blog/how-to-check-if-hotspot-is-unlimited.html">How to Check If Your Hotspot Is Really Unlimited</a></li>
       </ul>
     </div>
   </article>
