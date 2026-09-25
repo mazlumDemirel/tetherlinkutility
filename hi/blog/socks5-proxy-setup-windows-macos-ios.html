@@ -23,8 +23,8 @@
   <link rel="alternate" hreflang="tr" href="https://tetherlinkutility.com/tr/blog/socks5-proxy-setup-windows-macos-ios.html" />
   <link rel="alternate" hreflang="hi" href="https://tetherlinkutility.com/hi/blog/socks5-proxy-setup-windows-macos-ios.html" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/blog/socks5-proxy-setup-windows-macos-ios.html" />
-  <title>How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS</title>
-  <meta name="description" content="Windows और macOS (पूरे कवरेज वाले sing-box TUN मोड सहित) और iOS (Shadowrocket, Potatso Lite) के लिए स्टेप-बाय-स्टेप SOCKS5 प्रॉक्सी सेटअप।">
+  <title>Windows, macOS और iOS पर SOCKS5 प्रॉक्सी कैसे सेट करें</title>
+  <meta name="description" content="Firefox, Chrome (FoxyProxy), macOS नेटवर्क सेटिंग्स, sing-box TUN मोड और iOS ऐप्स के लिए स्टेप-बाय-स्टेप SOCKS5 प्रॉक्सी सेटअप।">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Tether Link Utility">
 
@@ -32,8 +32,8 @@
   <link rel="apple-touch-icon" href="/favicon.png">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS">
-  <meta property="og:description" content="Windows, macOS (पूरे कवरेज वाले sing-box विकल्प सहित), और iOS के लिए स्टेप-बाय-स्टेप SOCKS5 सेटअप।">
+  <meta property="og:title" content="Windows, macOS और iOS पर SOCKS5 प्रॉक्सी कैसे सेट करें">
+  <meta property="og:description" content="Firefox, Chrome (FoxyProxy), macOS नेटवर्क सेटिंग्स, sing-box TUN मोड और iOS ऐप्स के लिए स्टेप-बाय-स्टेप SOCKS5 प्रॉक्सी सेटअप।">
   <meta property="og:url" content="https://tetherlinkutility.com/hi/blog/socks5-proxy-setup-windows-macos-ios.html">
   <meta property="og:site_name" content="Tether Link Utility">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
@@ -42,18 +42,18 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@tetherlinkutili">
-  <meta name="twitter:title" content="How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS">
-  <meta name="twitter:description" content="Windows, macOS (पूरे कवरेज वाले sing-box विकल्प सहित), और iOS के लिए स्टेप-बाय-स्टेप SOCKS5 सेटअप।">
+  <meta name="twitter:title" content="Windows, macOS और iOS पर SOCKS5 प्रॉक्सी कैसे सेट करें">
+  <meta name="twitter:description" content="Firefox, Chrome (FoxyProxy), macOS नेटवर्क सेटिंग्स, sing-box TUN मोड और iOS ऐप्स के लिए स्टेप-बाय-स्टेप SOCKS5 प्रॉक्सी सेटअप।">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS",
-    "description": "Step-by-step SOCKS5 proxy setup for Windows and macOS (including full-coverage sing-box TUN mode) and iOS (Shadowrocket, Potatso Lite).",
+    "headline": "Windows, macOS और iOS पर SOCKS5 प्रॉक्सी कैसे सेट करें",
+    "description": "Step-by-step SOCKS5 proxy setup for Firefox, Chrome (FoxyProxy), macOS network settings, sing-box TUN mode and iOS apps.",
     "datePublished": "2026-09-18",
-    "dateModified": "2026-09-18",
+    "dateModified": "2026-09-25",
     "author": { "@type": "Organization", "name": "Tether Link Utility" },
     "publisher": {
       "@type": "Organization",
@@ -67,7 +67,7 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS",
+    "name": "Windows, macOS और iOS पर SOCKS5 प्रॉक्सी कैसे सेट करें",
     "step": [
       {
         "@type": "HowToStep",
@@ -81,8 +81,8 @@
       },
       {
         "@type": "HowToStep",
-        "name": "Windows and macOS: full system coverage with sing-box",
-        "text": "Firefox/FoxyProxy and macOS's native SOCKS setting only route traffic from apps that check them, leaking DNS and background traffic. For full coverage, install sing-box (brew install sing-box on macOS, or download the Windows release), configure a TUN inbound with a SOCKS outbound pointed at the phone's IP/port, and run it with elevated privileges."
+        "name": "Windows and macOS: all apps and DNS with sing-box",
+        "text": "Firefox/FoxyProxy and macOS's native SOCKS setting only route traffic from apps that use them. To route every app and DNS through the proxy, install sing-box (brew install sing-box on macOS, or download the Windows release), configure a TUN inbound with a SOCKS outbound pointed at the phone's IP/port, and run it with elevated privileges."
       },
       {
         "@type": "HowToStep",
@@ -225,13 +225,13 @@
 <main>
   <article>
     <div class="page-eyebrow">ब्लॉग</div>
-    <h1>How to Set Up a SOCKS5 Proxy on Windows, macOS, and iOS</h1>
-    <div class="post-meta">प्रकाशित 18 सितंबर, 2026</div>
+    <h1>Windows, macOS और iOS पर SOCKS5 प्रॉक्सी कैसे सेट करें</h1>
+    <div class="post-meta">प्रकाशित 18 सितंबर, 2026 &middot; अपडेट 25 सितंबर, 2026</div>
 
-    <p>Tether Link Utility आपके Android फ़ोन पर एक लोकल SOCKS5 प्रॉक्सी चलाता है। SOCKS5 प्रॉक्सी सेटिंग सपोर्ट करने वाला कोई भी डिवाइस फ़ोन के अपने Wi-Fi हॉटस्पॉट पर इससे कनेक्ट हो सकता है, Windows या macOS पर किसी अलग क्लाइंट ऐप की ज़रूरत नहीं, और iOS पर एक हल्का सा। यहां हर प्लेटफ़ॉर्म को इससे जोड़ने का तरीका बताया गया है।</p>
+    <p>Tether Link Utility आपके Android फ़ोन पर एक लोकल SOCKS5 प्रॉक्सी चलाता है। SOCKS5 प्रॉक्सी सेटिंग सपोर्ट करने वाला कोई भी डिवाइस फ़ोन के Wi-Fi (Android का LocalOnlyHotspot) से जुड़कर इस प्रॉक्सी से कनेक्ट हो सकता है, Windows या macOS पर किसी अलग क्लाइंट ऐप की ज़रूरत नहीं, और iOS पर एक हल्का सा। यहां हर प्लेटफ़ॉर्म को इससे जोड़ने का तरीका बताया गया है।</p>
 
     <h2>शुरू करने से पहले</h2>
-    <p>Tether Link Utility खोलें, <strong>START SERVER</strong> दबाएं, और स्क्रीन पर दिखाई गई दो चीज़ें नोट करें: <strong>IP एड्रेस</strong> और <strong>पोर्ट</strong>। नीचे दिए गए जिस भी सेटअप में आपका डिवाइस मैच करे, दोनों वहां डालने होंगे।</p>
+    <p>Tether Link Utility खोलें, <strong>START SERVER</strong> दबाएं, और स्क्रीन पर दिखाई गई दो चीज़ें नोट करें: <strong>IP एड्रेस</strong> और <strong>पोर्ट</strong>। नीचे दिए गए जिस भी सेटअप में आपका डिवाइस मैच करे, दोनों वहां डालने होंगे। पहले डिवाइस को फ़ोन के Wi-Fi नेटवर्क से जोड़ें: Wi-Fi का नाम और पासवर्ड <strong>Show QR Code</strong> स्क्रीन पर QR के नीचे लिखे टेक्स्ट में भी दिखते हैं।</p>
 
     <h2>Windows</h2>
     <h3>विकल्प A: Firefox (किसी एक्सटेंशन की ज़रूरत नहीं)</h3>
@@ -239,7 +239,7 @@
       <li><strong>Settings → General → Network Settings → Settings</strong> पर जाएं।</li>
       <li><strong>Manual proxy configuration</strong> चुनें।</li>
       <li>फ़ोन का IP <strong>SOCKS Host</strong> में डालें, पोर्ट <strong>Port</strong> में, और <strong>SOCKS v5</strong> चुनें।</li>
-      <li>टनल के बाहर DNS लीक से बचने के लिए <strong>Proxy DNS when using SOCKS v5</strong> चेक करें।</li>
+      <li><strong>Proxy DNS when using SOCKS v5</strong> चेक करें, ताकि DNS लुकअप भी प्रॉक्सी से जाएं।</li>
     </ol>
     <h3>विकल्प B: Chrome या Edge, FoxyProxy के ज़रिए</h3>
     <ol>
@@ -247,8 +247,8 @@
       <li>एक नया प्रॉक्सी जोड़ें: टाइप <strong>SOCKS5</strong>, host = फ़ोन का IP, port = ऐप में दिखाया गया पोर्ट।</li>
       <li>टूलबार आइकन से FoxyProxy को उस प्रॉक्सी पर स्विच करें।</li>
     </ol>
-    <h3>विकल्प C (सुझाया गया): sing-box से पूरे सिस्टम का कवरेज</h3>
-    <p>Firefox और FoxyProxy सिर्फ उस एक ब्राउज़र का ट्रैफ़िक रूट करते हैं, DNS लुकअप और बैकग्राउंड ऐप ट्रैफ़िक अब भी सामान्य हॉटस्पॉट कनेक्शन से बिना सुरक्षा के जा सकता है। Windows पर हर ऐप को टनल करने के लिए, DNS सहित, इसके बजाय <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> (ओपन सोर्स, MIT-जैसा लाइसेंस, सक्रिय रूप से मेंटेन्ड) को TUN मोड में इस्तेमाल करें:</p>
+    <h3>विकल्प C (सुझाया गया): sing-box से सभी ऐप्स के लिए</h3>
+    <p>Firefox और FoxyProxy सिर्फ उस एक ब्राउज़र का ट्रैफ़िक प्रॉक्सी से भेजते हैं, बाकी ऐप्स और DNS लुकअप नहीं। Windows पर हर ऐप और DNS को प्रॉक्सी से भेजने के लिए इसके बजाय <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> (ओपन सोर्स, MIT-जैसा लाइसेंस, सक्रिय रूप से मेंटेन्ड) को TUN मोड में इस्तेमाल करें:</p>
     <ol>
       <li><a href="https://github.com/SagerNet/sing-box/releases" target="_blank" rel="noopener">github.com/SagerNet/sing-box/releases</a> से लेटेस्ट Windows रिलीज़ डाउनलोड करें।</li>
       <li>नीचे दिया कॉन्फ़िग <code>config.json</code> के तौर पर सेव करें, IP/पोर्ट को ऐप में दिखाए गए से बदल दें।</li>
@@ -263,9 +263,9 @@
       <li><strong>Proxies</strong> पर जाएं, <strong>SOCKS Proxy</strong> चेक करें।</li>
       <li>फ़ोन का IP एड्रेस और पोर्ट डालें, फिर <strong>OK → Apply</strong> दबाएं।</li>
     </ol>
-    <p>किसी थर्ड-पार्टी ऐप की ज़रूरत नहीं, पर ध्यान दें macOS की native SOCKS सेटिंग DNS को प्रॉक्सी से रूट नहीं करती, इसलिए DNS क्वेरी टनल के बाहर लीक हो सकती हैं भले ही आपका ब्राउज़िंग ट्रैफ़िक न हो।</p>
+    <p>किसी थर्ड-पार्टी ऐप की ज़रूरत नहीं, पर ध्यान दें macOS की native SOCKS सेटिंग DNS को प्रॉक्सी से रूट नहीं करती, इसलिए DNS क्वेरी प्रॉक्सी के बजाय सीधे जा सकती हैं, और कुछ ऐप्स सिस्टम प्रॉक्सी सेटिंग को नहीं मानते।</p>
 
-    <h3>विकल्प B (सुझाया गया): sing-box से पूरे सिस्टम का कवरेज</h3>
+    <h3>विकल्प B (सुझाया गया): sing-box से सभी ऐप्स के लिए</h3>
     <p>हर चीज़, हर ऐप, DNS सहित, के लिए ऊपर वाली native सेटिंग के बजाय <a href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener">sing-box</a> को TUN मोड में चलाएं।</p>
 
     <div class="callout">
@@ -274,13 +274,6 @@
       <p style="margin-top: 16px;"><a href="/downloads/tlu-mac-tunnel.zip" class="cta-button" style="display:inline-block;">tlu-mac-tunnel.zip डाउनलोड करें</a></p>
       <p style="margin-top: 12px; font-size: 14px;">इसे अनज़िप करें, फिर Terminal में: <code>chmod +x tlu-mac-tunnel.sh && ./tlu-mac-tunnel.sh</code></p>
     </div>
-
-    <h3>क्या यह असल में काम करता है? यहां प्रूफ है</h3>
-    <p>हमने स्क्रिप्ट चलाई, टनल के ज़रिए एक 1GB टेस्ट फ़ाइल डाउनलोड की, और फ़ोन के कैरियर अकाउंट को पहले और बाद में चेक किया। हॉटस्पॉट-शेयरिंग डेटा पैकेज में दोनों बार उतनी ही मात्रा बची दिखी, कुछ भी उसमें नहीं गिना गया, भले ही ऐप का अपना काउंटर 1GB से कहीं ज़्यादा टनल से रूट होते दिखा रहा था।</p>
-    <video controls playsinline preload="metadata" style="width:100%; border-radius: 8px; display: block; margin-top: 12px;" poster="/mac-tunnel-script-demo.png">
-      <source src="/sing-box-proof-demo.mp4" type="video/mp4">
-    </video>
-    <p style="margin-top: 12px; font-size: 14px;">दिखाया गया कैरियर अकाउंट Vodafone का है, देखें <a href="/hi/blog/vodafone-hotspot-data-limit.html">पूरा Vodafone हॉटस्पॉट डेटा विश्लेषण</a>।</p>
 
     <p>या इसे हाथ से सेटअप करें:</p>
     <ol>
@@ -315,7 +308,7 @@
     "default_domain_resolver": "remote"
   }
 }</pre>
-      <p><code>PHONE_IP</code> और <code>PHONE_PORT</code> दोनों को ऐप में दिखाए गए वैल्यू से बदलें (और <code>PHONE_IP/32</code> रूट रूल भी, यह लाइन टनल को अपने ही फ़ोन कनेक्शन को खुद के ज़रिए रूट करने से रोकती है)। असली कैरियर पर वेरिफ़ाई किया गया, ऐप के लेटेस्ट वर्शन के हिसाब से QUIC/HTTP3 और DNS दोनों सही से टनल होते हैं, जिसमें खासतौर पर इसके लिए SOCKS5 UDP ASSOCIATE सपोर्ट जोड़ा गया है।</p>
+      <p><code>PHONE_IP</code> और <code>PHONE_PORT</code> दोनों को ऐप में दिखाए गए वैल्यू से बदलें (और <code>PHONE_IP/32</code> रूट रूल भी, यह लाइन टनल को अपने ही फ़ोन कनेक्शन को खुद के ज़रिए रूट करने से रोकती है)। ऐप के लेटेस्ट वर्शन में SOCKS5 UDP ASSOCIATE सपोर्ट है, इसलिए QUIC/HTTP3 और DNS भी प्रॉक्सी से जाते हैं।</p>
     </div>
 
     <h2>iOS</h2>
@@ -334,23 +327,26 @@
     </ol>
 
     <div class="callout">
-      <p><strong>DNS टिप:</strong> हर प्लेटफ़ॉर्म पर, जहां भी विकल्प मौजूद हो (Firefox का "Proxy DNS when using SOCKS v5," Shadowrocket का डिफ़ॉल्ट व्यवहार) पक्का करें कि DNS क्वेरी भी प्रॉक्सी से रूट हो रही हैं। वरना DNS लुकअप टनल के बाहर लीक हो सकते हैं भले ही आपका असली ट्रैफ़िक न हो, ऊपर बताया गया sing-box का TUN मोड ठीक यही बनावट के हिसाब से टालता है, क्योंकि यह हर ऐप के opt-in पर निर्भर रहने के बजाय बाकी सब चीज़ों के साथ DNS भी कैप्चर करता है।</p>
+      <p><strong>DNS टिप:</strong> हर प्लेटफ़ॉर्म पर, जहां भी विकल्प मौजूद हो (Firefox का "Proxy DNS when using SOCKS v5," Shadowrocket का डिफ़ॉल्ट व्यवहार) पक्का करें कि DNS क्वेरी भी प्रॉक्सी से रूट हो रही हैं। वरना DNS लुकअप प्रॉक्सी के बजाय सीधे जा सकते हैं। ऊपर बताया गया sing-box का TUN मोड यह अपने आप संभालता है, क्योंकि यह हर ऐप की सेटिंग पर निर्भर रहने के बजाय बाकी ट्रैफ़िक के साथ DNS भी प्रॉक्सी से भेजता है।</p>
     </div>
 
     <h2>Android-to-Android आसान है</h2>
-    <p>अगर दोनों डिवाइस Android हैं, ऊपर का सब कुछ छोड़ें, क्लाइंट फ़ोन पर <strong>Scan QR Code · Connect to Server</strong> दबाएं और कैमरा सर्वर फ़ोन पर दिखाए गए QR कोड पर रखें। ज़्यादातर डिवाइस पर Wi-Fi और प्रॉक्सी कनेक्शन दोनों एक ही टैप में पूरे हो जाते हैं।</p>
+    <p>अगर दोनों डिवाइस Android हैं, ऊपर का सब कुछ छोड़ें, क्लाइंट फ़ोन पर <strong>Scan QR Code · Connect to Server</strong> दबाएं और कैमरा सर्वर फ़ोन पर दिखाए गए QR कोड पर रखें। QR कोड में फ़ोन के Wi-Fi की डिटेल्स और प्रॉक्सी एड्रेस दोनों होते हैं। Android 10+ पर ऐप सिस्टम के ज़रिए Wi-Fi से जुड़ता है (सिस्टम पुष्टि मांग सकता है), फिर Android के VpnService से डिवाइस का ट्रैफ़िक प्रॉक्सी से भेजता है। किसी रिमोट सर्वर का इस्तेमाल नहीं होता।</p>
+
+    <p>अगर आप अपने फ़ोन का मोबाइल डेटा लैपटॉप या दूसरे फ़ोन के साथ शेयर करना चाहते हैं, तो Tether Link Utility एक Android ऐप है जो यह काम एक लोकल SOCKS5 प्रॉक्सी के ज़रिए करता है। कनेक्टेड डिवाइस का डेटा फिर भी आपके मोबाइल प्लान में गिना जाता है, इसलिए अपने कैरियर की टेदरिंग शर्तें ज़रूर देखें।</p>
 
     <div class="cta-box">
       <h3>Tether Link Utility</h3>
-      <p>एक फ्री Android ऐप जो आपका मोबाइल डेटा शेयर करने के लिए लोकल SOCKS5 प्रॉक्सी चलाता है, न root, न रिमोट सर्वर, न अकाउंट की ज़रूरत।</p>
+      <p>एक Android ऐप जो आपके फ़ोन का मोबाइल डेटा आपके दूसरे डिवाइसों के साथ एक लोकल SOCKS5 प्रॉक्सी के ज़रिए शेयर करता है। न root, न अकाउंट, न रिमोट सर्वर।</p>
       <a class="cta-button" href="/hi/">यह कैसे काम करता है देखें</a>
     </div>
 
     <div class="related">
       <h3>संबंधित लेख</h3>
       <ul>
-        <li><a href="/hi/blog/best-ways-to-bypass-hotspot-throttling.html">Best Ways to Bypass Hotspot Data Caps and Throttling in 2026</a></li>
-        <li><a href="/hi/blog/understanding-carrier-hotspot-throttling.html">Understanding Carrier Hotspot Throttling</a></li>
+        <li><a href="/hi/blog/best-ways-to-bypass-hotspot-throttling.html">फ़ोन का इंटरनेट लैपटॉप के साथ शेयर करने के 5 तरीके (2026)</a></li>
+        <li><a href="/hi/blog/how-to-check-if-hotspot-is-unlimited.html">कैसे पता करें कि आपका हॉटस्पॉट सच में अनलिमिटेड है (2026)</a></li>
+        <li><a href="/hi/blog/iphone-hotspot-limit-bypass.html">iPhone पर्सनल हॉटस्पॉट लिमिट की जानकारी (2026)</a></li>
       </ul>
     </div>
   </article>

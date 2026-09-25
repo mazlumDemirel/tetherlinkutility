@@ -23,8 +23,8 @@
   <link rel="alternate" hreflang="tr" href="https://tetherlinkutility.com/tr/blog/att-hotspot-throttling.html" />
   <link rel="alternate" hreflang="hi" href="https://tetherlinkutility.com/hi/blog/att-hotspot-throttling.html" />
   <link rel="alternate" hreflang="x-default" href="https://tetherlinkutility.com/blog/att-hotspot-throttling.html" />
-  <title>AT&amp;T Hotspot Kısıtlaması Açıklaması: Nasıl Çalışıyor</title>
-  <meta name="description" content="AT&T'nin hotspot veri tahsisi sınırsız tarifelerde nasıl çalışıyor, tahsis bitince hotspot hızı neden 128 Kbps'ye düşüyor ve gerçek seçenekleriniz neler.">
+  <title>AT&amp;T Hotspot Hız ve Veri Sınırları Açıklaması (2026)</title>
+  <meta name="description" content="AT&amp;T'de hotspot verisinin ve hızlarının her tarifede nasıl işlediği, kalan hotspot verinizi nasıl kontrol edeceğiniz ve veri bittiğinde ne yapabileceğiniz.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Tether Link Utility">
 
@@ -32,8 +32,8 @@
   <link rel="apple-touch-icon" href="/favicon.png">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="AT&amp;T Hotspot Kısıtlaması Açıklaması">
-  <meta property="og:description" content="AT&T'nin hotspot veri tahsisi nasıl çalışıyor, tahsis bitince hotspot hızı neden 128 Kbps'ye düşüyor ve gerçek seçenekleriniz neler.">
+  <meta property="og:title" content="AT&amp;T Hotspot Hız ve Veri Sınırları Açıklaması (2026)">
+  <meta property="og:description" content="AT&amp;T'de hotspot verisinin ve hızlarının her tarifede nasıl işlediği, kalan hotspot verinizi nasıl kontrol edeceğiniz ve veri bittiğinde ne yapabileceğiniz.">
   <meta property="og:url" content="https://tetherlinkutility.com/tr/blog/att-hotspot-throttling.html">
   <meta property="og:site_name" content="Tether Link Utility">
   <meta property="og:image" content="https://tetherlinkutility.com/og-image.png">
@@ -42,16 +42,16 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@tetherlinkutili">
-  <meta name="twitter:title" content="AT&amp;T Hotspot Kısıtlaması Açıklaması">
-  <meta name="twitter:description" content="AT&T'nin hotspot veri tahsisi nasıl çalışıyor, tahsis bitince hotspot hızı neden 128 Kbps'ye düşüyor ve gerçek seçenekleriniz neler.">
+  <meta name="twitter:title" content="AT&amp;T Hotspot Hız ve Veri Sınırları Açıklaması (2026)">
+  <meta name="twitter:description" content="AT&amp;T'de hotspot verisinin ve hızlarının her tarifede nasıl işlediği, kalan hotspot verinizi nasıl kontrol edeceğiniz ve veri bittiğinde ne yapabileceğiniz.">
   <meta name="twitter:image" content="https://tetherlinkutility.com/og-image.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "AT&T Hotspot Kısıtlaması Açıklaması: Nasıl Çalışıyor",
-    "description": "AT&T'nin hotspot veri tahsisi sınırsız tarifelerde nasıl çalışıyor, tahsis bitince hotspot hızı neden 128 Kbps'ye düşüyor ve gerçek seçenekleriniz neler.",
+    "headline": "AT&T Hotspot Hız ve Veri Sınırları Açıklaması (2026)",
+    "description": "AT&T'de hotspot verisinin ve hızlarının her tarifede nasıl işlediği, kalan hotspot verinizi nasıl kontrol edeceğiniz ve veri bittiğinde ne yapabileceğiniz.",
     "datePublished": "2026-09-18",
     "dateModified": "2026-09-25",
     "author": { "@type": "Organization", "name": "Tether Link Utility" },
@@ -181,44 +181,47 @@
 <main>
   <article>
     <div class="page-eyebrow">Blog</div>
-    <h1>AT&amp;T Hotspot Kısıtlaması Açıklaması</h1>
-    <div class="post-meta">18 Eylül 2026'da yayınlandı &middot; 25 Eylül 2026'da güncellendi</div>
+    <h1>AT&amp;T Hotspot Hız ve Veri Sınırları Açıklaması (2026)</h1>
+    <div class="post-meta">18 Eylül 2026'de yayınlandı &middot; 25 Eylül 2026'da güncellendi</div>
 
-    <p>AT&amp;T'nin sınırsız tarifeleri, çoğu büyük ABD operatörünün yaptığı gibi "cihaz-üstü" veriyi "hotspot" verisinden ayırır ve telefonunuzu bir dizüstü bilgisayar için ana bağlantı olarak kullanıyorsanız, önce biten hotspot verisi olur.</p>
+    <p>AT&amp;T'nin sınırsız tarifeleri, büyük ABD operatörlerinin çoğu gibi telefonda kullanılan veriyle hotspot verisini ayrı takip eder. Telefonunuzu bir dizüstü bilgisayar için ana bağlantı olarak kullanıyorsanız, genellikle önce hotspot hakkı biter.</p>
 
-    <h2>AT&amp;T'nin hotspot tahsisi nasıl çalışıyor</h2>
-    <p>Eylül 2026'da AT&amp;T'nin "Use Your Device's Hotspot" destek sayfası (son güncelleme 26 Ağustos 2026) ve Unlimited tarife şartlarıyla karşılaştırılarak kontrol edildi. AT&amp;T'nin sınırsız tarifeleri her ay hat başına belirli miktarda yüksek hızlı hotspot verisi içerir ve bu miktar tarifeye göre değişir. AT&amp;T'ye göre bu verinin tamamını kullandığınızda, ek hotspot verisi satın almadığınız sürece hotspot hızınız en fazla <strong>128 Kbps</strong>'ye düşer. Bu, yoğunluğa bağlı bir önceliklendirme düşüşü değil bir hız sınırıdır, yani yerel ağ meşgul olsun olmasın uygulanır. <strong>Tahsisler tarife revizyonları arasında değişir ve seviyeye göre farklılaşır, size uygulanan rakam için güncel tarifenizi myAT&amp;T'de kontrol edin, <a href="/tr/blog/how-to-check-if-hotspot-is-unlimited.html">hotspotunuzun gerçekten sınırsız olup olmadığını kontrol etme rehberimiz</a> bunu adım adım anlatıyor.</strong></p>
-
-    <h2>AT&amp;T tethering trafiğini nasıl tespit ediyor</h2>
-    <p>Diğer operatörlerde olduğu gibi, AT&amp;T de tethering yaptığınızı beyan etmenizi istemez, bu TTL (Time To Live) düşüşü ve derin paket incelemesi (DPI) desenleri gibi trafik özelliklerinden çıkarılır. <a href="/tr/blog/understanding-carrier-hotspot-throttling.html">Bu tespitin nasıl çalıştığına dair tam mekanizmayı okuyun</a>.</p>
+    <h2>AT&amp;T'nin hotspot sınırı nedir</h2>
+    <p>AT&amp;T'nin sınırsız tarifeleri her ay hat başına belirli miktarda yüksek hızlı hotspot verisi içerir ve bu miktar tarifeye göre değişir. AT&amp;T'nin "Use Your Device's Hotspot" destek sayfasına göre bu veri bittiğinde, ek hotspot verisi almadığınız sürece hotspot hızı en fazla <strong>128 Kbps</strong> olur. Bu, ağ yoğunluğuna bağlı değil, tahsis bitince uygulanan bir hız sınırıdır. <em>(Eylül 2026'da AT&amp;T'nin destek sayfası ve Unlimited tarife şartlarıyla karşılaştırılarak kontrol edildi. Tarifeler değişebilir, myAT&amp;T'den doğrulayın.)</em></p>
 
     <div class="callout">
-      <p>128 Kbps sınırı bir tavandır, yoğunluk kuralı değildir: gece 2'de boş bir baz istasyonu bu sınırı kaldırmaz. Bu hızda mesajlaşma ve basit e-posta genelde çalışmaya devam eder, görüntülü görüşme, video izleme ve büyük indirmeler ise genelde çalışmaz.</p>
+      <p>128 Kbps hızda mesajlaşma ve basit e-posta genellikle çalışır, görüntülü görüşme, video izleme ve büyük indirmeler ise genellikle çalışmaz.</p>
     </div>
 
-    <h2>Seçenekleriniz</h2>
+    <h2>Kalan hotspot verinizi nasıl kontrol edersiniz</h2>
+    <ul>
+      <li><strong>myAT&amp;T uygulaması veya hesabı:</strong> tarifenize dahil hotspot verisini ve bu dönem kullandığınız miktarı gösterir.</li>
+      <li><strong>Telefonunuzun kendi sayacı:</strong> Android'de Ayarlar &gt; Ağ ve internet (veya Bağlantılar) &gt; Veri kullanımı bölümünde mobil veri kullanımı listelenir ve birçok cihazda "Hotspot ve tethering" ayrı bir satır olarak görünür. iPhone'da Ayarlar &gt; Hücresel &gt; Kişisel Erişim Noktası satırına bakın. Bu sayaçlar operatörün kaydıyla birebir aynı olmayabilir, faturalandırmada geçerli olan operatörün kaydıdır.</li>
+    </ul>
+    <p>Adım adım anlatım için <a href="/tr/blog/how-to-check-if-hotspot-is-unlimited.html">hotspotunuzun gerçekten sınırsız olup olmadığını kontrol etme rehberimize</a> bakın.</p>
+
+    <h2>Resmi seçenekleriniz</h2>
     <ol>
-      <li><strong>Belirli AT&amp;T tarifenizin bir hotspot eki satıp satmadığını kontrol edin</strong>, mevcutluk ve fiyat tarifeye göre değişir.</li>
-      <li><strong>Düz bir hotspot yerine yerel bir proxy çalıştırın</strong>, Tether Link Utility gibi uygulamalar bu trafiği root olmadan veya uzak sunucu kullanmadan düz bir hotspot bağlantısı yerine yerel bir proxy üzerinden yönlendirir.</li>
-      <li><strong>Tam karşılaştırmayı görün</strong>, <a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">hotspot aşma yöntemleri rehberimize bakın</a>.</li>
+      <li><strong>Tarifenizin bir hotspot ek paketi sunup sunmadığını kontrol edin.</strong> Uygunluk ve fiyat tarifeye göre değişir, güncel seçenekler myAT&amp;T'de listelenir.</li>
+      <li><strong>Daha fazla hotspot verisi içeren bir tarifeye geçin</strong>, hotspot'u her gün kullanıyorsanız.</li>
+      <li><strong>Yeni faturalandırma döneminin başlamasını bekleyin</strong> ve bu sırada mümkünse Wi-Fi kullanın.</li>
     </ol>
+    <p>Telefonunuzun mobil verisini bir dizüstü bilgisayar veya başka bir telefonla paylaşmak isterseniz, Tether Link Utility bunu yerel bir SOCKS5 proxy üzerinden yapan bir Android uygulamasıdır. Bağlı cihazların kullandığı veri yine mobil tarifenizden düşer, bu yüzden operatörünüzün paylaşım (tethering) şartlarını kontrol edin. Diğer yöntemler için <a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">telefonun internetini bilgisayarla paylaşmanın 5 yolu</a> yazımıza bakabilirsiniz.</p>
 
     <div class="cta-box">
       <h3>Tether Link Utility</h3>
-      <p>Mobil verinizi paylaşmak için yerel bir SOCKS5 proxy çalıştıran, root gerektirmeyen, uzak sunucu kullanmayan, hesap gerektirmeyen ücretsiz bir Android uygulaması.</p>
+      <p>Telefonunuzun mobil verisini yerel bir SOCKS5 proxy üzerinden diğer cihazlarınızla paylaşan bir Android uygulaması. Root yok, hesap yok, uzak sunucu yok.</p>
       <a class="cta-button" href="/tr/">Nasıl çalıştığını görün</a>
     </div>
 
     <div class="related">
       <h3>İlgili yazılar</h3>
       <ul>
-        <li><a href="/tr/blog/verizon-hotspot-data-cap.html">Verizon Hotspot Veri Sınırı Açıklaması</a></li>
-        <li><a href="/tr/blog/understanding-carrier-hotspot-throttling.html">Operatörler Hotspot'u Neden Kısıtlar</a></li>
-        <li><a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">2026'da Hotspot Veri Sınırlarını ve Kısıtlamalarını Aşmanın En İyi Yolları</a></li>
-        <li><a href="/tr/blog/us-cellular-hotspot-data-cap.html">US Cellular Hotspot Veri Sınırı Açıklaması</a></li>
-        <li><a href="/tr/blog/firstnet-hotspot-data-limit.html">FirstNet Hotspot Verisini Kısıtlıyor mu?</a></li>
-        <li><a href="/tr/blog/t-mobile-hotspot-data-limit.html">T-Mobile Hotspot Veri Sınırı Açıklaması</a></li>
-        <li><a href="/tr/blog/how-to-check-if-hotspot-is-unlimited.html">Hotspotunuzun Gerçekten Sınırsız Olup Olmadığını Nasıl Kontrol Edersiniz</a></li>
+        <li><a href="/tr/blog/understanding-carrier-hotspot-throttling.html">Hotspot'um Neden Yavaş? Operatör Hotspot Sınırları Açıklaması</a></li>
+        <li><a href="/tr/blog/best-ways-to-bypass-hotspot-throttling.html">Telefonun İnternetini Bilgisayarla Paylaşmanın 5 Yolu (2026)</a></li>
+        <li><a href="/tr/blog/verizon-hotspot-data-cap.html">Verizon Hotspot Veri Sınırları Açıklaması (2026)</a></li>
+        <li><a href="/tr/blog/firstnet-hotspot-data-limit.html">FirstNet Hotspot ve Tethering Kuralları Açıklaması (2026)</a></li>
+        <li><a href="/tr/blog/how-to-check-if-hotspot-is-unlimited.html">Hotspot'unuz Gerçekten Sınırsız mı? Nasıl Kontrol Edilir (2026)</a></li>
       </ul>
     </div>
   </article>
