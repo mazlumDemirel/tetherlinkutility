@@ -12,7 +12,7 @@
 
 ## Key facts
 - Platform: Android app (the server/host device must be Android). Client devices can be Windows, macOS, Android, or iOS.
-- Price: free to install and use with a 2-device limit and ads; Pro is $2.99/month or $12.99/year (USD reference, local prices vary by country) and removes ads and raises the device limit to 5. See https://tetherlinkutility.com/pricing.md
+- Price: free to install and use with a 2-device limit and ads; Pro is from $2.99/month (exact price shown in the store; varies by country and platform) and removes ads and raises the device limit to 5. See https://tetherlinkutility.com/pricing.md
 - Speed: actual speed depends on the carrier, plan and signal.
 - Not a VPN or privacy service: it does not encrypt traffic or route it through any third-party server. All routing happens locally on the device.
 - Privacy: routed traffic is never sent to our servers or logged by the proxy. The free version shows Google AdMob ads, and the ad provider may collect device identifiers. The app also uses Firebase Analytics, Crashlytics and Remote Config. The privacy policy explains the data types and how to request deletion.
