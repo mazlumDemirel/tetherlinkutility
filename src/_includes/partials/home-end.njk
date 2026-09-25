@@ -1,0 +1,130 @@
+<section class="badges-strip wrap">
+  <div class="section-label">{{ t.homeNav.findUsOn }}</div>
+  <div class="badges-row">
+    <a href="https://www.producthunt.com/products/tether-link-utility?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-tether-link-utility" target="_blank" rel="noopener noreferrer" class="badge-pill">Product Hunt</a>
+    <a href="https://www.nxgntools.com/tools/tether-link-utility?utm_source=tether-link-utility" target="_blank" rel="noopener">
+      <img src="https://www.nxgntools.com/api/embed/tether-link-utility?type=FIND_US_ON&amp;hideUpvotes=true" alt="Find us on NxGn Tools" loading="lazy" decoding="async" style="height: 48px; width: auto;" />
+    </a>
+    <a href="https://viberank.dev/apps/Tether%20Link%20Utility" target="_blank" rel="noopener noreferrer" class="badge-pill">VibeRank</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="footer-brand">&copy; 2026 Tether Link Utility &nbsp;&middot;&nbsp; {{ t.publisher }} &nbsp;&middot;&nbsp; <a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+  <div class="footer-links">
+    <a href="{{ t.prefix }}blog/">{{ t.blog }}</a>
+    <a href="{{ t.privacyHref }}">{{ t.privacy }}</a>
+{% for l in site.languages %}{% if l != lang %}    <a href="{{ i18n[l].prefix }}">{{ i18n[l].name }}</a>
+{% endif %}{% endfor %}    <a href="https://x.com/tetherlinkutili" target="_blank" rel="noopener" aria-label="Follow on X" style="display:inline-flex; align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <span>{{ t.homeNav.sticky }}</span>
+  <a href="{{ site.playUrl }}" class="btn-primary">{{ t.homeNav.stickyButton }}</a>
+</div>
+
+<script>
+  (function () {
+    // Language dropdown: toggles open on click, closes on an outside click or
+    // when a language option is chosen (navigation happens anyway via the href).
+    var dropdown = document.getElementById('langDropdown');
+    var langToggle = document.getElementById('langDropdownToggle');
+    if (!dropdown || !langToggle) return;
+    langToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !dropdown.classList.contains('is-open');
+      dropdown.classList.toggle('is-open', open);
+      langToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('is-open');
+        langToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }());
+
+  (function () {
+    // Mobile hamburger menu, nav-links becomes a fixed slide-out drawer below 860px
+    // (see the matching @media block); this just toggles it open/closed and closes it
+    // again on link tap or an outside click, since it overlays page content.
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    function setOpen(open) {
+      links.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!links.classList.contains('is-open'));
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') setOpen(false);
+    });
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('is-open') && !links.contains(e.target)) setOpen(false);
+    });
+  }());
+
+  (function () {
+    // FAQ: the first questions stay visible; the rest stay in the DOM (and in the
+    // FAQPage JSON-LD) and are collapsed in place. Without JS everything is shown.
+    var more = document.getElementById('faqMore');
+    var btn = document.getElementById('faqToggle');
+    if (!more || !btn) return;
+    function setOpen(open) {
+      if (open) more.removeAttribute('data-collapsed'); else more.setAttribute('data-collapsed', '');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.innerHTML = open ? btn.getAttribute('data-less') : btn.getAttribute('data-more');
+    }
+    function openForHash() {
+      var id = location.hash.slice(1);
+      var t = id && document.getElementById(id);
+      if (t && more.contains(t)) setOpen(true);
+    }
+    setOpen(false);
+    btn.hidden = false;
+    btn.addEventListener('click', function () { setOpen(more.hasAttribute('data-collapsed')); });
+    openForHash();
+    window.addEventListener('hashchange', openForHash);
+  }());
+
+  (function () {
+    // Shows a compact install CTA once the user has scrolled past the hero, and hides
+    // it again near the very bottom so it doesn't sit on top of the footer.
+    var bar = document.getElementById('stickyCta');
+    var hero = document.querySelector('.hero');
+    if (!bar || !hero) return;
+    window.addEventListener('scroll', function () {
+      var pastHero = window.scrollY > hero.offsetTop + hero.offsetHeight;
+      var nearBottom = window.scrollY + window.innerHeight > document.body.scrollHeight - 300;
+      bar.classList.toggle('is-visible', pastHero && !nearBottom);
+    }, { passive: true });
+  }());
+
+  (function () {
+    // Click-to-play YouTube facade: keeps the poster image as the LCP element and
+    // only loads the (heavy, third-party) iframe once the user actually asks for it.
+    document.querySelectorAll('.video-facade[data-yt-id]').forEach(function (el) {
+      function play() {
+        var id = el.getAttribute('data-yt-id');
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&playsinline=1&rel=0';
+        iframe.setAttribute('title', '{{ t.homeNav.videoTitle }}');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.cssText = 'width:100%;height:100%;display:block;border:0;';
+        el.replaceChildren(iframe);
+      }
+      el.addEventListener('click', play);
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+      });
+    });
+  }());
+</script>
+
+</body>
+</html>

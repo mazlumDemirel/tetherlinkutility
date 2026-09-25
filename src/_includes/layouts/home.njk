@@ -1,0 +1,59 @@
+{%- set t = i18n[lang] -%}
+{%- set pageUrl = site.url + t.prefix -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+{% include "partials/gtag.njk" %}
+{% if conversionSnippet %}  <!-- Event snippet for Sayfa görüntüleme conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-994847137/ux5ZCNm8svscEKHTsNoD',
+        'value': 1.0,
+        'currency': 'TRY'
+    });
+  </script>
+{% endif %}  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% if siteVerification %}  <meta name="google-site-verification" content="3ZffoZuU2qaZoJJrMZoL8VImUVBLLHqg3b7jA_cN3Z4" />
+{% endif %}  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ pageUrl }}" />
+{% for l in site.languages %}  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ i18n[l].prefix }}" />
+{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+{% if shortHeadComments %}  <!-- Open Graph -->
+{% else %}  <!-- Open Graph (Facebook, WhatsApp, Slack, LinkedIn, Reddit link previews) -->
+{% endif %}  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tether Link Utility">
+  <meta property="og:url" content="{{ pageUrl }}">
+  <meta property="og:locale" content="{{ t.ogLocale }}">
+{% for l in site.languages %}{% if l != lang %}  <meta property="og:locale:alternate" content="{{ i18n[l].ogLocale }}">
+{% endif %}{% endfor %}  <meta property="og:title" content="{{ ogTitle }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ site.url }}/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+{% if not shortHeadComments %}  <!-- Twitter/X Card -->
+{% endif %}  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ site.twitter }}">
+  <meta name="twitter:title" content="{{ ogTitle }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ site.url }}/og-image.png">
+
+{% if not shortHeadComments %}  <!-- Structured data for search engines -->
+{% endif %}  {% block jsonld %}{% endblock %}
+
+{% include "partials/home-style.njk" %}
+</head>
+<body>
+
+{% include "partials/home-nav.njk" %}
+
+<main>{% block main %}{% endblock %}</main>
+
+{% include "partials/home-end.njk" %}
