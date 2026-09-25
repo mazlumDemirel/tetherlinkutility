@@ -23,17 +23,34 @@ export default function (eleventyConfig) {
     );
   }
 
-  // Sort helper: by a numeric key inside an object field, e.g. sortByKey(posts, "index", "order").
-  // Items without that field are left out. An optional fallback key is used when the key is missing,
-  // e.g. sortByKey(posts, "index", "ldOrder", "order").
-  eleventyConfig.addFilter("sortByKey", (items, field, key, fallbackKey) => {
+  // Sort helper for hand-ordered lists (blog index, its JSON-LD, llms.txt):
+  // sortByKey(posts, "index", "order") sorts by data.index.order. An optional fallback key is
+  // used when the key is missing, e.g. sortByKey(posts, "index", "ldOrder", "order").
+  // Posts with no value at all are not dropped: they go first (placement "first", used by the
+  // blog index so a new post shows at the top) or last ("last"), newest first.
+  eleventyConfig.addFilter("sortByKey", (items, field, key, fallbackKey, placement = "last") => {
     const val = (p) => {
       const obj = p.data[field];
       if (!obj) return undefined;
       return obj[key] !== undefined ? obj[key] : fallbackKey ? obj[fallbackKey] : undefined;
     };
-    return [...items].filter((p) => val(p) !== undefined).sort((a, b) => val(a) - val(b));
+    const known = items.filter((p) => val(p) !== undefined).sort((a, b) => val(a) - val(b));
+    const unknown = items
+      .filter((p) => val(p) === undefined)
+      .sort((a, b) => String(b.data.published).localeCompare(String(a.data.published)));
+    return placement === "first" ? [...unknown, ...known] : [...known, ...unknown];
   });
+
+  // True if a blog post with this file name exists in that language (for hreflang and
+  // the language menu, so a post that is not translated yet does not link to a missing page).
+  eleventyConfig.addFilter("hasPost", (collections, lang, slug) =>
+    (collections[`posts_${lang}`] || []).some((p) => p.data.slug === slug)
+  );
+
+  // Turns the few HTML entities used in titles back into plain text (for llms.txt).
+  eleventyConfig.addFilter("plainText", (s) =>
+    String(s).replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"')
+  );
 
   // sitemap.xml entries: every page with `sitemap` front matter, plus files listed in
   // src/_data/sitemapExtra.json (for passthrough files such as pricing.md), sorted by `order`.
@@ -41,7 +58,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("sitemapEntries", (pages, extra) => {
     const entries = pages
       .filter((p) => p.data.sitemap)
-      .map((p) => ({ url: p.url, ...p.data.sitemap }))
+      .map((p) => ({
+        url: p.url,
+        ...p.data.sitemap,
+        lastmod: p.data.sitemap.lastmod || p.data.modified || p.data.published,
+      }))
       .concat(extra || []);
     const key = (e) => (e.order === undefined ? Infinity : e.order);
     return entries.sort((a, b) => key(a) - key(b) || a.url.localeCompare(b.url));

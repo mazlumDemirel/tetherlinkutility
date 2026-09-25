@@ -7,8 +7,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="{{ pageUrl }}" />
-{% for l in site.languages %}  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ i18n[l].prefix }}blog/{{ slug }}.html" />
-{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/blog/{{ slug }}.html" />
+{% for l in site.languages %}{% if collections | hasPost(l, slug) %}  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ i18n[l].prefix }}blog/{{ slug }}.html" />
+{% endif %}{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/blog/{{ slug }}.html" />
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   <meta name="robots" content="index, follow">
