@@ -20,7 +20,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addCollection(`posts_${lang}`, (api) =>
       api
         .getAll()
-        .filter((p) => p.data.isPost && p.data.lang === lang)
+        .filter((p) => p.data.isPost && p.data.lang === lang && !p.data.scheduled)
         .sort((a, b) => a.data.slug.localeCompare(b.data.slug))
     );
   }
@@ -41,6 +41,16 @@ export default function (eleventyConfig) {
       .filter((p) => val(p) === undefined)
       .sort((a, b) => String(b.data.published).localeCompare(String(a.data.published)));
     return placement === "first" ? [...unknown, ...known] : [...known, ...unknown];
+  });
+
+  // Blog index order: newest published first; posts from the same day keep their hand-set
+  // index.order (then slug) so the order within a day stays stable.
+  eleventyConfig.addFilter("byPublished", (items) => {
+    const date = (p) => String(p.data.index?.published || p.data.published || "");
+    const order = (p) => (p.data.index?.order ?? Infinity);
+    return [...items].sort(
+      (a, b) => date(b).localeCompare(date(a)) || order(a) - order(b) || a.data.slug.localeCompare(b.data.slug)
+    );
   });
 
   // True if a blog post with this file name exists in that language (for hreflang and
