@@ -157,7 +157,7 @@ sitemap:
     <a href="#tr">Türkçe</a>
     <a href="#hi">हिन्दी</a>
   </div>
-  <div class="effective-date">Effective Date: September 25, 2026</div>
+  <div class="effective-date">Effective Date: September 26, 2026</div>
 
   <h2>1. Information Collection and Use</h2>
   <p>Tether Link Utility is designed as a local system routing utility.</p>
@@ -167,11 +167,17 @@ sitemap:
     <li><strong>Third-Party Services:</strong> The app includes Google AdMob (free version only), Firebase Analytics, Firebase Crashlytics, and Firebase Remote Config. These services collect device identifiers and usage and crash data, as described in section 3.</li>
   </ul>
 
-  <h2>2. Use of Android VpnService</h2>
+  <h2>2. Use of Android VpnService and iOS Network Extension</h2>
   <p>Our application uses the Android VpnService API to establish a local SOCKS5 proxy server on your device.</p>
   <ul>
     <li><strong>Purpose:</strong> The VpnService is used strictly to protect local socket connections from being re-routed by the system, allowing the app to forward hotspot traffic through the device's active GSM network connection. It does not connect to any remote VPN server.</li>
     <li><strong>No Remote Server:</strong> Traffic handled by the service goes from your connected devices to your phone over its Wi-Fi hotspot, and then out over your mobile data connection to the sites and services you use. It is not routed through, copied to, or stored on any server operated by us.</li>
+  </ul>
+  <p>On iPhone and iPad, the app uses Apple's Network Extension framework (a packet tunnel) for the same purposes.</p>
+  <ul>
+    <li><strong>Sharing from an iPhone:</strong> the tunnel keeps the local SOCKS5 proxy server running while the app is in the background. It does not route this iPhone's own traffic and does not connect to any remote VPN server.</li>
+    <li><strong>Connecting to another phone:</strong> the tunnel sends this device's traffic to the proxy on the phone you chose, for example by scanning its QR code. It is not sent to any server of ours.</li>
+    <li><strong>Saved hotspot details:</strong> if you save your hotspot's Wi-Fi name and password so the QR code can include them, they are stored only on your device (on iOS, the password is kept in the Keychain) and are never sent to us.</li>
   </ul>
 
   <h2>3. Advertising &amp; Analytics</h2>
@@ -181,7 +187,7 @@ sitemap:
   <p>These services are provided by Google and handle data according to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. None of them receive the content of the traffic you share through the proxy.</p>
 
   <h2>4. In-App Purchases</h2>
-  <p>Subscriptions are processed securely through the Google Play Billing system. We do not receive or store your payment details.</p>
+  <p>Subscriptions are processed securely through Google Play Billing on Android and the App Store on iPhone and iPad. We do not receive or store your payment details.</p>
 
   <h2>5. Data Security</h2>
   <p>All proxy operations are handled on your device, with no remote server of ours in between. The traffic you share through the proxy goes from your devices to your phone and out over your mobile connection; it is not sent to us. Advertising, analytics, and crash data are handled as described in section 3.</p>
@@ -196,6 +202,7 @@ sitemap:
   <p>The app has no accounts, so we do not hold data tied to your name, phone number or email address. You can still control and remove the data described above:</p>
   <ul>
     <li><strong>Advertising ID:</strong> you can reset or delete your advertising ID, or opt out of personalized ads, in your Android settings (usually under Google &gt; Ads, or Privacy &gt; Ads, depending on the device).</li>
+    <li><strong>Tracking on iPhone and iPad:</strong> the app asks for permission before using your device's advertising identifier. You can change this at any time in Settings &gt; Privacy &amp; Security &gt; Tracking; if you do not allow it, you still see ads, but they are not personalized using that identifier.</li>
     <li><strong>Data on your device:</strong> clearing the app's storage or uninstalling the app removes the settings and identifiers it keeps on your phone.</li>
     <li><strong>Deletion request:</strong> email <a href="mailto:support@tetherlinkutility.com?subject=Data%20deletion%20request">support@tetherlinkutility.com</a> with the subject "Data deletion request". Because this data is not linked to your name or email, please include your device model and roughly when you used the app so we can try to locate it. We will ask Google to delete the Firebase Analytics and Crashlytics data we can associate with your installation, and we aim to reply within 30 days.</li>
   </ul>
@@ -216,7 +223,7 @@ sitemap:
     <a href="#tr">Türkçe</a>
     <a href="#hi">हिन्दी</a>
   </div>
-  <div class="effective-date">Yürürlük Tarihi: 25 Eylül 2026</div>
+  <div class="effective-date">Yürürlük Tarihi: 26 Eylül 2026</div>
 
   <h2>1. Bilgi Toplama ve Kullanımı</h2>
   <p>Tether Link Utility yerel bir sistem yönlendirme yardımcı programı olarak tasarlanmıştır.</p>
@@ -226,11 +233,17 @@ sitemap:
     <li><strong>Üçüncü Taraf Hizmetler:</strong> Uygulama Google AdMob (yalnızca ücretsiz sürüm), Firebase Analytics, Firebase Crashlytics ve Firebase Remote Config içerir. Bu hizmetler, 3. bölümde açıklandığı gibi cihaz tanımlayıcıları ile kullanım ve çökme verilerini toplar.</li>
   </ul>
 
-  <h2>2. Android VpnService Kullanımı</h2>
+  <h2>2. Android VpnService ve iOS Network Extension Kullanımı</h2>
   <p>Uygulamamız, cihazınızda yerel bir SOCKS5 proxy sunucusu oluşturmak için Android VpnService API'sini kullanır.</p>
   <ul>
     <li><strong>Amaç:</strong> VpnService yalnızca yerel soket bağlantılarının sistem tarafından yeniden yönlendirilmesini engellemek için kullanılır; bu sayede uygulama, hotspot trafiğini cihazın etkin GSM ağ bağlantısı üzerinden iletebilir. Herhangi bir uzak VPN sunucusuna bağlanılmaz.</li>
     <li><strong>Uzak Sunucu Yok:</strong> Servisin işlediği trafik, bağlı cihazlarınızdan Wi-Fi hotspot üzerinden telefonunuza, oradan da mobil veri bağlantınız üzerinden kullandığınız sitelere ve hizmetlere gider. Bizim işlettiğimiz hiçbir sunucudan geçirilmez, oraya kopyalanmaz veya orada saklanmaz.</li>
+  </ul>
+  <p>iPhone ve iPad'de uygulama aynı amaçlarla Apple'ın Network Extension altyapısını (paket tüneli) kullanır.</p>
+  <ul>
+    <li><strong>iPhone'dan paylaşım:</strong> Tünel, uygulama arka plandayken yerel SOCKS5 proxy sunucusunun çalışmaya devam etmesini sağlar. Bu iPhone'un kendi trafiğini yönlendirmez ve hiçbir uzak VPN sunucusuna bağlanmaz.</li>
+    <li><strong>Başka bir telefona bağlanma:</strong> Tünel, bu cihazın trafiğini seçtiğiniz telefondaki proxy'ye (örneğin QR kodunu tarayarak) gönderir. Trafik hiçbir sunucumuza gönderilmez.</li>
+    <li><strong>Kaydedilen hotspot bilgileri:</strong> QR kodun içermesi için hotspot'unuzun Wi-Fi adını ve şifresini kaydederseniz, bunlar yalnızca cihazınızda saklanır (iOS'ta şifre Anahtar Zinciri'nde tutulur) ve bize asla gönderilmez.</li>
   </ul>
 
   <h2>3. Reklamcılık ve Analitik</h2>
@@ -240,7 +253,7 @@ sitemap:
   <p>Bu hizmetler Google tarafından sağlanır ve verileri <a href="https://policies.google.com/privacy?hl=tr" target="_blank" rel="noopener">Google Gizlilik Politikası</a>'na göre işler. Hiçbiri, proxy üzerinden paylaştığınız trafiğin içeriğini almaz.</p>
 
   <h2>4. Uygulama İçi Satın Almalar</h2>
-  <p>Abonelikler, Google Play Faturalama sistemi aracılığıyla güvenli bir şekilde işlenir. Ödeme bilgilerinizi almaz veya saklamayız.</p>
+  <p>Abonelikler Android'de Google Play Faturalama, iPhone ve iPad'de App Store aracılığıyla güvenli bir şekilde işlenir. Ödeme bilgilerinizi almaz veya saklamayız.</p>
 
   <h2>5. Veri Güvenliği</h2>
   <p>Tüm proxy işlemleri cihazınızda gerçekleşir, arada bize ait uzak bir sunucu yoktur. Proxy üzerinden paylaştığınız trafik cihazlarınızdan telefonunuza, oradan mobil bağlantınıza gider; bize gönderilmez. Reklam, analitik ve çökme verileri 3. bölümde açıklandığı şekilde işlenir.</p>
@@ -255,6 +268,7 @@ sitemap:
   <p>Uygulamada hesap sistemi yoktur; bu nedenle adınıza, telefon numaranıza veya e-posta adresinize bağlı veri tutmayız. Yukarıda açıklanan verileri yine de kontrol edebilir ve silebilirsiniz:</p>
   <ul>
     <li><strong>Reklam kimliği:</strong> Android ayarlarından (cihaza göre genellikle Google &gt; Reklamlar veya Gizlilik &gt; Reklamlar altında) reklam kimliğinizi sıfırlayabilir, silebilir veya kişiselleştirilmiş reklamları kapatabilirsiniz.</li>
+    <li><strong>iPhone ve iPad'de izleme:</strong> Uygulama, cihazınızın reklam tanımlayıcısını kullanmadan önce izin ister. Bunu istediğiniz zaman Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden değiştirebilirsiniz; izin vermezseniz reklam görmeye devam edersiniz ancak bu tanımlayıcıyla kişiselleştirilmezler.</li>
     <li><strong>Cihazınızdaki veriler:</strong> Uygulamanın depolama alanını temizlemek veya uygulamayı kaldırmak, telefonunuzda tuttuğu ayarları ve tanımlayıcıları siler.</li>
     <li><strong>Silme talebi:</strong> "Data deletion request" (Veri silme talebi) konusuyla <a href="mailto:support@tetherlinkutility.com?subject=Data%20deletion%20request">support@tetherlinkutility.com</a> adresine e-posta gönderin. Bu veriler adınıza veya e-posta adresinize bağlı olmadığından, bulabilmemiz için cihaz modelinizi ve uygulamayı yaklaşık ne zaman kullandığınızı belirtin. Kurulumunuzla ilişkilendirebildiğimiz Firebase Analytics ve Crashlytics verilerinin silinmesini Google'dan talep eder, 30 gün içinde yanıt vermeyi hedefleriz.</li>
   </ul>
@@ -275,7 +289,7 @@ sitemap:
     <a href="#tr">Türkçe</a>
     <a href="#hi">हिन्दी</a>
   </div>
-  <div class="effective-date">लागू होने की तारीख: 25 सितंबर, 2026</div>
+  <div class="effective-date">लागू होने की तारीख: 26 सितंबर, 2026</div>
 
   <h2>1. जानकारी जुटाना और इस्तेमाल</h2>
   <p>Tether Link Utility को एक लोकल सिस्टम रूटिंग यूटिलिटी के तौर पर डिज़ाइन किया गया है।</p>
@@ -285,11 +299,17 @@ sitemap:
     <li><strong>थर्ड-पार्टी सेवाएं:</strong> ऐप में Google AdMob (सिर्फ फ्री वर्शन), Firebase Analytics, Firebase Crashlytics, और Firebase Remote Config शामिल हैं। ये सेवाएं सेक्शन 3 में बताए गए तरीके से डिवाइस आइडेंटिफ़ायर और इस्तेमाल व क्रैश डेटा जुटाती हैं।</li>
   </ul>
 
-  <h2>2. Android VpnService का इस्तेमाल</h2>
+  <h2>2. Android VpnService और iOS Network Extension का इस्तेमाल</h2>
   <p>हमारा ऐप आपके डिवाइस पर एक लोकल SOCKS5 प्रॉक्सी सर्वर बनाने के लिए Android VpnService API इस्तेमाल करता है।</p>
   <ul>
     <li><strong>मकसद:</strong> VpnService का इस्तेमाल सिर्फ लोकल सॉकेट कनेक्शनों को सिस्टम द्वारा दोबारा रूट होने से बचाने के लिए किया जाता है, जिससे ऐप हॉटस्पॉट ट्रैफ़िक को डिवाइस के एक्टिव GSM नेटवर्क कनेक्शन के ज़रिए फॉरवर्ड कर पाता है। यह किसी भी रिमोट VPN सर्वर से कनेक्ट नहीं होता।</li>
     <li><strong>कोई रिमोट सर्वर नहीं:</strong> सर्विस द्वारा हैंडल किया गया ट्रैफ़िक आपके जुड़े हुए डिवाइस से Wi-Fi हॉटस्पॉट के ज़रिए आपके फ़ोन तक, और फिर आपके मोबाइल डेटा कनेक्शन से उन साइट्स और सेवाओं तक जाता है जिन्हें आप इस्तेमाल करते हैं। यह हमारे चलाए किसी भी सर्वर से होकर नहीं जाता, न वहां कॉपी होता है, न स्टोर होता है।</li>
+  </ul>
+  <p>iPhone और iPad पर ऐप इन्हीं कामों के लिए Apple का Network Extension फ्रेमवर्क (पैकेट टनल) इस्तेमाल करता है।</p>
+  <ul>
+    <li><strong>iPhone से शेयर करना:</strong> टनल, ऐप के बैकग्राउंड में होने पर भी लोकल SOCKS5 प्रॉक्सी सर्वर को चालू रखता है। यह इस iPhone का अपना ट्रैफ़िक रूट नहीं करता और किसी रिमोट VPN सर्वर से कनेक्ट नहीं होता।</li>
+    <li><strong>दूसरे फ़ोन से कनेक्ट करना:</strong> टनल इस डिवाइस का ट्रैफ़िक आपके चुने हुए फ़ोन (जैसे उसका QR कोड स्कैन करके) के प्रॉक्सी पर भेजता है। यह हमारे किसी सर्वर पर नहीं भेजा जाता।</li>
+    <li><strong>सेव की गई हॉटस्पॉट जानकारी:</strong> अगर आप QR कोड में शामिल करने के लिए अपने हॉटस्पॉट का Wi-Fi नाम और पासवर्ड सेव करते हैं, तो वे सिर्फ आपके डिवाइस पर रहते हैं (iOS पर पासवर्ड Keychain में रखा जाता है) और हमें कभी नहीं भेजे जाते।</li>
   </ul>
 
   <h2>3. विज्ञापन और एनालिटिक्स</h2>
@@ -299,7 +319,7 @@ sitemap:
   <p>ये सेवाएं Google देता है और डेटा को <a href="https://policies.google.com/privacy?hl=hi" target="_blank" rel="noopener">Google की प्राइवेसी पॉलिसी</a> के अनुसार हैंडल करता है। इनमें से कोई भी सेवा प्रॉक्सी के ज़रिए शेयर किए गए आपके ट्रैफ़िक का कंटेंट नहीं पाती।</p>
 
   <h2>4. इन-ऐप खरीदारी</h2>
-  <p>सब्सक्रिप्शन Google Play Billing सिस्टम के ज़रिए सुरक्षित तरीके से प्रोसेस होते हैं। हम आपकी पेमेंट डिटेल्स न तो पाते हैं न स्टोर करते हैं।</p>
+  <p>सब्सक्रिप्शन Android पर Google Play Billing और iPhone व iPad पर App Store के ज़रिए सुरक्षित तरीके से प्रोसेस होते हैं। हम आपकी पेमेंट डिटेल्स न तो पाते हैं न स्टोर करते हैं।</p>
 
   <h2>5. डेटा सुरक्षा</h2>
   <p>सभी प्रॉक्सी ऑपरेशन आपके डिवाइस पर ही होते हैं, बीच में हमारा कोई रिमोट सर्वर नहीं होता। प्रॉक्सी के ज़रिए शेयर किया गया ट्रैफ़िक आपके डिवाइस से आपके फ़ोन तक और फिर आपके मोबाइल कनेक्शन से बाहर जाता है, यह हमें नहीं भेजा जाता। विज्ञापन, एनालिटिक्स, और क्रैश डेटा सेक्शन 3 में बताए गए तरीके से हैंडल होते हैं।</p>
@@ -314,6 +334,7 @@ sitemap:
   <p>ऐप में कोई अकाउंट नहीं है, इसलिए हम आपके नाम, फ़ोन नंबर या ईमेल एड्रेस से जुड़ा डेटा नहीं रखते। फिर भी ऊपर बताए गए डेटा को आप कंट्रोल कर सकते हैं और हटा सकते हैं:</p>
   <ul>
     <li><strong>विज्ञापन ID:</strong> अपनी Android सेटिंग्स में (डिवाइस के हिसाब से आमतौर पर Google &gt; Ads या Privacy &gt; Ads में) आप अपनी विज्ञापन ID रीसेट या डिलीट कर सकते हैं, या पर्सनलाइज़्ड विज्ञापन बंद कर सकते हैं।</li>
+    <li><strong>iPhone और iPad पर ट्रैकिंग:</strong> ऐप आपके डिवाइस का विज्ञापन आइडेंटिफ़ायर इस्तेमाल करने से पहले अनुमति मांगता है। आप इसे कभी भी Settings &gt; Privacy &amp; Security &gt; Tracking में बदल सकते हैं; अनुमति न देने पर भी आपको विज्ञापन दिखेंगे, लेकिन वे उस आइडेंटिफ़ायर से पर्सनलाइज़ नहीं होंगे।</li>
     <li><strong>आपके डिवाइस का डेटा:</strong> ऐप का स्टोरेज क्लियर करने या ऐप अनइंस्टॉल करने से वह सेटिंग्स और आइडेंटिफ़ायर हट जाते हैं जो ऐप आपके फ़ोन पर रखता है।</li>
     <li><strong>डेटा हटाने का अनुरोध:</strong> "Data deletion request" विषय के साथ <a href="mailto:support@tetherlinkutility.com?subject=Data%20deletion%20request">support@tetherlinkutility.com</a> पर ईमेल करें। यह डेटा आपके नाम या ईमेल से जुड़ा नहीं होता, इसलिए इसे ढूंढने में मदद के लिए अपना डिवाइस मॉडल और ऐप लगभग कब इस्तेमाल किया, यह बताएं। आपके इंस्टॉलेशन से जोड़े जा सकने वाले Firebase Analytics और Crashlytics डेटा को हटाने के लिए हम Google से अनुरोध करेंगे, और 30 दिनों के अंदर जवाब देने की कोशिश करेंगे।</li>
   </ul>
