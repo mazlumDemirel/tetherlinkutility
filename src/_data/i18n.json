@@ -22,6 +22,32 @@
       "sticky": "Share your phone's mobile data in one tap",
       "stickyButton": "Get it on Google Play",
       "videoTitle": "Tether Link Utility demo video"
+    },
+    "post": {
+      "quickAnswer": "Quick answer",
+      "checked": "Checked",
+      "onThisPage": "On this page",
+      "faqTitle": "Frequently asked questions",
+      "faqShort": "FAQ",
+      "guide": "GUIDE",
+      "breadcrumb": "Breadcrumb"
+    },
+    "guides": {
+      "title": "Hotspot guides",
+      "sub": "How hotspot limits work on your carrier, and how to check yours.",
+      "all": "All guides",
+      "label": "GUIDE",
+      "featuredBlurb": "Wi-Fi hotspot, USB, Bluetooth and SOCKS5 proxy compared.",
+      "carriers": "Carrier limits",
+      "socks": "SOCKS5 setup: Windows, macOS, iOS",
+      "unlimited": "Is my hotspot really unlimited?",
+      "carrierOrder": [
+        "jio-hotspot-data-limit",
+        "airtel-hotspot-data-limit",
+        "att-hotspot-throttling",
+        "verizon-hotspot-data-cap"
+      ],
+      "moreLabel": "more carrier guides"
     }
   },
   "tr": {
@@ -47,6 +73,32 @@
       "sticky": "Telefonunuzun mobil verisini tek dokunuşla paylaşın",
       "stickyButton": "Google Play'den İndirin",
       "videoTitle": "Tether Link Utility tanıtım videosu"
+    },
+    "post": {
+      "quickAnswer": "Hızlı cevap",
+      "checked": "Kontrol:",
+      "onThisPage": "Bu sayfada",
+      "faqTitle": "Sık sorulan sorular",
+      "faqShort": "SSS",
+      "guide": "REHBER",
+      "breadcrumb": "Sayfa yolu"
+    },
+    "guides": {
+      "title": "Hotspot rehberleri",
+      "sub": "Operatörünüzde hotspot sınırlarının nasıl işlediği ve kendi sınırınızı nasıl kontrol edeceğiniz.",
+      "all": "Tüm rehberler",
+      "label": "REHBER",
+      "featuredBlurb": "Wi-Fi hotspot, USB, Bluetooth ve SOCKS5 proxy karşılaştırması.",
+      "carriers": "Operatör sınırları",
+      "socks": "SOCKS5 kurulumu: Windows, macOS, iOS",
+      "unlimited": "Hotspot'um gerçekten sınırsız mı?",
+      "carrierOrder": [
+        "turkcell-hotspot-data-limit",
+        "turk-telekom-hotspot-data-limit",
+        "vodafone-hotspot-data-limit",
+        "att-hotspot-throttling"
+      ],
+      "moreLabel": "operatör rehberi daha"
     }
   },
   "hi": {
@@ -72,6 +124,32 @@
       "sticky": "एक टैप में अपने फ़ोन का मोबाइल डेटा शेयर करें",
       "stickyButton": "Google Play पर पाएं",
       "videoTitle": "Tether Link Utility डेमो वीडियो"
+    },
+    "post": {
+      "quickAnswer": "त्वरित उत्तर",
+      "checked": "जाँचा गया:",
+      "onThisPage": "इस पेज पर",
+      "faqTitle": "अक्सर पूछे जाने वाले सवाल",
+      "faqShort": "FAQ",
+      "guide": "गाइड",
+      "breadcrumb": "ब्रेडक्रंब"
+    },
+    "guides": {
+      "title": "हॉटस्पॉट गाइड",
+      "sub": "आपके ऑपरेटर पर हॉटस्पॉट लिमिट कैसे काम करती है, और अपनी लिमिट कैसे चेक करें।",
+      "all": "सभी गाइड",
+      "label": "गाइड",
+      "featuredBlurb": "Wi-Fi हॉटस्पॉट, USB, Bluetooth और SOCKS5 प्रॉक्सी की तुलना।",
+      "carriers": "ऑपरेटर लिमिट",
+      "socks": "SOCKS5 सेटअप: Windows, macOS, iOS",
+      "unlimited": "क्या मेरा हॉटस्पॉट सच में अनलिमिटेड है?",
+      "carrierOrder": [
+        "jio-hotspot-data-limit",
+        "airtel-hotspot-data-limit",
+        "att-hotspot-throttling",
+        "verizon-hotspot-data-cap"
+      ],
+      "moreLabel": "और ऑपरेटर गाइड"
     }
   }
 }

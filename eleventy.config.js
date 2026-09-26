@@ -1,3 +1,5 @@
+import fs from "node:fs";
+
 // Eleventy config for tetherlinkutility.com
 // Source pages live in src/, static files in public/ (copied as-is), output goes to _site/.
 
@@ -82,6 +84,81 @@ export default function (eleventyConfig) {
     if (lang === "hi") return `${d} ${month}, ${y}`;
     return `${d} ${month} ${y}`;
   });
+
+  // Carrier page layout (handoff 6a). Post bodies are plain HTML, so the extra blocks are
+  // spliced into the rendered body here instead of being written into every post:
+  //   - breadcrumb replaces the "Blog" eyebrow
+  //   - quick answer + "On this page" (built from the h2s) go right after .post-meta
+  //   - the FAQ goes right before the CTA box
+  //   - the first two related links become cards (same-region carrier, then the "5 ways" guide)
+  // Pages without the matching front matter are returned unchanged.
+  const GUIDE_SLUG = "best-ways-to-bypass-hotspot-throttling";
+  const slugify = (s) =>
+    s.replace(/<[^>]+>/g, "").replace(/&[a-z#0-9]+;/gi, "").toLowerCase().trim()
+      .replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-+|-+$/g, "");
+  const stripTags = (s) => s.replace(/<[^>]+>/g, "").trim();
+
+  eleventyConfig.addFilter("enhancePost", (content, o) => {
+    let html = content;
+    if (o.breadcrumb) {
+      html = html.replace(/<div class="page-eyebrow">[^<]*<\/div>\s*/, o.breadcrumb);
+    }
+    if (o.quick) {
+      const h2s = [];
+      html = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (m, inner) => {
+        const id = slugify(inner);
+        h2s.push({ id, text: stripTags(inner) });
+        return `<h2 id="${id}">${inner}</h2>`;
+      });
+      if (o.faq) h2s.push({ id: "faq", text: o.labels.faqShort });
+      const toc =
+        `    <div class="toc" role="navigation" aria-label="${o.labels.onThisPage}"><span class="toc-label">${o.labels.onThisPage}</span>\n` +
+        h2s.map((h, i) => `      <a href="#${h.id}">${i + 1} · ${h.text}</a>\n`).join("") +
+        `    </div>\n`;
+      html = html.replace(/(<div class="post-meta">[\s\S]*?<\/div>\n?)/, `$1${o.quick}${toc}`);
+    }
+    if (o.faq) {
+      html = html.replace(/(\s*)<div class="cta-box">/, `\n${o.faq}$1<div class="cta-box">`);
+    }
+    if (o.region && o.posts) {
+      html = html.replace(/<div class="related">([\s\S]*?)<\/div>/, (block, inner) => {
+        const links = [...inner.matchAll(/<li>(<a href="([^"]+)">[\s\S]*?<\/a>)<\/li>/g)].map((m) => ({
+          li: m[1],
+          slug: m[2].split("/").pop().replace(/\.html$/, ""),
+        }));
+        const bySlug = (slug) => o.posts.find((p) => p.data.slug === slug);
+        const sameRegion =
+          links.find((l) => bySlug(l.slug)?.data.region === o.region) ||
+          o.posts
+            .filter((p) => p.data.region === o.region && p.data.slug !== o.slug)
+            .map((p) => ({ slug: p.data.slug }))[0];
+        const picks = [sameRegion, { slug: GUIDE_SLUG }].filter(Boolean).map((l) => bySlug(l.slug)).filter(Boolean);
+        if (!picks.length) return block;
+        const cards = picks
+          .map((p) => {
+            const r = p.data.region;
+            const eyebrow = r ? r.toLocaleUpperCase(/ü|ı|ş|ğ/i.test(r) ? "tr-TR" : "en-US") : o.labels.guide;
+            const title = p.data.cardTitle || p.data.ogTitle || p.data.title;
+            return `        <a class="related-card" href="${p.url}"><span class="related-eyebrow">${eyebrow}</span><span class="related-title">${title}</span></a>\n`;
+          })
+          .join("");
+        const pickedSlugs = picks.map((p) => p.data.slug);
+        const rest = links.filter((l) => !pickedSlugs.includes(l.slug));
+        const h3 = inner.match(/<h3>[\s\S]*?<\/h3>/)?.[0] || "";
+        return (
+          `<div class="related">\n      ${h3}\n      <div class="related-cards">\n${cards}      </div>\n` +
+          (rest.length ? `      <ul>\n${rest.map((l) => `        <li>${l.li}</li>\n`).join("")}      </ul>\n` : "") +
+          `    </div>`
+        );
+      });
+    }
+    return html;
+  });
+
+  // og:image for a post: the generated card from tools/og.mjs when it exists, otherwise the site default.
+  eleventyConfig.addFilter("ogImage", (lang, slug) =>
+    fs.existsSync(`public/og/${lang}/${slug}.png`) ? `/og/${lang}/${slug}.png` : "/og-image.png"
+  );
 
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },

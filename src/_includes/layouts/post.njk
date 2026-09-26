@@ -1,5 +1,6 @@
 {%- set t = i18n[lang] -%}
 {%- set pageUrl = site.url + t.prefix + "blog/" + slug + ".html" -%}
+{%- set ogImageUrl = site.url + (lang | ogImage(slug)) -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
@@ -22,7 +23,8 @@
   <meta property="og:description" content="{{ ogDescription or description }}">
   <meta property="og:url" content="{{ pageUrl }}">
   <meta property="og:site_name" content="Tether Link Utility">
-  <meta property="og:image" content="{{ site.url }}/og-image.png">
+  <meta property="og:image" content="{{ ogImageUrl }}">
+  <meta property="og:image:alt" content="{{ ogTitle or title }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -30,7 +32,7 @@
   <meta name="twitter:site" content="@{{ site.twitter }}">
   <meta name="twitter:title" content="{{ twitterTitle or ogTitle or title }}">
   <meta name="twitter:description" content="{{ twitterDescription or ogDescription or description }}">
-  <meta name="twitter:image" content="{{ site.url }}/og-image.png">
+  <meta name="twitter:image" content="{{ ogImageUrl }}">
 
   <script type="application/ld+json">
   {
@@ -50,6 +52,27 @@
   }
   </script>
 {% if extraJsonLd %}{{ extraJsonLd }}{% endif %}
+{% if region and carrier %}  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": {{ t.blog | dump }}, "item": "{{ site.url }}{{ t.prefix }}blog/" },
+      { "@type": "ListItem", "position": 2, "name": {{ region | dump }} },
+      { "@type": "ListItem", "position": 3, "name": {{ carrier | dump }}, "item": "{{ pageUrl }}" }
+    ]
+  }
+  </script>
+{% endif %}{% if faq %}  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+{% for item in faq %}      { "@type": "Question", "name": {{ item.q | striptags | dump }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | striptags | dump }} } }{% if not loop.last %},{% endif %}
+{% endfor %}    ]
+  }
+  </script>
+{% endif %}
 {% include "partials/post-style.njk" %}
 </head>
 <body>
@@ -58,7 +81,10 @@
 
 <main>
   <article>
-{{ content }}  </article>
+{%- set quickHtml = "" -%}{%- if quick -%}{%- set quickHtml -%}{% include "partials/quick-answer.njk" %}{%- endset -%}{%- endif -%}
+{%- set faqHtml = "" -%}{%- if faq -%}{%- set faqHtml -%}{% include "partials/faq.njk" %}{%- endset -%}{%- endif -%}
+{%- set crumbHtml = "" -%}{%- if region and carrier -%}{%- set crumbHtml -%}{% include "partials/breadcrumb.njk" %}{%- endset -%}{%- endif -%}
+{{ content | enhancePost({ quick: quickHtml, faq: faqHtml, breadcrumb: crumbHtml, region: region, slug: slug, posts: collections["posts_" + lang], labels: t.post }) }}  </article>
 </main>
 
 {% include "partials/blog-footer.njk" %}
