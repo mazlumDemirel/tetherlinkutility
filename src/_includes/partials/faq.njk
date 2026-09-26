@@ -1,0 +1,6 @@
+{#- FAQ accordion from the post's `faq` front matter (native details/summary, first item open).
+    Inserted before the CTA box by the enhancePost filter; FAQPage JSON-LD in post.njk uses the same array. -#}
+    <h2 id="faq">{{ t.post.faqTitle }}</h2>
+    <div class="faq">
+{% for item in faq %}      <details{% if loop.first %} open{% endif %}><summary>{{ item.q }}</summary><p>{{ item.a }}</p></details>
+{% endfor %}    </div>

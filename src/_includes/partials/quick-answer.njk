@@ -1,0 +1,6 @@
+{#- Quick answer box for carrier pages, from the post's `quick` front matter.
+    Inserted right after .post-meta by the enhancePost filter. -#}
+    <div class="quick-answer">
+      <div class="quick-head"><span class="quick-label">{{ t.post.quickAnswer }}</span>{% if quick.checked %}<span class="quick-checked">{{ t.post.checked }} {{ quick.checked }}</span>{% endif %}</div>
+{% for row in quick.rows %}      <div class="quick-row"><span class="quick-k">{{ row.k }}</span><span class="quick-v">{{ row.v }}</span></div>
+{% endfor %}    </div>
