@@ -1,0 +1,230 @@
+{
+  "title": "Tether Link Utility: comparte los datos móviles de tu teléfono con SOCKS5",
+  "ogTitle": "Tether Link Utility: comparte los datos móviles de tu teléfono con SOCKS5",
+  "description": "Comparte los datos móviles de tu teléfono Android con tu computadora, tablet u otro teléfono mediante un proxy SOCKS5 local. Sin root, sin cuenta, sin servidor remoto.",
+  "jsonld": [
+    {
+      "type": "website"
+    },
+    {
+      "type": "organization"
+    },
+    {
+      "type": "howTo"
+    },
+    {
+      "type": "app"
+    },
+    {
+      "type": "faq",
+      "gap": true
+    }
+  ],
+  "howTo": {
+    "name": "Cómo compartir los datos móviles de tu teléfono por Wi-Fi con Tether Link Utility",
+    "steps": [
+      {
+        "name": "Toca START SERVER",
+        "text": "El punto de acceso Wi-Fi se activa automáticamente. La app crea un túnel proxy SOCKS5 local y muestra los datos de conexión."
+      },
+      {
+        "name": "Muestra el código QR",
+        "text": "Un solo código QR incluye la red Wi-Fi y la dirección del proxy. El nombre de la red y la contraseña también se muestran como texto para las computadoras."
+      },
+      {
+        "name": "Conecta tu dispositivo",
+        "text": "Android: escanea el código QR para unirte a la red Wi-Fi y conectar el proxy automáticamente. Windows / macOS / iOS: únete a la red Wi-Fi que aparece y luego introduce la IP y el puerto en la configuración de proxy SOCKS5."
+      },
+      {
+        "name": "Empieza a navegar",
+        "text": "El tráfico pasa por tus datos móviles. Sin servidor remoto: todo se queda en tu dispositivo."
+      }
+    ]
+  },
+  "app": {
+    "description": "Comparte los datos móviles de tu teléfono Android con tus otros dispositivos por Wi-Fi mediante un proxy SOCKS5 local. Sin root, sin cuenta, sin servidor remoto.",
+    "featureList": [
+      "Comparte datos móviles con computadoras, tablets y teléfonos por Wi-Fi",
+      "La versión gratuita comparte tu conexión con hasta 2 dispositivos, sin necesidad de root",
+      "Sin servidor remoto: todo el tráfico del proxy se enruta localmente en el dispositivo",
+      "Punto de acceso automático con un toque y conexión Wi-Fi entre dispositivos Android",
+      "Configuración con código QR para conectarte al instante",
+      "Compatibilidad con proxy SOCKS5 para clientes Windows, macOS e iOS"
+    ],
+    "freeName": "Gratis",
+    "proDescription": "Desde $2.99 al mes. El precio exacto, en moneda local y con el plan anual, aparece en Google Play o en la App Store y varía según el país y la plataforma."
+  },
+  "hero": {
+    "iosPill": "muy pronto",
+    "h1": "Los datos móviles de tu teléfono, en ",
+    "h1Accent": "todos tus dispositivos.",
+    "body": "Tether Link Utility ejecuta un proxy SOCKS5 local en tu teléfono Android y lo comparte por punto de acceso Wi-Fi, para que tu computadora, tu tablet u otro teléfono puedan usar tus datos móviles. Todo funciona en tu dispositivo.",
+    "playLabel": "Disponible en Google Play",
+    "playEyebrow": "DISPONIBLE EN",
+    "playWord": "Google Play",
+    "iosLabel": "La versión para iOS llegará muy pronto",
+    "iosEyebrow": "MUY PRONTO",
+    "trust": [
+      "Instalación gratuita",
+      "Sin cuenta",
+      "Sin servidor remoto"
+    ],
+    "screenshot": "/app-screenshot.png",
+    "screenshotAlt": "Tether Link Utility funcionando en Android: velocidad de descarga y subida en tiempo real, estadísticas de la sesión, 2 dispositivos conectados y host y puerto SOCKS5"
+  },
+  "how": {
+    "title": "Conectado en cuatro pasos",
+    "demoLink": "Ver la demo &#9656;",
+    "steps": [
+      {
+        "title": "Toca START",
+        "text": "El punto de acceso se activa automáticamente y el proxy se inicia."
+      },
+      {
+        "title": "Muestra el código QR",
+        "text": "Un solo código incluye la red Wi-Fi y la dirección del proxy."
+      },
+      {
+        "title": "Conecta tu dispositivo",
+        "text": "Android lo escanea y se une. En una computadora, introduce la IP y el puerto en la configuración SOCKS5."
+      },
+      {
+        "title": "Empieza a navegar",
+        "text": "El tráfico pasa por tus datos móviles. Nada pasa por nuestros servidores."
+      }
+    ],
+    "cards": [
+      {
+        "title": "Totalmente local",
+        "text": "El proxy se ejecuta en tu teléfono. Sin cuenta y sin servidor remoto: el tráfico que enrutas nunca se envía a nuestros servidores ni el proxy lo registra. La versión gratuita muestra anuncios, y nuestro proveedor de anuncios puede recopilar identificadores del dispositivo. Consulta la <a href=\"/privacy.html#es\">Política de privacidad</a>."
+      },
+      {
+        "title": "Conexión automática entre Android",
+        "text": "Escanea el código QR con el otro teléfono Android; en la mayoría de los dispositivos, la red Wi-Fi y el proxy se conectan automáticamente."
+      },
+      {
+        "title": "Avisos de cambio de IP",
+        "text": "La IP del operador puede cambiar entre sesiones. La app reconoce el cambio y avisa automáticamente a los dispositivos conectados."
+      }
+    ],
+    "notes": "<strong>¿Usas el punto de acceso propio de tu teléfono?</strong> Si activas tú mismo el Hotspot móvil (Android) o el Compartir Internet (iPhone), guarda su nombre y contraseña una vez en <strong>WI-FI</strong> dentro de la app. Se quedan en tu dispositivo, el punto de acceso no se modifica y se añaden al código QR para que otros dispositivos se unan escaneándolo. No hace falta cuando la app de Android inicia su propio punto de acceso. Los datos que usan los dispositivos conectados cuentan para tu plan móvil. Revisa las condiciones de tu operador sobre compartir conexión."
+  },
+  "demo": {
+    "title": "Míralo en acción",
+    "videoId": "XdQTXdNc_4w",
+    "playLabel": "Reproducir el video de demostración",
+    "previewAlt": "Vista previa del video de demostración"
+  },
+  "platforms": {
+    "label": "Plataformas",
+    "title": "Funciona con lo que ya tienes",
+    "text": "Las computadoras y los iPhone se conectan con la configuración estándar de proxy SOCKS5 o con apps como Shadowrocket. Para cubrir todo el sistema, DNS incluido, ejecuta <strong>sing-box</strong> en modo TUN en Windows o macOS.",
+    "guideLink": "Guía de configuración completa (en inglés) &rarr;",
+    "items": [
+      {
+        "mono": "WIN",
+        "name": "Windows",
+        "text": "Firefox incluye SOCKS5. Chrome y Edge: FoxyProxy.",
+        "chip": "SOCKS5"
+      },
+      {
+        "mono": "MAC",
+        "name": "macOS",
+        "text": "Ajustes del Sistema &rarr; Red &rarr; Proxies &rarr; Proxy SOCKS, o sing-box.",
+        "chip": "nativo"
+      },
+      {
+        "mono": "AND",
+        "name": "Android",
+        "text": "Escanea el código QR en Tether Link Utility. No necesitas otra app.",
+        "chip": "integrado"
+      },
+      {
+        "mono": "iOS",
+        "name": "iOS",
+        "text": "Shadowrocket (de pago) o Potatso Lite (gratis), solo para el tráfico de esa app.",
+        "chip": "SOCKS5"
+      }
+    ]
+  },
+  "pricing": {
+    "label": "Precios",
+    "title": "Empieza gratis. Pasa a Pro cuando necesites más.",
+    "plans": [
+      {
+        "name": "Gratis",
+        "price": "$0",
+        "features": [
+          "2 dispositivos a la vez",
+          "Anuncios de banner e intersticiales",
+          "Sin necesidad de cuenta"
+        ]
+      },
+      {
+        "name": "Pro",
+        "pro": true,
+        "pricePrefix": "desde",
+        "price": "$2.99",
+        "priceSuffix": "/mes",
+        "features": [
+          "5 dispositivos a la vez",
+          "Sin anuncios",
+          "Sin necesidad de cuenta"
+        ]
+      }
+    ],
+    "note": "El precio exacto, en moneda local y con el plan anual, aparece en Google Play o en la App Store."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "visible": 4,
+    "items": [
+      {
+        "q": "¿Cómo funciona Tether Link Utility?",
+        "a": "Ejecuta un proxy SOCKS5 local en tu teléfono Android, con la API VpnService de Android, y lo comparte por el punto de acceso Wi-Fi del teléfono (sin cable USB). Tus otros dispositivos envían su tráfico a ese proxy y el teléfono lo reenvía por su conexión de datos móviles. No hay ningún servidor remoto de por medio."
+      },
+      {
+        "q": "¿Necesito acceso root?",
+        "a": "No, funciona completamente sin permisos de root."
+      },
+      {
+        "q": "¿Usa un servidor remoto?",
+        "a": "No. El tráfico del proxy va de tus dispositivos a tu teléfono y sale por tus datos móviles; no pasa por ningún servidor nuestro, ni se registra ni se almacena en él. La versión gratuita muestra anuncios de Google AdMob, y la app usa Firebase Analytics y Crashlytics, que recopilan identificadores del dispositivo y datos de uso y de fallos, como se explica en nuestra <a href=\"/privacy.html#es\">política de privacidad</a>."
+      },
+      {
+        "q": "¿Puedo conectar una computadora con Windows o Mac?",
+        "a": "Sí, configura el proxy SOCKS5 de tu computadora (integrado en macOS, o con Firefox/FoxyProxy en Windows) con la IP y el puerto que muestra la app. Eso cubre las apps que respetan esa configuración; para cubrir todo el sistema, DNS incluido, usa sing-box en modo TUN."
+      },
+      {
+        "q": "¿La configuración de proxy SOCKS5 protege todo mi tráfico?",
+        "a": "No del todo. La configuración SOCKS5 del navegador o del sistema solo redirige el tráfico de las apps que la respetan; las consultas DNS y otro tráfico en segundo plano pueden seguir saliendo por la conexión normal del punto de acceso en lugar de por el proxy. Para una cobertura completa en Windows o macOS, ejecuta <a href=\"/blog/socks5-proxy-setup-windows-macos-ios.html\">sing-box en modo TUN</a> (guía en inglés), que envía todo el tráfico del sistema, DNS incluido, por el túnel."
+      },
+      {
+        "q": "¿Funciona con iPhone?",
+        "a": "iOS no tiene una configuración SOCKS5 nativa, pero apps como Shadowrocket o Potatso pueden conectarse al proxy de la misma forma, solo para el tráfico de esa app y no para todo el dispositivo. Por ahora no hay una opción verificada para todo el dispositivo en iOS. Una app nativa para iOS está en desarrollo y llegará muy pronto."
+      },
+      {
+        "q": "¿Cuántos dispositivos pueden conectarse a la vez?",
+        "a": "La versión gratuita conecta hasta 2 dispositivos a la vez; Pro amplía el límite a 5. Pro cuesta desde $2.99 al mes. El precio exacto, en moneda local y con el plan anual, aparece en Google Play o en la App Store."
+      },
+      {
+        "q": "¿Funciona con 5G y 4G/LTE?",
+        "a": "Sí, comparte la conexión de datos móviles que tenga activa tu teléfono en ese momento, sea cual sea la generación de red."
+      },
+      {
+        "q": "¿Usa los datos de mi plan móvil?",
+        "a": "Sí. Los datos que usan los dispositivos conectados cuentan para tu plan. Revisa las condiciones de tu operador sobre compartir conexión."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, la versión gratuita se puede usar sin pagar: hasta 2 dispositivos a la vez, con anuncios. Pro elimina los anuncios y permite hasta 5 dispositivos a la vez. La app en sí no añade actualmente ningún límite de velocidad; la velocidad real depende de tu operador, tu plan y la señal."
+      },
+      {
+        "q": "¿Otros dispositivos pueden unirse a mi propio punto de acceso escaneando el código QR?",
+        "a": "Sí. Si activas tú mismo el punto de acceso del sistema de tu teléfono (Hotspot móvil en Android, Compartir Internet en iPhone), guarda su nombre de red y contraseña una vez en WI-FI dentro de la app. Se guardan solo en tu dispositivo, la app no cambia la configuración de tu punto de acceso y los datos se añaden al código QR para que otros dispositivos se unan a la red automáticamente al escanearlo. En iPhone, la contraseña aparece en Ajustes &gt; Compartir Internet. Cuando la app de Android inicia su propio punto de acceso automáticamente, este paso no es necesario."
+      }
+    ],
+    "more": "Las 11 preguntas &rarr;",
+    "less": "Mostrar menos preguntas"
+  }
+}

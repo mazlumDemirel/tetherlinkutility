@@ -1,0 +1,20 @@
+---
+permalink: /es/index.html
+lang: es
+# Page text lives in src/_data/home/<lang>.json, markup in partials/home-main.njk and home-jsonld.njk.
+eleventyComputed:
+  title: "{{ home[lang].title }}"
+  ogTitle: "{{ home[lang].ogTitle }}"
+  description: "{{ home[lang].description }}"
+shortHeadComments: true
+sitemap:
+  order: 21
+  lastmod: "2026-09-27"
+  changefreq: "weekly"
+  priority: "0.9"
+---
+{% extends "layouts/home.njk" %}
+
+{% block jsonld %}{% include "partials/home-jsonld.njk" %}{% endblock %}
+
+{% block main %}{% include "partials/home-main.njk" %}{% endblock %}

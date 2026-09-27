@@ -151,5 +151,40 @@
       ],
       "moreLabel": "और ऑपरेटर गाइड"
     }
+  },
+  "es": {
+    "prefix": "/es/",
+    "name": "Español",
+    "code": "ES",
+    "ogLocale": "es_ES",
+    "publisherPrefix": "por ",
+    "home": "Inicio",
+    "faq": "Preguntas frecuentes",
+    "blog": "Blog",
+    "privacy": "Privacidad",
+    "privacyHref": "/privacy.html#es",
+    "blogLang": "en",
+    "homeNav": {
+      "openMenu": "Abrir menú",
+      "how": "Cómo funciona",
+      "platforms": "Plataformas",
+      "pricing": "Precios",
+      "faq": "FAQ",
+      "language": "Idioma",
+      "getApp": "Descargar la app",
+      "findUsOn": "Encuéntranos en",
+      "sticky": "Comparte los datos móviles de tu teléfono con un toque",
+      "stickyButton": "Disponible en Google Play",
+      "videoTitle": "Video de demostración de Tether Link Utility"
+    },
+    "post": {
+      "quickAnswer": "Respuesta rápida",
+      "checked": "Revisado:",
+      "onThisPage": "En esta página",
+      "faqTitle": "Preguntas frecuentes",
+      "faqShort": "Preguntas frecuentes",
+      "guide": "GUÍA",
+      "breadcrumb": "Ruta de navegación"
+    }
   }
 }
