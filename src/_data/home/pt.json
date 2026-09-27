@@ -1,7 +1,8 @@
 {
-  "title": "Tether Link Utility: compartilhe os dados móveis do seu celular via SOCKS5",
-  "ogTitle": "Tether Link Utility: compartilhe os dados móveis do seu celular via SOCKS5",
-  "description": "Compartilhe os dados móveis do seu celular Android com seu computador, tablet ou outro celular por meio de um proxy SOCKS5 local. Sem root, sem conta, sem servidor remoto.",
+  "title": "Compartilhar internet do celular com outro dispositivo",
+  "ogTitle": "Tether Link Utility: compartilhe a internet do celular com outro dispositivo",
+  "description": "Compartilhe os dados móveis do seu celular Android com outro dispositivo pelo roteador Wi-Fi e um proxy SOCKS5 local. Conexão por QR, sem root e sem conta.",
+  "inLanguage": "pt-BR",
   "jsonld": [
     {
       "type": "website"
@@ -56,7 +57,7 @@
   },
   "hero": {
     "iosPill": "em breve",
-    "h1": "Os dados móveis do seu celular, em ",
+    "h1": "Compartilhe a internet do seu celular com ",
     "h1Accent": "todos os seus dispositivos.",
     "body": "O Tether Link Utility roda um proxy SOCKS5 local no seu celular Android e o compartilha pelo ponto de acesso Wi-Fi, para que seu computador, seu tablet ou outro celular possam usar seus dados móveis. Tudo funciona no seu dispositivo.",
     "playLabel": "Disponível no Google Play",

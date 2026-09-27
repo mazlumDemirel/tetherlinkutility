@@ -2,6 +2,7 @@
     `jsonld` in that file lists the blocks in output order (type: website, organization, howTo,
     app, faq); `gap: true` puts an empty line before the block. `ldUrl` overrides the page URL
     used in the WebSite, Organization and SoftwareApplication blocks.
+    `inLanguage` (optional) adds inLanguage to every block except Organization.
     FAQPage answers are the FAQ answers with HTML tags removed. -#}
 {%- set h = home[lang] -%}
 {%- set ldUrl = h.ldUrl or (site.url + t.prefix) -%}
@@ -10,7 +11,8 @@
 {% endif %}  {% endif %}<script type="application/ld+json">
   {
     "@context": "https://schema.org",
-{% if b.type == "website" %}    "@type": "WebSite",
+{% if h.inLanguage and b.type != "organization" %}    "inLanguage": "{{ h.inLanguage }}",
+{% endif %}{% if b.type == "website" %}    "@type": "WebSite",
     "name": "{{ site.name }}",
     "url": "{{ ldUrl }}"
 {% elif b.type == "organization" %}    "@type": "Organization",

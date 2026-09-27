@@ -2,13 +2,13 @@
 {%- set pageUrl = site.url + t.prefix + "blog/" + slug + ".html" -%}
 {%- set ogImageUrl = site.url + (lang | ogImage(slug)) -%}
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ t.hreflang or lang }}">
 <head>
 {% include "partials/gtag.njk" %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="{{ pageUrl }}" />
-{% for l in site.languages %}{% if collections | hasPost(l, slug) %}  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ i18n[l].prefix }}blog/{{ slug }}.html" />
+{% for l in site.languages %}{% if collections | hasPost(l, slug) %}  <link rel="alternate" hreflang="{{ i18n[l].hreflang or l }}" href="{{ site.url }}{{ i18n[l].prefix }}blog/{{ slug }}.html" />
 {% endif %}{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/blog/{{ slug }}.html" />
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">

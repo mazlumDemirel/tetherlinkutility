@@ -70,13 +70,42 @@ export default function (eleventyConfig) {
   // sitemap.xml entries: every page with `sitemap` front matter, plus files listed in
   // src/_data/sitemapExtra.json (for passthrough files such as pricing.md), sorted by `order`.
   // Pages without an `order` go last, sorted by URL.
-  eleventyConfig.addFilter("sitemapEntries", (pages, extra) => {
+  // Each entry may carry `alternates` ([{ hreflang, href }]) for pages that exist in several
+  // languages. These match the hreflang tags in the page heads: home pages list every language,
+  // blog index pages the languages with their own blog, posts the languages that have that post;
+  // x-default is always the English URL. Pages with a single language get no alternates.
+  eleventyConfig.addFilter("sitemapEntries", (pages, extra, site, i18n) => {
+    const hl = (l) => i18n[l].hreflang || l;
+    const postLangs = (slug) =>
+      languages.filter((l) => pages.some((p) => p.data.isPost && p.data.lang === l && p.data.slug === slug && !p.data.scheduled));
+    const alternatesFor = (p) => {
+      const lang = p.data.lang;
+      if (!lang || !i18n[lang]) return null;
+      const prefix = i18n[lang].prefix;
+      const url = p.url.replace(/index\.html$/, "");
+      let langs, path;
+      if (p.data.isPost) {
+        langs = postLangs(p.data.slug);
+        path = `blog/${p.data.slug}.html`;
+      } else if (url === prefix) {
+        langs = languages;
+        path = "";
+      } else if (url === `${prefix}blog/`) {
+        langs = languages.filter((l) => !i18n[l].blogLang);
+        path = "blog/";
+      } else return null;
+      if (langs.length < 2) return null;
+      return langs
+        .map((l) => ({ hreflang: hl(l), href: `${site.url}${i18n[l].prefix}${path}` }))
+        .concat({ hreflang: "x-default", href: `${site.url}/${path}` });
+    };
     const entries = pages
       .filter((p) => p.data.sitemap)
       .map((p) => ({
         url: p.url,
         ...p.data.sitemap,
         lastmod: p.data.sitemap.lastmod || p.data.modified || p.data.published,
+        alternates: alternatesFor(p),
       }))
       .concat(extra || []);
     const key = (e) => (e.order === undefined ? Infinity : e.order);
