@@ -3,7 +3,7 @@
 {%- set blogPrefix = i18n[t.blogLang or lang].prefix -%}
 {%- set pageUrl = site.url + t.prefix -%}
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ t.hreflang or lang }}">
 <head>
 {% include "partials/gtag.njk" %}
 {% if conversionSnippet %}  <!-- Event snippet for Sayfa görüntüleme conversion page -->
@@ -19,7 +19,7 @@
 {% if siteVerification %}  <meta name="google-site-verification" content="3ZffoZuU2qaZoJJrMZoL8VImUVBLLHqg3b7jA_cN3Z4" />
 {% endif %}  <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{ pageUrl }}" />
-{% for l in site.languages %}  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ i18n[l].prefix }}" />
+{% for l in site.languages %}  <link rel="alternate" hreflang="{{ i18n[l].hreflang or l }}" href="{{ site.url }}{{ i18n[l].prefix }}" />
 {% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
