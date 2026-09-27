@@ -1,5 +1,8 @@
 import fs from "node:fs";
 
+// Site languages (single source of truth: src/_data/site.json).
+const { languages } = JSON.parse(fs.readFileSync(new URL("./src/_data/site.json", import.meta.url), "utf8"));
+
 // Eleventy config for tetherlinkutility.com
 // Source pages live in src/, static files in public/ (copied as-is), output goes to _site/.
 
@@ -15,8 +18,8 @@ export default function (eleventyConfig) {
     throwOnUndefined: false,
   });
 
-  // Blog posts per language, used by the blog index pages, sitemap.xml and llms.txt.
-  for (const lang of ["en", "tr", "hi"]) {
+  // Blog posts per language (empty for a language without translated posts), used by the blog index pages, sitemap.xml and llms.txt.
+  for (const lang of languages) {
     eleventyConfig.addCollection(`posts_${lang}`, (api) =>
       api
         .getAll()

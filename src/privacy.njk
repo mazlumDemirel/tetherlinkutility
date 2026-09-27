@@ -156,6 +156,7 @@ sitemap:
     <a href="#en">English</a>
     <a href="#tr">Türkçe</a>
     <a href="#hi">हिन्दी</a>
+    <a href="#es">Español</a>
   </div>
   <div class="effective-date">Effective Date: September 26, 2026</div>
 
@@ -222,6 +223,7 @@ sitemap:
     <a href="#en">English</a>
     <a href="#tr">Türkçe</a>
     <a href="#hi">हिन्दी</a>
+    <a href="#es">Español</a>
   </div>
   <div class="effective-date">Yürürlük Tarihi: 26 Eylül 2026</div>
 
@@ -288,6 +290,7 @@ sitemap:
     <a href="#en">English</a>
     <a href="#tr">Türkçe</a>
     <a href="#hi">हिन्दी</a>
+    <a href="#es">Español</a>
   </div>
   <div class="effective-date">लागू होने की तारीख: 26 सितंबर, 2026</div>
 
@@ -344,6 +347,73 @@ sitemap:
 
   <h2>10. बौद्धिक संपदा</h2>
   <p>Barnah Adam, Barnah Kız, और Tether Link Utility से जुड़े बाकी सभी किरदार, आर्टवर्क, और कंटेंट मौलिक रचनाएं हैं। सर्वाधिकार सुरक्षित।</p>
+  </div>
+
+  <div class="lang-divider">Español</div>
+
+  <div id="es" lang="es">
+  <h2 style="font-size: clamp(28px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">Política de privacidad</h2>
+  <div class="lang-switch">
+    <a href="#en">English</a>
+    <a href="#tr">Türkçe</a>
+    <a href="#hi">हिन्दी</a>
+    <a href="#es">Español</a>
+  </div>
+  <div class="effective-date">Fecha de entrada en vigor: 26 de septiembre de 2026</div>
+
+  <h2>1. Recopilación y uso de la información</h2>
+  <p>Tether Link Utility está diseñada como una utilidad de enrutamiento local del sistema.</p>
+  <ul>
+    <li><strong>Sin cuenta ni datos de contacto:</strong> la app no solicita, recopila ni almacena tu nombre, número de teléfono, dirección de correo electrónico ni datos de cuenta.</li>
+    <li><strong>Sin registro del tráfico de red:</strong> no supervisamos, registramos, inspeccionamos ni almacenamos el contenido de tu tráfico, tu historial de navegación ni las direcciones de destino que pasan por tu conexión compartida, y este tráfico no se envía a ningún servidor nuestro.</li>
+    <li><strong>Servicios de terceros:</strong> la app incluye Google AdMob (solo en la versión gratuita), Firebase Analytics, Firebase Crashlytics y Firebase Remote Config. Estos servicios recopilan identificadores del dispositivo y datos de uso y de fallos, como se describe en la sección 3.</li>
+  </ul>
+
+  <h2>2. Uso de Android VpnService y de iOS Network Extension</h2>
+  <p>Nuestra aplicación usa la API VpnService de Android para crear un servidor proxy SOCKS5 local en tu dispositivo.</p>
+  <ul>
+    <li><strong>Finalidad:</strong> VpnService se usa únicamente para evitar que el sistema redirija las conexiones de socket locales, lo que permite a la app reenviar el tráfico del punto de acceso a través de la conexión de red GSM activa del dispositivo. No se conecta a ningún servidor VPN remoto.</li>
+    <li><strong>Sin servidor remoto:</strong> el tráfico que gestiona el servicio va desde tus dispositivos conectados hasta tu teléfono por su punto de acceso Wi-Fi, y de ahí sale por tu conexión de datos móviles hacia los sitios y servicios que usas. No pasa por ningún servidor que operemos, ni se copia ni se almacena en él.</li>
+  </ul>
+  <p>En iPhone y iPad, la app usa el framework Network Extension de Apple (un túnel de paquetes) con los mismos fines.</p>
+  <ul>
+    <li><strong>Compartir desde un iPhone:</strong> el túnel mantiene en funcionamiento el servidor proxy SOCKS5 local mientras la app está en segundo plano. No enruta el tráfico propio de este iPhone ni se conecta a ningún servidor VPN remoto.</li>
+    <li><strong>Conectarse a otro teléfono:</strong> el túnel envía el tráfico de este dispositivo al proxy del teléfono que elijas, por ejemplo al escanear su código QR. No se envía a ningún servidor nuestro.</li>
+    <li><strong>Datos del punto de acceso guardados:</strong> si guardas el nombre y la contraseña de la red Wi-Fi de tu punto de acceso para que el código QR los incluya, se almacenan solo en tu dispositivo (en iOS, la contraseña se guarda en el Llavero) y nunca se nos envían.</li>
+  </ul>
+
+  <h2>3. Publicidad y analítica</h2>
+  <p>La versión gratuita muestra anuncios intersticiales y de banner servidos por Google AdMob. AdMob puede recopilar identificadores del dispositivo y datos de uso de acuerdo con la Política de privacidad de Google. Los suscriptores Premium no ven anuncios.</p>
+  <p>También usamos Firebase Analytics (Google) para entender el uso básico de la app, por ejemplo cuántas personas la abren y qué funciones se usan, para poder encontrar problemas y mejorarla. Firebase Analytics recopila un identificador de instancia de la app, información del dispositivo (como el modelo y la versión del sistema operativo) y eventos de uso. No vinculamos estos datos con tu nombre, número de teléfono ni dirección de correo electrónico.</p>
+  <p>Usamos Firebase Crashlytics (Google) para recibir informes de fallos. Un informe de fallos incluye información del dispositivo, el estado de la app en el momento del fallo y un identificador de instalación. Usamos Firebase Remote Config (Google) para cambiar algunos ajustes de la app sin publicar una actualización; para ello, la app envía a Firebase un identificador de instancia de la app e información básica del dispositivo.</p>
+  <p>Google presta estos servicios y trata los datos según la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Política de privacidad de Google</a>. Ninguno de ellos recibe el contenido del tráfico que compartes a través del proxy.</p>
+
+  <h2>4. Compras dentro de la app</h2>
+  <p>Las suscripciones se procesan de forma segura a través de Google Play Billing en Android y de la App Store en iPhone y iPad. No recibimos ni almacenamos tus datos de pago.</p>
+
+  <h2>5. Seguridad de los datos</h2>
+  <p>Todas las operaciones del proxy se realizan en tu dispositivo, sin ningún servidor remoto nuestro de por medio. El tráfico que compartes a través del proxy va desde tus dispositivos hasta tu teléfono y sale por tu conexión móvil; no se nos envía. Los datos de publicidad, analítica y fallos se tratan como se describe en la sección 3.</p>
+
+  <h2>6. Privacidad de los menores</h2>
+  <p>Esta aplicación no está dirigida a menores de 13 años. No recopilamos de forma consciente ninguna información de menores.</p>
+
+  <h2>7. Cambios en esta Política de privacidad</h2>
+  <p>Podemos actualizar esta Política de privacidad de vez en cuando. Los cambios entran en vigor en el momento de su publicación.</p>
+
+  <h2>8. Tus opciones y la eliminación de datos</h2>
+  <p>La app no tiene cuentas, así que no conservamos datos vinculados a tu nombre, número de teléfono ni dirección de correo electrónico. Aun así, puedes controlar y eliminar los datos descritos arriba:</p>
+  <ul>
+    <li><strong>ID de publicidad:</strong> puedes restablecer o eliminar tu ID de publicidad, o desactivar los anuncios personalizados, en los ajustes de Android (normalmente en Google &gt; Anuncios, o en Privacidad &gt; Anuncios, según el dispositivo).</li>
+    <li><strong>Seguimiento en iPhone y iPad:</strong> la app pide permiso antes de usar el identificador de publicidad de tu dispositivo. Puedes cambiarlo en cualquier momento en Ajustes &gt; Privacidad y seguridad &gt; Rastreo; si no lo permites, seguirás viendo anuncios, pero no se personalizarán con ese identificador.</li>
+    <li><strong>Datos en tu dispositivo:</strong> borrar el almacenamiento de la app o desinstalarla elimina los ajustes e identificadores que guarda en tu teléfono.</li>
+    <li><strong>Solicitud de eliminación:</strong> envía un correo a <a href="mailto:support@tetherlinkutility.com?subject=Data%20deletion%20request">support@tetherlinkutility.com</a> con el asunto "Data deletion request" (solicitud de eliminación de datos). Como estos datos no están vinculados a tu nombre ni a tu correo, indica el modelo de tu dispositivo y cuándo usaste la app aproximadamente para que podamos intentar localizarlos. Pediremos a Google que elimine los datos de Firebase Analytics y Crashlytics que podamos asociar a tu instalación, y procuramos responder en un plazo de 30 días.</li>
+  </ul>
+
+  <h2>9. Contacto</h2>
+  <p>Si tienes alguna pregunta sobre esta Política de privacidad, escríbenos a: <a href="mailto:support@tetherlinkutility.com">support@tetherlinkutility.com</a></p>
+
+  <h2>10. Propiedad intelectual</h2>
+  <p>Barnah Adam, Barnah Kız y todos los demás personajes, ilustraciones y contenidos asociados a Tether Link Utility son obras originales. Todos los derechos reservados.</p>
   </div>
 </main>
 

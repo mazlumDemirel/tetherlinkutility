@@ -1,4 +1,6 @@
 {%- set t = i18n[lang] -%}
+{#- Blog links go to this language's blog, or to t.blogLang's blog for a language without translated posts. -#}
+{%- set blogPrefix = i18n[t.blogLang or lang].prefix -%}
 {%- set pageUrl = site.url + t.prefix -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
