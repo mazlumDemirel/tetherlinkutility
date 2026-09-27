@@ -1,0 +1,71 @@
+---
+title: "Servidor proxy SOCKS5 no Android: o que é e como usar"
+description: "O que faz um servidor proxy SOCKS5 no celular Android, como outros dispositivos se conectam a ele pelo Wi-Fi e como configurar Windows, macOS, iOS e Android."
+published: "2026-09-27"
+modified: "2026-09-27"
+sitemap:
+  order: 72
+  lastmod: "2026-09-27"
+  changefreq: "monthly"
+  priority: "0.7"
+index:
+  order: 2
+  excerpt: "Como funciona um proxy SOCKS5 rodando no celular Android, o papel do roteador local do sistema e como conectar Windows, macOS, iOS e Android."
+---
+    <div class="page-eyebrow">Blog</div>
+    <h1>Servidor proxy SOCKS5 no Android: o que é e como usar</h1>
+    <div class="post-meta">Publicado em 27 de setembro de 2026</div>
+
+    <p>Um servidor proxy SOCKS5 costuma rodar em um computador ou em um data center. Mas ele também pode rodar em um celular Android, e isso acaba sendo um jeito prático de compartilhar os dados móveis do celular com outros dispositivos na mesma rede Wi-Fi. Este guia explica o que é SOCKS5, por que rodar um no celular, como ele funciona junto com o roteador local do Android e como conectar cada tipo de dispositivo.</p>
+
+    <h2>O que é SOCKS5?</h2>
+    <p>SOCKS5 é um protocolo de proxy de uso geral. Um cliente (um navegador, um app ou uma ferramenta que atua no sistema inteiro) se conecta ao proxy e pede que ele abra uma conexão com algum endereço em seu nome. O proxy faz essa conexão e repassa os dados nos dois sentidos. O SOCKS5 funciona com qualquer conexão TCP e também aceita UDP por meio de um recurso chamado UDP ASSOCIATE, usado pelo DNS e por alguns protocolos mais novos, como o QUIC.</p>
+    <p>Diferente de um proxy HTTP, o SOCKS5 não precisa entender o tráfego que transporta. Por isso ele é uma boa opção para compartilhar uma conexão: sites, jogos, apps de mensagem e transferências de arquivo podem passar por ele.</p>
+
+    <h2>Por que rodar um proxy SOCKS5 no celular?</h2>
+    <ul>
+      <li><strong>Compartilhar dados móveis com outros dispositivos.</strong> Um computador, um tablet ou um segundo celular na mesma rede Wi-Fi pode mandar seu tráfego para o proxy, e o celular o encaminha pela conexão de dados móveis.</li>
+      <li><strong>Funciona com muitos clientes.</strong> Navegadores, sistemas operacionais e muitos apps já aceitam SOCKS5, então no computador muitas vezes não é preciso instalar nada.</li>
+      <li><strong>Tudo fica local.</strong> O proxy roda no seu celular. O tráfego vai do seu dispositivo para o celular e sai pela conexão móvel dele, sem nenhum servidor remoto no meio.</li>
+      <li><strong>Sem root.</strong> Um app Android comum consegue rodar um servidor SOCKS5.</li>
+    </ul>
+
+    <h2>Como funciona com o LocalOnlyHotspot</h2>
+    <p>Os outros dispositivos precisam de um caminho de rede até o celular. O Tether Link Utility consegue esse caminho com o recurso <strong>LocalOnlyHotspot</strong> do Android (disponível desde o Android 8): o sistema cria uma rede Wi-Fi com nome e senha gerados automaticamente. Sozinho, um LocalOnlyHotspot dá aos dispositivos conectados acesso ao celular, mas não à internet. O proxy SOCKS5 completa essa parte: os dispositivos no Wi-Fi local se conectam ao IP e à porta do proxy, e o proxy encaminha as conexões deles pelos dados móveis do celular.</p>
+    <p>No app, toque em <strong>START SERVER</strong>. Quando o roteador e o proxy estiverem ativos, a tela mostra o endereço IP e a porta, e <strong>Show QR Code</strong> exibe um código com os dados do Wi-Fi e o endereço do proxy.</p>
+
+    <h2>Conectando os clientes</h2>
+    <p>Primeiro, cada cliente entra na rede Wi-Fi do celular. Depois, é preciso dizer a ele para usar o proxy:</p>
+    <ul>
+      <li><strong>Android:</strong> instale o Tether Link Utility também no outro celular e escaneie o QR Code. No Android 10 ou mais recente ele entra no Wi-Fi automaticamente e depois passa o tráfego do celular pelo proxy com o VpnService do Android (uma interface de VPN local, sem servidor remoto). Veja <a href="/pt/blog/share-mobile-data-android-to-android-qr.html">Compartilhar internet de Android para Android com QR Code</a>.</li>
+      <li><strong>Windows:</strong> configure SOCKS5 no Firefox ou use uma extensão de proxy como o FoxyProxy no Chrome ou no Edge. Para passar todos os apps e o DNS pelo proxy, e não só o navegador, rode o sing-box em modo TUN.</li>
+      <li><strong>macOS:</strong> digite o IP e a porta em Ajustes do Sistema, Rede, Wi-Fi, Detalhes, Proxies, Proxy SOCKS. Para todos os apps e o DNS, o sing-box em modo TUN é a opção mais completa.</li>
+      <li><strong>Linux:</strong> use as configurações de proxy de rede do seu ambiente gráfico ou a opção SOCKS5 de cada aplicativo; o sing-box também roda no Linux.</li>
+      <li><strong>iOS e iPadOS:</strong> o iOS não tem ajuste SOCKS5 nativo, então use um app que aceite proxy SOCKS5, como o Shadowrocket ou o Potatso Lite.</li>
+    </ul>
+    <p>O passo a passo de cada plataforma, com um arquivo de configuração do sing-box, está em <a href="/pt/blog/socks5-proxy-setup-windows-macos-ios.html">Como configurar um proxy SOCKS5 no Windows, macOS e iOS</a>.</p>
+
+    <h2>Observações de segurança</h2>
+    <ul>
+      <li><strong>Só na rede local.</strong> O proxy escuta na rede do roteador local do celular. Só dispositivos que entraram nesse Wi-Fi conseguem acessá-lo, então compartilhe a senha do Wi-Fi (e o QR Code, que a contém) só com pessoas de confiança.</li>
+      <li><strong>O SOCKS5 não criptografa.</strong> O protocolo encaminha o tráfego, mas não o criptografa. A ligação Wi-Fi até o celular é protegida pela segurança WPA2 ou WPA3 do roteador, e depois do celular seu tráfego fica tão protegido quanto os sites e apps que você usa o deixam. Prefira sites com HTTPS e apps que usam conexões criptografadas.</li>
+      <li><strong>Pare o servidor quando terminar.</strong> Ao parar, o roteador e o proxy são desligados.</li>
+    </ul>
+
+    <h2>Limites e custos</h2>
+    <p>A versão gratuita do Tether Link Utility permite até 2 dispositivos conectados e mostra anúncios. A versão Pro permite até 5 dispositivos, sem anúncios. Todos os dados usados pelos dispositivos conectados saem do plano de dados do celular e contam na franquia, e cada operadora define suas próprias regras de roteamento, então confira as condições do seu plano antes de compartilhar muitos dados.</p>
+
+    <div class="cta-box">
+      <h3>Tether Link Utility</h3>
+      <p>Um app Android que compartilha os dados móveis do seu celular com seus outros dispositivos por meio de um proxy SOCKS5 local. Sem root, sem conta, sem servidor remoto.</p>
+      <a class="cta-button" href="/pt/">Veja como funciona</a>
+    </div>
+
+    <div class="related">
+      <h3>Leia também</h3>
+      <ul>
+        <li><a href="/pt/blog/socks5-proxy-setup-windows-macos-ios.html">Como configurar proxy SOCKS5 no Windows, macOS e iOS</a></li>
+        <li><a href="/pt/blog/share-mobile-data-android-to-android-qr.html">Compartilhar internet de Android para Android com QR Code</a></li>
+        <li><a href="/blog/best-ways-to-bypass-hotspot-throttling.html">5 Ways to Share Your Phone's Internet With Another Device (em inglês)</a></li>
+      </ul>
+    </div>

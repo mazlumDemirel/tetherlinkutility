@@ -162,6 +162,7 @@
     "home": "Inicio",
     "faq": "Preguntas frecuentes",
     "blog": "Blog",
+    "blogTitle": "Blog de guías del punto de acceso: Tether Link Utility",
     "privacy": "Privacidad",
     "privacyHref": "/privacy.html#es",
     "homeNav": {
@@ -193,11 +194,16 @@
       "sub": "Cómo funcionan los límites del punto de acceso en tu operador y cómo revisar el tuyo.",
       "all": "Todas las guías",
       "label": "GUÍA",
-      "featuredBlurb": "Punto de acceso Wi-Fi, USB, Bluetooth y proxy SOCKS5 comparados.",
+      "featuredBlurb": "Por qué el hotspot va más lento que el celular y cómo revisar los límites de tu plan.",
       "carriers": "Límites por operador",
       "socks": "Configurar SOCKS5: Windows, macOS, iOS",
       "unlimited": "¿Mi punto de acceso es realmente ilimitado?",
-      "carrierOrder": [],
+      "carrierOrder": [
+        "telcel-compartir-datos-hotspot",
+        "att-mexico-compartir-datos",
+        "personal-compartir-internet",
+        "claro-argentina-compartir-internet"
+      ],
       "moreLabel": "guías de operadores más"
     }
   },
@@ -211,6 +217,7 @@
     "home": "Início",
     "faq": "Perguntas frequentes",
     "blog": "Blog",
+    "blogTitle": "Blog de guias de roteamento: Tether Link Utility",
     "privacy": "Privacidade",
     "privacyHref": "/privacy.html#pt",
     "homeNav": {
@@ -242,11 +249,15 @@
       "sub": "Como funcionam os limites de ponto de acesso na sua operadora e como verificar o seu.",
       "all": "Todos os guias",
       "label": "GUIA",
-      "featuredBlurb": "Ponto de acesso Wi-Fi, USB, Bluetooth e proxy SOCKS5 comparados.",
+      "featuredBlurb": "Por que o roteamento fica mais lento que o celular e como conferir os limites do seu plano.",
       "carriers": "Limites por operadora",
       "socks": "Configurar SOCKS5: Windows, macOS, iOS",
       "unlimited": "Meu ponto de acesso é mesmo ilimitado?",
-      "carrierOrder": [],
+      "carrierOrder": [
+        "vivo-limite-roteamento",
+        "claro-limite-roteamento",
+        "tim-limite-roteamento"
+      ],
       "moreLabel": "guias de operadoras a mais"
     }
   }

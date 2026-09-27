@@ -1,0 +1,88 @@
+---
+title: "Compartilhar internet de Android para Android com QR Code"
+description: "Como compartilhar os dados móveis do seu celular com outro Android escaneando um QR Code: o que o código contém, como a conexão funciona e o passo a passo."
+published: "2026-09-27"
+modified: "2026-09-27"
+sitemap:
+  order: 73
+  lastmod: "2026-09-27"
+  changefreq: "monthly"
+  priority: "0.7"
+index:
+  order: 1
+  excerpt: "Como um segundo celular Android usa os dados móveis do primeiro escaneando um QR Code: o que você precisa, os passos em cada aparelho e o que conferir se não conectar."
+---
+    <div class="page-eyebrow">Blog</div>
+    <h1>Compartilhar internet de Android para Android com QR Code</h1>
+    <div class="post-meta">Publicado em 27 de setembro de 2026</div>
+
+    <p>Se você tem dois celulares Android e só um deles tem dados móveis, dá para compartilhar essa conexão escaneando um QR Code. Este guia explica como isso funciona com o Tether Link Utility: o que você precisa, o que o QR Code realmente contém, os passos em cada celular e o que conferir se algo não conectar.</p>
+
+    <h2>O que você precisa</h2>
+    <ul>
+      <li><strong>Um celular servidor</strong>: o Android com dados móveis, com Android 8 ou mais recente e o Tether Link Utility instalado.</li>
+      <li><strong>Um celular cliente</strong>: o Android que vai usar esses dados, também com o Tether Link Utility instalado. Para entrar no Wi-Fi automaticamente, o cliente precisa de Android 10 ou mais recente.</li>
+      <li>Dados móveis ligados no celular servidor. Os dados usados pelo cliente contam no plano do celular servidor, então confira as regras de roteamento da sua operadora.</li>
+    </ul>
+
+    <h2>Como a conexão funciona</h2>
+    <p>Quando você inicia o servidor, o app pede ao Android um <strong>LocalOnlyHotspot</strong>: uma rede Wi-Fi criada pelo sistema, com nome e senha gerados pelo próprio Android. Ao mesmo tempo, o app roda um <strong>proxy SOCKS5</strong> no celular. Os dispositivos que entram nesse Wi-Fi mandam o tráfego para o proxy, e o proxy o encaminha pela conexão de dados móveis do celular.</p>
+    <p>No celular cliente, o app usa o <strong>VpnService</strong> do Android para criar uma interface de VPN local. Essa interface manda o tráfego do celular para o proxy no celular servidor. Não há nenhum servidor remoto no meio: a "VPN" aqui é só um mecanismo de roteamento local, e o tráfego vai do celular cliente para o celular servidor e sai pelos dados móveis dele.</p>
+
+    <h2>Passos no celular servidor</h2>
+    <ol>
+      <li>Abra o Tether Link Utility e toque em <strong>START SERVER</strong>.</li>
+      <li>Conceda as permissões que o Android pedir. Para iniciar o roteador é preciso a permissão de localização nas versões mais antigas do Android e a permissão de dispositivos Wi-Fi por perto no Android 13 ou mais recente.</li>
+      <li>Espere a tela mostrar o endereço IP e a porta.</li>
+      <li>Toque em <strong>Show QR Code</strong>.</li>
+    </ol>
+
+    <h2>Passos no celular cliente</h2>
+    <ol>
+      <li>Abra o Tether Link Utility e toque em <strong>Scan QR Code · Connect to Server</strong>.</li>
+      <li>Aponte a câmera para o QR Code no celular servidor.</li>
+      <li>No Android 10 ou mais recente, o app pede ao sistema para entrar no Wi-Fi do servidor. O Android pode mostrar um aviso pedindo que você confirme a conexão. Aceite.</li>
+      <li>Na primeira vez, o Android pede que você permita a conexão VPN. É a interface local do VpnService descrita acima. Aceite.</li>
+      <li>Quando o status mostrar que está conectado, os apps do celular cliente passam a usar os dados móveis do celular servidor.</li>
+    </ol>
+
+    <h2>O que o QR Code contém</h2>
+    <p>O QR Code é um texto curto com o endereço do proxy e os dados do Wi-Fi, neste formato:</p>
+    <p><strong>socks5://IP:PORT?ssid=NETWORK_NAME&amp;pass=PASSWORD#TetherLink</strong></p>
+    <p>Se o roteador usa WPA3, é acrescentado <strong>&amp;sec=wpa3</strong>. O mesmo texto aparece embaixo do QR Code, então você pode ler os valores e digitá-los à mão em um dispositivo que não consegue escanear. Como o QR Code inclui a senha do Wi-Fi, mostre-o só para quem você quer que use a sua conexão.</p>
+
+    <h2>Usando o roteador do próprio celular</h2>
+    <p>Se você mesmo liga o roteador do sistema do celular (Roteador Wi-Fi no Android, Acesso Pessoal no iPhone) em vez de deixar o app criar um, toque em <strong>WI-FI</strong> no app e salve uma vez o nome e a senha dessa rede. Eles ficam guardados só no seu aparelho e o app não altera o seu roteador. Os dados entram no QR Code, então outros dispositivos podem entrar na rede escaneando o código. No iPhone, a senha fica em <strong>Ajustes &gt; Acesso Pessoal</strong>. Quando o app Android cria o próprio roteador automaticamente, você pode pular esta etapa.</p>
+
+    <h2>Solução de problemas</h2>
+    <ul>
+      <li><strong>O servidor não inicia.</strong> Confira se a permissão de localização (ou de dispositivos Wi-Fi por perto no Android 13 ou mais recente) foi concedida. Se o Roteador Wi-Fi normal do celular já estiver ligado, o app não consegue criar o próprio roteador e passa a rodar o servidor sobre o roteador normal. Desligue o roteador normal e deixe o app criar o dele, ou mantenha-o ligado e salve uma vez o nome e a senha em <strong>WI-FI</strong> para que o QR Code os inclua.</li>
+      <li><strong>O cliente não entra no Wi-Fi.</strong> Procure um aviso ou notificação do sistema pedindo para confirmar a rede. Se você fechou o aviso, escaneie o QR Code de novo.</li>
+      <li><strong>Cliente com Android 9 ou anterior.</strong> A entrada automática no Wi-Fi não está disponível. Conecte-se à rede Wi-Fi manualmente com o nome e a senha que aparecem no texto do QR Code e depois escaneie o código ou digite o IP e a porta.</li>
+      <li><strong>Funcionava antes, mas parou.</strong> O endereço IP do celular servidor pode mudar quando o roteador reinicia. O app mostra um aviso quando isso acontece. Mostre o novo QR Code e escaneie de novo.</li>
+      <li><strong>Conectado, mas lento.</strong> A velocidade depende do sinal móvel do celular servidor, do seu plano e das condições da rede. Deixar os dois celulares próximos ajuda a ligação Wi-Fi.</li>
+    </ul>
+
+    <h2>Limites que vale conhecer</h2>
+    <ul>
+      <li>A versão gratuita permite até 2 dispositivos conectados e mostra anúncios. A versão Pro permite até 5 dispositivos e remove os anúncios.</li>
+      <li>Todo o tráfego dos dispositivos conectados usa os dados móveis do celular servidor e conta no plano dele. As operadoras definem suas próprias regras de roteamento, então confira as condições do seu plano.</li>
+      <li>Mantenha o celular servidor carregado. Rodar um roteador e um proxy gasta mais bateria que o uso normal.</li>
+    </ul>
+
+    <p>Se quiser conectar outro dispositivo, como um computador ou um iPhone, em vez de um segundo Android, veja <a href="/pt/blog/socks5-proxy-setup-windows-macos-ios.html">Como configurar um proxy SOCKS5 no Windows, macOS e iOS</a>.</p>
+
+    <div class="cta-box">
+      <h3>Tether Link Utility</h3>
+      <p>Um app Android que compartilha os dados móveis do seu celular com seus outros dispositivos por meio de um proxy SOCKS5 local. Sem root, sem conta, sem servidor remoto.</p>
+      <a class="cta-button" href="/pt/">Veja como funciona</a>
+    </div>
+
+    <div class="related">
+      <h3>Leia também</h3>
+      <ul>
+        <li><a href="/pt/blog/android-socks5-proxy-server.html">Servidor proxy SOCKS5 no Android: o que é e como usar</a></li>
+        <li><a href="/pt/blog/socks5-proxy-setup-windows-macos-ios.html">Como configurar proxy SOCKS5 no Windows, macOS e iOS</a></li>
+        <li><a href="/blog/best-ways-to-bypass-hotspot-throttling.html">5 Ways to Share Your Phone's Internet With Another Device (em inglês)</a></li>
+      </ul>
+    </div>

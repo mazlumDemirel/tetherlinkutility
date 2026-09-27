@@ -120,7 +120,7 @@
     "label": "Plataformas",
     "title": "Funciona com o que você já tem",
     "text": "Computadores e iPhones se conectam pelas configurações padrão de proxy SOCKS5 ou por apps como o Shadowrocket. Para cobertura completa em todo o sistema, DNS incluído, rode o <strong>sing-box</strong> no modo TUN no Windows ou no macOS.",
-    "guideLink": "Guia completo de configuração (em inglês) &rarr;",
+    "guideLink": "Guia completo de configuração &rarr;",
     "items": [
       {
         "mono": "WIN",
@@ -198,7 +198,7 @@
       },
       {
         "q": "Uma configuração de proxy SOCKS5 protege todo o meu tráfego?",
-        "a": "Não totalmente. Uma configuração SOCKS5 do navegador ou do sistema só redireciona o tráfego dos apps que a respeitam; consultas DNS e outro tráfego em segundo plano ainda podem sair pela conexão comum do ponto de acesso em vez de passar pelo proxy. Para cobertura completa no Windows ou no macOS, rode o <a href=\"/blog/socks5-proxy-setup-windows-macos-ios.html\">sing-box no modo TUN</a> (guia em inglês), que envia todo o tráfego do sistema, DNS incluído, pelo túnel."
+        "a": "Não totalmente. Uma configuração SOCKS5 do navegador ou do sistema só redireciona o tráfego dos apps que a respeitam; consultas DNS e outro tráfego em segundo plano ainda podem sair pela conexão comum do ponto de acesso em vez de passar pelo proxy. Para cobertura completa no Windows ou no macOS, rode o <a href=\"/pt/blog/socks5-proxy-setup-windows-macos-ios.html\">sing-box no modo TUN</a>, que envia todo o tráfego do sistema, DNS incluído, pelo túnel."
       },
       {
         "q": "Funciona com iPhone?",
