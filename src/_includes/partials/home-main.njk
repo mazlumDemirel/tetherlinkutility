@@ -86,7 +86,7 @@
         <div class="section-label">{{ h.platforms.label }}</div>
         <h2>{{ h.platforms.title }}</h2>
         <p>{{ h.platforms.text }}</p>
-        <a class="demo-link" href="{{ blogPrefix }}blog/socks5-proxy-setup-windows-macos-ios.html">{{ h.platforms.guideLink }}</a>
+        <a class="demo-link" href="{% if collections | hasPost(lang, "socks5-proxy-setup-windows-macos-ios") %}{{ t.prefix }}{% else %}/{% endif %}blog/socks5-proxy-setup-windows-macos-ios.html">{{ h.platforms.guideLink }}</a>
       </div>
       <ul class="platform-list">
 {% for p in h.platforms.items %}        <li class="platform"><span class="mono" aria-hidden="true">{{ p.mono }}</span><div class="platform-info"><h3>{{ p.name }}</h3><p>{{ p.text }}</p></div><span class="code-chip">{{ p.chip }}</span></li>
@@ -109,7 +109,7 @@
     <p class="price-note">{{ h.pricing.note }}</p>
   </section>
 
-  {% if not t.blogLang %}{% include "partials/home-guides.njk" %}{% endif %}
+  {% if collections | hasBlog(lang) %}{% include "partials/home-guides.njk" %}{% endif %}
 
   <section class="section wrap faq" id="faq">
     <div class="faq-wrap">

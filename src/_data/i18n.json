@@ -164,7 +164,6 @@
     "blog": "Blog",
     "privacy": "Privacidad",
     "privacyHref": "/privacy.html#es",
-    "blogLang": "en",
     "homeNav": {
       "openMenu": "Abrir menú",
       "how": "Cómo funciona",
@@ -186,6 +185,20 @@
       "faqShort": "Preguntas frecuentes",
       "guide": "GUÍA",
       "breadcrumb": "Ruta de navegación"
+    },
+    "blogEmpty": "Todavía no hay guías en español.",
+    "blogEmptyLink": "Ver las guías en inglés",
+    "guides": {
+      "title": "Guías sobre el punto de acceso",
+      "sub": "Cómo funcionan los límites del punto de acceso en tu operador y cómo revisar el tuyo.",
+      "all": "Todas las guías",
+      "label": "GUÍA",
+      "featuredBlurb": "Punto de acceso Wi-Fi, USB, Bluetooth y proxy SOCKS5 comparados.",
+      "carriers": "Límites por operador",
+      "socks": "Configurar SOCKS5: Windows, macOS, iOS",
+      "unlimited": "¿Mi punto de acceso es realmente ilimitado?",
+      "carrierOrder": [],
+      "moreLabel": "guías de operadores más"
     }
   },
   "pt": {
@@ -200,7 +213,6 @@
     "blog": "Blog",
     "privacy": "Privacidade",
     "privacyHref": "/privacy.html#pt",
-    "blogLang": "en",
     "homeNav": {
       "openMenu": "Abrir menu",
       "how": "Como funciona",
@@ -222,6 +234,20 @@
       "faqShort": "Perguntas frequentes",
       "guide": "GUIA",
       "breadcrumb": "Trilha de navegação"
+    },
+    "blogEmpty": "Ainda não há guias em português.",
+    "blogEmptyLink": "Ver os guias em inglês",
+    "guides": {
+      "title": "Guias de ponto de acesso",
+      "sub": "Como funcionam os limites de ponto de acesso na sua operadora e como verificar o seu.",
+      "all": "Todos os guias",
+      "label": "GUIA",
+      "featuredBlurb": "Ponto de acesso Wi-Fi, USB, Bluetooth e proxy SOCKS5 comparados.",
+      "carriers": "Limites por operadora",
+      "socks": "Configurar SOCKS5: Windows, macOS, iOS",
+      "unlimited": "Meu ponto de acesso é mesmo ilimitado?",
+      "carrierOrder": [],
+      "moreLabel": "guias de operadoras a mais"
     }
   }
 }

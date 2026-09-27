@@ -1,6 +1,8 @@
 {#- Homepage "Hotspot guides" section (handoff 6c), between Pricing and FAQ.
     Featured card = the post with `featured: true`; chips = carrier posts in t.guides.carrierOrder;
-    "+N" = the remaining carrier posts (they are on the blog index). -#}
+    "+N" = the remaining carrier posts (they are on the blog index).
+    With an empty carrierOrder (ES/PT), the chips are the first four carrier posts by file name.
+    The SOCKS5 and "unlimited" rows only show when that post exists in this language. -#}
 {%- set g = t.guides -%}
 {%- set posts = collections["posts_" + lang] -%}
 {%- set carrierCount = 0 -%}{%- for p in posts -%}{%- if p.data.carrier -%}{%- set carrierCount = carrierCount + 1 -%}{%- endif -%}{%- endfor -%}
@@ -22,12 +24,14 @@
         <div class="guide-row guide-row-carriers">
           <span class="guide-row-title">{{ g.carriers }}</span>
           <div class="guide-chips">
-{% for slug in g.carrierOrder %}{% for p in posts %}{% if p.data.slug == slug %}            <a class="guide-chip" href="{{ p.url }}">{{ p.data.carrier }}</a>
-{% endif %}{% endfor %}{% endfor %}{% if carrierCount > g.carrierOrder.length %}            <a class="guide-chip guide-chip-more" href="{{ t.prefix }}blog/" aria-label="+{{ carrierCount - g.carrierOrder.length }} {{ g.moreLabel }}">+{{ carrierCount - g.carrierOrder.length }}</a>
+{%- set chipOrder = g.carrierOrder -%}
+{%- if not chipOrder.length -%}{%- set chipOrder = [] -%}{%- for p in posts -%}{%- if p.data.carrier and chipOrder.length < 4 -%}{%- if chipOrder.push(p.data.slug) -%}{%- endif -%}{%- endif -%}{%- endfor -%}{%- endif %}
+{% for slug in chipOrder %}{% for p in posts %}{% if p.data.slug == slug %}            <a class="guide-chip" href="{{ p.url }}">{{ p.data.carrier }}</a>
+{% endif %}{% endfor %}{% endfor %}{% if carrierCount > chipOrder.length %}            <a class="guide-chip guide-chip-more" href="{{ t.prefix }}blog/" aria-label="+{{ carrierCount - chipOrder.length }} {{ g.moreLabel }}">+{{ carrierCount - chipOrder.length }}</a>
 {% endif %}          </div>
         </div>
-        <a class="guide-row" href="{{ t.prefix }}blog/socks5-proxy-setup-windows-macos-ios.html"><span class="guide-row-title">{{ g.socks }}</span><span class="guide-arrow">&rarr;</span></a>
-        <a class="guide-row" href="{{ t.prefix }}blog/how-to-check-if-hotspot-is-unlimited.html"><span class="guide-row-title">{{ g.unlimited }}</span><span class="guide-arrow">&rarr;</span></a>
-      </div>
+{% if collections | hasPost(lang, "socks5-proxy-setup-windows-macos-ios") %}        <a class="guide-row" href="{{ t.prefix }}blog/socks5-proxy-setup-windows-macos-ios.html"><span class="guide-row-title">{{ g.socks }}</span><span class="guide-arrow">&rarr;</span></a>
+{% endif %}{% if collections | hasPost(lang, "how-to-check-if-hotspot-is-unlimited") %}        <a class="guide-row" href="{{ t.prefix }}blog/how-to-check-if-hotspot-is-unlimited.html"><span class="guide-row-title">{{ g.unlimited }}</span><span class="guide-arrow">&rarr;</span></a>
+{% endif %}      </div>
     </div>
   </section>
