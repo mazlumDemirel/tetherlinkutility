@@ -1,0 +1,128 @@
+{#- Homepage body (hero, how it works, demo, platforms, pricing, guides, FAQ).
+    All page text comes from src/_data/home/<lang>.json; the markup is shared by every language.
+    FAQ: the first `faq.visible` questions are shown, the rest go inside the "show more" block. -#}
+{%- set h = home[lang] %}
+  <section class="hero wrap">
+    <div class="hero-content">
+      <div class="hero-pills"><span class="pill pill-accent">Android</span><span class="pill pill-muted"><span><span class="keep-case">iOS</span> {{ h.hero.iosPill }}</span></span></div>
+      <h1>{{ h.hero.h1 }}<span>{{ h.hero.h1Accent }}</span></h1>
+      <p class="hero-body">{{ h.hero.body }}</p>
+      <div class="hero-actions">
+        <a href="{{ site.playUrl }}" class="play-badge" aria-label="{{ h.hero.playLabel }}">
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <defs>
+              <linearGradient id="pbBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D8FF"/><stop offset="100%" stop-color="#0084FF"/>
+              </linearGradient>
+              <linearGradient id="pbGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5AE560"/><stop offset="100%" stop-color="#00C24C"/>
+              </linearGradient>
+              <linearGradient id="pbYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFE000"/><stop offset="100%" stop-color="#FFB000"/>
+              </linearGradient>
+              <linearGradient id="pbRed" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF6B6B"/><stop offset="100%" stop-color="#E8422E"/>
+              </linearGradient>
+            </defs>
+            <path d="M3.18 23.76c.3.17.64.24.99.19L15.89 12 3.18.05C2.83 0 2.48.07 2.18.24 1.59.57 1.2 1.22 1.2 2v20c0 .78.39 1.43.98 1.76z" fill="url(#pbBlue)"/>
+            <path d="M4.14 1.37l12.22 7.07-3.27 3.27L4.14 1.37z" fill="url(#pbGreen)"/>
+            <path d="M4.14 22.63l8.95-8.95 3.27 3.27-12.22 5.68z" fill="url(#pbRed)"/>
+            <path d="M19.62 9.29l-2.94-1.7-3.27 3.27 3.27 3.27 2.97-1.72c.85-.49.85-1.63-.03-2.12z" fill="url(#pbYellow)"/>
+          </svg>
+          <span class="pb-text"><span class="pb-eyebrow">{{ h.hero.playEyebrow }}</span><span class="pb-word">{{ h.hero.playWord }}</span></span>
+        </a>
+        <div class="ios-soon-badge" role="img" aria-label="{{ h.hero.iosLabel }}" title="{{ h.hero.iosLabel }}"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.51 2.68-1.27z"/></svg><span class="pb-text"><span class="pb-eyebrow">{{ h.hero.iosEyebrow }}</span><span class="pb-word">App Store</span></span></div>
+      </div>
+      <ul class="hero-trust">
+{% for item in h.hero.trust %}        <li>{{ item }}</li>
+{% endfor %}      </ul>
+    </div>
+    <div class="hero-phone">
+      <div class="hero-phone-frame">
+        <img src="{{ h.hero.screenshot }}" alt="{{ h.hero.screenshotAlt }}" width="1080" height="2400" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="how">
+    <span class="anchor-alias" id="why"></span>
+    <div class="section-head">
+      <h2>{{ h.how.title }}</h2>
+      <a class="demo-link" href="#demo">{{ h.how.demoLink }}</a>
+    </div>
+    <ol class="steps">
+{% for step in h.how.steps %}      <li class="step">
+        <div class="step-num">0{{ loop.index }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </li>
+{% endfor %}    </ol>
+    <span class="anchor-alias" id="features"></span>
+    <div class="cards">
+{% for card in h.how.cards %}      <div class="card">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.text }}</p>
+      </div>
+{% endfor %}    </div>
+    <p class="notes">{{ h.how.notes }}</p>
+  </section>
+
+  <section class="section wrap video-showcase" id="demo">
+    <h2>{{ h.demo.title }}</h2>
+    <div class="video-frame video-facade" data-yt-id="{{ h.demo.videoId }}" role="button" tabindex="0" aria-label="{{ h.demo.playLabel }}">
+      <img src="https://img.youtube.com/vi/{{ h.demo.videoId }}/hqdefault.jpg" alt="{{ h.demo.previewAlt }}" loading="lazy" decoding="async" width="480" height="360" />
+      <span class="video-facade-play" aria-hidden="true">
+        <svg width="72" height="72" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="30" fill="rgba(0,0,0,0.55)"/>
+          <path d="M24 18l20 12-20 12V18z" fill="#fff"/>
+        </svg>
+      </span>
+    </div>
+  </section>
+
+  <section class="section wrap" id="platforms">
+    <div class="platforms-grid">
+      <div class="platforms-intro">
+        <div class="section-label">{{ h.platforms.label }}</div>
+        <h2>{{ h.platforms.title }}</h2>
+        <p>{{ h.platforms.text }}</p>
+        <a class="demo-link" href="{{ t.prefix }}blog/socks5-proxy-setup-windows-macos-ios.html">{{ h.platforms.guideLink }}</a>
+      </div>
+      <ul class="platform-list">
+{% for p in h.platforms.items %}        <li class="platform"><span class="mono" aria-hidden="true">{{ p.mono }}</span><div class="platform-info"><h3>{{ p.name }}</h3><p>{{ p.text }}</p></div><span class="code-chip">{{ p.chip }}</span></li>
+{% endfor %}      </ul>
+    </div>
+  </section>
+
+  <section class="section wrap" id="pricing">
+    <div class="section-label">{{ h.pricing.label }}</div>
+    <h2 style="margin-bottom:32px">{{ h.pricing.title }}</h2>
+    <div class="pricing-cards">
+{% for plan in h.pricing.plans %}      <div class="price-card{% if plan.pro %} pro{% endif %}">
+        <h3>{{ plan.name }}</h3>
+        <div class="price">{% if plan.pricePrefix %}<span>{{ plan.pricePrefix }}</span>{% endif %}<b>{{ plan.price }}</b>{% if plan.priceSuffix %}<span>{{ plan.priceSuffix }}</span>{% endif %}</div>
+        <ul>
+{% for f in plan.features %}          <li>{{ f }}</li>
+{% endfor %}        </ul>
+      </div>
+{% endfor %}    </div>
+    <p class="price-note">{{ h.pricing.note }}</p>
+  </section>
+
+  {% include "partials/home-guides.njk" %}
+
+  <section class="section wrap faq" id="faq">
+    <div class="faq-wrap">
+    <h2>{{ h.faq.title }}</h2>
+{% for item in h.faq.items %}{% if loop.index0 == h.faq.visible %}
+    <div class="faq-more" id="faqMore">
+{% endif %}
+    <details class="faq-item">
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a }}</p>
+    </details>
+{% endfor %}
+    </div>
+    <button type="button" class="faq-toggle" id="faqToggle" aria-controls="faqMore" aria-expanded="false" data-more="{{ h.faq.more }}" data-less="{{ h.faq.less }}" hidden>{{ h.faq.more }}</button>
+    </div>
+  </section>

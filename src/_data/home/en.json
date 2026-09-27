@@ -1,0 +1,230 @@
+{
+  "title": "Tether Link Utility: Share Your Phone's Mobile Data via SOCKS5",
+  "ogTitle": "Tether Link Utility: Share Your Phone&#x27;s Mobile Data via SOCKS5",
+  "description": "Share your Android phone&#x27;s mobile data with your laptop, tablet or another phone through a local SOCKS5 proxy. No root, no account, no remote server.",
+  "jsonld": [
+    {
+      "type": "website"
+    },
+    {
+      "type": "organization"
+    },
+    {
+      "type": "howTo"
+    },
+    {
+      "type": "app"
+    },
+    {
+      "type": "faq",
+      "gap": true
+    }
+  ],
+  "howTo": {
+    "name": "How to share your phone's mobile data over Wi-Fi with Tether Link Utility",
+    "steps": [
+      {
+        "name": "Tap START SERVER",
+        "text": "The Wi-Fi hotspot turns on automatically. The app creates a local SOCKS5 proxy tunnel and displays the connection details."
+      },
+      {
+        "name": "Show the QR code",
+        "text": "One QR code carries the Wi-Fi network and the proxy address together. The network name and password are also shown as plain text for laptops."
+      },
+      {
+        "name": "Connect your device",
+        "text": "Android: scan the QR code to join the Wi-Fi and connect the proxy automatically. Windows / macOS / iOS: join the Wi-Fi shown, then enter the IP and port in your SOCKS5 proxy settings."
+      },
+      {
+        "name": "Start browsing",
+        "text": "Traffic routes through your mobile data. No remote server, everything stays on your device."
+      }
+    ]
+  },
+  "app": {
+    "description": "Shares your Android phone's mobile data with your other devices over Wi-Fi through a local SOCKS5 proxy. No root, no account, no remote server.",
+    "featureList": [
+      "Share mobile data with laptops, tablets and phones over Wi-Fi",
+      "Free tier shares your connection with up to 2 devices, no root required",
+      "No remote server, all proxy traffic is routed locally on the device",
+      "One-tap automatic hotspot and Wi-Fi connection between Android devices",
+      "QR code setup for instant connection",
+      "SOCKS5 proxy support for Windows, macOS, and iOS clients"
+    ],
+    "freeName": "Free",
+    "proDescription": "From $2.99/month. Exact price, including local currency and yearly plan, is shown in Google Play or the App Store and varies by country and platform."
+  },
+  "hero": {
+    "iosPill": "coming soon",
+    "h1": "Your phone's mobile data, on ",
+    "h1Accent": "every device.",
+    "body": "Tether Link Utility runs a local SOCKS5 proxy on your Android phone and shares it over Wi-Fi hotspot, so your laptop, tablet or another phone can use your mobile data. Everything runs on your device.",
+    "playLabel": "Get it on Google Play",
+    "playEyebrow": "GET IT ON",
+    "playWord": "Google Play",
+    "iosLabel": "iOS version coming soon",
+    "iosEyebrow": "COMING SOON",
+    "trust": [
+      "Free to install",
+      "No account",
+      "No remote server"
+    ],
+    "screenshot": "/app-screenshot.png",
+    "screenshotAlt": "Tether Link Utility running on Android: live download and upload speed, session stats, 2 devices connected and SOCKS5 host and port"
+  },
+  "how": {
+    "title": "Connected in four steps",
+    "demoLink": "Watch the demo &#9656;",
+    "steps": [
+      {
+        "title": "Tap START",
+        "text": "The hotspot turns on automatically and the proxy starts."
+      },
+      {
+        "title": "Show the QR code",
+        "text": "One code carries the Wi-Fi network and the proxy address."
+      },
+      {
+        "title": "Connect your device",
+        "text": "Android scans and joins. Laptops enter the IP and port in their SOCKS5 settings."
+      },
+      {
+        "title": "Start browsing",
+        "text": "Traffic routes through your mobile data. Nothing goes through our servers."
+      }
+    ],
+    "cards": [
+      {
+        "title": "Fully local",
+        "text": "The proxy runs on your phone. No account and no remote server: your routed traffic is never sent to our servers or logged by the proxy. The free version shows ads, and our ad provider may collect device identifiers. See the <a href=\"/privacy.html\">Privacy Policy</a>."
+      },
+      {
+        "title": "Android-to-Android auto connect",
+        "text": "Scan the QR code on the other Android phone; on most devices Wi-Fi joins and the proxy connects automatically."
+      },
+      {
+        "title": "IP change alerts",
+        "text": "Carrier IPs can change between sessions. The app notices the change and alerts connected devices automatically."
+      }
+    ],
+    "notes": "<strong>Using your phone's own hotspot?</strong> If you turn on Mobile Hotspot (Android) or Personal Hotspot (iPhone) yourself, save its name and password once under <strong>WI-FI</strong> in the app. They stay on your device, the hotspot itself isn't changed, and they're added to the QR code so other devices join by scanning. Not needed when the Android app starts its own hotspot. Data used by connected devices counts toward your mobile plan. Check your carrier's terms for tethering."
+  },
+  "demo": {
+    "title": "See it in action",
+    "videoId": "XdQTXdNc_4w",
+    "playLabel": "Play demo video",
+    "previewAlt": "Demo video preview"
+  },
+  "platforms": {
+    "label": "Platforms",
+    "title": "Works with what you already have",
+    "text": "Laptops and iPhones connect through standard SOCKS5 proxy settings or apps like Shadowrocket. For full system-wide coverage, DNS included, run <strong>sing-box</strong> in TUN mode on Windows or macOS.",
+    "guideLink": "Full setup guide &rarr;",
+    "items": [
+      {
+        "mono": "WIN",
+        "name": "Windows",
+        "text": "Firefox has SOCKS5 built in. Chrome and Edge: FoxyProxy.",
+        "chip": "SOCKS5"
+      },
+      {
+        "mono": "MAC",
+        "name": "macOS",
+        "text": "System Settings &rarr; Network &rarr; Proxies &rarr; SOCKS Proxy, or sing-box.",
+        "chip": "native"
+      },
+      {
+        "mono": "AND",
+        "name": "Android",
+        "text": "Scan the QR code in Tether Link Utility. No extra app needed.",
+        "chip": "built-in"
+      },
+      {
+        "mono": "iOS",
+        "name": "iOS",
+        "text": "Shadowrocket (paid) or Potatso Lite (free), for that app's own traffic only.",
+        "chip": "SOCKS5"
+      }
+    ]
+  },
+  "pricing": {
+    "label": "Pricing",
+    "title": "Free to start. Pro when you need more.",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "$0",
+        "features": [
+          "2 devices at once",
+          "Banner and interstitial ads",
+          "No account needed"
+        ]
+      },
+      {
+        "name": "Pro",
+        "pro": true,
+        "pricePrefix": "from",
+        "price": "$2.99",
+        "priceSuffix": "/month",
+        "features": [
+          "5 devices at once",
+          "No ads",
+          "No account needed"
+        ]
+      }
+    ],
+    "note": "Exact price, including local currency and yearly plan, is shown in Google Play or the App Store."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "visible": 4,
+    "items": [
+      {
+        "q": "How does Tether Link Utility work?",
+        "a": "It runs a local SOCKS5 proxy on your Android phone, using Android's VpnService API, and shares it over the phone's Wi-Fi hotspot (no USB cable involved). Your other devices send their traffic to that proxy, and the phone forwards it over its mobile data connection. There's no remote server in between."
+      },
+      {
+        "q": "Do I need root access?",
+        "a": "No, it works entirely without root privileges."
+      },
+      {
+        "q": "Does it use a remote server?",
+        "a": "No. Proxied traffic goes from your devices to your phone and out over your mobile data; it is not routed through, logged, or stored on any server of ours. The free version shows Google AdMob ads, and the app uses Firebase Analytics and Crashlytics, which collect device identifiers and usage and crash data, as described in our <a href=\"/privacy.html\">privacy policy</a>."
+      },
+      {
+        "q": "Can I connect a Windows or Mac laptop?",
+        "a": "Yes, point your laptop's SOCKS5 proxy settings (built into macOS, or via Firefox/FoxyProxy on Windows) at the IP and port shown in the app. That covers apps which check that setting; for full system-wide coverage including DNS, use sing-box in TUN mode instead."
+      },
+      {
+        "q": "Does a SOCKS5 proxy setting protect all my traffic?",
+        "a": "Not entirely. A browser or system SOCKS5 setting only reroutes traffic from apps that check it; DNS lookups and other background traffic can still go over the plain hotspot connection instead of the proxy. For full coverage on Windows or macOS, run <a href=\"/blog/socks5-proxy-setup-windows-macos-ios.html\">sing-box in TUN mode</a>, which routes your whole system's traffic, DNS included, through the tunnel."
+      },
+      {
+        "q": "Does it work with iPhone?",
+        "a": "iOS has no native SOCKS5 setting, but apps like Shadowrocket or Potatso can connect to the proxy the same way, for that app's own traffic only, not the whole device. A verified full-device option isn't currently available on iOS. A native iOS app is in development and coming soon."
+      },
+      {
+        "q": "How many devices can connect at once?",
+        "a": "The free tier connects up to 2 devices at once; Pro raises that to 5. Pro starts from $2.99/month. The exact price, including local currency and yearly plan, is shown in Google Play or the App Store."
+      },
+      {
+        "q": "Does it work with 5G and 4G/LTE?",
+        "a": "Yes, it shares whatever active mobile data connection your phone currently has, regardless of network generation."
+      },
+      {
+        "q": "Does it use my mobile data plan?",
+        "a": "Yes. Data used by connected devices counts toward your plan. Check your carrier's terms for tethering."
+      },
+      {
+        "q": "Is it free?",
+        "a": "Yes, the free version is free to use: up to 2 devices at once, with ads. Pro removes ads and allows up to 5 devices at once. The app itself doesn't currently add a speed limit; actual speed depends on your carrier, plan and signal."
+      },
+      {
+        "q": "Can other devices join my own hotspot by scanning the QR code?",
+        "a": "Yes. If you turn on your phone's system hotspot yourself (Mobile Hotspot on Android, Personal Hotspot on iPhone), save its network name and password once under WI-FI in the app. They are stored only on your device, the app doesn't change your hotspot settings, and the details are added to the QR code so other devices join the network automatically by scanning. On iPhone, the password is shown in Settings &gt; Personal Hotspot. When the Android app starts its own hotspot automatically, this step isn't needed."
+      }
+    ],
+    "more": "All 11 questions &rarr;",
+    "less": "Show fewer questions"
+  }
+}

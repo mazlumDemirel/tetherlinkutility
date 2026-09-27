@@ -1,0 +1,226 @@
+{
+  "title": "Tether Link Utility: Telefonunuzun Mobil Verisini SOCKS5 ile Paylaşın",
+  "ogTitle": "Tether Link Utility: Telefonunuzun Mobil Verisini SOCKS5 ile Paylaşın",
+  "description": "Android telefonunuzun mobil verisini dizüstü bilgisayarınız, tabletiniz veya başka bir telefonla yerel bir SOCKS5 proxy üzerinden paylaşın. Root yok, hesap yok, uzak sunucu yok.",
+  "jsonld": [
+    {
+      "type": "app"
+    },
+    {
+      "type": "faq",
+      "gap": true
+    },
+    {
+      "type": "howTo",
+      "gap": true
+    }
+  ],
+  "ldUrl": "https://tetherlinkutility.com/",
+  "howTo": {
+    "name": "Tether Link Utility ile telefonun mobil verisi Wi-Fi üzerinden nasıl paylaşılır",
+    "steps": [
+      {
+        "name": "SUNUCUYU BAŞLAT'a dokunun",
+        "text": "Wi-Fi hotspot otomatik olarak açılır. Uygulama yerel bir SOCKS5 proxy tüneli oluşturur ve bağlantı bilgilerini gösterir."
+      },
+      {
+        "name": "QR kodu gösterin",
+        "text": "Bir QR kod, Wi-Fi ağını ve proxy adresini birlikte taşır. Ağ adı ve şifresi dizüstü bilgisayarlar için düz metin olarak da gösterilir."
+      },
+      {
+        "name": "Cihazınızı bağlayın",
+        "text": "Android: QR kodu tarayın, Wi-Fi ve proxy otomatik bağlanır. Windows / macOS / iOS: gösterilen Wi-Fi'a katılın, ardından SOCKS5 proxy ayarlarınıza IP ve portu girin."
+      },
+      {
+        "name": "Gezinmeye başlayın",
+        "text": "Trafik mobil veriniz üzerinden yönlendirilir. Uzak sunucu yok, her şey cihazınızda kalır."
+      }
+    ]
+  },
+  "app": {
+    "description": "Android telefonunuzun mobil verisini yerel bir SOCKS5 proxy ile Wi-Fi üzerinden diğer cihazlarınızla paylaştırır. Root yok, hesap yok, uzak sunucu yok.",
+    "featureList": [
+      "Mobil veriyi dizüstü bilgisayar, tablet ve telefonlarla Wi-Fi üzerinden paylaşma",
+      "Ücretsiz katman root gerektirmeden en fazla 2 cihazla bağlantı paylaşır",
+      "Uzak sunucu yok, tüm proxy trafiği cihaz üzerinde yerel olarak yönlendirilir",
+      "Android cihazlar arasında tek dokunuşla otomatik hotspot ve Wi-Fi bağlantısı",
+      "Anında bağlantı için QR kod kurulumu",
+      "Windows, macOS ve iOS istemcileri için SOCKS5 proxy desteği"
+    ],
+    "freeName": "Ücretsiz",
+    "proDescription": "Aylık $2.99'dan başlayan fiyatlarla. Yerel para birimi ve yıllık plan dahil kesin fiyat Google Play veya App Store'da gösterilir, ülkeye ve platforma göre değişir."
+  },
+  "hero": {
+    "iosPill": "çok yakında",
+    "h1": "Telefonunuzun mobil verisi, ",
+    "h1Accent": "tüm cihazlarınızda.",
+    "body": "Tether Link Utility, Android telefonunuzda yerel bir SOCKS5 proxy çalıştırır ve bunu Wi-Fi hotspot üzerinden paylaşır; böylece dizüstü bilgisayarınız, tabletiniz veya başka bir telefon mobil verinizi kullanabilir. Her şey cihazınızda çalışır.",
+    "playLabel": "Google Play'den indirin",
+    "playEyebrow": "GOOGLE PLAY'DE",
+    "playWord": "Hemen İndirin",
+    "iosLabel": "iOS sürümü çok yakında",
+    "iosEyebrow": "ÇOK YAKINDA",
+    "trust": [
+      "Kurulumu ücretsiz",
+      "Hesap gerekmez",
+      "Uzak sunucu yok"
+    ],
+    "screenshot": "/app-screenshot-tr.png",
+    "screenshotAlt": "Android'de çalışan Tether Link Utility: anlık indirme ve yükleme hızı, oturum istatistikleri, 2 bağlı cihaz ve SOCKS5 host ile port bilgisi"
+  },
+  "how": {
+    "title": "Dört adımda bağlanın",
+    "demoLink": "Tanıtım videosunu izleyin &#9656;",
+    "steps": [
+      {
+        "title": "BAŞLAT'a dokunun",
+        "text": "Hotspot otomatik olarak açılır ve proxy başlar."
+      },
+      {
+        "title": "QR kodu gösterin",
+        "text": "Tek bir kod, Wi-Fi ağını ve proxy adresini birlikte taşır."
+      },
+      {
+        "title": "Cihazınızı bağlayın",
+        "text": "Android tarar ve ağa katılır. Dizüstü bilgisayarlarda SOCKS5 ayarlarına IP ve port girilir."
+      },
+      {
+        "title": "Gezinmeye başlayın",
+        "text": "Trafik mobil veriniz üzerinden yönlendirilir. Hiçbir şey sunucularımızdan geçmez."
+      }
+    ],
+    "cards": [
+      {
+        "title": "Tamamen yerel",
+        "text": "Proxy telefonunuzda çalışır. Hesap yok, uzak sunucu yok: yönlendirilen trafiğiniz asla sunucularımıza gönderilmez ve proxy tarafından kaydedilmez. Ücretsiz sürüm reklam gösterir ve reklam sağlayıcımız cihaz tanımlayıcılarını toplayabilir. <a href=\"/privacy.html#tr\">Gizlilik Politikası</a>'na bakın."
+      },
+      {
+        "title": "Android'den Android'e otomatik bağlantı",
+        "text": "Diğer Android telefonda QR kodu tarayın; çoğu cihazda Wi-Fi'ye katılır ve proxy otomatik bağlanır."
+      },
+      {
+        "title": "IP değişikliği uyarısı",
+        "text": "Operatör IP'leri oturumlar arasında değişebilir. Uygulama değişikliği fark eder ve bağlı cihazları otomatik olarak uyarır."
+      }
+    ],
+    "notes": "<strong>Telefonunuzun kendi hotspot'unu mu kullanıyorsunuz?</strong> Mobil Hotspot'u (Android) veya Kişisel Erişim Noktası'nı (iPhone) kendiniz açıyorsanız, ağ adını ve şifresini uygulamadaki <strong>WI-FI</strong> bölümüne bir kez kaydedin. Bilgiler yalnızca cihazınızda saklanır, hotspot ayarlarınız değiştirilmez ve QR koda eklenir; böylece diğer cihazlar tarayarak ağa katılır. Android uygulaması hotspot'u kendisi başlattığında buna gerek yoktur. Bağlı cihazların kullandığı veri mobil paketinizden düşer. Tethering için operatörünüzün koşullarını kontrol edin."
+  },
+  "demo": {
+    "title": "Uygulamayı iş başında görün",
+    "videoId": "8T_M4cgN8_E",
+    "playLabel": "Tanıtım videosunu oynat",
+    "previewAlt": "Tanıtım videosu önizlemesi"
+  },
+  "platforms": {
+    "label": "Platformlar",
+    "title": "Zaten kullandığınız cihazlarla çalışır",
+    "text": "Dizüstü bilgisayarlar ve iPhone'lar standart SOCKS5 proxy ayarlarıyla ya da Shadowrocket gibi uygulamalarla bağlanır. Windows veya macOS'ta DNS dahil tam sistem kapsaması için <strong>sing-box</strong>'ı TUN modunda çalıştırın.",
+    "guideLink": "Tam kurulum rehberi &rarr;",
+    "items": [
+      {
+        "mono": "WIN",
+        "name": "Windows",
+        "text": "Firefox'ta SOCKS5 desteği yerleşiktir. Chrome ve Edge: FoxyProxy.",
+        "chip": "SOCKS5"
+      },
+      {
+        "mono": "MAC",
+        "name": "macOS",
+        "text": "Sistem Ayarları &rarr; Ağ &rarr; Proxy'ler &rarr; SOCKS Proxy ya da sing-box.",
+        "chip": "yerleşik"
+      },
+      {
+        "mono": "AND",
+        "name": "Android",
+        "text": "Tether Link Utility ile QR kodu tarayın. Ekstra uygulama gerekmez.",
+        "chip": "yerleşik"
+      },
+      {
+        "mono": "iOS",
+        "name": "iOS",
+        "text": "Shadowrocket (ücretli) veya Potatso Lite (ücretsiz), yalnızca o uygulamanın kendi trafiği için.",
+        "chip": "SOCKS5"
+      }
+    ]
+  },
+  "pricing": {
+    "label": "Fiyatlar",
+    "title": "Ücretsiz başlayın. Daha fazlası için Pro'ya geçin.",
+    "plans": [
+      {
+        "name": "Ücretsiz",
+        "price": "$0",
+        "features": [
+          "Aynı anda 2 cihaz",
+          "Banner ve geçiş reklamları",
+          "Hesap gerekmez"
+        ]
+      },
+      {
+        "name": "Pro",
+        "pro": true,
+        "pricePrefix": "aylık",
+        "price": "$2.99",
+        "priceSuffix": "'dan başlayan",
+        "features": [
+          "Aynı anda 5 cihaz",
+          "Reklam yok",
+          "Hesap gerekmez"
+        ]
+      }
+    ],
+    "note": "Yerel para birimi ve yıllık plan dahil kesin fiyat Google Play veya App Store'da gösterilir."
+  },
+  "faq": {
+    "title": "Sıkça sorulan sorular",
+    "visible": 4,
+    "items": [
+      {
+        "q": "Tether Link Utility nasıl çalışır?",
+        "a": "Android telefonunuzda, Android'in VpnService API'sini kullanarak yerel bir SOCKS5 proxy çalıştırır ve bunu telefonun Wi-Fi hotspot'u üzerinden paylaşır (USB kablo yok). Diğer cihazlarınız trafiklerini bu proxy'ye gönderir, telefon da bunu mobil veri bağlantısı üzerinden iletir. Arada uzak bir sunucu yoktur."
+      },
+      {
+        "q": "Root yetkisi gerekiyor mu?",
+        "a": "Hayır, tamamen root yetkisi olmadan çalışır."
+      },
+      {
+        "q": "Uzak bir sunucu kullanıyor mu?",
+        "a": "Hayır. Proxy trafiği cihazlarınızdan telefonunuza, oradan mobil verinize gider; sunucularımızdan geçirilmez, kaydedilmez veya saklanmaz. Ücretsiz sürüm Google AdMob reklamları gösterir ve uygulama Firebase Analytics ile Crashlytics kullanır; bunlar <a href=\"/privacy.html#tr\">gizlilik politikamızda</a> açıklandığı gibi cihaz tanımlayıcıları ile kullanım ve çökme verilerini toplar."
+      },
+      {
+        "q": "Windows veya Mac dizüstü bilgisayar bağlayabilir miyim?",
+        "a": "Evet, dizüstü bilgisayarınızın SOCKS5 proxy ayarlarını (macOS'ta yerleşik, Windows'ta Firefox/FoxyProxy ile) uygulamada gösterilen IP ve porta yönlendirin. Bu, sadece o ayarı kontrol eden uygulamaları kapsar; DNS dahil tam sistem kapsaması için sing-box'ı TUN modunda kullanın."
+      },
+      {
+        "q": "SOCKS5 proxy ayarı tüm trafiğimi korur mu?",
+        "a": "Tam olarak değil. Bir tarayıcı ya da sistem SOCKS5 ayarı sadece bu ayarı kontrol eden uygulamaların trafiğini yönlendirir; DNS sorguları ve diğer arka plan trafiği proxy yerine düz hotspot bağlantısından gidebilir. Windows veya macOS'ta tam kapsama için <a href=\"/tr/blog/socks5-proxy-setup-windows-macos-ios.html\">sing-box'ı TUN modunda</a> çalıştırın, tüm sistem trafiğinizi, DNS dahil, tünelden geçirir."
+      },
+      {
+        "q": "iPhone ile çalışıyor mu?",
+        "a": "iOS'ta yerleşik bir SOCKS5 ayarı yok, ancak Shadowrocket veya Potatso gibi uygulamalar aynı şekilde proxy'ye bağlanabilir, sadece o uygulamanın kendi trafiği için, tüm cihaz için değil. iOS'ta doğrulanmış, tam cihaz kapsayan bir seçenek şu an mevcut değil. Yerel bir iOS uygulaması geliştiriliyor, çok yakında yayında."
+      },
+      {
+        "q": "Aynı anda kaç cihaz bağlanabilir?",
+        "a": "Ücretsiz katman aynı anda 2 cihaza kadar bağlar; Pro bunu 5 cihaza çıkarır. Pro aylık $2.99'dan başlayan fiyatlarla sunulur. Yerel para birimi ve yıllık plan dahil kesin fiyat Google Play veya App Store'da gösterilir."
+      },
+      {
+        "q": "5G ve 4G/LTE ile çalışıyor mu?",
+        "a": "Evet, telefonunuzun o anda sahip olduğu aktif mobil veri bağlantısını, ağ jenerasyonundan bağımsız olarak paylaşır."
+      },
+      {
+        "q": "Mobil veri paketimi kullanıyor mu?",
+        "a": "Evet. Bağlı cihazların kullandığı veri paketinizden düşer. Tethering için operatörünüzün koşullarını kontrol edin."
+      },
+      {
+        "q": "Ücretsiz mi?",
+        "a": "Evet, ücretsiz sürümü kullanmak ücretsizdir: aynı anda 2 cihaza kadar, reklamlı. Pro reklamları kaldırır ve aynı anda 5 cihaza kadar bağlanmaya izin verir. Uygulamanın kendisi şu anda bir hız sınırı eklemiyor; gerçek hız operatörünüze, paketinize ve sinyale bağlıdır."
+      },
+      {
+        "q": "Diğer cihazlar QR kodu tarayarak kendi hotspot'uma katılabilir mi?",
+        "a": "Evet. Telefonunuzun sistem hotspot'unu kendiniz açıyorsanız (Android'de Mobil Hotspot, iPhone'da Kişisel Erişim Noktası), ağ adını ve şifresini uygulamadaki WI-FI bölümüne bir kez kaydedin. Bu bilgiler yalnızca cihazınızda saklanır, uygulama hotspot ayarlarınızı değiştirmez ve bilgiler QR koda eklenir; böylece diğer cihazlar kodu tarayarak ağa otomatik olarak katılır. iPhone'da şifre Ayarlar &gt; Kişisel Erişim Noktası bölümünde görünür. Android uygulaması hotspot'u otomatik olarak kendisi başlattığında bu adıma gerek yoktur."
+      }
+    ],
+    "more": "11 sorunun tümü &rarr;",
+    "less": "Daha az soru göster"
+  }
+}

@@ -1,0 +1,75 @@
+{#- Homepage JSON-LD blocks. Text comes from src/_data/home/<lang>.json.
+    `jsonld` in that file lists the blocks in output order (type: website, organization, howTo,
+    app, faq); `gap: true` puts an empty line before the block. `ldUrl` overrides the page URL
+    used in the WebSite, Organization and SoftwareApplication blocks.
+    FAQPage answers are the FAQ answers with HTML tags removed. -#}
+{%- set h = home[lang] -%}
+{%- set ldUrl = h.ldUrl or (site.url + t.prefix) -%}
+{%- for b in h.jsonld %}{% if not loop.first %}
+{% if b.gap %}
+{% endif %}  {% endif %}<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+{% if b.type == "website" %}    "@type": "WebSite",
+    "name": "{{ site.name }}",
+    "url": "{{ ldUrl }}"
+{% elif b.type == "organization" %}    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ ldUrl }}",
+    "logo": "{{ site.url }}/favicon.png",
+    "email": "{{ site.email }}",
+    "sameAs": [
+      "{{ site.playUrl }}",
+      "https://www.producthunt.com/products/tether-link-utility",
+      "https://www.nxgntools.com/tools/tether-link-utility",
+      "https://viberank.dev/apps/Tether%20Link%20Utility"
+    ]
+{% elif b.type == "howTo" %}    "@type": "HowTo",
+    "name": {{ h.howTo.name | dump }},
+    "step": [
+{% for s in h.howTo.steps %}      {
+        "@type": "HowToStep",
+        "name": {{ s.name | dump }},
+        "text": {{ s.text | dump }}
+      }{% if not loop.last %},{% endif %}
+{% endfor %}    ]
+{% elif b.type == "app" %}    "@type": "SoftwareApplication",
+    "name": "{{ site.name }}",
+    "publisher": { "@type": "Organization", "name": "Steadyline Labs", "url": "{{ site.publisherUrl }}" },
+    "installUrl": "{{ site.playUrl }}",
+    "downloadUrl": "{{ site.playUrl }}",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Android",
+    "url": "{{ ldUrl }}",
+    "description": {{ h.app.description | dump }},
+    "featureList": [
+{% for f in h.app.featureList %}      {{ f | dump }}{% if not loop.last %},{% endif %}
+{% endfor %}    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": {{ h.app.freeName | dump }},
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "2.99",
+        "priceCurrency": "USD",
+        "description": {{ h.app.proDescription | dump }}
+      }
+    ]
+{% elif b.type == "faq" %}    "@type": "FAQPage",
+    "mainEntity": [
+{% for item in h.faq.items %}      {
+        "@type": "Question",
+        "name": {{ item.q | dump }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ (item.a | striptags | replace("&gt;", ">")) | dump }}
+        }
+      }{% if not loop.last %},{% endif %}
+{% endfor %}    ]
+{% endif %}  }
+  </script>{% endfor -%}
