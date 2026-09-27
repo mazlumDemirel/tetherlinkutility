@@ -186,5 +186,40 @@
       "guide": "GUÍA",
       "breadcrumb": "Ruta de navegación"
     }
+  },
+  "pt": {
+    "prefix": "/pt/",
+    "name": "Português",
+    "code": "PT",
+    "ogLocale": "pt_BR",
+    "publisherPrefix": "por ",
+    "home": "Início",
+    "faq": "Perguntas frequentes",
+    "blog": "Blog",
+    "privacy": "Privacidade",
+    "privacyHref": "/privacy.html#pt",
+    "blogLang": "en",
+    "homeNav": {
+      "openMenu": "Abrir menu",
+      "how": "Como funciona",
+      "platforms": "Plataformas",
+      "pricing": "Preços",
+      "faq": "FAQ",
+      "language": "Idioma",
+      "getApp": "Baixar o app",
+      "findUsOn": "Encontre-nos no",
+      "sticky": "Compartilhe os dados móveis do seu celular com um toque",
+      "stickyButton": "Disponível no Google Play",
+      "videoTitle": "Vídeo de demonstração do Tether Link Utility"
+    },
+    "post": {
+      "quickAnswer": "Resposta rápida",
+      "checked": "Verificado em:",
+      "onThisPage": "Nesta página",
+      "faqTitle": "Perguntas frequentes",
+      "faqShort": "Perguntas frequentes",
+      "guide": "GUIA",
+      "breadcrumb": "Trilha de navegação"
+    }
   }
 }
