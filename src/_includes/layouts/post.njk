@@ -24,6 +24,7 @@
   <meta property="og:description" content="{{ ogDescription or description }}">
   <meta property="og:url" content="{{ pageUrl }}">
   <meta property="og:site_name" content="Tether Link Utility">
+  <meta property="og:locale" content="{{ t.ogLocale }}">
   <meta property="og:image" content="{{ ogImageUrl }}">
   <meta property="og:image:alt" content="{{ ogTitle or title }}">
   <meta property="og:image:width" content="1200">
@@ -39,6 +40,7 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "inLanguage": "{{ t.hreflang or lang }}",
     "headline": "{{ ldHeadline or title }}",
     "description": "{{ ldDescription or description }}",
     "datePublished": "{{ published }}",
