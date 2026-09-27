@@ -35,6 +35,8 @@ eleventyExcludeFromCollections: true
 {% for post in collections.posts_en | sortByKey("llms", "order") %}- {{ site.url }}{{ post.url }} : {{ post.data.llms.text if post.data.llms else (post.data.title | plainText) }}
 {% endfor %}
 Most guides are also available in Turkish (https://tetherlinkutility.com/tr/blog/) and Hindi (https://tetherlinkutility.com/hi/blog/), same filenames under each language's `/blog/` path.
-
+{% if collections | hasBlog("es") %}Spanish guides for Latin American carriers: {{ site.url }}/es/blog/ (their own filenames, mostly not translations of the English posts).
+{% endif %}{% if collections | hasBlog("pt") %}Brazilian Portuguese guides for Brazilian carriers: {{ site.url }}/pt/blog/ (their own filenames, mostly not translations of the English posts).
+{% endif %}
 ## Contact
 support@tetherlinkutility.com

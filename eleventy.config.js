@@ -62,6 +62,20 @@ export default function (eleventyConfig) {
     (collections[`posts_${lang}`] || []).some((p) => p.data.slug === slug)
   );
 
+  // True if a language has its own blog: no `blogLang` fallback in i18n.json and at least one
+  // published post. A language with 0 posts (e.g. a new ES/PT blog) keeps the site as if it had
+  // no blog: its index is noindex and left out of the sitemap, hreflang and language menus.
+  const i18nData = JSON.parse(fs.readFileSync(new URL("./src/_data/i18n.json", import.meta.url), "utf8"));
+  const hasBlog = (collections, lang) => !i18nData[lang].blogLang && (collections[`posts_${lang}`] || []).length > 0;
+  eleventyConfig.addFilter("hasBlog", hasBlog);
+
+  // Languages that have a blog post with this file name. Posts that exist in only one language
+  // (e.g. country-specific carrier posts in ES/PT) get no hreflang at all, as Google advises for
+  // standalone pages.
+  eleventyConfig.addFilter("postLangs", (collections, slug) =>
+    languages.filter((l) => (collections[`posts_${l}`] || []).some((p) => p.data.slug === slug))
+  );
+
   // Turns the few HTML entities used in titles back into plain text (for llms.txt).
   eleventyConfig.addFilter("plainText", (s) =>
     String(s).replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"')
@@ -73,7 +87,7 @@ export default function (eleventyConfig) {
   // Each entry may carry `alternates` ([{ hreflang, href }]) for pages that exist in several
   // languages. These match the hreflang tags in the page heads: home pages list every language,
   // blog index pages the languages with their own blog, posts the languages that have that post;
-  // x-default is always the English URL. Pages with a single language get no alternates.
+  // x-default is the English URL when there is one. Pages with a single language get no alternates.
   eleventyConfig.addFilter("sitemapEntries", (pages, extra, site, i18n) => {
     const hl = (l) => i18n[l].hreflang || l;
     const postLangs = (slug) =>
@@ -91,16 +105,22 @@ export default function (eleventyConfig) {
         langs = languages;
         path = "";
       } else if (url === `${prefix}blog/`) {
-        langs = languages.filter((l) => !i18n[l].blogLang);
+        langs = languages.filter(blogLang);
         path = "blog/";
       } else return null;
       if (langs.length < 2) return null;
       return langs
         .map((l) => ({ hreflang: hl(l), href: `${site.url}${i18n[l].prefix}${path}` }))
-        .concat({ hreflang: "x-default", href: `${site.url}/${path}` });
+        .concat(langs.includes("en") ? { hreflang: "x-default", href: `${site.url}/${path}` } : []);
     };
+    // A language has its own blog when it has no blogLang fallback and at least one published post.
+    const blogLang = (l) => !i18n[l].blogLang && pages.some((p) => p.data.isPost && p.data.lang === l && !p.data.scheduled);
+    // Blog index of a language without posts yet: noindex, so not in the sitemap.
+    const emptyBlogIndex = (p) =>
+      !p.data.isPost && p.data.lang && i18n[p.data.lang] &&
+      p.url === `${i18n[p.data.lang].prefix}blog/` && !blogLang(p.data.lang);
     const entries = pages
-      .filter((p) => p.data.sitemap)
+      .filter((p) => p.data.sitemap && !emptyBlogIndex(p))
       .map((p) => ({
         url: p.url,
         ...p.data.sitemap,
@@ -113,10 +133,12 @@ export default function (eleventyConfig) {
   });
 
   // Human-readable dates for the blog index cards, e.g. "September 25, 2026",
-  // "25 Eylül 2026", "25 सितंबर, 2026".
+  // "25 Eylül 2026", "25 सितंबर, 2026", "25 de septiembre de 2026".
   const MONTHS = {
     en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     tr: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+    es: ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    pt: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
     hi: ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"],
   };
   eleventyConfig.addFilter("displayDate", (iso, lang) => {
@@ -124,6 +146,7 @@ export default function (eleventyConfig) {
     const month = MONTHS[lang][m - 1];
     if (lang === "en") return `${month} ${d}, ${y}`;
     if (lang === "hi") return `${d} ${month}, ${y}`;
+    if (lang === "es" || lang === "pt") return `${d} de ${month} de ${y}`;
     return `${d} ${month} ${y}`;
   });
 

@@ -1,5 +1,5 @@
 // Shared directory data for blog posts. Each language's blog folder
-// (src/blog, src/tr/blog, src/hi/blog) calls this with its language code.
+// (src/blog, src/tr/blog, src/hi/blog, src/es/blog, src/pt/blog) calls this with its language code.
 // A post's URL is the file name: src/tr/blog/foo.html -> /tr/blog/foo.html
 // Build date as YYYY-MM-DD in Istanbul time (the deploy runs early in the morning, UTC).
 const today = () => new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
