@@ -45,14 +45,14 @@
     "description": "Shares your Android phone's mobile data with your other devices over Wi-Fi through a local SOCKS5 proxy. No root, no account, no remote server.",
     "featureList": [
       "Share mobile data with laptops, tablets and phones over Wi-Fi",
-      "Free tier shares your connection with up to 2 devices, no root required",
+      "Free tier shares your connection with 1 device at a time, no root required",
       "No remote server, all proxy traffic is routed locally on the device",
       "One-tap automatic hotspot and Wi-Fi connection between Android devices",
       "QR code setup for instant connection",
       "SOCKS5 proxy support for Windows, macOS, and iOS clients"
     ],
     "freeName": "Free",
-    "proDescription": "From $2.99/month. Exact price, including local currency and yearly plan, is shown in Google Play or the App Store and varies by country and platform."
+    "proDescription": "From $3.99/month. Exact price, including local currency and yearly plan, is shown in Google Play or the App Store and varies by country and platform."
   },
   "hero": {
     "iosPill": "coming soon",
@@ -70,7 +70,7 @@
       "No remote server"
     ],
     "screenshot": "/app-screenshot.png",
-    "screenshotAlt": "Tether Link Utility running on Android: live download and upload speed, session stats, 2 devices connected and SOCKS5 host and port"
+    "screenshotAlt": "Tether Link Utility running on Android: live download and upload speed, session stats, 1 device connected and SOCKS5 host and port"
   },
   "how": {
     "title": "Connected in four steps",
@@ -155,7 +155,7 @@
         "name": "Free",
         "price": "$0",
         "features": [
-          "2 devices at once",
+          "1 device at a time",
           "Banner and interstitial ads",
           "No account needed"
         ]
@@ -164,7 +164,7 @@
         "name": "Pro",
         "pro": true,
         "pricePrefix": "from",
-        "price": "$2.99",
+        "price": "$3.99",
         "priceSuffix": "/month",
         "features": [
           "5 devices at once",
@@ -205,7 +205,7 @@
       },
       {
         "q": "How many devices can connect at once?",
-        "a": "The free tier connects up to 2 devices at once; Pro raises that to 5. Pro starts from $2.99/month. The exact price, including local currency and yearly plan, is shown in Google Play or the App Store."
+        "a": "The free tier connects 1 device at a time; Pro raises that to 5. Pro starts from $3.99/month. The exact price, including local currency and yearly plan, is shown in Google Play or the App Store."
       },
       {
         "q": "Does it work with 5G and 4G/LTE?",
@@ -217,7 +217,7 @@
       },
       {
         "q": "Is it free?",
-        "a": "Yes, the free version is free to use: up to 2 devices at once, with ads. Pro removes ads and allows up to 5 devices at once. The app itself doesn't currently add a speed limit; actual speed depends on your carrier, plan and signal."
+        "a": "Yes, the free version is free to use: 1 device at a time, with ads. Pro removes ads and allows up to 5 devices at once. The app itself doesn't currently add a speed limit; actual speed depends on your carrier, plan and signal."
       },
       {
         "q": "Can other devices join my own hotspot by scanning the QR code?",
