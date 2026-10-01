@@ -46,14 +46,14 @@
     "description": "Compartilha os dados móveis do seu celular Android com seus outros dispositivos por Wi-Fi por meio de um proxy SOCKS5 local. Sem root, sem conta, sem servidor remoto.",
     "featureList": [
       "Compartilhe dados móveis com computadores, tablets e celulares por Wi-Fi",
-      "O plano gratuito compartilha sua conexão com até 2 dispositivos, sem precisar de root",
+      "O plano gratuito compartilha sua conexão com 1 dispositivo por vez, sem precisar de root",
       "Sem servidor remoto, todo o tráfego do proxy é roteado localmente no dispositivo",
       "Ponto de acesso automático com um toque e conexão Wi-Fi entre dispositivos Android",
       "Configuração por QR code para conexão instantânea",
       "Suporte a proxy SOCKS5 para clientes Windows, macOS e iOS"
     ],
     "freeName": "Grátis",
-    "proDescription": "A partir de $2.99 por mês. O preço exato, na moeda local e com o plano anual, aparece no Google Play ou na App Store e varia conforme o país e a plataforma."
+    "proDescription": "A partir de $3.99 por mês. O preço exato, na moeda local e com o plano anual, aparece no Google Play ou na App Store e varia conforme o país e a plataforma."
   },
   "hero": {
     "iosPill": "em breve",
@@ -71,7 +71,7 @@
       "Sem servidor remoto"
     ],
     "screenshot": "/app-screenshot.png",
-    "screenshotAlt": "Tether Link Utility rodando no Android: velocidade de download e upload em tempo real, estatísticas da sessão, 2 dispositivos conectados e host e porta SOCKS5"
+    "screenshotAlt": "Tether Link Utility rodando no Android: velocidade de download e upload em tempo real, estatísticas da sessão, 1 dispositivo conectado e host e porta SOCKS5"
   },
   "how": {
     "title": "Conectado em quatro passos",
@@ -156,7 +156,7 @@
         "name": "Grátis",
         "price": "$0",
         "features": [
-          "2 dispositivos ao mesmo tempo",
+          "1 dispositivo por vez",
           "Anúncios de banner e intersticiais",
           "Sem necessidade de conta"
         ]
@@ -165,7 +165,7 @@
         "name": "Pro",
         "pro": true,
         "pricePrefix": "a partir de",
-        "price": "$2.99",
+        "price": "$3.99",
         "priceSuffix": "/mês",
         "features": [
           "5 dispositivos ao mesmo tempo",
@@ -206,7 +206,7 @@
       },
       {
         "q": "Quantos dispositivos podem se conectar ao mesmo tempo?",
-        "a": "O plano gratuito conecta até 2 dispositivos ao mesmo tempo; o Pro aumenta para 5. O Pro custa a partir de $2.99 por mês. O preço exato, na moeda local e com o plano anual, aparece no Google Play ou na App Store."
+        "a": "O plano gratuito conecta 1 dispositivo por vez; o Pro aumenta para 5. O Pro custa a partir de $3.99 por mês. O preço exato, na moeda local e com o plano anual, aparece no Google Play ou na App Store."
       },
       {
         "q": "Funciona com 5G e 4G/LTE?",
@@ -218,7 +218,7 @@
       },
       {
         "q": "É gratuito?",
-        "a": "Sim, a versão gratuita é de uso livre: até 2 dispositivos ao mesmo tempo, com anúncios. O Pro remove os anúncios e permite até 5 dispositivos ao mesmo tempo. No momento, o app em si não impõe limite de velocidade; a velocidade real depende da sua operadora, do seu plano e do sinal."
+        "a": "Sim, a versão gratuita é de uso livre: 1 dispositivo por vez, com anúncios. O Pro remove os anúncios e permite até 5 dispositivos ao mesmo tempo. No momento, o app em si não impõe limite de velocidade; a velocidade real depende da sua operadora, do seu plano e do sinal."
       },
       {
         "q": "Outros dispositivos podem entrar no meu próprio ponto de acesso escaneando o QR code?",

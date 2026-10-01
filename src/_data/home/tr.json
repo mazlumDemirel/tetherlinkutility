@@ -41,14 +41,14 @@
     "description": "Android telefonunuzun mobil verisini yerel bir SOCKS5 proxy ile Wi-Fi üzerinden diğer cihazlarınızla paylaştırır. Root yok, hesap yok, uzak sunucu yok.",
     "featureList": [
       "Mobil veriyi dizüstü bilgisayar, tablet ve telefonlarla Wi-Fi üzerinden paylaşma",
-      "Ücretsiz katman root gerektirmeden en fazla 2 cihazla bağlantı paylaşır",
+      "Ücretsiz katman root gerektirmeden bağlantıyı 1 cihazla paylaşır",
       "Uzak sunucu yok, tüm proxy trafiği cihaz üzerinde yerel olarak yönlendirilir",
       "Android cihazlar arasında tek dokunuşla otomatik hotspot ve Wi-Fi bağlantısı",
       "Anında bağlantı için QR kod kurulumu",
       "Windows, macOS ve iOS istemcileri için SOCKS5 proxy desteği"
     ],
     "freeName": "Ücretsiz",
-    "proDescription": "Aylık $2.99'dan başlayan fiyatlarla. Yerel para birimi ve yıllık plan dahil kesin fiyat Google Play veya App Store'da gösterilir, ülkeye ve platforma göre değişir."
+    "proDescription": "Aylık $3.99'dan başlayan fiyatlarla. Yerel para birimi ve yıllık plan dahil kesin fiyat Google Play veya App Store'da gösterilir, ülkeye ve platforma göre değişir."
   },
   "hero": {
     "iosPill": "çok yakında",
@@ -66,7 +66,7 @@
       "Uzak sunucu yok"
     ],
     "screenshot": "/app-screenshot-tr.png",
-    "screenshotAlt": "Android'de çalışan Tether Link Utility: anlık indirme ve yükleme hızı, oturum istatistikleri, 2 bağlı cihaz ve SOCKS5 host ile port bilgisi"
+    "screenshotAlt": "Android'de çalışan Tether Link Utility: anlık indirme ve yükleme hızı, oturum istatistikleri, 1 bağlı cihaz ve SOCKS5 host ile port bilgisi"
   },
   "how": {
     "title": "Dört adımda bağlanın",
@@ -151,7 +151,7 @@
         "name": "Ücretsiz",
         "price": "$0",
         "features": [
-          "Aynı anda 2 cihaz",
+          "Aynı anda 1 cihaz",
           "Banner ve geçiş reklamları",
           "Hesap gerekmez"
         ]
@@ -160,7 +160,7 @@
         "name": "Pro",
         "pro": true,
         "pricePrefix": "aylık",
-        "price": "$2.99",
+        "price": "$3.99",
         "priceSuffix": "'dan başlayan",
         "features": [
           "Aynı anda 5 cihaz",
@@ -201,7 +201,7 @@
       },
       {
         "q": "Aynı anda kaç cihaz bağlanabilir?",
-        "a": "Ücretsiz katman aynı anda 2 cihaza kadar bağlar; Pro bunu 5 cihaza çıkarır. Pro aylık $2.99'dan başlayan fiyatlarla sunulur. Yerel para birimi ve yıllık plan dahil kesin fiyat Google Play veya App Store'da gösterilir."
+        "a": "Ücretsiz katman aynı anda 1 cihaz bağlar; Pro bunu 5 cihaza çıkarır. Pro aylık $3.99'dan başlayan fiyatlarla sunulur. Yerel para birimi ve yıllık plan dahil kesin fiyat Google Play veya App Store'da gösterilir."
       },
       {
         "q": "5G ve 4G/LTE ile çalışıyor mu?",
@@ -213,7 +213,7 @@
       },
       {
         "q": "Ücretsiz mi?",
-        "a": "Evet, ücretsiz sürümü kullanmak ücretsizdir: aynı anda 2 cihaza kadar, reklamlı. Pro reklamları kaldırır ve aynı anda 5 cihaza kadar bağlanmaya izin verir. Uygulamanın kendisi şu anda bir hız sınırı eklemiyor; gerçek hız operatörünüze, paketinize ve sinyale bağlıdır."
+        "a": "Evet, ücretsiz sürümü kullanmak ücretsizdir: aynı anda 1 cihaz, reklamlı. Pro reklamları kaldırır ve aynı anda 5 cihaza kadar bağlanmaya izin verir. Uygulamanın kendisi şu anda bir hız sınırı eklemiyor; gerçek hız operatörünüze, paketinize ve sinyale bağlıdır."
       },
       {
         "q": "Diğer cihazlar QR kodu tarayarak kendi hotspot'uma katılabilir mi?",
