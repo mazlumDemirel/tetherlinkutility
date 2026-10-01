@@ -65,11 +65,16 @@
     "playWord": "Google Play",
     "iosLabel": "A versão para iOS chega em breve",
     "iosEyebrow": "EM BREVE",
+    "trustNoRoot": "Sem root",
     "trust": [
       "Instalação gratuita",
       "Sem conta",
       "Sem servidor remoto"
     ],
+    "visual": {
+      "host": "Seu celular Android",
+      "devices": "Seus outros dispositivos"
+    },
     "screenshot": "/app-screenshot.png",
     "screenshotAlt": "Tether Link Utility rodando no Android: velocidade de download e upload em tempo real, estatísticas da sessão, 1 dispositivo conectado e host e porta SOCKS5"
   },
@@ -227,5 +232,8 @@
     ],
     "more": "Todas as 11 perguntas &rarr;",
     "less": "Mostrar menos perguntas"
+  },
+  "closing": {
+    "title": "Instale grátis pelo Google Play"
   }
 }

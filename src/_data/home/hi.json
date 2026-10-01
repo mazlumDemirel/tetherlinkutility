@@ -64,11 +64,16 @@
     "playWord": "Google Play",
     "iosLabel": "iOS वर्शन जल्द आ रहा है",
     "iosEyebrow": "जल्द आ रहा है",
+    "trustNoRoot": "रूट की ज़रूरत नहीं",
     "trust": [
       "इंस्टॉल करना मुफ़्त",
       "कोई अकाउंट नहीं",
       "कोई रिमोट सर्वर नहीं"
     ],
+    "visual": {
+      "host": "आपका Android फ़ोन",
+      "devices": "आपके दूसरे डिवाइस"
+    },
     "screenshot": "/app-screenshot.png",
     "screenshotAlt": "Android पर चल रहा Tether Link Utility: लाइव डाउनलोड और अपलोड स्पीड, सेशन आंकड़े, 1 डिवाइस कनेक्टेड और SOCKS5 होस्ट व पोर्ट"
   },
@@ -225,5 +230,8 @@
     ],
     "more": "सभी 11 सवाल &rarr;",
     "less": "कम सवाल दिखाएं"
+  },
+  "closing": {
+    "title": "Google Play से मुफ़्त इंस्टॉल करें"
   }
 }
