@@ -60,11 +60,16 @@
     "playWord": "Hemen İndirin",
     "iosLabel": "iOS sürümü çok yakında",
     "iosEyebrow": "ÇOK YAKINDA",
+    "trustNoRoot": "Root yok",
     "trust": [
       "Kurulumu ücretsiz",
       "Hesap gerekmez",
       "Uzak sunucu yok"
     ],
+    "visual": {
+      "host": "Android telefonunuz",
+      "devices": "Diğer cihazlarınız"
+    },
     "screenshot": "/app-screenshot-tr.png",
     "screenshotAlt": "Android'de çalışan Tether Link Utility: anlık indirme ve yükleme hızı, oturum istatistikleri, 1 bağlı cihaz ve SOCKS5 host ile port bilgisi"
   },
@@ -222,5 +227,8 @@
     ],
     "more": "11 sorunun tümü &rarr;",
     "less": "Daha az soru göster"
+  },
+  "closing": {
+    "title": "Google Play'den ücretsiz indirin"
   }
 }

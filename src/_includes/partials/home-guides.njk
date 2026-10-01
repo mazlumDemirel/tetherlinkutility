@@ -6,7 +6,7 @@
 {%- set g = t.guides -%}
 {%- set posts = collections["posts_" + lang] -%}
 {%- set carrierCount = 0 -%}{%- for p in posts -%}{%- if p.data.carrier -%}{%- set carrierCount = carrierCount + 1 -%}{%- endif -%}{%- endfor -%}
-  <section class="section wrap" id="guides">
+  <section class="section wrap band-peach" id="guides">
     <div class="guides-head">
       <div>
         <h2>{{ g.title }}</h2>

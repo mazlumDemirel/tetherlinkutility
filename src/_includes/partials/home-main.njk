@@ -31,15 +31,31 @@
           </svg>
           <span class="pb-text"><span class="pb-eyebrow">{{ h.hero.playEyebrow }}</span><span class="pb-word">{{ h.hero.playWord }}</span></span>
         </a>
-        <div class="ios-soon-badge" role="img" aria-label="{{ h.hero.iosLabel }}" title="{{ h.hero.iosLabel }}"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.51 2.68-1.27z"/></svg><span class="pb-text"><span class="pb-eyebrow">{{ h.hero.iosEyebrow }}</span><span class="pb-word">App Store</span></span></div>
+        <div class="ios-soon-badge" role="img" aria-label="{{ h.hero.iosLabel }}" title="{{ h.hero.iosLabel }}"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.51 2.68-1.27z"/></svg><span class="pb-text"><span class="pb-eyebrow">{{ h.hero.iosEyebrow }}</span><span class="pb-word">App Store</span></span></div>
       </div>
       <ul class="hero-trust">
 {% for item in h.hero.trust %}        <li>{{ item }}</li>
-{% endfor %}      </ul>
+{% if loop.first %}        <li>{{ h.hero.trustNoRoot }}</li>
+{% endif %}{% endfor %}      </ul>
     </div>
-    <div class="hero-phone">
-      <div class="hero-phone-frame">
-        <img src="{{ h.hero.screenshot }}" alt="{{ h.hero.screenshotAlt }}" width="1080" height="2400" fetchpriority="high" />
+    <div class="hero-visual">
+      <div class="hv-card">
+        <div class="hv-top" aria-hidden="true"><span class="hv-live"></span><span class="hv-wifi">Wi-Fi</span><span class="hv-port">SOCKS5 &middot; 8282</span></div>
+        <div class="hv-host">
+          <div class="hv-phone"><img src="{{ h.hero.screenshot }}" alt="{{ h.hero.screenshotAlt }}" width="1080" height="2400" fetchpriority="high" /></div>
+          <div class="hv-host-info" aria-hidden="true">
+            <b>{{ h.hero.visual.host }}</b>
+            <span class="hv-proxy">SOCKS5 <code>:8282</code></span>
+            <span class="hv-bars"><i></i><i></i><i></i><i></i></span>
+          </div>
+        </div>
+        <div class="hv-link" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hv-devices-label" aria-hidden="true">{{ h.hero.visual.devices }}</div>
+        <ul class="hv-devices" aria-hidden="true">
+          <li><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg><span class="hv-ok"></span></li>
+          <li><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M11 18.5h2"/></svg><span class="hv-ok"></span></li>
+          <li><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg><span class="hv-ok"></span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -67,7 +83,7 @@
     <p class="notes">{{ h.how.notes }}</p>
   </section>
 
-  <section class="section wrap video-showcase" id="demo">
+  <section class="section wrap video-showcase band-peach" id="demo">
     <h2>{{ h.demo.title }}</h2>
     <div class="video-frame video-facade" data-yt-id="{{ h.demo.videoId }}" role="button" tabindex="0" aria-label="{{ h.demo.playLabel }}">
       <img src="https://img.youtube.com/vi/{{ h.demo.videoId }}/hqdefault.jpg" alt="{{ h.demo.previewAlt }}" loading="lazy" decoding="async" width="480" height="360" />
@@ -80,7 +96,7 @@
     </div>
   </section>
 
-  <section class="section wrap" id="platforms">
+  <section class="section wrap band-navy" id="platforms">
     <div class="platforms-grid">
       <div class="platforms-intro">
         <div class="section-label">{{ h.platforms.label }}</div>
@@ -124,5 +140,23 @@
 {% endfor %}
     </div>
     <button type="button" class="faq-toggle" id="faqToggle" aria-controls="faqMore" aria-expanded="false" data-more="{{ h.faq.more }}" data-less="{{ h.faq.less }}" hidden>{{ h.faq.more }}</button>
+    </div>
+  </section>
+
+  <section class="closing wrap">
+    <div class="closing-card">
+      <div class="closing-text">
+        <h2>{{ h.closing.title }}</h2>
+        <p>{{ t.homeNav.sticky }}</p>
+      </div>
+      <a href="{{ site.playUrl }}" class="play-badge" aria-label="{{ h.hero.playLabel }}">
+        <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3.18 23.76c.3.17.64.24.99.19L15.89 12 3.18.05C2.83 0 2.48.07 2.18.24 1.59.57 1.2 1.22 1.2 2v20c0 .78.39 1.43.98 1.76z" fill="url(#pbBlue)"/>
+          <path d="M4.14 1.37l12.22 7.07-3.27 3.27L4.14 1.37z" fill="url(#pbGreen)"/>
+          <path d="M4.14 22.63l8.95-8.95 3.27 3.27-12.22 5.68z" fill="url(#pbRed)"/>
+          <path d="M19.62 9.29l-2.94-1.7-3.27 3.27 3.27 3.27 2.97-1.72c.85-.49.85-1.63-.03-2.12z" fill="url(#pbYellow)"/>
+        </svg>
+        <span class="pb-text"><span class="pb-eyebrow">{{ h.hero.playEyebrow }}</span><span class="pb-word">{{ h.hero.playWord }}</span></span>
+      </a>
     </div>
   </section>
