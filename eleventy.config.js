@@ -225,6 +225,26 @@ export default function (eleventyConfig) {
     fs.existsSync(`public/og/${lang}/${slug}.png`) ? `/og/${lang}/${slug}.png` : "/og-image.png"
   );
 
+  // Keeps "Wi-Fi" on one line (no break at the hyphen) in visible page text. Only text between
+  // tags inside <body> is touched; attributes, <script>, <style> and <head> stay byte-identical,
+  // so the copy itself (and what search engines index) does not change.
+  eleventyConfig.addTransform("nowrapWifi", function (content) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return content;
+    const bodyStart = content.indexOf("<body");
+    if (bodyStart < 0) return content;
+    const head = content.slice(0, bodyStart);
+    let skip = false;
+    const body = content.slice(bodyStart).replace(/(<[^>]*>)|([^<]+)/g, (m, tag, text) => {
+      if (tag) {
+        if (/^<(script|style)\b/i.test(tag)) skip = true;
+        else if (/^<\/(script|style)>/i.test(tag)) skip = false;
+        return tag;
+      }
+      return skip ? text : text.replace(/Wi-Fi/g, '<span class="nowrap">Wi-Fi</span>');
+    });
+    return head + body;
+  });
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     templateFormats: ["njk", "html", "md"],

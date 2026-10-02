@@ -1,4 +1,6 @@
 {%- set t = i18n[lang] -%}
+{%- set blogPrefix = t.prefix if (collections | hasBlog(lang)) else i18n[t.blogLang or "en"].prefix -%}
+{%- set navMode = "blog" -%}
 {%- set pageUrl = site.url + t.prefix + "blog/" -%}
 {%- set blogTitle = t.blogTitle or (t.blog + ": Tether Link Utility") -%}
 <!DOCTYPE html>
@@ -56,7 +58,7 @@
 </head>
 <body>
 
-{% set langPath = "blog/" %}{% set hideBlogLink = true %}{% include "partials/blog-nav.njk" %}
+{% set langPath = "blog/" %}{% include "partials/site-nav.njk" %}
 
 <main>
   <div class="page-eyebrow">{{ eyebrow }}</div>
@@ -70,9 +72,8 @@
 {% else %}  <p class="post-excerpt">{{ t.blogEmpty }} <a href="/blog/">{{ t.blogEmptyLink }}</a></p>
 {% endfor %}</main>
 
-{% include "partials/blog-footer.njk" %}
+{% include "partials/site-footer.njk" %}
 
-
-{% include "partials/lang-dropdown-script.njk" %}
+{% include "partials/site-nav-script.njk" %}
 </body>
 </html>

@@ -1,0 +1,164 @@
+{#- Shared site chrome CSS (tokens, header, language menu, mobile drawer, navy footer).
+    Included inside the <style> of the home, blog and privacy pages. -#}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Light warm theme. Brand orange (--accent) is for fills, large text and icons;
+       small orange/green text uses the darker --accent-text / --success-text (AA on light). */
+    :root {
+      color-scheme: light;
+      --ground:    #FBF6F0;
+      --peach:     #FFF0E4;
+      --surface:   #FFFFFF;
+      --elevated:  #FFF5EC;
+      --border:    #EFE3D6;
+      --border-md: #E3D3C2;
+      --accent:    #E8622A;
+      --accent-text: #B4441A;
+      --accent-soft: rgba(232,98,42,0.10);
+      /* Button fill: darker orange so white labels pass 4.5:1 (#E8622A stays for highlights). */
+      --accent-btn: #C4501F;
+      --accent-btn-hover: #A9431A;
+      --success:   #00BF8A;
+      --success-text: #00775A;
+      --success-bg: #E3F7EF;
+      --text:      #1A1A2E;
+      --muted:     #55536B;
+      --dim:       #6A6780;
+      --navy:      #0C0C18;
+      --shadow-sm: 0 1px 2px rgba(60,35,15,0.05), 0 4px 14px -6px rgba(60,35,15,0.10);
+      --shadow-lg: 0 2px 6px rgba(60,35,15,0.05), 0 24px 50px -18px rgba(90,45,15,0.25);
+    }
+    /* Navy band (Platforms) and footer reuse the original dark palette. */
+    .band-navy, footer {
+      --surface:   #141428;
+      --elevated:  #1E1E38;
+      --border:    #24243F;
+      --border-md: #30305A;
+      --text:      #ECEDFF;
+      --muted:     #A3A3C7;
+      --dim:       #9090B6;
+      --accent-text: #F07A45;
+      --success-text: #00BF8A;
+      color: var(--text);
+      border-image: conic-gradient(var(--navy) 0 0) fill 0 / / 0 100vmax;
+    }
+    .band-peach { border-image: conic-gradient(var(--peach) 0 0) fill 0 / / 0 100vmax; }
+
+    html { scroll-behavior: smooth; }
+    [id] { scroll-margin-top: 80px; }
+
+    body {
+      background: var(--ground);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--accent-text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    .nowrap { white-space: nowrap; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding-left: clamp(20px, 5vw, 80px); padding-right: clamp(20px, 5vw, 80px); }
+
+    /* ── Nav ─────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(251,246,240,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(20px, 5vw, 80px);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-brand {
+      font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
+      color: var(--text); display: flex; align-items: center; gap: 10px;
+    }
+    .nav-brand:hover { text-decoration: none; }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.btn-nav {
+      background: var(--accent-btn); color: #fff; font-size: 14px; font-weight: 700;
+      padding: 9px 16px; border-radius: 9px; transition: background-color 0.15s;
+    }
+    .nav-links a.btn-nav:hover { background: var(--accent-btn-hover); color: #fff; }
+
+    .lang-dropdown { position: relative; }
+    .lang-dropdown-toggle {
+      display: flex; align-items: center; gap: 6px;
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 14px; font-weight: 600; font-family: inherit; padding: 4px 0;
+    }
+    .lang-dropdown-toggle:hover { color: var(--text); }
+    .lang-dropdown-toggle svg { transition: transform 0.2s ease; }
+    .lang-dropdown.is-open .lang-dropdown-toggle svg { transform: rotate(180deg); }
+    .lang-dropdown-menu {
+      position: absolute; top: calc(100% + 14px); right: 0;
+      background: var(--surface); border: 1px solid var(--border-md); border-radius: 10px;
+      padding: 6px; min-width: 140px;
+      display: none; flex-direction: column;
+      box-shadow: var(--shadow-lg);
+      z-index: 20;
+    }
+    .lang-dropdown.is-open .lang-dropdown-menu { display: flex; }
+    .lang-dropdown-menu a {
+      padding: 8px 12px; border-radius: 6px; font-size: 14px; color: var(--muted);
+      white-space: nowrap;
+    }
+    .lang-dropdown-menu a:hover { background: var(--elevated); color: var(--text); text-decoration: none; }
+    .lang-dropdown-menu a.is-current { color: var(--accent-text); font-weight: 600; }
+
+    .nav-toggle {
+      display: none; background: none; border: none; color: var(--text);
+      width: 44px; height: 44px; padding: 0; cursor: pointer;
+      align-items: center; justify-content: center;
+    }
+    .nav-toggle svg { display: block; }
+
+    /* ── Footer ──────────────────────────── */
+    footer {
+      padding-top: 32px; padding-bottom: 32px;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px;
+      font-size: 14px; color: var(--dim);
+    }
+    footer a { color: var(--muted); }
+    footer .footer-brand a { color: var(--accent-text); }
+    footer a:hover { color: var(--text); text-decoration: none; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+    .footer-brand .sep { padding: 0 6px; }
+    @media (max-width: 640px) {
+      footer { flex-direction: column; align-items: flex-start; }
+      /* Even rows on phones instead of a ragged wrap. */
+      .footer-brand { display: flex; flex-direction: column; gap: 4px; }
+      .footer-brand .sep { display: none; }
+      .footer-links { display: grid; grid-template-columns: repeat(3, max-content); gap: 10px 28px; }
+    }
+
+    @media (max-width: 860px) {
+      /* backdrop-filter on <nav> makes it a containing block for fixed-position
+         descendants, which breaks the drawer's fixed positioning. Drop the blur on mobile. */
+      nav { backdrop-filter: none; background: rgba(251,246,240,0.98); }
+
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed; top: 64px; right: 0; bottom: 0; width: min(75vw, 290px);
+        background: var(--surface); border-left: 1px solid var(--border); box-shadow: var(--shadow-lg);
+        flex-direction: column; align-items: flex-start; gap: 4px;
+        padding: 20px; z-index: 9;
+        transform: translateX(100%); transition: transform 0.25s ease;
+      }
+      .nav-links.is-open { transform: translateX(0); }
+      .nav-links a { padding: 12px 4px; width: 100%; }
+      .nav-links a.btn-nav { width: auto; padding: 12px 18px; margin-top: 12px; }
+      .lang-dropdown { padding: 8px 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }

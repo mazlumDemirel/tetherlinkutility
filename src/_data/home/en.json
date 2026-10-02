@@ -117,6 +117,7 @@
   "demo": {
     "title": "See it in action",
     "videoId": "866HxsnLb2U",
+    "cover": "/demo-cover-en.jpg",
     "playLabel": "Play demo video",
     "previewAlt": "Demo video preview"
   },
