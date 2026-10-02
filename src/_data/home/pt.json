@@ -118,6 +118,7 @@
   "demo": {
     "title": "Veja funcionando",
     "videoId": "866HxsnLb2U",
+    "cover": "/demo-cover-en.jpg",
     "playLabel": "Reproduzir vídeo de demonstração",
     "previewAlt": "Prévia do vídeo de demonstração"
   },

@@ -1,3 +1,7 @@
+{#- Site header, shared by the home, blog and privacy pages.
+    navMode: unset on the home page (section links are in-page anchors), "blog" or "privacy" elsewhere.
+    Needs `blogPrefix` (set by each layout, also used by the footer). -#}
+{%- set navBase = t.prefix if navMode else "" -%}
 <nav>
   <a class="nav-brand" href="{{ t.prefix }}">
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -16,10 +20,10 @@
     </svg>
   </button>
   <div class="nav-links" id="navLinks">
-    <a href="#how">{{ t.homeNav.how }}</a>
-    <a href="#platforms">{{ t.homeNav.platforms }}</a>
-    <a href="#pricing">{{ t.homeNav.pricing }}</a>
-    <a href="#faq">{{ t.homeNav.faq }}</a>
+    <a href="{{ navBase }}#how">{{ t.homeNav.how }}</a>
+    <a href="{{ navBase }}#platforms">{{ t.homeNav.platforms }}</a>
+    <a href="{{ navBase }}#pricing">{{ t.homeNav.pricing }}</a>
+    <a href="{{ navBase }}#faq">{{ t.homeNav.faq }}</a>
     <a href="{{ blogPrefix }}blog/">{{ t.blog }}</a>
     <div class="lang-dropdown" id="langDropdown">
       <button class="lang-dropdown-toggle" id="langDropdownToggle" aria-label="{{ t.homeNav.language }}" aria-haspopup="true" aria-expanded="false" aria-controls="langDropdownMenu">
@@ -27,7 +31,9 @@
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 3.5L5 7l3.5-3.5"/></svg>
       </button>
       <div class="lang-dropdown-menu" id="langDropdownMenu" role="menu">
-{% for l in site.languages %}        <a href="{{ i18n[l].prefix }}"{% if l == lang %} class="is-current"{% endif %} role="menuitem">{{ i18n[l].name }}</a>
+{#- Home: each language's home. Blog: the same post if it exists there, else that language's blog index,
+    else (no blog yet) its home. Privacy: the language's section on the same page. -#}
+{% for l in site.languages %}        <a href="{% if navMode == "privacy" %}#{{ l }}{% elif navMode == "blog" %}{{ site.url }}{{ i18n[l].prefix }}{% if slug and (collections | hasPost(l, slug)) %}{{ langPath }}{% elif (collections | hasBlog(l)) or l == lang %}blog/{% endif %}{% else %}{{ i18n[l].prefix }}{% endif %}"{% if l == lang %} class="is-current"{% endif %} role="menuitem">{{ i18n[l].name }}</a>
 {% endfor %}      </div>
     </div>
     <a href="{{ site.playUrl }}" class="btn-nav">{{ t.homeNav.getApp }}</a>

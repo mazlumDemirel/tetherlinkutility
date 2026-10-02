@@ -55,7 +55,7 @@
     "h1": "Telefonunuzun mobil verisi, ",
     "h1Accent": "tüm cihazlarınızda.",
     "body": "Tether Link Utility, Android telefonunuzda yerel bir SOCKS5 proxy çalıştırır ve bunu Wi-Fi hotspot üzerinden paylaşır; böylece dizüstü bilgisayarınız, tabletiniz veya başka bir telefon mobil verinizi kullanabilir. Her şey cihazınızda çalışır.",
-    "playLabel": "Google Play'den indirin",
+    "playLabel": "Google Play'den Hemen İndirin",
     "playEyebrow": "GOOGLE PLAY'DE",
     "playWord": "Hemen İndirin",
     "iosLabel": "iOS sürümü çok yakında",
@@ -113,6 +113,7 @@
   "demo": {
     "title": "Uygulamayı iş başında görün",
     "videoId": "Xs4J50JHhZI",
+    "cover": "/demo-cover-tr.jpg",
     "playLabel": "Tanıtım videosunu oynat",
     "previewAlt": "Tanıtım videosu önizlemesi"
   },
@@ -154,7 +155,7 @@
     "plans": [
       {
         "name": "Ücretsiz",
-        "price": "$0",
+        "price": "Ücretsiz",
         "features": [
           "Aynı anda 1 cihaz",
           "Banner ve geçiş reklamları",
@@ -165,8 +166,8 @@
         "name": "Pro",
         "pro": true,
         "pricePrefix": "aylık",
-        "price": "$3.99",
-        "priceSuffix": "'dan başlayan",
+        "price": "109,99 TL",
+        "priceSuffix": "'den başlayan",
         "features": [
           "Aynı anda 5 cihaz",
           "Reklam yok",

@@ -1,4 +1,6 @@
 {%- set t = i18n[lang] -%}
+{%- set blogPrefix = t.prefix if (collections | hasBlog(lang)) else i18n[t.blogLang or "en"].prefix -%}
+{%- set navMode = "blog" -%}
 {%- set pageUrl = site.url + t.prefix + "blog/" + slug + ".html" -%}
 {%- set ogImageUrl = site.url + (lang | ogImage(slug)) -%}
 <!DOCTYPE html>
@@ -79,7 +81,7 @@
 </head>
 <body>
 
-{% set langPath = "blog/" + slug + ".html" %}{% include "partials/blog-nav.njk" %}
+{% set langPath = "blog/" + slug + ".html" %}{% include "partials/site-nav.njk" %}
 
 <main>
   <article>
@@ -89,9 +91,8 @@
 {{ content | enhancePost({ quick: quickHtml, faq: faqHtml, breadcrumb: crumbHtml, region: region, slug: slug, posts: collections["posts_" + lang], labels: t.post }) }}  </article>
 </main>
 
-{% include "partials/blog-footer.njk" %}
+{% include "partials/site-footer.njk" %}
 
-
-{% include "partials/lang-dropdown-script.njk" %}
+{% include "partials/site-nav-script.njk" %}
 </body>
 </html>
