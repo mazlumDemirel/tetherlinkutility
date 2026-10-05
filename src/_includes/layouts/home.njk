@@ -5,16 +5,7 @@
 <!DOCTYPE html>
 <html lang="{{ t.hreflang or lang }}">
 <head>
-{% include "partials/gtag.njk" %}
-{% if conversionSnippet %}  <!-- Event snippet for Sayfa görüntüleme conversion page -->
-  <script>
-    gtag('event', 'conversion', {
-        'send_to': 'AW-994847137/ux5ZCNm8svscEKHTsNoD',
-        'value': 1.0,
-        'currency': 'TRY'
-    });
-  </script>
-{% endif %}  <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 {% if siteVerification %}  <meta name="google-site-verification" content="3ZffoZuU2qaZoJJrMZoL8VImUVBLLHqg3b7jA_cN3Z4" />
 {% endif %}  <meta name="robots" content="index, follow">
