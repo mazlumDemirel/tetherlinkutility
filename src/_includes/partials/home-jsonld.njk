@@ -14,6 +14,7 @@
 {% if h.inLanguage and b.type != "organization" %}    "inLanguage": "{{ h.inLanguage }}",
 {% endif %}{% if b.type == "website" %}    "@type": "WebSite",
     "name": "{{ site.name }}",
+    "alternateName": ["TetherLinkUtility", "Tether Link"],
     "url": "{{ ldUrl }}"
 {% elif b.type == "organization" %}    "@type": "Organization",
     "name": "{{ site.name }}",
@@ -38,6 +39,7 @@
 {% elif b.type == "app" %}    "@type": "SoftwareApplication",
     "name": "{{ site.name }}",
     "publisher": { "@type": "Organization", "name": "Steadyline Labs", "url": "{{ site.publisherUrl }}" },
+    "sameAs": ["{{ site.playUrl }}"],
     "installUrl": "{{ site.playUrl }}",
     "downloadUrl": "{{ site.playUrl }}",
     "applicationCategory": "UtilitiesApplication",
