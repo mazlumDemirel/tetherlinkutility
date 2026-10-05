@@ -54,13 +54,13 @@
         "@type": "Offer",
         "name": {{ h.app.freeName | dump }},
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "{{ 'TRY' if lang == 'tr' else 'USD' }}"
       },
       {
         "@type": "Offer",
         "name": "Pro",
-        "price": "3.99",
-        "priceCurrency": "USD",
+        "price": "{{ '109.99' if lang == 'tr' else '3.99' }}",
+        "priceCurrency": "{{ 'TRY' if lang == 'tr' else 'USD' }}",
         "description": {{ h.app.proDescription | dump }}
       }
     ]
